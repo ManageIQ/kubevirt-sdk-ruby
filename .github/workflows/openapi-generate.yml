@@ -1,0 +1,43 @@
+name: Update gem from OpenAPI Spec
+
+on:
+  workflow_dispatch:
+  push:
+  schedule:
+  - cron: '0 0 * * 0'
+
+jobs:
+  openapi-generate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up system
+      run: sudo apt install -y xq
+    - id: openapi-version
+      name: Detect openapi-generator-cli version
+      run: |
+        version=`wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/maven-metadata.xml -O - | xq -x "//metadata/versioning/latest"`
+        echo "version=$version" >> $GITHUB_OUTPUT
+    - name: Set up openapi-generator-cli
+      run: wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/${{ steps.openapi-version.outputs.version }}/openapi-generator-cli-${{ steps.openapi-version.outputs.version }}.jar -O openapi-generator-cli.jar
+    - name: OpenAPI Generate
+      run: java -jar openapi-generator-cli.jar generate --input-spec https://raw.githubusercontent.com/kubevirt/kubevirt/refs/heads/main/api/openapi-spec/swagger.json --skip-validate-spec --generator-name ruby --config .openapi-config.json
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v7
+      with:
+        add-paths: |
+          .openapi-generator
+          docs
+          lib
+          README.md
+          spec
+        commit-message: Update kubevirt gem
+        branch: openapi_generate
+        author: ManageIQ Bot <bot@manageiq.org>
+        committer: ManageIQ Bot <bot@manageiq.org>
+        delete-branch: true
+        labels: enhancement
+        push-to-fork: miq-bot/kubevirt-sdk-ruby
+        title: Update Kubevirt Gem
+        body: Update the kubevirt-sdk-ruby gem from the kubevirt openapi-spec https://github.com/kubevirt/kubevirt/tree/main/api/openapi-spec
+        token: ${{ secrets.PR_TOKEN }}
