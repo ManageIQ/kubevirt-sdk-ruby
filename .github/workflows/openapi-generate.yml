@@ -36,7 +36,8 @@ jobs:
         committer: ManageIQ Bot <bot@manageiq.org>
         delete-branch: true
         labels: enhancement
+        assignee: agrare
         push-to-fork: miq-bot/kubevirt-sdk-ruby
-        title: Update Kubevirt Gem
+        title: Update kubevirt gem
         body: Update the kubevirt-sdk-ruby gem from the kubevirt openapi-spec https://github.com/kubevirt/kubevirt/tree/main/api/openapi-spec
         token: ${{ secrets.PR_TOKEN }}
