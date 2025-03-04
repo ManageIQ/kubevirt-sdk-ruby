@@ -7,8 +7,10 @@
 | **conditions** | [**Array&lt;V1VirtualMachineCondition&gt;**](V1VirtualMachineCondition.md) | Hold the state information of the VirtualMachine and its VirtualMachineInstance | [optional] |
 | **created** | **Boolean** | Created indicates if the virtual machine is created in the cluster | [optional] |
 | **desired_generation** | **Integer** | DesiredGeneration is the generation which is desired for the VMI. This will be used in comparisons with ObservedGeneration to understand when the VMI is out of sync. This will be changed at the same time as ObservedGeneration to remove errors which could occur if Generation is updated through an Update() before ObservedGeneration in Status. | [optional] |
+| **instancetype_ref** | [**V1InstancetypeStatusRef**](V1InstancetypeStatusRef.md) |  | [optional] |
 | **memory_dump_request** | [**V1VirtualMachineMemoryDumpRequest**](V1VirtualMachineMemoryDumpRequest.md) |  | [optional] |
 | **observed_generation** | **Integer** | ObservedGeneration is the generation observed by the vmi when started. | [optional] |
+| **preference_ref** | [**V1InstancetypeStatusRef**](V1InstancetypeStatusRef.md) |  | [optional] |
 | **printable_status** | **String** | PrintableStatus is a human readable, high-level representation of the status of the virtual machine | [optional] |
 | **ready** | **Boolean** | Ready indicates if the virtual machine is running and ready | [optional] |
 | **restore_in_progress** | **String** | RestoreInProgress is the name of the VirtualMachineRestore currently executing | [optional] |
@@ -29,8 +31,10 @@ instance = Kubevirt::V1VirtualMachineStatus.new(
   conditions: null,
   created: null,
   desired_generation: null,
+  instancetype_ref: null,
   memory_dump_request: null,
   observed_generation: null,
+  preference_ref: null,
   printable_status: null,
   ready: null,
   restore_in_progress: null,

@@ -1,4 +1,4 @@
-# Kubevirt::V1alpha1VirtualMachineCloneSpec
+# Kubevirt::V1beta1VirtualMachineCloneSpec
 
 ## Properties
 
@@ -10,14 +10,14 @@
 | **new_sm_bios_serial** | **String** | NewSMBiosSerial manually sets that target&#39;s SMbios serial. If this field is not specified, a new serial will be generated automatically. | [optional] |
 | **source** | [**K8sIoApiCoreV1TypedLocalObjectReference**](K8sIoApiCoreV1TypedLocalObjectReference.md) |  |  |
 | **target** | [**K8sIoApiCoreV1TypedLocalObjectReference**](K8sIoApiCoreV1TypedLocalObjectReference.md) |  | [optional] |
-| **template** | [**V1alpha1VirtualMachineCloneTemplateFilters**](V1alpha1VirtualMachineCloneTemplateFilters.md) |  | [optional] |
+| **template** | [**V1beta1VirtualMachineCloneTemplateFilters**](V1beta1VirtualMachineCloneTemplateFilters.md) |  | [optional] |
 
 ## Example
 
 ```ruby
 require 'kubevirt'
 
-instance = Kubevirt::V1alpha1VirtualMachineCloneSpec.new(
+instance = Kubevirt::V1beta1VirtualMachineCloneSpec.new(
   annotation_filters: null,
   label_filters: null,
   new_mac_addresses: null,
