@@ -30,7 +30,7 @@ Layout/EmptyLineAfterMagicComment:
 
 # In a regular class definition, no empty lines around the body.
 Layout/EmptyLinesAroundClassBody:
-  Enabled: true
+  Enabled: false
 
 # In a regular method definition, no empty lines around the body.
 Layout/EmptyLinesAroundMethodBody:
@@ -38,7 +38,7 @@ Layout/EmptyLinesAroundMethodBody:
 
 # In a regular module definition, no empty lines around the body.
 Layout/EmptyLinesAroundModuleBody:
-  Enabled: true
+  Enabled: false
 
 Layout/FirstArgumentIndentation:
   Enabled: true
@@ -58,7 +58,7 @@ Layout/IndentationWidth:
   Enabled: true
 
 Layout/LeadingCommentSpace:
-  Enabled: true
+  Enabled: false
 
 Layout/SpaceAfterColon:
   Enabled: true
