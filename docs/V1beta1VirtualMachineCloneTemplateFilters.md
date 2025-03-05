@@ -1,4 +1,4 @@
-# Kubevirt::V1alpha1VirtualMachineCloneTemplateFilters
+# Kubevirt::V1beta1VirtualMachineCloneTemplateFilters
 
 ## Properties
 
@@ -12,7 +12,7 @@
 ```ruby
 require 'kubevirt'
 
-instance = Kubevirt::V1alpha1VirtualMachineCloneTemplateFilters.new(
+instance = Kubevirt::V1beta1VirtualMachineCloneTemplateFilters.new(
   annotation_filters: null,
   label_filters: null
 )

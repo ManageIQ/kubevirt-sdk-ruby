@@ -1,24 +1,26 @@
-# Kubevirt::V1alpha1VirtualMachineCloneList
+# Kubevirt::V1beta1VirtualMachineClone
 
 ## Properties
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **api_version** | **String** | APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources | [optional] |
-| **items** | [**Array&lt;V1alpha1VirtualMachineClone&gt;**](V1alpha1VirtualMachineClone.md) |  |  |
 | **kind** | **String** | Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds | [optional] |
-| **metadata** | [**K8sIoApimachineryPkgApisMetaV1ListMeta**](K8sIoApimachineryPkgApisMetaV1ListMeta.md) |  | [optional] |
+| **metadata** | [**K8sIoApimachineryPkgApisMetaV1ObjectMeta**](K8sIoApimachineryPkgApisMetaV1ObjectMeta.md) |  | [optional] |
+| **spec** | [**V1beta1VirtualMachineCloneSpec**](V1beta1VirtualMachineCloneSpec.md) |  |  |
+| **status** | [**V1beta1VirtualMachineCloneStatus**](V1beta1VirtualMachineCloneStatus.md) |  | [optional] |
 
 ## Example
 
 ```ruby
 require 'kubevirt'
 
-instance = Kubevirt::V1alpha1VirtualMachineCloneList.new(
+instance = Kubevirt::V1beta1VirtualMachineClone.new(
   api_version: null,
-  items: null,
   kind: null,
-  metadata: null
+  metadata: null,
+  spec: null,
+  status: null
 )
 ```
 

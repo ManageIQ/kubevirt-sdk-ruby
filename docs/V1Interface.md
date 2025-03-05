@@ -19,7 +19,7 @@
 | **ports** | [**Array&lt;V1Port&gt;**](V1Port.md) | List of ports to be forwarded to the virtual machine. | [optional] |
 | **slirp** | **Object** | DeprecatedInterfaceSlirp is an alias to the deprecated InterfaceSlirp that connects to a given network using QEMU user networking mode. Deprecated: Removed in v1.3 | [optional] |
 | **sriov** | **Object** | InterfaceSRIOV connects to a given network by passing-through an SR-IOV PCI device via vfio. | [optional] |
-| **state** | **String** | State represents the requested operational state of the interface. The (only) value supported is &#x60;absent&#x60;, expressing a request to remove the interface. | [optional] |
+| **state** | **String** | State represents the requested operational state of the interface. The supported values are: &#x60;absent&#x60;, expressing a request to remove the interface. &#x60;down&#x60;, expressing a request to set the link down. &#x60;up&#x60;, expressing a request to set the link up. Empty value functions as &#x60;up&#x60;. | [optional] |
 | **tag** | **String** | If specified, the virtual network interface address and its tag will be provided to the guest via config drive | [optional] |
 
 ## Example

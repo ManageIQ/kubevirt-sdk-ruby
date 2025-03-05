@@ -10,6 +10,7 @@
 | **devices** | [**V1Devices**](V1Devices.md) |  |  |
 | **features** | [**V1Features**](V1Features.md) |  | [optional] |
 | **firmware** | [**V1Firmware**](V1Firmware.md) |  | [optional] |
+| **io_threads** | [**V1DiskIOThreads**](V1DiskIOThreads.md) |  | [optional] |
 | **io_threads_policy** | **String** | Controls whether or not disks will share IOThreads. Omitting IOThreadsPolicy disables use of IOThreads. One of: shared, auto | [optional] |
 | **launch_security** | [**V1LaunchSecurity**](V1LaunchSecurity.md) |  | [optional] |
 | **machine** | [**V1Machine**](V1Machine.md) |  | [optional] |
@@ -28,6 +29,7 @@ instance = Kubevirt::V1DomainSpec.new(
   devices: null,
   features: null,
   firmware: null,
+  io_threads: null,
   io_threads_policy: null,
   launch_security: null,
   machine: null,
