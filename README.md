@@ -428,6 +428,7 @@ Class | Method | HTTP request | Description
  - [Kubevirt::V1DataVolumeTemplateSpec](docs/V1DataVolumeTemplateSpec.md)
  - [Kubevirt::V1DeveloperConfiguration](docs/V1DeveloperConfiguration.md)
  - [Kubevirt::V1Devices](docs/V1Devices.md)
+ - [Kubevirt::V1Diag288Watchdog](docs/V1Diag288Watchdog.md)
  - [Kubevirt::V1Disk](docs/V1Disk.md)
  - [Kubevirt::V1DiskIOThreads](docs/V1DiskIOThreads.md)
  - [Kubevirt::V1DiskTarget](docs/V1DiskTarget.md)

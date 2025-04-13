@@ -85,6 +85,7 @@ docs/V1DataVolumeSource.md
 docs/V1DataVolumeTemplateSpec.md
 docs/V1DeveloperConfiguration.md
 docs/V1Devices.md
+docs/V1Diag288Watchdog.md
 docs/V1Disk.md
 docs/V1DiskIOThreads.md
 docs/V1DiskTarget.md
@@ -432,6 +433,7 @@ lib/kubevirt/models/v1_developer_configuration.rb
 lib/kubevirt/models/v1_devices.rb
 lib/kubevirt/models/v1_dhcp_options.rb
 lib/kubevirt/models/v1_dhcp_private_options.rb
+lib/kubevirt/models/v1_diag288_watchdog.rb
 lib/kubevirt/models/v1_disk.rb
 lib/kubevirt/models/v1_disk_io_threads.rb
 lib/kubevirt/models/v1_disk_target.rb
@@ -774,6 +776,7 @@ spec/models/v1_developer_configuration_spec.rb
 spec/models/v1_devices_spec.rb
 spec/models/v1_dhcp_options_spec.rb
 spec/models/v1_dhcp_private_options_spec.rb
+spec/models/v1_diag288_watchdog_spec.rb
 spec/models/v1_disk_io_threads_spec.rb
 spec/models/v1_disk_spec.rb
 spec/models/v1_disk_target_spec.rb
