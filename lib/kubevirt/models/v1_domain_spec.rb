@@ -29,7 +29,7 @@ module Kubevirt
 
     attr_accessor :io_threads
 
-    # Controls whether or not disks will share IOThreads. Omitting IOThreadsPolicy disables use of IOThreads. One of: shared, auto
+    # Controls whether or not disks will share IOThreads. Omitting IOThreadsPolicy disables use of IOThreads. One of: shared, auto, supplementalPool
     attr_accessor :io_threads_policy
 
     attr_accessor :launch_security

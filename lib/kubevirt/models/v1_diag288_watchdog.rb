@@ -14,21 +14,15 @@ require 'date'
 require 'time'
 
 module Kubevirt
-  # Named watchdog device.
-  class V1Watchdog
-    attr_accessor :diag288
-
-    attr_accessor :i6300esb
-
-    # Name of the watchdog.
-    attr_accessor :name
+  # diag288 watchdog device.
+  class V1Diag288Watchdog
+    # The action to take. Valid values are poweroff, reset, shutdown. Defaults to reset.
+    attr_accessor :action
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'diag288' => :'diag288',
-        :'i6300esb' => :'i6300esb',
-        :'name' => :'name'
+        :'action' => :'action'
       }
     end
 
@@ -45,9 +39,7 @@ module Kubevirt
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'diag288' => :'V1Diag288Watchdog',
-        :'i6300esb' => :'V1I6300ESBWatchdog',
-        :'name' => :'String'
+        :'action' => :'String'
       }
     end
 
@@ -61,30 +53,20 @@ module Kubevirt
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1Watchdog` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1Diag288Watchdog` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1Watchdog`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1Diag288Watchdog`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'diag288')
-        self.diag288 = attributes[:'diag288']
-      end
-
-      if attributes.key?(:'i6300esb')
-        self.i6300esb = attributes[:'i6300esb']
-      end
-
-      if attributes.key?(:'name')
-        self.name = attributes[:'name']
-      else
-        self.name = ''
+      if attributes.key?(:'action')
+        self.action = attributes[:'action']
       end
     end
 
@@ -93,10 +75,6 @@ module Kubevirt
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -104,18 +82,7 @@ module Kubevirt
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @name.nil?
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] name Value to be assigned
-    def name=(name)
-      if name.nil?
-        fail ArgumentError, 'name cannot be nil'
-      end
-
-      @name = name
     end
 
     # Checks equality by comparing each attribute.
@@ -123,9 +90,7 @@ module Kubevirt
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          diag288 == o.diag288 &&
-          i6300esb == o.i6300esb &&
-          name == o.name
+          action == o.action
     end
 
     # @see the `==` method
@@ -137,7 +102,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [diag288, i6300esb, name].hash
+      [action].hash
     end
 
     # Builds the object from hash
