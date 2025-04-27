@@ -30,7 +30,7 @@ module Kubevirt
     # EvacuationNodeName is used to track the eviction process of a VMI. It stores the name of the node that we want to evacuate. It is meant to be used by KubeVirt core components only and can't be set or modified by users.
     attr_accessor :evacuation_node_name
 
-    # FSFreezeStatus is the state of the fs of the guest it can be either frozen or thawed
+    # FSFreezeStatus indicates whether a freeze operation was requested for the guest filesystem. It will be set to \"frozen\" if the request was made, or unset otherwise. This does not reflect the actual state of the guest filesystem.
     attr_accessor :fs_freeze_status
 
     attr_accessor :guest_os_info
