@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **enabled** | **Boolean** | Enabled allows a user to explictly disable the vTPM even when one is enabled by a preference referenced by the VirtualMachine Defaults to True | [optional] |
+| **enabled** | **Boolean** | Enabled allows a user to explicitly disable the vTPM even when one is enabled by a preference referenced by the VirtualMachine Defaults to True | [optional] |
 | **persistent** | **Boolean** | Persistent indicates the state of the TPM device should be kept accross reboots Defaults to false | [optional] |
 
 ## Example

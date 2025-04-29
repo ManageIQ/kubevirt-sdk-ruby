@@ -15,7 +15,7 @@ require 'time'
 
 module Kubevirt
   class V1TPMDevice
-    # Enabled allows a user to explictly disable the vTPM even when one is enabled by a preference referenced by the VirtualMachine Defaults to True
+    # Enabled allows a user to explicitly disable the vTPM even when one is enabled by a preference referenced by the VirtualMachine Defaults to True
     attr_accessor :enabled
 
     # Persistent indicates the state of the TPM device should be kept accross reboots Defaults to false
