@@ -14,24 +14,14 @@ require 'date'
 require 'time'
 
 module Kubevirt
-  class V1VirtualMachineInstanceMigrationSpec
-    # AddedNodeSelector is an additional selector that can be used to complement a NodeSelector or NodeAffinity as set on the VM to restrict the set of allowed target nodes for a migration. In case of key collisions, values set on the VM objects are going to be preserved to ensure that addedNodeSelector can only restrict but not bypass constraints already set on the VM object.
-    attr_accessor :added_node_selector
-
-    attr_accessor :receive
-
-    attr_accessor :send_to
-
-    # The name of the VMI to perform the migration on. VMI must exist in the migration objects namespace
-    attr_accessor :vmi_name
+  class V1VirtualMachineInstanceMigrationTarget
+    # A unique identifier to identify this migration.
+    attr_accessor :migration_id
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'added_node_selector' => :'addedNodeSelector',
-        :'receive' => :'receive',
-        :'send_to' => :'sendTo',
-        :'vmi_name' => :'vmiName'
+        :'migration_id' => :'migrationID'
       }
     end
 
@@ -48,10 +38,7 @@ module Kubevirt
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'added_node_selector' => :'Hash<String, String>',
-        :'receive' => :'V1VirtualMachineInstanceMigrationTarget',
-        :'send_to' => :'V1VirtualMachineInstanceMigrationSource',
-        :'vmi_name' => :'String'
+        :'migration_id' => :'String'
       }
     end
 
@@ -65,34 +52,22 @@ module Kubevirt
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1VirtualMachineInstanceMigrationSpec` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1VirtualMachineInstanceMigrationTarget` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1VirtualMachineInstanceMigrationSpec`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1VirtualMachineInstanceMigrationTarget`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'added_node_selector')
-        if (value = attributes[:'added_node_selector']).is_a?(Hash)
-          self.added_node_selector = value
-        end
-      end
-
-      if attributes.key?(:'receive')
-        self.receive = attributes[:'receive']
-      end
-
-      if attributes.key?(:'send_to')
-        self.send_to = attributes[:'send_to']
-      end
-
-      if attributes.key?(:'vmi_name')
-        self.vmi_name = attributes[:'vmi_name']
+      if attributes.key?(:'migration_id')
+        self.migration_id = attributes[:'migration_id']
+      else
+        self.migration_id = ''
       end
     end
 
@@ -101,6 +76,10 @@ module Kubevirt
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
+      if @migration_id.nil?
+        invalid_properties.push('invalid value for "migration_id", migration_id cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -108,7 +87,18 @@ module Kubevirt
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      return false if @migration_id.nil?
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] migration_id Value to be assigned
+    def migration_id=(migration_id)
+      if migration_id.nil?
+        fail ArgumentError, 'migration_id cannot be nil'
+      end
+
+      @migration_id = migration_id
     end
 
     # Checks equality by comparing each attribute.
@@ -116,10 +106,7 @@ module Kubevirt
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          added_node_selector == o.added_node_selector &&
-          receive == o.receive &&
-          send_to == o.send_to &&
-          vmi_name == o.vmi_name
+          migration_id == o.migration_id
     end
 
     # @see the `==` method
@@ -131,7 +118,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [added_node_selector, receive, send_to, vmi_name].hash
+      [migration_id].hash
     end
 
     # Builds the object from hash

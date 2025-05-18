@@ -14,24 +14,66 @@ require 'date'
 require 'time'
 
 module Kubevirt
-  class V1VirtualMachineInstanceMigrationSpec
-    # AddedNodeSelector is an additional selector that can be used to complement a NodeSelector or NodeAffinity as set on the VM to restrict the set of allowed target nodes for a migration. In case of key collisions, values set on the VM objects are going to be preserved to ensure that addedNodeSelector can only restrict but not bypass constraints already set on the VM object.
-    attr_accessor :added_node_selector
+  class V1VirtualMachineInstanceMigrationTargetState
+    # The UID of the target attachment pod for hotplug volumes
+    attr_accessor :attachment_pod_uid
 
-    attr_accessor :receive
+    # If the VMI requires dedicated CPUs, this field will hold the dedicated CPU set on the target node
+    attr_accessor :cpu_set
 
-    attr_accessor :send_to
+    # The list of ports opened for live migration on the destination node
+    attr_accessor :direct_migration_node_ports
 
-    # The name of the VMI to perform the migration on. VMI must exist in the migration objects namespace
-    attr_accessor :vmi_name
+    # The Target Node has seen the Domain Start Event
+    attr_accessor :domain_detected
+
+    # The name of the domain on the source libvirt domain
+    attr_accessor :domain_name
+
+    # Namespace used in the name of the source libvirt domain. Can be used to find and modify paths in the domain
+    attr_accessor :domain_namespace
+
+    # Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers.
+    attr_accessor :domain_ready_timestamp
+
+    # The Source VirtualMachineInstanceMigration object associated with this migration
+    attr_accessor :migration_uid
+
+    # The source node that the VMI originated on
+    attr_accessor :node
+
+    # The address of the target node to use for the migration
+    attr_accessor :node_address
+
+    # If the VMI requires dedicated CPUs, this field will hold the numa topology on the target node
+    attr_accessor :node_topology
+
+    # If the VMI being migrated uses persistent features (backend-storage), its source PVC name is saved here
+    attr_accessor :persistent_state_pvc_name
+
+    # The source pod that the VMI is originated on
+    attr_accessor :pod
+
+    # The ip address/fqdn:port combination to use to synchronize the VMI with the target.
+    attr_accessor :sync_address
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'added_node_selector' => :'addedNodeSelector',
-        :'receive' => :'receive',
-        :'send_to' => :'sendTo',
-        :'vmi_name' => :'vmiName'
+        :'attachment_pod_uid' => :'attachmentPodUID',
+        :'cpu_set' => :'cpuSet',
+        :'direct_migration_node_ports' => :'directMigrationNodePorts',
+        :'domain_detected' => :'domainDetected',
+        :'domain_name' => :'domainName',
+        :'domain_namespace' => :'domainNamespace',
+        :'domain_ready_timestamp' => :'domainReadyTimestamp',
+        :'migration_uid' => :'migrationUID',
+        :'node' => :'node',
+        :'node_address' => :'nodeAddress',
+        :'node_topology' => :'nodeTopology',
+        :'persistent_state_pvc_name' => :'persistentStatePVCName',
+        :'pod' => :'pod',
+        :'sync_address' => :'syncAddress'
       }
     end
 
@@ -48,10 +90,20 @@ module Kubevirt
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'added_node_selector' => :'Hash<String, String>',
-        :'receive' => :'V1VirtualMachineInstanceMigrationTarget',
-        :'send_to' => :'V1VirtualMachineInstanceMigrationSource',
-        :'vmi_name' => :'String'
+        :'attachment_pod_uid' => :'String',
+        :'cpu_set' => :'Array<Integer>',
+        :'direct_migration_node_ports' => :'Hash<String, Integer>',
+        :'domain_detected' => :'Boolean',
+        :'domain_name' => :'String',
+        :'domain_namespace' => :'String',
+        :'domain_ready_timestamp' => :'Time',
+        :'migration_uid' => :'String',
+        :'node' => :'String',
+        :'node_address' => :'String',
+        :'node_topology' => :'String',
+        :'persistent_state_pvc_name' => :'String',
+        :'pod' => :'String',
+        :'sync_address' => :'String'
       }
     end
 
@@ -65,34 +117,76 @@ module Kubevirt
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1VirtualMachineInstanceMigrationSpec` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1VirtualMachineInstanceMigrationTargetState` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1VirtualMachineInstanceMigrationSpec`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1VirtualMachineInstanceMigrationTargetState`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'added_node_selector')
-        if (value = attributes[:'added_node_selector']).is_a?(Hash)
-          self.added_node_selector = value
+      if attributes.key?(:'attachment_pod_uid')
+        self.attachment_pod_uid = attributes[:'attachment_pod_uid']
+      end
+
+      if attributes.key?(:'cpu_set')
+        if (value = attributes[:'cpu_set']).is_a?(Array)
+          self.cpu_set = value
         end
       end
 
-      if attributes.key?(:'receive')
-        self.receive = attributes[:'receive']
+      if attributes.key?(:'direct_migration_node_ports')
+        if (value = attributes[:'direct_migration_node_ports']).is_a?(Hash)
+          self.direct_migration_node_ports = value
+        end
       end
 
-      if attributes.key?(:'send_to')
-        self.send_to = attributes[:'send_to']
+      if attributes.key?(:'domain_detected')
+        self.domain_detected = attributes[:'domain_detected']
       end
 
-      if attributes.key?(:'vmi_name')
-        self.vmi_name = attributes[:'vmi_name']
+      if attributes.key?(:'domain_name')
+        self.domain_name = attributes[:'domain_name']
+      end
+
+      if attributes.key?(:'domain_namespace')
+        self.domain_namespace = attributes[:'domain_namespace']
+      end
+
+      if attributes.key?(:'domain_ready_timestamp')
+        self.domain_ready_timestamp = attributes[:'domain_ready_timestamp']
+      end
+
+      if attributes.key?(:'migration_uid')
+        self.migration_uid = attributes[:'migration_uid']
+      end
+
+      if attributes.key?(:'node')
+        self.node = attributes[:'node']
+      end
+
+      if attributes.key?(:'node_address')
+        self.node_address = attributes[:'node_address']
+      end
+
+      if attributes.key?(:'node_topology')
+        self.node_topology = attributes[:'node_topology']
+      end
+
+      if attributes.key?(:'persistent_state_pvc_name')
+        self.persistent_state_pvc_name = attributes[:'persistent_state_pvc_name']
+      end
+
+      if attributes.key?(:'pod')
+        self.pod = attributes[:'pod']
+      end
+
+      if attributes.key?(:'sync_address')
+        self.sync_address = attributes[:'sync_address']
       end
     end
 
@@ -116,10 +210,20 @@ module Kubevirt
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          added_node_selector == o.added_node_selector &&
-          receive == o.receive &&
-          send_to == o.send_to &&
-          vmi_name == o.vmi_name
+          attachment_pod_uid == o.attachment_pod_uid &&
+          cpu_set == o.cpu_set &&
+          direct_migration_node_ports == o.direct_migration_node_ports &&
+          domain_detected == o.domain_detected &&
+          domain_name == o.domain_name &&
+          domain_namespace == o.domain_namespace &&
+          domain_ready_timestamp == o.domain_ready_timestamp &&
+          migration_uid == o.migration_uid &&
+          node == o.node &&
+          node_address == o.node_address &&
+          node_topology == o.node_topology &&
+          persistent_state_pvc_name == o.persistent_state_pvc_name &&
+          pod == o.pod &&
+          sync_address == o.sync_address
     end
 
     # @see the `==` method
@@ -131,7 +235,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [added_node_selector, receive, send_to, vmi_name].hash
+      [attachment_pod_uid, cpu_set, direct_migration_node_ports, domain_detected, domain_name, domain_namespace, domain_ready_timestamp, migration_uid, node, node_address, node_topology, persistent_state_pvc_name, pod, sync_address].hash
     end
 
     # Builds the object from hash
