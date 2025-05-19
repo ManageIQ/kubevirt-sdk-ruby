@@ -35,6 +35,9 @@ module Kubevirt
 
     attr_accessor :migration_configuration
 
+    # The type of migration network, either 'pod' or 'migration'
+    attr_accessor :migration_network_type
+
     # Name of the migration policy. If string is empty, no policy is matched
     attr_accessor :migration_policy_name
 
@@ -51,6 +54,8 @@ module Kubevirt
     attr_accessor :source_persistent_state_pvc_name
 
     attr_accessor :source_pod
+
+    attr_accessor :source_state
 
     # Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers.
     attr_accessor :start_timestamp
@@ -85,6 +90,8 @@ module Kubevirt
     # The target pod that the VMI is moving to
     attr_accessor :target_pod
 
+    attr_accessor :target_state
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -95,12 +102,14 @@ module Kubevirt
         :'failed' => :'failed',
         :'failure_reason' => :'failureReason',
         :'migration_configuration' => :'migrationConfiguration',
+        :'migration_network_type' => :'migrationNetworkType',
         :'migration_policy_name' => :'migrationPolicyName',
         :'migration_uid' => :'migrationUid',
         :'mode' => :'mode',
         :'source_node' => :'sourceNode',
         :'source_persistent_state_pvc_name' => :'sourcePersistentStatePVCName',
         :'source_pod' => :'sourcePod',
+        :'source_state' => :'sourceState',
         :'start_timestamp' => :'startTimestamp',
         :'target_attachment_pod_uid' => :'targetAttachmentPodUID',
         :'target_cpu_set' => :'targetCPUSet',
@@ -111,7 +120,8 @@ module Kubevirt
         :'target_node_domain_ready_timestamp' => :'targetNodeDomainReadyTimestamp',
         :'target_node_topology' => :'targetNodeTopology',
         :'target_persistent_state_pvc_name' => :'targetPersistentStatePVCName',
-        :'target_pod' => :'targetPod'
+        :'target_pod' => :'targetPod',
+        :'target_state' => :'targetState'
       }
     end
 
@@ -135,12 +145,14 @@ module Kubevirt
         :'failed' => :'Boolean',
         :'failure_reason' => :'String',
         :'migration_configuration' => :'V1MigrationConfiguration',
+        :'migration_network_type' => :'String',
         :'migration_policy_name' => :'String',
         :'migration_uid' => :'String',
         :'mode' => :'String',
         :'source_node' => :'String',
         :'source_persistent_state_pvc_name' => :'String',
         :'source_pod' => :'String',
+        :'source_state' => :'V1VirtualMachineInstanceMigrationSourceState',
         :'start_timestamp' => :'Time',
         :'target_attachment_pod_uid' => :'String',
         :'target_cpu_set' => :'Array<Integer>',
@@ -151,7 +163,8 @@ module Kubevirt
         :'target_node_domain_ready_timestamp' => :'Time',
         :'target_node_topology' => :'String',
         :'target_persistent_state_pvc_name' => :'String',
-        :'target_pod' => :'String'
+        :'target_pod' => :'String',
+        :'target_state' => :'V1VirtualMachineInstanceMigrationTargetState'
       }
     end
 
@@ -205,6 +218,10 @@ module Kubevirt
         self.migration_configuration = attributes[:'migration_configuration']
       end
 
+      if attributes.key?(:'migration_network_type')
+        self.migration_network_type = attributes[:'migration_network_type']
+      end
+
       if attributes.key?(:'migration_policy_name')
         self.migration_policy_name = attributes[:'migration_policy_name']
       end
@@ -227,6 +244,10 @@ module Kubevirt
 
       if attributes.key?(:'source_pod')
         self.source_pod = attributes[:'source_pod']
+      end
+
+      if attributes.key?(:'source_state')
+        self.source_state = attributes[:'source_state']
       end
 
       if attributes.key?(:'start_timestamp')
@@ -276,6 +297,10 @@ module Kubevirt
       if attributes.key?(:'target_pod')
         self.target_pod = attributes[:'target_pod']
       end
+
+      if attributes.key?(:'target_state')
+        self.target_state = attributes[:'target_state']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -305,12 +330,14 @@ module Kubevirt
           failed == o.failed &&
           failure_reason == o.failure_reason &&
           migration_configuration == o.migration_configuration &&
+          migration_network_type == o.migration_network_type &&
           migration_policy_name == o.migration_policy_name &&
           migration_uid == o.migration_uid &&
           mode == o.mode &&
           source_node == o.source_node &&
           source_persistent_state_pvc_name == o.source_persistent_state_pvc_name &&
           source_pod == o.source_pod &&
+          source_state == o.source_state &&
           start_timestamp == o.start_timestamp &&
           target_attachment_pod_uid == o.target_attachment_pod_uid &&
           target_cpu_set == o.target_cpu_set &&
@@ -321,7 +348,8 @@ module Kubevirt
           target_node_domain_ready_timestamp == o.target_node_domain_ready_timestamp &&
           target_node_topology == o.target_node_topology &&
           target_persistent_state_pvc_name == o.target_persistent_state_pvc_name &&
-          target_pod == o.target_pod
+          target_pod == o.target_pod &&
+          target_state == o.target_state
     end
 
     # @see the `==` method
@@ -333,7 +361,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [abort_requested, abort_status, completed, end_timestamp, failed, failure_reason, migration_configuration, migration_policy_name, migration_uid, mode, source_node, source_persistent_state_pvc_name, source_pod, start_timestamp, target_attachment_pod_uid, target_cpu_set, target_direct_migration_node_ports, target_node, target_node_address, target_node_domain_detected, target_node_domain_ready_timestamp, target_node_topology, target_persistent_state_pvc_name, target_pod].hash
+      [abort_requested, abort_status, completed, end_timestamp, failed, failure_reason, migration_configuration, migration_network_type, migration_policy_name, migration_uid, mode, source_node, source_persistent_state_pvc_name, source_pod, source_state, start_timestamp, target_attachment_pod_uid, target_cpu_set, target_direct_migration_node_ports, target_node, target_node_address, target_node_domain_detected, target_node_domain_ready_timestamp, target_node_topology, target_persistent_state_pvc_name, target_pod, target_state].hash
     end
 
     # Builds the object from hash
