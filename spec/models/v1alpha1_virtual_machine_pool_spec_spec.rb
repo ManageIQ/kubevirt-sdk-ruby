@@ -27,6 +27,12 @@ describe Kubevirt::V1alpha1VirtualMachinePoolSpec do
     end
   end
 
+  describe 'test attribute "max_unavailable"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "name_generation"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
