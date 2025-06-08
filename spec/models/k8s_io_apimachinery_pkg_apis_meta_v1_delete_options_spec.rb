@@ -45,6 +45,12 @@ describe Kubevirt::K8sIoApimachineryPkgApisMetaV1DeleteOptions do
     end
   end
 
+  describe 'test attribute "ignore_store_read_error_with_cluster_breaking_potential"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "kind"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

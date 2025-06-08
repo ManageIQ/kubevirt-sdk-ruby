@@ -14,6 +14,7 @@ require 'date'
 require 'time'
 
 module Kubevirt
+  # TypedObjectReference contains enough information to let you locate the typed referenced object
   class K8sIoApiCoreV1TypedObjectReference
     # APIGroup is the group for the resource being referenced. If APIGroup is not specified, the specified Kind must be in the core API group. For any other third-party types, APIGroup is required.
     attr_accessor :api_group
