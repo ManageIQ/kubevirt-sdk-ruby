@@ -16,9 +16,10 @@ require 'time'
 module Kubevirt
   # PodDNSConfigOption defines DNS resolver options of a pod.
   class K8sIoApiCoreV1PodDNSConfigOption
-    # Required.
+    # Name is this DNS resolver option's name. Required.
     attr_accessor :name
 
+    # Value is this DNS resolver option's value.
     attr_accessor :value
 
     # Attribute mapping from ruby-style variable name to JSON key.

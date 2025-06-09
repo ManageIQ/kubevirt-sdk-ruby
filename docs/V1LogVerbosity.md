@@ -10,6 +10,7 @@
 | **virt_handler** | **Integer** |  | [optional] |
 | **virt_launcher** | **Integer** |  | [optional] |
 | **virt_operator** | **Integer** |  | [optional] |
+| **virt_synchronization_controller** | **Integer** |  | [optional] |
 
 ## Example
 
@@ -22,7 +23,8 @@ instance = Kubevirt::V1LogVerbosity.new(
   virt_controller: null,
   virt_handler: null,
   virt_launcher: null,
-  virt_operator: null
+  virt_operator: null,
+  virt_synchronization_controller: null
 )
 ```
 

@@ -25,6 +25,9 @@ module Kubevirt
     # The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
     attr_accessor :grace_period_seconds
 
+    # if set to true, it will trigger an unsafe deletion of the resource in case the normal deletion flow fails with a corrupt object error. A resource is considered corrupt if it can not be retrieved from the underlying storage successfully because of a) its data can not be transformed e.g. decryption failure, or b) it fails to decode into an object. NOTE: unsafe deletion ignores finalizer constraints, skips precondition checks, and removes the object from the storage. WARNING: This may potentially break the cluster if the workload associated with the resource being unsafe-deleted relies on normal deletion flow. Use only if you REALLY know what you are doing. The default value is false, and the user must opt in to enable it
+    attr_accessor :ignore_store_read_error_with_cluster_breaking_potential
+
     # Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
     attr_accessor :kind
 
@@ -42,6 +45,7 @@ module Kubevirt
         :'api_version' => :'apiVersion',
         :'dry_run' => :'dryRun',
         :'grace_period_seconds' => :'gracePeriodSeconds',
+        :'ignore_store_read_error_with_cluster_breaking_potential' => :'ignoreStoreReadErrorWithClusterBreakingPotential',
         :'kind' => :'kind',
         :'orphan_dependents' => :'orphanDependents',
         :'preconditions' => :'preconditions',
@@ -65,6 +69,7 @@ module Kubevirt
         :'api_version' => :'String',
         :'dry_run' => :'Array<String>',
         :'grace_period_seconds' => :'Integer',
+        :'ignore_store_read_error_with_cluster_breaking_potential' => :'Boolean',
         :'kind' => :'String',
         :'orphan_dependents' => :'Boolean',
         :'preconditions' => :'K8sIoApimachineryPkgApisMetaV1Preconditions',
@@ -108,6 +113,10 @@ module Kubevirt
         self.grace_period_seconds = attributes[:'grace_period_seconds']
       end
 
+      if attributes.key?(:'ignore_store_read_error_with_cluster_breaking_potential')
+        self.ignore_store_read_error_with_cluster_breaking_potential = attributes[:'ignore_store_read_error_with_cluster_breaking_potential']
+      end
+
       if attributes.key?(:'kind')
         self.kind = attributes[:'kind']
       end
@@ -148,6 +157,7 @@ module Kubevirt
           api_version == o.api_version &&
           dry_run == o.dry_run &&
           grace_period_seconds == o.grace_period_seconds &&
+          ignore_store_read_error_with_cluster_breaking_potential == o.ignore_store_read_error_with_cluster_breaking_potential &&
           kind == o.kind &&
           orphan_dependents == o.orphan_dependents &&
           preconditions == o.preconditions &&
@@ -163,7 +173,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [api_version, dry_run, grace_period_seconds, kind, orphan_dependents, preconditions, propagation_policy].hash
+      [api_version, dry_run, grace_period_seconds, ignore_store_read_error_with_cluster_breaking_potential, kind, orphan_dependents, preconditions, propagation_policy].hash
     end
 
     # Builds the object from hash

@@ -29,6 +29,8 @@ module Kubevirt
 
     attr_accessor :virt_operator
 
+    attr_accessor :virt_synchronization_controller
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -37,7 +39,8 @@ module Kubevirt
         :'virt_controller' => :'virtController',
         :'virt_handler' => :'virtHandler',
         :'virt_launcher' => :'virtLauncher',
-        :'virt_operator' => :'virtOperator'
+        :'virt_operator' => :'virtOperator',
+        :'virt_synchronization_controller' => :'virtSynchronizationController'
       }
     end
 
@@ -59,7 +62,8 @@ module Kubevirt
         :'virt_controller' => :'Integer',
         :'virt_handler' => :'Integer',
         :'virt_launcher' => :'Integer',
-        :'virt_operator' => :'Integer'
+        :'virt_operator' => :'Integer',
+        :'virt_synchronization_controller' => :'Integer'
       }
     end
 
@@ -110,6 +114,10 @@ module Kubevirt
       if attributes.key?(:'virt_operator')
         self.virt_operator = attributes[:'virt_operator']
       end
+
+      if attributes.key?(:'virt_synchronization_controller')
+        self.virt_synchronization_controller = attributes[:'virt_synchronization_controller']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -137,7 +145,8 @@ module Kubevirt
           virt_controller == o.virt_controller &&
           virt_handler == o.virt_handler &&
           virt_launcher == o.virt_launcher &&
-          virt_operator == o.virt_operator
+          virt_operator == o.virt_operator &&
+          virt_synchronization_controller == o.virt_synchronization_controller
     end
 
     # @see the `==` method
@@ -149,7 +158,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [node_verbosity, virt_api, virt_controller, virt_handler, virt_launcher, virt_operator].hash
+      [node_verbosity, virt_api, virt_controller, virt_handler, virt_launcher, virt_operator, virt_synchronization_controller].hash
     end
 
     # Builds the object from hash

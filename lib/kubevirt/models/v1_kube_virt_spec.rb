@@ -53,6 +53,9 @@ module Kubevirt
     # The namespace the service monitor will be deployed  When ServiceMonitorNamespace is set, then we'll install the service monitor object in that namespace otherwise we will use the monitoring namespace.
     attr_accessor :service_monitor_namespace
 
+    # Specify the port to listen on for VMI status synchronization traffic. Default is 9185
+    attr_accessor :synchronization_port
+
     # Specifies if kubevirt can be deleted if workloads are still present. This is mainly a precaution to avoid accidental data loss
     attr_accessor :uninstall_strategy
 
@@ -99,6 +102,7 @@ module Kubevirt
         :'product_name' => :'productName',
         :'product_version' => :'productVersion',
         :'service_monitor_namespace' => :'serviceMonitorNamespace',
+        :'synchronization_port' => :'synchronizationPort',
         :'uninstall_strategy' => :'uninstallStrategy',
         :'workload_update_strategy' => :'workloadUpdateStrategy',
         :'workloads' => :'workloads'
@@ -132,6 +136,7 @@ module Kubevirt
         :'product_name' => :'String',
         :'product_version' => :'String',
         :'service_monitor_namespace' => :'String',
+        :'synchronization_port' => :'String',
         :'uninstall_strategy' => :'String',
         :'workload_update_strategy' => :'V1KubeVirtWorkloadUpdateStrategy',
         :'workloads' => :'V1ComponentConfig'
@@ -218,6 +223,10 @@ module Kubevirt
         self.service_monitor_namespace = attributes[:'service_monitor_namespace']
       end
 
+      if attributes.key?(:'synchronization_port')
+        self.synchronization_port = attributes[:'synchronization_port']
+      end
+
       if attributes.key?(:'uninstall_strategy')
         self.uninstall_strategy = attributes[:'uninstall_strategy']
       end
@@ -277,6 +286,7 @@ module Kubevirt
           product_name == o.product_name &&
           product_version == o.product_version &&
           service_monitor_namespace == o.service_monitor_namespace &&
+          synchronization_port == o.synchronization_port &&
           uninstall_strategy == o.uninstall_strategy &&
           workload_update_strategy == o.workload_update_strategy &&
           workloads == o.workloads
@@ -291,7 +301,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [certificate_rotate_strategy, configuration, customize_components, image_pull_policy, image_pull_secrets, image_registry, image_tag, infra, monitor_account, monitor_namespace, product_component, product_name, product_version, service_monitor_namespace, uninstall_strategy, workload_update_strategy, workloads].hash
+      [certificate_rotate_strategy, configuration, customize_components, image_pull_policy, image_pull_secrets, image_registry, image_tag, infra, monitor_account, monitor_namespace, product_component, product_name, product_version, service_monitor_namespace, synchronization_port, uninstall_strategy, workload_update_strategy, workloads].hash
     end
 
     # Builds the object from hash
