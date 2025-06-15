@@ -219,10 +219,12 @@ All URIs are relative to *http://localhost*
 | [**v1alpha3usbredir**](DefaultApi.md#v1alpha3usbredir) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/usbredir |  |
 | [**v1alpha3vm_addvolume**](DefaultApi.md#v1alpha3vm_addvolume) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/addvolume |  |
 | [**v1alpha3vm_expand_spec**](DefaultApi.md#v1alpha3vm_expand_spec) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/expand-spec |  |
+| [**v1alpha3vm_objectgraph**](DefaultApi.md#v1alpha3vm_objectgraph) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/objectgraph |  |
 | [**v1alpha3vm_port_forward**](DefaultApi.md#v1alpha3vm_port_forward) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/portforward/{port} |  |
 | [**v1alpha3vm_port_forward_with_protocol**](DefaultApi.md#v1alpha3vm_port_forward_with_protocol) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/portforward/{port}/{protocol} |  |
 | [**v1alpha3vm_removevolume**](DefaultApi.md#v1alpha3vm_removevolume) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/removevolume |  |
 | [**v1alpha3vmi_addvolume**](DefaultApi.md#v1alpha3vmi_addvolume) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/addvolume |  |
+| [**v1alpha3vmi_objectgraph**](DefaultApi.md#v1alpha3vmi_objectgraph) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/objectgraph |  |
 | [**v1alpha3vmi_port_forward**](DefaultApi.md#v1alpha3vmi_port_forward) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/portforward/{port} |  |
 | [**v1alpha3vmi_port_forward_with_protocol**](DefaultApi.md#v1alpha3vmi_port_forward_with_protocol) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/portforward/{port}/{protocol} |  |
 | [**v1alpha3vmi_removevolume**](DefaultApi.md#v1alpha3vmi_removevolume) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/removevolume |  |
@@ -233,10 +235,12 @@ All URIs are relative to *http://localhost*
 | [**v1usbredir**](DefaultApi.md#v1usbredir) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/usbredir |  |
 | [**v1vm_addvolume**](DefaultApi.md#v1vm_addvolume) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/addvolume |  |
 | [**v1vm_expand_spec**](DefaultApi.md#v1vm_expand_spec) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/expand-spec |  |
+| [**v1vm_objectgraph**](DefaultApi.md#v1vm_objectgraph) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/objectgraph |  |
 | [**v1vm_port_forward**](DefaultApi.md#v1vm_port_forward) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/portforward/{port} |  |
 | [**v1vm_port_forward_with_protocol**](DefaultApi.md#v1vm_port_forward_with_protocol) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/portforward/{port}/{protocol} |  |
 | [**v1vm_removevolume**](DefaultApi.md#v1vm_removevolume) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/removevolume |  |
 | [**v1vmi_addvolume**](DefaultApi.md#v1vmi_addvolume) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/addvolume |  |
+| [**v1vmi_objectgraph**](DefaultApi.md#v1vmi_objectgraph) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/objectgraph |  |
 | [**v1vmi_port_forward**](DefaultApi.md#v1vmi_port_forward) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/portforward/{port} |  |
 | [**v1vmi_port_forward_with_protocol**](DefaultApi.md#v1vmi_port_forward_with_protocol) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/portforward/{port}/{protocol} |  |
 | [**v1vmi_removevolume**](DefaultApi.md#v1vmi_removevolume) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/removevolume |  |
@@ -15317,6 +15321,74 @@ No authorization required
 - **Accept**: application/json
 
 
+## v1alpha3vm_objectgraph
+
+> <V1ObjectGraphNode> v1alpha3vm_objectgraph(name, namespace, body)
+
+
+
+Get graph of objects related to a Virtual Machine
+
+### Examples
+
+```ruby
+require 'time'
+require 'kubevirt'
+
+api_instance = Kubevirt::DefaultApi.new
+name = 'name_example' # String | Name of the resource
+namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
+body = Kubevirt::V1ObjectGraphOptions.new # V1ObjectGraphOptions | 
+
+begin
+  
+  result = api_instance.v1alpha3vm_objectgraph(name, namespace, body)
+  p result
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->v1alpha3vm_objectgraph: #{e}"
+end
+```
+
+#### Using the v1alpha3vm_objectgraph_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<V1ObjectGraphNode>, Integer, Hash)> v1alpha3vm_objectgraph_with_http_info(name, namespace, body)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.v1alpha3vm_objectgraph_with_http_info(name, namespace, body)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <V1ObjectGraphNode>
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->v1alpha3vm_objectgraph_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **name** | **String** | Name of the resource |  |
+| **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
+| **body** | [**V1ObjectGraphOptions**](V1ObjectGraphOptions.md) |  |  |
+
+### Return type
+
+[**V1ObjectGraphNode**](V1ObjectGraphNode.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## v1alpha3vm_port_forward
 
 > v1alpha3vm_port_forward(name, namespace, port)
@@ -15587,6 +15659,74 @@ No authorization required
 
 - **Content-Type**: Not defined
 - **Accept**: */*
+
+
+## v1alpha3vmi_objectgraph
+
+> <V1ObjectGraphNode> v1alpha3vmi_objectgraph(name, namespace, body)
+
+
+
+Get graph of objects related to a Virtual Machine Instance
+
+### Examples
+
+```ruby
+require 'time'
+require 'kubevirt'
+
+api_instance = Kubevirt::DefaultApi.new
+name = 'name_example' # String | Name of the resource
+namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
+body = Kubevirt::V1ObjectGraphOptions.new # V1ObjectGraphOptions | 
+
+begin
+  
+  result = api_instance.v1alpha3vmi_objectgraph(name, namespace, body)
+  p result
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->v1alpha3vmi_objectgraph: #{e}"
+end
+```
+
+#### Using the v1alpha3vmi_objectgraph_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<V1ObjectGraphNode>, Integer, Hash)> v1alpha3vmi_objectgraph_with_http_info(name, namespace, body)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.v1alpha3vmi_objectgraph_with_http_info(name, namespace, body)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <V1ObjectGraphNode>
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->v1alpha3vmi_objectgraph_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **name** | **String** | Name of the resource |  |
+| **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
+| **body** | [**V1ObjectGraphOptions**](V1ObjectGraphOptions.md) |  |  |
+
+### Return type
+
+[**V1ObjectGraphNode**](V1ObjectGraphNode.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## v1alpha3vmi_port_forward
@@ -16227,6 +16367,74 @@ No authorization required
 - **Accept**: application/json
 
 
+## v1vm_objectgraph
+
+> <V1ObjectGraphNode> v1vm_objectgraph(name, namespace, body)
+
+
+
+Get graph of objects related to a Virtual Machine
+
+### Examples
+
+```ruby
+require 'time'
+require 'kubevirt'
+
+api_instance = Kubevirt::DefaultApi.new
+name = 'name_example' # String | Name of the resource
+namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
+body = Kubevirt::V1ObjectGraphOptions.new # V1ObjectGraphOptions | 
+
+begin
+  
+  result = api_instance.v1vm_objectgraph(name, namespace, body)
+  p result
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->v1vm_objectgraph: #{e}"
+end
+```
+
+#### Using the v1vm_objectgraph_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<V1ObjectGraphNode>, Integer, Hash)> v1vm_objectgraph_with_http_info(name, namespace, body)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.v1vm_objectgraph_with_http_info(name, namespace, body)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <V1ObjectGraphNode>
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->v1vm_objectgraph_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **name** | **String** | Name of the resource |  |
+| **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
+| **body** | [**V1ObjectGraphOptions**](V1ObjectGraphOptions.md) |  |  |
+
+### Return type
+
+[**V1ObjectGraphNode**](V1ObjectGraphNode.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## v1vm_port_forward
 
 > v1vm_port_forward(name, namespace, port)
@@ -16497,6 +16705,74 @@ No authorization required
 
 - **Content-Type**: Not defined
 - **Accept**: */*
+
+
+## v1vmi_objectgraph
+
+> <V1ObjectGraphNode> v1vmi_objectgraph(name, namespace, body)
+
+
+
+Get graph of objects related to a Virtual Machine Instance
+
+### Examples
+
+```ruby
+require 'time'
+require 'kubevirt'
+
+api_instance = Kubevirt::DefaultApi.new
+name = 'name_example' # String | Name of the resource
+namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
+body = Kubevirt::V1ObjectGraphOptions.new # V1ObjectGraphOptions | 
+
+begin
+  
+  result = api_instance.v1vmi_objectgraph(name, namespace, body)
+  p result
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->v1vmi_objectgraph: #{e}"
+end
+```
+
+#### Using the v1vmi_objectgraph_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<V1ObjectGraphNode>, Integer, Hash)> v1vmi_objectgraph_with_http_info(name, namespace, body)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.v1vmi_objectgraph_with_http_info(name, namespace, body)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <V1ObjectGraphNode>
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->v1vmi_objectgraph_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **name** | **String** | Name of the resource |  |
+| **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
+| **body** | [**V1ObjectGraphOptions**](V1ObjectGraphOptions.md) |  |  |
+
+### Return type
+
+[**V1ObjectGraphNode**](V1ObjectGraphNode.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
 ## v1vmi_port_forward
