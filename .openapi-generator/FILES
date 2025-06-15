@@ -160,6 +160,8 @@ docs/V1Network.md
 docs/V1NetworkConfiguration.md
 docs/V1NodeMediatedDeviceTypesConfig.md
 docs/V1NodePlacement.md
+docs/V1ObjectGraphNode.md
+docs/V1ObjectGraphOptions.md
 docs/V1PITTimer.md
 docs/V1PauseOptions.md
 docs/V1PciHostDevice.md
@@ -512,6 +514,8 @@ lib/kubevirt/models/v1_network_configuration.rb
 lib/kubevirt/models/v1_node_mediated_device_types_config.rb
 lib/kubevirt/models/v1_node_placement.rb
 lib/kubevirt/models/v1_numa.rb
+lib/kubevirt/models/v1_object_graph_node.rb
+lib/kubevirt/models/v1_object_graph_options.rb
 lib/kubevirt/models/v1_pause_options.rb
 lib/kubevirt/models/v1_pci_host_device.rb
 lib/kubevirt/models/v1_permitted_host_devices.rb
@@ -859,6 +863,8 @@ spec/models/v1_network_spec.rb
 spec/models/v1_node_mediated_device_types_config_spec.rb
 spec/models/v1_node_placement_spec.rb
 spec/models/v1_numa_spec.rb
+spec/models/v1_object_graph_node_spec.rb
+spec/models/v1_object_graph_options_spec.rb
 spec/models/v1_pause_options_spec.rb
 spec/models/v1_pci_host_device_spec.rb
 spec/models/v1_permitted_host_devices_spec.rb

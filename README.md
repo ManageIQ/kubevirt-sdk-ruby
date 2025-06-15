@@ -291,10 +291,12 @@ Class | Method | HTTP request | Description
 *Kubevirt::DefaultApi* | [**v1alpha3usbredir**](docs/DefaultApi.md#v1alpha3usbredir) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/usbredir | 
 *Kubevirt::DefaultApi* | [**v1alpha3vm_addvolume**](docs/DefaultApi.md#v1alpha3vm_addvolume) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/addvolume | 
 *Kubevirt::DefaultApi* | [**v1alpha3vm_expand_spec**](docs/DefaultApi.md#v1alpha3vm_expand_spec) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/expand-spec | 
+*Kubevirt::DefaultApi* | [**v1alpha3vm_objectgraph**](docs/DefaultApi.md#v1alpha3vm_objectgraph) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/objectgraph | 
 *Kubevirt::DefaultApi* | [**v1alpha3vm_port_forward**](docs/DefaultApi.md#v1alpha3vm_port_forward) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/portforward/{port} | 
 *Kubevirt::DefaultApi* | [**v1alpha3vm_port_forward_with_protocol**](docs/DefaultApi.md#v1alpha3vm_port_forward_with_protocol) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/portforward/{port}/{protocol} | 
 *Kubevirt::DefaultApi* | [**v1alpha3vm_removevolume**](docs/DefaultApi.md#v1alpha3vm_removevolume) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/removevolume | 
 *Kubevirt::DefaultApi* | [**v1alpha3vmi_addvolume**](docs/DefaultApi.md#v1alpha3vmi_addvolume) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/addvolume | 
+*Kubevirt::DefaultApi* | [**v1alpha3vmi_objectgraph**](docs/DefaultApi.md#v1alpha3vmi_objectgraph) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/objectgraph | 
 *Kubevirt::DefaultApi* | [**v1alpha3vmi_port_forward**](docs/DefaultApi.md#v1alpha3vmi_port_forward) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/portforward/{port} | 
 *Kubevirt::DefaultApi* | [**v1alpha3vmi_port_forward_with_protocol**](docs/DefaultApi.md#v1alpha3vmi_port_forward_with_protocol) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/portforward/{port}/{protocol} | 
 *Kubevirt::DefaultApi* | [**v1alpha3vmi_removevolume**](docs/DefaultApi.md#v1alpha3vmi_removevolume) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/removevolume | 
@@ -305,10 +307,12 @@ Class | Method | HTTP request | Description
 *Kubevirt::DefaultApi* | [**v1usbredir**](docs/DefaultApi.md#v1usbredir) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/usbredir | 
 *Kubevirt::DefaultApi* | [**v1vm_addvolume**](docs/DefaultApi.md#v1vm_addvolume) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/addvolume | 
 *Kubevirt::DefaultApi* | [**v1vm_expand_spec**](docs/DefaultApi.md#v1vm_expand_spec) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/expand-spec | 
+*Kubevirt::DefaultApi* | [**v1vm_objectgraph**](docs/DefaultApi.md#v1vm_objectgraph) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/objectgraph | 
 *Kubevirt::DefaultApi* | [**v1vm_port_forward**](docs/DefaultApi.md#v1vm_port_forward) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/portforward/{port} | 
 *Kubevirt::DefaultApi* | [**v1vm_port_forward_with_protocol**](docs/DefaultApi.md#v1vm_port_forward_with_protocol) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/portforward/{port}/{protocol} | 
 *Kubevirt::DefaultApi* | [**v1vm_removevolume**](docs/DefaultApi.md#v1vm_removevolume) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/removevolume | 
 *Kubevirt::DefaultApi* | [**v1vmi_addvolume**](docs/DefaultApi.md#v1vmi_addvolume) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/addvolume | 
+*Kubevirt::DefaultApi* | [**v1vmi_objectgraph**](docs/DefaultApi.md#v1vmi_objectgraph) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/objectgraph | 
 *Kubevirt::DefaultApi* | [**v1vmi_port_forward**](docs/DefaultApi.md#v1vmi_port_forward) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/portforward/{port} | 
 *Kubevirt::DefaultApi* | [**v1vmi_port_forward_with_protocol**](docs/DefaultApi.md#v1vmi_port_forward_with_protocol) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/portforward/{port}/{protocol} | 
 *Kubevirt::DefaultApi* | [**v1vmi_removevolume**](docs/DefaultApi.md#v1vmi_removevolume) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/removevolume | 
@@ -503,6 +507,8 @@ Class | Method | HTTP request | Description
  - [Kubevirt::V1NetworkConfiguration](docs/V1NetworkConfiguration.md)
  - [Kubevirt::V1NodeMediatedDeviceTypesConfig](docs/V1NodeMediatedDeviceTypesConfig.md)
  - [Kubevirt::V1NodePlacement](docs/V1NodePlacement.md)
+ - [Kubevirt::V1ObjectGraphNode](docs/V1ObjectGraphNode.md)
+ - [Kubevirt::V1ObjectGraphOptions](docs/V1ObjectGraphOptions.md)
  - [Kubevirt::V1PITTimer](docs/V1PITTimer.md)
  - [Kubevirt::V1PauseOptions](docs/V1PauseOptions.md)
  - [Kubevirt::V1PciHostDevice](docs/V1PciHostDevice.md)
