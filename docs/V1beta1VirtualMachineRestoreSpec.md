@@ -8,6 +8,8 @@
 | **target** | [**K8sIoApiCoreV1TypedLocalObjectReference**](K8sIoApiCoreV1TypedLocalObjectReference.md) |  |  |
 | **target_readiness_policy** | **String** |  | [optional] |
 | **virtual_machine_snapshot_name** | **String** |  | [default to &#39;&#39;] |
+| **volume_restore_overrides** | [**Array&lt;V1beta1VolumeRestoreOverride&gt;**](V1beta1VolumeRestoreOverride.md) | VolumeRestoreOverrides gives the option to change properties of each restored volume For example, specifying the name of the restored volume, or adding labels/annotations to it | [optional] |
+| **volume_restore_policy** | **String** |  | [optional] |
 
 ## Example
 
@@ -18,7 +20,9 @@ instance = Kubevirt::V1beta1VirtualMachineRestoreSpec.new(
   patches: null,
   target: null,
   target_readiness_policy: null,
-  virtual_machine_snapshot_name: null
+  virtual_machine_snapshot_name: null,
+  volume_restore_overrides: null,
+  volume_restore_policy: null
 )
 ```
 

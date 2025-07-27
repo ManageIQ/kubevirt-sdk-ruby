@@ -15,6 +15,7 @@
 | **operator_version** | **String** |  | [optional] |
 | **outdated_virtual_machine_instance_workloads** | **Integer** |  | [optional] |
 | **phase** | **String** |  | [optional] |
+| **synchronization_addresses** | **Array&lt;String&gt;** |  | [optional] |
 | **target_deployment_config** | **String** |  | [optional] |
 | **target_deployment_id** | **String** |  | [optional] |
 | **target_kube_virt_registry** | **String** |  | [optional] |
@@ -37,6 +38,7 @@ instance = Kubevirt::V1KubeVirtStatus.new(
   operator_version: null,
   outdated_virtual_machine_instance_workloads: null,
   phase: null,
+  synchronization_addresses: null,
   target_deployment_config: null,
   target_deployment_id: null,
   target_kube_virt_registry: null,
