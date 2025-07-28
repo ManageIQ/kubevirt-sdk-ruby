@@ -8,6 +8,7 @@
 | **arm64** | [**V1ArchSpecificConfiguration**](V1ArchSpecificConfiguration.md) |  | [optional] |
 | **default_architecture** | **String** |  | [optional] |
 | **ppc64le** | [**V1ArchSpecificConfiguration**](V1ArchSpecificConfiguration.md) |  | [optional] |
+| **s390x** | [**V1ArchSpecificConfiguration**](V1ArchSpecificConfiguration.md) |  | [optional] |
 
 ## Example
 
@@ -18,7 +19,8 @@ instance = Kubevirt::V1ArchConfiguration.new(
   amd64: null,
   arm64: null,
   default_architecture: null,
-  ppc64le: null
+  ppc64le: null,
+  s390x: null
 )
 ```
 

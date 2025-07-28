@@ -21,6 +21,7 @@ docs/K8sIoApiCoreV1PodAffinityTerm.md
 docs/K8sIoApiCoreV1PodAntiAffinity.md
 docs/K8sIoApiCoreV1PodDNSConfig.md
 docs/K8sIoApiCoreV1PodDNSConfigOption.md
+docs/K8sIoApiCoreV1PodResourceClaim.md
 docs/K8sIoApiCoreV1PreferredSchedulingTerm.md
 docs/K8sIoApiCoreV1ResourceFieldSelector.md
 docs/K8sIoApiCoreV1TCPSocketAction.md
@@ -84,6 +85,10 @@ docs/V1DHCPPrivateOptions.md
 docs/V1DataVolumeSource.md
 docs/V1DataVolumeTemplateSpec.md
 docs/V1DeveloperConfiguration.md
+docs/V1DeviceAttribute.md
+docs/V1DeviceResourceClaimStatus.md
+docs/V1DeviceStatus.md
+docs/V1DeviceStatusInfo.md
 docs/V1Devices.md
 docs/V1Diag288Watchdog.md
 docs/V1Disk.md
@@ -160,7 +165,10 @@ docs/V1Network.md
 docs/V1NetworkConfiguration.md
 docs/V1NodeMediatedDeviceTypesConfig.md
 docs/V1NodePlacement.md
+docs/V1ObjectGraphNode.md
+docs/V1ObjectGraphOptions.md
 docs/V1PITTimer.md
+docs/V1PanicDevice.md
 docs/V1PauseOptions.md
 docs/V1PciHostDevice.md
 docs/V1PermittedHostDevices.md
@@ -214,6 +222,7 @@ docs/V1UserPasswordAccessCredentialPropagationMethod.md
 docs/V1UserPasswordAccessCredentialSource.md
 docs/V1VGPUDisplayOptions.md
 docs/V1VGPUOptions.md
+docs/V1VideoDevice.md
 docs/V1VirtualMachine.md
 docs/V1VirtualMachineCondition.md
 docs/V1VirtualMachineInstance.md
@@ -274,6 +283,9 @@ docs/V1alpha1VirtualMachinePool.md
 docs/V1alpha1VirtualMachinePoolCondition.md
 docs/V1alpha1VirtualMachinePoolList.md
 docs/V1alpha1VirtualMachinePoolNameGeneration.md
+docs/V1alpha1VirtualMachinePoolProactiveScaleInStrategy.md
+docs/V1alpha1VirtualMachinePoolScaleInStrategy.md
+docs/V1alpha1VirtualMachinePoolSelectionPolicy.md
 docs/V1alpha1VirtualMachinePoolSpec.md
 docs/V1alpha1VirtualMachinePoolStatus.md
 docs/V1alpha1VirtualMachineTemplateSpec.md
@@ -347,6 +359,7 @@ docs/V1beta1VirtualMachineSnapshotStatus.md
 docs/V1beta1VolumeBackup.md
 docs/V1beta1VolumePreferences.md
 docs/V1beta1VolumeRestore.md
+docs/V1beta1VolumeRestoreOverride.md
 docs/V1beta1VolumeSnapshotStatus.md
 git_push.sh
 kubevirt.gemspec
@@ -373,6 +386,7 @@ lib/kubevirt/models/k8s_io_api_core_v1_pod_affinity_term.rb
 lib/kubevirt/models/k8s_io_api_core_v1_pod_anti_affinity.rb
 lib/kubevirt/models/k8s_io_api_core_v1_pod_dns_config.rb
 lib/kubevirt/models/k8s_io_api_core_v1_pod_dns_config_option.rb
+lib/kubevirt/models/k8s_io_api_core_v1_pod_resource_claim.rb
 lib/kubevirt/models/k8s_io_api_core_v1_preferred_scheduling_term.rb
 lib/kubevirt/models/k8s_io_api_core_v1_resource_field_selector.rb
 lib/kubevirt/models/k8s_io_api_core_v1_tcp_socket_action.rb
@@ -434,6 +448,10 @@ lib/kubevirt/models/v1_customize_components_patch.rb
 lib/kubevirt/models/v1_data_volume_source.rb
 lib/kubevirt/models/v1_data_volume_template_spec.rb
 lib/kubevirt/models/v1_developer_configuration.rb
+lib/kubevirt/models/v1_device_attribute.rb
+lib/kubevirt/models/v1_device_resource_claim_status.rb
+lib/kubevirt/models/v1_device_status.rb
+lib/kubevirt/models/v1_device_status_info.rb
 lib/kubevirt/models/v1_devices.rb
 lib/kubevirt/models/v1_dhcp_options.rb
 lib/kubevirt/models/v1_dhcp_private_options.rb
@@ -512,6 +530,9 @@ lib/kubevirt/models/v1_network_configuration.rb
 lib/kubevirt/models/v1_node_mediated_device_types_config.rb
 lib/kubevirt/models/v1_node_placement.rb
 lib/kubevirt/models/v1_numa.rb
+lib/kubevirt/models/v1_object_graph_node.rb
+lib/kubevirt/models/v1_object_graph_options.rb
+lib/kubevirt/models/v1_panic_device.rb
 lib/kubevirt/models/v1_pause_options.rb
 lib/kubevirt/models/v1_pci_host_device.rb
 lib/kubevirt/models/v1_permitted_host_devices.rb
@@ -566,6 +587,7 @@ lib/kubevirt/models/v1_user_password_access_credential_propagation_method.rb
 lib/kubevirt/models/v1_user_password_access_credential_source.rb
 lib/kubevirt/models/v1_vgpu_display_options.rb
 lib/kubevirt/models/v1_vgpu_options.rb
+lib/kubevirt/models/v1_video_device.rb
 lib/kubevirt/models/v1_virtual_machine.rb
 lib/kubevirt/models/v1_virtual_machine_condition.rb
 lib/kubevirt/models/v1_virtual_machine_instance.rb
@@ -626,6 +648,9 @@ lib/kubevirt/models/v1alpha1_virtual_machine_pool.rb
 lib/kubevirt/models/v1alpha1_virtual_machine_pool_condition.rb
 lib/kubevirt/models/v1alpha1_virtual_machine_pool_list.rb
 lib/kubevirt/models/v1alpha1_virtual_machine_pool_name_generation.rb
+lib/kubevirt/models/v1alpha1_virtual_machine_pool_proactive_scale_in_strategy.rb
+lib/kubevirt/models/v1alpha1_virtual_machine_pool_scale_in_strategy.rb
+lib/kubevirt/models/v1alpha1_virtual_machine_pool_selection_policy.rb
 lib/kubevirt/models/v1alpha1_virtual_machine_pool_spec.rb
 lib/kubevirt/models/v1alpha1_virtual_machine_pool_status.rb
 lib/kubevirt/models/v1alpha1_virtual_machine_template_spec.rb
@@ -699,6 +724,7 @@ lib/kubevirt/models/v1beta1_virtual_machine_snapshot_status.rb
 lib/kubevirt/models/v1beta1_volume_backup.rb
 lib/kubevirt/models/v1beta1_volume_preferences.rb
 lib/kubevirt/models/v1beta1_volume_restore.rb
+lib/kubevirt/models/v1beta1_volume_restore_override.rb
 lib/kubevirt/models/v1beta1_volume_snapshot_status.rb
 lib/kubevirt/version.rb
 spec/api/default_api_spec.rb
@@ -720,6 +746,7 @@ spec/models/k8s_io_api_core_v1_pod_affinity_term_spec.rb
 spec/models/k8s_io_api_core_v1_pod_anti_affinity_spec.rb
 spec/models/k8s_io_api_core_v1_pod_dns_config_option_spec.rb
 spec/models/k8s_io_api_core_v1_pod_dns_config_spec.rb
+spec/models/k8s_io_api_core_v1_pod_resource_claim_spec.rb
 spec/models/k8s_io_api_core_v1_preferred_scheduling_term_spec.rb
 spec/models/k8s_io_api_core_v1_resource_field_selector_spec.rb
 spec/models/k8s_io_api_core_v1_tcp_socket_action_spec.rb
@@ -781,6 +808,10 @@ spec/models/v1_customize_components_spec.rb
 spec/models/v1_data_volume_source_spec.rb
 spec/models/v1_data_volume_template_spec_spec.rb
 spec/models/v1_developer_configuration_spec.rb
+spec/models/v1_device_attribute_spec.rb
+spec/models/v1_device_resource_claim_status_spec.rb
+spec/models/v1_device_status_info_spec.rb
+spec/models/v1_device_status_spec.rb
 spec/models/v1_devices_spec.rb
 spec/models/v1_dhcp_options_spec.rb
 spec/models/v1_dhcp_private_options_spec.rb
@@ -859,6 +890,9 @@ spec/models/v1_network_spec.rb
 spec/models/v1_node_mediated_device_types_config_spec.rb
 spec/models/v1_node_placement_spec.rb
 spec/models/v1_numa_spec.rb
+spec/models/v1_object_graph_node_spec.rb
+spec/models/v1_object_graph_options_spec.rb
+spec/models/v1_panic_device_spec.rb
 spec/models/v1_pause_options_spec.rb
 spec/models/v1_pci_host_device_spec.rb
 spec/models/v1_permitted_host_devices_spec.rb
@@ -913,6 +947,7 @@ spec/models/v1_user_password_access_credential_source_spec.rb
 spec/models/v1_user_password_access_credential_spec.rb
 spec/models/v1_vgpu_display_options_spec.rb
 spec/models/v1_vgpu_options_spec.rb
+spec/models/v1_video_device_spec.rb
 spec/models/v1_virtual_machine_condition_spec.rb
 spec/models/v1_virtual_machine_instance_condition_spec.rb
 spec/models/v1_virtual_machine_instance_file_system_disk_spec.rb
@@ -972,6 +1007,9 @@ spec/models/v1alpha1_selectors_spec.rb
 spec/models/v1alpha1_virtual_machine_pool_condition_spec.rb
 spec/models/v1alpha1_virtual_machine_pool_list_spec.rb
 spec/models/v1alpha1_virtual_machine_pool_name_generation_spec.rb
+spec/models/v1alpha1_virtual_machine_pool_proactive_scale_in_strategy_spec.rb
+spec/models/v1alpha1_virtual_machine_pool_scale_in_strategy_spec.rb
+spec/models/v1alpha1_virtual_machine_pool_selection_policy_spec.rb
 spec/models/v1alpha1_virtual_machine_pool_spec.rb
 spec/models/v1alpha1_virtual_machine_pool_spec_spec.rb
 spec/models/v1alpha1_virtual_machine_pool_status_spec.rb
@@ -1045,6 +1083,7 @@ spec/models/v1beta1_virtual_machine_snapshot_status_spec.rb
 spec/models/v1beta1_virtual_machine_spec.rb
 spec/models/v1beta1_volume_backup_spec.rb
 spec/models/v1beta1_volume_preferences_spec.rb
+spec/models/v1beta1_volume_restore_override_spec.rb
 spec/models/v1beta1_volume_restore_spec.rb
 spec/models/v1beta1_volume_snapshot_status_spec.rb
 spec/spec_helper.rb

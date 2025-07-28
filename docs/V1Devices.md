@@ -22,10 +22,12 @@
 | **interfaces** | [**Array&lt;V1Interface&gt;**](V1Interface.md) | Interfaces describe network interfaces which are added to the vmi. | [optional] |
 | **log_serial_console** | **Boolean** | Whether to log the auto-attached default serial console or not. Serial console logs will be collect to a file and then streamed from a named &#x60;guest-console-log&#x60;. Not relevant if autoattachSerialConsole is disabled. Defaults to cluster wide setting on VirtualMachineOptions. | [optional] |
 | **network_interface_multiqueue** | **Boolean** | If specified, virtual network interfaces configured with a virtio bus will also enable the vhost multiqueue feature for network devices. The number of queues created depends on additional factors of the VirtualMachineInstance, like the number of guest CPUs. | [optional] |
+| **panic_devices** | [**Array&lt;V1PanicDevice&gt;**](V1PanicDevice.md) | PanicDevices provides additional crash information when a guest crashes. | [optional] |
 | **rng** | **Object** | Rng represents the random device passed from host | [optional] |
 | **sound** | [**V1SoundDevice**](V1SoundDevice.md) |  | [optional] |
 | **tpm** | [**V1TPMDevice**](V1TPMDevice.md) |  | [optional] |
 | **use_virtio_transitional** | **Boolean** | Fall back to legacy virtio 0.9 support if virtio bus is selected on devices. This is helpful for old machines like CentOS6 or RHEL6 which do not understand virtio_non_transitional (virtio 1.0). | [optional] |
+| **video** | [**V1VideoDevice**](V1VideoDevice.md) |  | [optional] |
 | **watchdog** | [**V1Watchdog**](V1Watchdog.md) |  | [optional] |
 
 ## Example
@@ -52,10 +54,12 @@ instance = Kubevirt::V1Devices.new(
   interfaces: null,
   log_serial_console: null,
   network_interface_multiqueue: null,
+  panic_devices: null,
   rng: null,
   sound: null,
   tpm: null,
   use_virtio_transitional: null,
+  video: null,
   watchdog: null
 )
 ```

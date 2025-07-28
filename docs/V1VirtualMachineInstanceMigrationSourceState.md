@@ -11,7 +11,9 @@
 | **node_selectors** | **Hash&lt;String, String&gt;** | Node selectors needed by the target to start the receiving pod. | [optional] |
 | **persistent_state_pvc_name** | **String** | If the VMI being migrated uses persistent features (backend-storage), its source PVC name is saved here | [optional] |
 | **pod** | **String** | The source pod that the VMI is originated on | [optional] |
+| **selinux_context** | **String** | SELinuxContext is the actual SELinux context of the pod | [optional] |
 | **sync_address** | **String** | The ip address/fqdn:port combination to use to synchronize the VMI with the target. | [optional] |
+| **virtual_machine_instance_uid** | **String** | VirtualMachineInstanceUID is the UID of the target virtual machine instance | [optional] |
 
 ## Example
 
@@ -26,7 +28,9 @@ instance = Kubevirt::V1VirtualMachineInstanceMigrationSourceState.new(
   node_selectors: null,
   persistent_state_pvc_name: null,
   pod: null,
-  sync_address: null
+  selinux_context: null,
+  sync_address: null,
+  virtual_machine_instance_uid: null
 )
 ```
 
