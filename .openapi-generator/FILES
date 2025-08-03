@@ -233,6 +233,7 @@ docs/V1VirtualMachineInstanceFileSystemInfo.md
 docs/V1VirtualMachineInstanceFileSystemList.md
 docs/V1VirtualMachineInstanceGuestAgentInfo.md
 docs/V1VirtualMachineInstanceGuestOSInfo.md
+docs/V1VirtualMachineInstanceGuestOSLoad.md
 docs/V1VirtualMachineInstanceGuestOSUser.md
 docs/V1VirtualMachineInstanceGuestOSUserList.md
 docs/V1VirtualMachineInstanceList.md
@@ -598,6 +599,7 @@ lib/kubevirt/models/v1_virtual_machine_instance_file_system_info.rb
 lib/kubevirt/models/v1_virtual_machine_instance_file_system_list.rb
 lib/kubevirt/models/v1_virtual_machine_instance_guest_agent_info.rb
 lib/kubevirt/models/v1_virtual_machine_instance_guest_os_info.rb
+lib/kubevirt/models/v1_virtual_machine_instance_guest_os_load.rb
 lib/kubevirt/models/v1_virtual_machine_instance_guest_os_user.rb
 lib/kubevirt/models/v1_virtual_machine_instance_guest_os_user_list.rb
 lib/kubevirt/models/v1_virtual_machine_instance_list.rb
@@ -956,6 +958,7 @@ spec/models/v1_virtual_machine_instance_file_system_list_spec.rb
 spec/models/v1_virtual_machine_instance_file_system_spec.rb
 spec/models/v1_virtual_machine_instance_guest_agent_info_spec.rb
 spec/models/v1_virtual_machine_instance_guest_os_info_spec.rb
+spec/models/v1_virtual_machine_instance_guest_os_load_spec.rb
 spec/models/v1_virtual_machine_instance_guest_os_user_list_spec.rb
 spec/models/v1_virtual_machine_instance_guest_os_user_spec.rb
 spec/models/v1_virtual_machine_instance_list_spec.rb

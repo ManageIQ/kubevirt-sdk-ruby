@@ -580,6 +580,7 @@ Class | Method | HTTP request | Description
  - [Kubevirt::V1VirtualMachineInstanceFileSystemList](docs/V1VirtualMachineInstanceFileSystemList.md)
  - [Kubevirt::V1VirtualMachineInstanceGuestAgentInfo](docs/V1VirtualMachineInstanceGuestAgentInfo.md)
  - [Kubevirt::V1VirtualMachineInstanceGuestOSInfo](docs/V1VirtualMachineInstanceGuestOSInfo.md)
+ - [Kubevirt::V1VirtualMachineInstanceGuestOSLoad](docs/V1VirtualMachineInstanceGuestOSLoad.md)
  - [Kubevirt::V1VirtualMachineInstanceGuestOSUser](docs/V1VirtualMachineInstanceGuestOSUser.md)
  - [Kubevirt::V1VirtualMachineInstanceGuestOSUserList](docs/V1VirtualMachineInstanceGuestOSUserList.md)
  - [Kubevirt::V1VirtualMachineInstanceList](docs/V1VirtualMachineInstanceList.md)
