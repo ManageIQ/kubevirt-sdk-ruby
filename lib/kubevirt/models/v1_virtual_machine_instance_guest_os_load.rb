@@ -14,52 +14,35 @@ require 'date'
 require 'time'
 
 module Kubevirt
-  # VirtualMachineInstanceGuestAgentInfo represents information from the installed guest agent
-  class V1VirtualMachineInstanceGuestAgentInfo
-    # APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
-    attr_accessor :api_version
+  # VirtualMachineInstanceGuestOSLoad represents the system load averages from the guest agent
+  class V1VirtualMachineInstanceGuestOSLoad
+    # Load average over 15 minutes
+    attr_accessor :load15m
 
-    # FSFreezeStatus indicates whether a freeze operation was requested for the guest filesystem. It will be set to \"frozen\" if the request was made, or unset otherwise. This does not reflect the actual state of the guest filesystem.
-    attr_accessor :fs_freeze_status
+    # Load15mSet indicates whether the 15 minute load average is set
+    attr_accessor :load15m_set
 
-    attr_accessor :fs_info
+    # Load average over 1 minute
+    attr_accessor :load1m
 
-    # GAVersion is a version of currently installed guest agent
-    attr_accessor :guest_agent_version
+    # Load1mSet indicates whether the 1 minute load average is set
+    attr_accessor :load1m_set
 
-    # Hostname represents FQDN of a guest
-    attr_accessor :hostname
+    # Load average over 5 minutes
+    attr_accessor :load5m
 
-    # Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
-    attr_accessor :kind
-
-    attr_accessor :load
-
-    attr_accessor :os
-
-    # Return command list the guest agent supports
-    attr_accessor :supported_commands
-
-    # Timezone is guest os current timezone
-    attr_accessor :timezone
-
-    # UserList is a list of active guest OS users
-    attr_accessor :user_list
+    # Load5mSet indicates whether the 5 minute load average is set
+    attr_accessor :load5m_set
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'api_version' => :'apiVersion',
-        :'fs_freeze_status' => :'fsFreezeStatus',
-        :'fs_info' => :'fsInfo',
-        :'guest_agent_version' => :'guestAgentVersion',
-        :'hostname' => :'hostname',
-        :'kind' => :'kind',
-        :'load' => :'load',
-        :'os' => :'os',
-        :'supported_commands' => :'supportedCommands',
-        :'timezone' => :'timezone',
-        :'user_list' => :'userList'
+        :'load15m' => :'load15m',
+        :'load15m_set' => :'load15mSet',
+        :'load1m' => :'load1m',
+        :'load1m_set' => :'load1mSet',
+        :'load5m' => :'load5m',
+        :'load5m_set' => :'load5mSet'
       }
     end
 
@@ -76,17 +59,12 @@ module Kubevirt
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'api_version' => :'String',
-        :'fs_freeze_status' => :'String',
-        :'fs_info' => :'V1VirtualMachineInstanceFileSystemInfo',
-        :'guest_agent_version' => :'String',
-        :'hostname' => :'String',
-        :'kind' => :'String',
-        :'load' => :'V1VirtualMachineInstanceGuestOSLoad',
-        :'os' => :'V1VirtualMachineInstanceGuestOSInfo',
-        :'supported_commands' => :'Array<V1GuestAgentCommandInfo>',
-        :'timezone' => :'String',
-        :'user_list' => :'Array<V1VirtualMachineInstanceGuestOSUser>'
+        :'load15m' => :'Float',
+        :'load15m_set' => :'Boolean',
+        :'load1m' => :'Float',
+        :'load1m_set' => :'Boolean',
+        :'load5m' => :'Float',
+        :'load5m_set' => :'Boolean'
       }
     end
 
@@ -100,64 +78,40 @@ module Kubevirt
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1VirtualMachineInstanceGuestAgentInfo` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1VirtualMachineInstanceGuestOSLoad` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1VirtualMachineInstanceGuestAgentInfo`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1VirtualMachineInstanceGuestOSLoad`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'api_version')
-        self.api_version = attributes[:'api_version']
+      if attributes.key?(:'load15m')
+        self.load15m = attributes[:'load15m']
       end
 
-      if attributes.key?(:'fs_freeze_status')
-        self.fs_freeze_status = attributes[:'fs_freeze_status']
+      if attributes.key?(:'load15m_set')
+        self.load15m_set = attributes[:'load15m_set']
       end
 
-      if attributes.key?(:'fs_info')
-        self.fs_info = attributes[:'fs_info']
+      if attributes.key?(:'load1m')
+        self.load1m = attributes[:'load1m']
       end
 
-      if attributes.key?(:'guest_agent_version')
-        self.guest_agent_version = attributes[:'guest_agent_version']
+      if attributes.key?(:'load1m_set')
+        self.load1m_set = attributes[:'load1m_set']
       end
 
-      if attributes.key?(:'hostname')
-        self.hostname = attributes[:'hostname']
+      if attributes.key?(:'load5m')
+        self.load5m = attributes[:'load5m']
       end
 
-      if attributes.key?(:'kind')
-        self.kind = attributes[:'kind']
-      end
-
-      if attributes.key?(:'load')
-        self.load = attributes[:'load']
-      end
-
-      if attributes.key?(:'os')
-        self.os = attributes[:'os']
-      end
-
-      if attributes.key?(:'supported_commands')
-        if (value = attributes[:'supported_commands']).is_a?(Array)
-          self.supported_commands = value
-        end
-      end
-
-      if attributes.key?(:'timezone')
-        self.timezone = attributes[:'timezone']
-      end
-
-      if attributes.key?(:'user_list')
-        if (value = attributes[:'user_list']).is_a?(Array)
-          self.user_list = value
-        end
+      if attributes.key?(:'load5m_set')
+        self.load5m_set = attributes[:'load5m_set']
       end
     end
 
@@ -181,17 +135,12 @@ module Kubevirt
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          api_version == o.api_version &&
-          fs_freeze_status == o.fs_freeze_status &&
-          fs_info == o.fs_info &&
-          guest_agent_version == o.guest_agent_version &&
-          hostname == o.hostname &&
-          kind == o.kind &&
-          load == o.load &&
-          os == o.os &&
-          supported_commands == o.supported_commands &&
-          timezone == o.timezone &&
-          user_list == o.user_list
+          load15m == o.load15m &&
+          load15m_set == o.load15m_set &&
+          load1m == o.load1m &&
+          load1m_set == o.load1m_set &&
+          load5m == o.load5m &&
+          load5m_set == o.load5m_set
     end
 
     # @see the `==` method
@@ -203,7 +152,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [api_version, fs_freeze_status, fs_info, guest_agent_version, hostname, kind, load, os, supported_commands, timezone, user_list].hash
+      [load15m, load15m_set, load1m, load1m_set, load5m, load5m_set].hash
     end
 
     # Builds the object from hash

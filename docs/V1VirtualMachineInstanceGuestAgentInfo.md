@@ -10,6 +10,7 @@
 | **guest_agent_version** | **String** | GAVersion is a version of currently installed guest agent | [optional] |
 | **hostname** | **String** | Hostname represents FQDN of a guest | [optional] |
 | **kind** | **String** | Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds | [optional] |
+| **load** | [**V1VirtualMachineInstanceGuestOSLoad**](V1VirtualMachineInstanceGuestOSLoad.md) |  | [optional] |
 | **os** | [**V1VirtualMachineInstanceGuestOSInfo**](V1VirtualMachineInstanceGuestOSInfo.md) |  | [optional] |
 | **supported_commands** | [**Array&lt;V1GuestAgentCommandInfo&gt;**](V1GuestAgentCommandInfo.md) | Return command list the guest agent supports | [optional] |
 | **timezone** | **String** | Timezone is guest os current timezone | [optional] |
@@ -27,6 +28,7 @@ instance = Kubevirt::V1VirtualMachineInstanceGuestAgentInfo.new(
   guest_agent_version: null,
   hostname: null,
   kind: null,
+  load: null,
   os: null,
   supported_commands: null,
   timezone: null,

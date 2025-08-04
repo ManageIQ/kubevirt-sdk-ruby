@@ -247,6 +247,7 @@ Kubevirt.autoload :V1VirtualMachineInstanceFileSystemInfo, 'kubevirt/models/v1_v
 Kubevirt.autoload :V1VirtualMachineInstanceFileSystemList, 'kubevirt/models/v1_virtual_machine_instance_file_system_list'
 Kubevirt.autoload :V1VirtualMachineInstanceGuestAgentInfo, 'kubevirt/models/v1_virtual_machine_instance_guest_agent_info'
 Kubevirt.autoload :V1VirtualMachineInstanceGuestOSInfo, 'kubevirt/models/v1_virtual_machine_instance_guest_os_info'
+Kubevirt.autoload :V1VirtualMachineInstanceGuestOSLoad, 'kubevirt/models/v1_virtual_machine_instance_guest_os_load'
 Kubevirt.autoload :V1VirtualMachineInstanceGuestOSUser, 'kubevirt/models/v1_virtual_machine_instance_guest_os_user'
 Kubevirt.autoload :V1VirtualMachineInstanceGuestOSUserList, 'kubevirt/models/v1_virtual_machine_instance_guest_os_user_list'
 Kubevirt.autoload :V1VirtualMachineInstanceList, 'kubevirt/models/v1_virtual_machine_instance_list'
