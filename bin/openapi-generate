@@ -15,4 +15,11 @@ fi
 rm -rf ./docs ./lib ./spec
 
 # Generate the kubevirt gem from the current openapi-spec
-java -jar openapi-generator-cli-$version.jar generate --input-spec https://raw.githubusercontent.com/kubevirt/kubevirt/refs/heads/main/api/openapi-spec/swagger.json --skip-validate-spec --generator-name ruby --config .openapi-config.json
+export RUBY_POST_PROCESS_FILE="rubocop -A"
+
+java -jar openapi-generator-cli-$version.jar generate \
+ --input-spec https://raw.githubusercontent.com/kubevirt/kubevirt/refs/heads/main/api/openapi-spec/swagger.json \
+ --skip-validate-spec \
+ --generator-name ruby \
+ --config .openapi-config.json \
+ --enable-post-process-file
