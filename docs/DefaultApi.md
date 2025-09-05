@@ -12894,7 +12894,7 @@ No authorization required
 
 ## v1_vnc
 
-> v1_vnc(name, namespace)
+> v1_vnc(name, namespace, opts)
 
 
 
@@ -12909,10 +12909,13 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
+opts = {
+  preserve_session: true # Boolean | Connect only if ongoing session is not disturbed.
+}
 
 begin
   
-  api_instance.v1_vnc(name, namespace)
+  api_instance.v1_vnc(name, namespace, opts)
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->v1_vnc: #{e}"
 end
@@ -12922,12 +12925,12 @@ end
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> v1_vnc_with_http_info(name, namespace)
+> <Array(nil, Integer, Hash)> v1_vnc_with_http_info(name, namespace, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.v1_vnc_with_http_info(name, namespace)
+  data, status_code, headers = api_instance.v1_vnc_with_http_info(name, namespace, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
@@ -12942,6 +12945,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Name of the resource |  |
 | **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
+| **preserve_session** | **Boolean** | Connect only if ongoing session is not disturbed. | [optional] |
 
 ### Return type
 
@@ -14684,7 +14688,7 @@ No authorization required
 
 ## v1alpha3_vnc
 
-> v1alpha3_vnc(name, namespace)
+> v1alpha3_vnc(name, namespace, opts)
 
 
 
@@ -14699,10 +14703,13 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
+opts = {
+  preserve_session: true # Boolean | Connect only if ongoing session is not disturbed.
+}
 
 begin
   
-  api_instance.v1alpha3_vnc(name, namespace)
+  api_instance.v1alpha3_vnc(name, namespace, opts)
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->v1alpha3_vnc: #{e}"
 end
@@ -14712,12 +14719,12 @@ end
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> v1alpha3_vnc_with_http_info(name, namespace)
+> <Array(nil, Integer, Hash)> v1alpha3_vnc_with_http_info(name, namespace, opts)
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.v1alpha3_vnc_with_http_info(name, namespace)
+  data, status_code, headers = api_instance.v1alpha3_vnc_with_http_info(name, namespace, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
@@ -14732,6 +14739,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Name of the resource |  |
 | **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
+| **preserve_session** | **Boolean** | Connect only if ongoing session is not disturbed. | [optional] |
 
 ### Return type
 
