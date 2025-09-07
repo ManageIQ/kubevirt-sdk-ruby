@@ -25,6 +25,8 @@ module Kubevirt
 
     attr_accessor :virtual_machine_snapshot_name
 
+    attr_accessor :volume_ownership_policy
+
     # VolumeRestoreOverrides gives the option to change properties of each restored volume For example, specifying the name of the restored volume, or adding labels/annotations to it
     attr_accessor :volume_restore_overrides
 
@@ -37,6 +39,7 @@ module Kubevirt
         :'target' => :'target',
         :'target_readiness_policy' => :'targetReadinessPolicy',
         :'virtual_machine_snapshot_name' => :'virtualMachineSnapshotName',
+        :'volume_ownership_policy' => :'volumeOwnershipPolicy',
         :'volume_restore_overrides' => :'volumeRestoreOverrides',
         :'volume_restore_policy' => :'volumeRestorePolicy'
       }
@@ -59,6 +62,7 @@ module Kubevirt
         :'target' => :'K8sIoApiCoreV1TypedLocalObjectReference',
         :'target_readiness_policy' => :'String',
         :'virtual_machine_snapshot_name' => :'String',
+        :'volume_ownership_policy' => :'String',
         :'volume_restore_overrides' => :'Array<V1beta1VolumeRestoreOverride>',
         :'volume_restore_policy' => :'String'
       }
@@ -106,6 +110,10 @@ module Kubevirt
         self.virtual_machine_snapshot_name = attributes[:'virtual_machine_snapshot_name']
       else
         self.virtual_machine_snapshot_name = ''
+      end
+
+      if attributes.key?(:'volume_ownership_policy')
+        self.volume_ownership_policy = attributes[:'volume_ownership_policy']
       end
 
       if attributes.key?(:'volume_restore_overrides')
@@ -173,6 +181,7 @@ module Kubevirt
           target == o.target &&
           target_readiness_policy == o.target_readiness_policy &&
           virtual_machine_snapshot_name == o.virtual_machine_snapshot_name &&
+          volume_ownership_policy == o.volume_ownership_policy &&
           volume_restore_overrides == o.volume_restore_overrides &&
           volume_restore_policy == o.volume_restore_policy
     end
@@ -186,7 +195,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [patches, target, target_readiness_policy, virtual_machine_snapshot_name, volume_restore_overrides, volume_restore_policy].hash
+      [patches, target, target_readiness_policy, virtual_machine_snapshot_name, volume_ownership_policy, volume_restore_overrides, volume_restore_policy].hash
     end
 
     # Builds the object from hash
