@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **vsockcid** | **Integer** | VSOCKCID is used to track the allocated VSOCK CID in the VM. | [optional] |
 | **active_pods** | **Hash&lt;String, String&gt;** | ActivePods is a mapping of pod UID to node name. It is possible for multiple pods to be running for a single VMI during migration. | [optional] |
+| **changed_block_tracking** | [**V1ChangedBlockTrackingStatus**](V1ChangedBlockTrackingStatus.md) |  | [optional] |
 | **conditions** | [**Array&lt;V1VirtualMachineInstanceCondition&gt;**](V1VirtualMachineInstanceCondition.md) | Conditions are specific points in VirtualMachineInstance&#39;s pod runtime. | [optional] |
 | **current_cpu_topology** | [**V1CPUTopology**](V1CPUTopology.md) |  | [optional] |
 | **device_status** | [**V1DeviceStatus**](V1DeviceStatus.md) |  | [optional] |
@@ -40,6 +41,7 @@ require 'kubevirt'
 instance = Kubevirt::V1VirtualMachineInstanceStatus.new(
   vsockcid: null,
   active_pods: null,
+  changed_block_tracking: null,
   conditions: null,
   current_cpu_topology: null,
   device_status: null,

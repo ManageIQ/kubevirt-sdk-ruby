@@ -411,6 +411,8 @@ Class | Method | HTTP request | Description
  - [Kubevirt::V1CPUFeature](docs/V1CPUFeature.md)
  - [Kubevirt::V1CPUTopology](docs/V1CPUTopology.md)
  - [Kubevirt::V1CertConfig](docs/V1CertConfig.md)
+ - [Kubevirt::V1ChangedBlockTrackingSelectors](docs/V1ChangedBlockTrackingSelectors.md)
+ - [Kubevirt::V1ChangedBlockTrackingStatus](docs/V1ChangedBlockTrackingStatus.md)
  - [Kubevirt::V1Chassis](docs/V1Chassis.md)
  - [Kubevirt::V1Clock](docs/V1Clock.md)
  - [Kubevirt::V1ClockOffset](docs/V1ClockOffset.md)

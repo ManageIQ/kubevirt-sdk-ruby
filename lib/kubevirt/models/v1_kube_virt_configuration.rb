@@ -25,6 +25,8 @@ module Kubevirt
 
     attr_accessor :auto_cpu_limit_namespace_label_selector
 
+    attr_accessor :changed_block_tracking_label_selectors
+
     attr_accessor :common_instancetypes_deployment
 
     attr_accessor :controller_configuration
@@ -130,6 +132,7 @@ module Kubevirt
         :'api_configuration' => :'apiConfiguration',
         :'architecture_configuration' => :'architectureConfiguration',
         :'auto_cpu_limit_namespace_label_selector' => :'autoCPULimitNamespaceLabelSelector',
+        :'changed_block_tracking_label_selectors' => :'changedBlockTrackingLabelSelectors',
         :'common_instancetypes_deployment' => :'commonInstancetypesDeployment',
         :'controller_configuration' => :'controllerConfiguration',
         :'cpu_model' => :'cpuModel',
@@ -183,6 +186,7 @@ module Kubevirt
         :'api_configuration' => :'V1ReloadableComponentConfiguration',
         :'architecture_configuration' => :'V1ArchConfiguration',
         :'auto_cpu_limit_namespace_label_selector' => :'K8sIoApimachineryPkgApisMetaV1LabelSelector',
+        :'changed_block_tracking_label_selectors' => :'V1ChangedBlockTrackingSelectors',
         :'common_instancetypes_deployment' => :'V1CommonInstancetypesDeployment',
         :'controller_configuration' => :'V1ReloadableComponentConfiguration',
         :'cpu_model' => :'String',
@@ -255,6 +259,10 @@ module Kubevirt
 
       if attributes.key?(:'auto_cpu_limit_namespace_label_selector')
         self.auto_cpu_limit_namespace_label_selector = attributes[:'auto_cpu_limit_namespace_label_selector']
+      end
+
+      if attributes.key?(:'changed_block_tracking_label_selectors')
+        self.changed_block_tracking_label_selectors = attributes[:'changed_block_tracking_label_selectors']
       end
 
       if attributes.key?(:'common_instancetypes_deployment')
@@ -434,6 +442,7 @@ module Kubevirt
           api_configuration == o.api_configuration &&
           architecture_configuration == o.architecture_configuration &&
           auto_cpu_limit_namespace_label_selector == o.auto_cpu_limit_namespace_label_selector &&
+          changed_block_tracking_label_selectors == o.changed_block_tracking_label_selectors &&
           common_instancetypes_deployment == o.common_instancetypes_deployment &&
           controller_configuration == o.controller_configuration &&
           cpu_model == o.cpu_model &&
@@ -478,7 +487,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [additional_guest_memory_overhead_ratio, api_configuration, architecture_configuration, auto_cpu_limit_namespace_label_selector, common_instancetypes_deployment, controller_configuration, cpu_model, cpu_request, default_runtime_class, developer_configuration, emulated_machines, eviction_strategy, handler_configuration, image_pull_policy, instancetype, ksm_configuration, live_update_configuration, machine_type, mediated_devices_configuration, mem_balloon_stats_period, migrations, min_cpu_model, network, obsolete_cpu_models, ovmf_path, permitted_host_devices, seccomp_configuration, selinux_launcher_type, smbios, support_container_resources, supported_guest_agent_versions, tls_configuration, virtual_machine_instances_per_node, virtual_machine_options, vm_rollout_strategy, vm_state_storage_class, webhook_configuration].hash
+      [additional_guest_memory_overhead_ratio, api_configuration, architecture_configuration, auto_cpu_limit_namespace_label_selector, changed_block_tracking_label_selectors, common_instancetypes_deployment, controller_configuration, cpu_model, cpu_request, default_runtime_class, developer_configuration, emulated_machines, eviction_strategy, handler_configuration, image_pull_policy, instancetype, ksm_configuration, live_update_configuration, machine_type, mediated_devices_configuration, mem_balloon_stats_period, migrations, min_cpu_model, network, obsolete_cpu_models, ovmf_path, permitted_host_devices, seccomp_configuration, selinux_launcher_type, smbios, support_container_resources, supported_guest_agent_versions, tls_configuration, virtual_machine_instances_per_node, virtual_machine_options, vm_rollout_strategy, vm_state_storage_class, webhook_configuration].hash
     end
 
     # Builds the object from hash

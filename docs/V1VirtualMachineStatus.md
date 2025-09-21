@@ -4,6 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **changed_block_tracking** | [**V1ChangedBlockTrackingStatus**](V1ChangedBlockTrackingStatus.md) |  | [optional] |
 | **conditions** | [**Array&lt;V1VirtualMachineCondition&gt;**](V1VirtualMachineCondition.md) | Hold the state information of the VirtualMachine and its VirtualMachineInstance | [optional] |
 | **created** | **Boolean** | Created indicates if the virtual machine is created in the cluster | [optional] |
 | **desired_generation** | **Integer** | DesiredGeneration is the generation which is desired for the VMI. This will be used in comparisons with ObservedGeneration to understand when the VMI is out of sync. This will be changed at the same time as ObservedGeneration to remove errors which could occur if Generation is updated through an Update() before ObservedGeneration in Status. | [optional] |
@@ -28,6 +29,7 @@
 require 'kubevirt'
 
 instance = Kubevirt::V1VirtualMachineStatus.new(
+  changed_block_tracking: null,
   conditions: null,
   created: null,
   desired_generation: null,

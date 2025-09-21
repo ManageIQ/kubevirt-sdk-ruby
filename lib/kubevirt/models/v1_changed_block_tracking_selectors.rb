@@ -14,62 +14,16 @@ require 'date'
 require 'time'
 
 module Kubevirt
-  class V1Disk
-    attr_accessor :block_size
+  class V1ChangedBlockTrackingSelectors
+    attr_accessor :namespace_label_selector
 
-    # BootOrder is an integer value > 0, used to determine ordering of boot devices. Lower values take precedence. Each disk or interface that has a boot order must have a unique value. Disks without a boot order are not tried if a disk with a boot order exists.
-    attr_accessor :boot_order
-
-    # Cache specifies which kvm disk cache mode should be used. Supported values are: none: Guest I/O not cached on the host, but may be kept in a disk cache. writethrough: Guest I/O cached on the host but written through to the physical medium. Slowest but with most guarantees. writeback: Guest I/O cached on the host. Defaults to none if the storage supports O_DIRECT, otherwise writethrough.
-    attr_accessor :cache
-
-    attr_accessor :cdrom
-
-    # ChangedBlockTracking indicates this disk should have CBT option Defaults to false.
-    attr_accessor :changed_block_tracking
-
-    # dedicatedIOThread indicates this disk should have an exclusive IO Thread. Enabling this implies useIOThreads = true. Defaults to false.
-    attr_accessor :dedicated_io_thread
-
-    attr_accessor :disk
-
-    # If specified, it can change the default error policy (stop) for the disk
-    attr_accessor :error_policy
-
-    # IO specifies which QEMU disk IO mode should be used. Supported values are: native, default, threads.
-    attr_accessor :io
-
-    attr_accessor :lun
-
-    # Name is the device name
-    attr_accessor :name
-
-    # Serial provides the ability to specify a serial number for the disk device.
-    attr_accessor :serial
-
-    # If specified the disk is made sharable and multiple write from different VMs are permitted
-    attr_accessor :shareable
-
-    # If specified, disk address and its tag will be provided to the guest via config drive metadata
-    attr_accessor :tag
+    attr_accessor :virtual_machine_label_selector
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'block_size' => :'blockSize',
-        :'boot_order' => :'bootOrder',
-        :'cache' => :'cache',
-        :'cdrom' => :'cdrom',
-        :'changed_block_tracking' => :'changedBlockTracking',
-        :'dedicated_io_thread' => :'dedicatedIOThread',
-        :'disk' => :'disk',
-        :'error_policy' => :'errorPolicy',
-        :'io' => :'io',
-        :'lun' => :'lun',
-        :'name' => :'name',
-        :'serial' => :'serial',
-        :'shareable' => :'shareable',
-        :'tag' => :'tag'
+        :'namespace_label_selector' => :'namespaceLabelSelector',
+        :'virtual_machine_label_selector' => :'virtualMachineLabelSelector'
       }
     end
 
@@ -86,20 +40,8 @@ module Kubevirt
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'block_size' => :'V1BlockSize',
-        :'boot_order' => :'Integer',
-        :'cache' => :'String',
-        :'cdrom' => :'V1CDRomTarget',
-        :'changed_block_tracking' => :'Boolean',
-        :'dedicated_io_thread' => :'Boolean',
-        :'disk' => :'V1DiskTarget',
-        :'error_policy' => :'String',
-        :'io' => :'String',
-        :'lun' => :'V1LunTarget',
-        :'name' => :'String',
-        :'serial' => :'String',
-        :'shareable' => :'Boolean',
-        :'tag' => :'String'
+        :'namespace_label_selector' => :'K8sIoApimachineryPkgApisMetaV1LabelSelector',
+        :'virtual_machine_label_selector' => :'K8sIoApimachineryPkgApisMetaV1LabelSelector'
       }
     end
 
@@ -113,74 +55,24 @@ module Kubevirt
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1Disk` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1ChangedBlockTrackingSelectors` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1Disk`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1ChangedBlockTrackingSelectors`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'block_size')
-        self.block_size = attributes[:'block_size']
+      if attributes.key?(:'namespace_label_selector')
+        self.namespace_label_selector = attributes[:'namespace_label_selector']
       end
 
-      if attributes.key?(:'boot_order')
-        self.boot_order = attributes[:'boot_order']
-      end
-
-      if attributes.key?(:'cache')
-        self.cache = attributes[:'cache']
-      end
-
-      if attributes.key?(:'cdrom')
-        self.cdrom = attributes[:'cdrom']
-      end
-
-      if attributes.key?(:'changed_block_tracking')
-        self.changed_block_tracking = attributes[:'changed_block_tracking']
-      end
-
-      if attributes.key?(:'dedicated_io_thread')
-        self.dedicated_io_thread = attributes[:'dedicated_io_thread']
-      end
-
-      if attributes.key?(:'disk')
-        self.disk = attributes[:'disk']
-      end
-
-      if attributes.key?(:'error_policy')
-        self.error_policy = attributes[:'error_policy']
-      end
-
-      if attributes.key?(:'io')
-        self.io = attributes[:'io']
-      end
-
-      if attributes.key?(:'lun')
-        self.lun = attributes[:'lun']
-      end
-
-      if attributes.key?(:'name')
-        self.name = attributes[:'name']
-      else
-        self.name = ''
-      end
-
-      if attributes.key?(:'serial')
-        self.serial = attributes[:'serial']
-      end
-
-      if attributes.key?(:'shareable')
-        self.shareable = attributes[:'shareable']
-      end
-
-      if attributes.key?(:'tag')
-        self.tag = attributes[:'tag']
+      if attributes.key?(:'virtual_machine_label_selector')
+        self.virtual_machine_label_selector = attributes[:'virtual_machine_label_selector']
       end
     end
 
@@ -189,10 +81,6 @@ module Kubevirt
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -200,18 +88,7 @@ module Kubevirt
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @name.nil?
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] name Value to be assigned
-    def name=(name)
-      if name.nil?
-        fail ArgumentError, 'name cannot be nil'
-      end
-
-      @name = name
     end
 
     # Checks equality by comparing each attribute.
@@ -219,20 +96,8 @@ module Kubevirt
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          block_size == o.block_size &&
-          boot_order == o.boot_order &&
-          cache == o.cache &&
-          cdrom == o.cdrom &&
-          changed_block_tracking == o.changed_block_tracking &&
-          dedicated_io_thread == o.dedicated_io_thread &&
-          disk == o.disk &&
-          error_policy == o.error_policy &&
-          io == o.io &&
-          lun == o.lun &&
-          name == o.name &&
-          serial == o.serial &&
-          shareable == o.shareable &&
-          tag == o.tag
+          namespace_label_selector == o.namespace_label_selector &&
+          virtual_machine_label_selector == o.virtual_machine_label_selector
     end
 
     # @see the `==` method
@@ -244,7 +109,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [block_size, boot_order, cache, cdrom, changed_block_tracking, dedicated_io_thread, disk, error_policy, io, lun, name, serial, shareable, tag].hash
+      [namespace_label_selector, virtual_machine_label_selector].hash
     end
 
     # Builds the object from hash

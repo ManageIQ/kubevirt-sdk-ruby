@@ -16,6 +16,8 @@ require 'time'
 module Kubevirt
   # VirtualMachineStatus represents the status returned by the controller to describe how the VirtualMachine is doing
   class V1VirtualMachineStatus
+    attr_accessor :changed_block_tracking
+
     # Hold the state information of the VirtualMachine and its VirtualMachineInstance
     attr_accessor :conditions
 
@@ -65,6 +67,7 @@ module Kubevirt
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'changed_block_tracking' => :'changedBlockTracking',
         :'conditions' => :'conditions',
         :'created' => :'created',
         :'desired_generation' => :'desiredGeneration',
@@ -98,6 +101,7 @@ module Kubevirt
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'changed_block_tracking' => :'V1ChangedBlockTrackingStatus',
         :'conditions' => :'Array<V1VirtualMachineCondition>',
         :'created' => :'Boolean',
         :'desired_generation' => :'Integer',
@@ -139,6 +143,10 @@ module Kubevirt
         end
         h[k.to_sym] = v
       }
+
+      if attributes.key?(:'changed_block_tracking')
+        self.changed_block_tracking = attributes[:'changed_block_tracking']
+      end
 
       if attributes.key?(:'conditions')
         if (value = attributes[:'conditions']).is_a?(Array)
@@ -237,6 +245,7 @@ module Kubevirt
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          changed_block_tracking == o.changed_block_tracking &&
           conditions == o.conditions &&
           created == o.created &&
           desired_generation == o.desired_generation &&
@@ -265,7 +274,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [conditions, created, desired_generation, instancetype_ref, memory_dump_request, observed_generation, preference_ref, printable_status, ready, restore_in_progress, run_strategy, snapshot_in_progress, start_failure, state_change_requests, volume_requests, volume_snapshot_statuses, volume_update_state].hash
+      [changed_block_tracking, conditions, created, desired_generation, instancetype_ref, memory_dump_request, observed_generation, preference_ref, printable_status, ready, restore_in_progress, run_strategy, snapshot_in_progress, start_failure, state_change_requests, volume_requests, volume_snapshot_statuses, volume_update_state].hash
     end
 
     # Builds the object from hash

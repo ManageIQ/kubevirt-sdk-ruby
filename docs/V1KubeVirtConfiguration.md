@@ -8,6 +8,7 @@
 | **api_configuration** | [**V1ReloadableComponentConfiguration**](V1ReloadableComponentConfiguration.md) |  | [optional] |
 | **architecture_configuration** | [**V1ArchConfiguration**](V1ArchConfiguration.md) |  | [optional] |
 | **auto_cpu_limit_namespace_label_selector** | [**K8sIoApimachineryPkgApisMetaV1LabelSelector**](K8sIoApimachineryPkgApisMetaV1LabelSelector.md) |  | [optional] |
+| **changed_block_tracking_label_selectors** | [**V1ChangedBlockTrackingSelectors**](V1ChangedBlockTrackingSelectors.md) |  | [optional] |
 | **common_instancetypes_deployment** | [**V1CommonInstancetypesDeployment**](V1CommonInstancetypesDeployment.md) |  | [optional] |
 | **controller_configuration** | [**V1ReloadableComponentConfiguration**](V1ReloadableComponentConfiguration.md) |  | [optional] |
 | **cpu_model** | **String** |  | [optional] |
@@ -52,6 +53,7 @@ instance = Kubevirt::V1KubeVirtConfiguration.new(
   api_configuration: null,
   architecture_configuration: null,
   auto_cpu_limit_namespace_label_selector: null,
+  changed_block_tracking_label_selectors: null,
   common_instancetypes_deployment: null,
   controller_configuration: null,
   cpu_model: null,

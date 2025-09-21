@@ -51,6 +51,12 @@ describe Kubevirt::V1Disk do
     end
   end
 
+  describe 'test attribute "changed_block_tracking"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "dedicated_io_thread"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
