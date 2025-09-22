@@ -51,6 +51,12 @@ describe Kubevirt::V1KubeVirtConfiguration do
     end
   end
 
+  describe 'test attribute "changed_block_tracking_label_selectors"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "common_instancetypes_deployment"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
