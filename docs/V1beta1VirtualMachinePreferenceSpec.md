@@ -12,6 +12,7 @@
 | **firmware** | [**V1beta1FirmwarePreferences**](V1beta1FirmwarePreferences.md) |  | [optional] |
 | **machine** | [**V1beta1MachinePreferences**](V1beta1MachinePreferences.md) |  | [optional] |
 | **prefer_spread_socket_to_core_ratio** | **Integer** | PreferSpreadSocketToCoreRatio defines the ratio to spread vCPUs between cores and sockets, it defaults to 2. | [optional] |
+| **preferred_architecture** | **String** | PreferredArchitecture defines a prefeerred architecture for the VirtualMachine | [optional] |
 | **preferred_subdomain** | **String** | Subdomain of the VirtualMachineInstance | [optional] |
 | **preferred_termination_grace_period_seconds** | **Integer** | Grace period observed after signalling a VirtualMachineInstance to stop after which the VirtualMachineInstance is force terminated. | [optional] |
 | **requirements** | [**V1beta1PreferenceRequirements**](V1beta1PreferenceRequirements.md) |  | [optional] |
@@ -31,6 +32,7 @@ instance = Kubevirt::V1beta1VirtualMachinePreferenceSpec.new(
   firmware: null,
   machine: null,
   prefer_spread_socket_to_core_ratio: null,
+  preferred_architecture: null,
   preferred_subdomain: null,
   preferred_termination_grace_period_seconds: null,
   requirements: null,

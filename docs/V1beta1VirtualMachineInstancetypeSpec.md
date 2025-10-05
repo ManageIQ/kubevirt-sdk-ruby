@@ -8,6 +8,7 @@
 | **cpu** | [**V1beta1CPUInstancetype**](V1beta1CPUInstancetype.md) |  |  |
 | **gpus** | [**Array&lt;V1GPU&gt;**](V1GPU.md) | Optionally defines any GPU devices associated with the instancetype. | [optional] |
 | **host_devices** | [**Array&lt;V1HostDevice&gt;**](V1HostDevice.md) | Optionally defines any HostDevices associated with the instancetype. | [optional] |
+| **io_threads** | [**V1DiskIOThreads**](V1DiskIOThreads.md) |  | [optional] |
 | **io_threads_policy** | **String** | Optionally defines the IOThreadsPolicy to be used by the instancetype. | [optional] |
 | **launch_security** | [**V1LaunchSecurity**](V1LaunchSecurity.md) |  | [optional] |
 | **memory** | [**V1beta1MemoryInstancetype**](V1beta1MemoryInstancetype.md) |  |  |
@@ -24,6 +25,7 @@ instance = Kubevirt::V1beta1VirtualMachineInstancetypeSpec.new(
   cpu: null,
   gpus: null,
   host_devices: null,
+  io_threads: null,
   io_threads_policy: null,
   launch_security: null,
   memory: null,
