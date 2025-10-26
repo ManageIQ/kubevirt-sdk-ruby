@@ -4,8 +4,9 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **logical** | **Integer** |  | [default to 0] |
-| **physical** | **Integer** |  | [default to 0] |
+| **discard_granularity** | **Integer** |  | [optional] |
+| **logical** | **Integer** |  | [optional] |
+| **physical** | **Integer** |  | [optional] |
 
 ## Example
 
@@ -13,6 +14,7 @@
 require 'kubevirt'
 
 instance = Kubevirt::V1CustomBlockSize.new(
+  discard_granularity: null,
   logical: null,
   physical: null
 )

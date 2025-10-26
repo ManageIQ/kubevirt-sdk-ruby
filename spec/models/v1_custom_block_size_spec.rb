@@ -27,6 +27,12 @@ describe Kubevirt::V1CustomBlockSize do
     end
   end
 
+  describe 'test attribute "discard_granularity"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "logical"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

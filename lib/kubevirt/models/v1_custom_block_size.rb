@@ -16,6 +16,8 @@ require 'time'
 module Kubevirt
   # CustomBlockSize represents the desired logical and physical block size for a VM disk.
   class V1CustomBlockSize
+    attr_accessor :discard_granularity
+
     attr_accessor :logical
 
     attr_accessor :physical
@@ -23,6 +25,7 @@ module Kubevirt
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'discard_granularity' => :'discardGranularity',
         :'logical' => :'logical',
         :'physical' => :'physical'
       }
@@ -41,6 +44,7 @@ module Kubevirt
     # Attribute type mapping.
     def self.openapi_types
       {
+        :'discard_granularity' => :'Integer',
         :'logical' => :'Integer',
         :'physical' => :'Integer'
       }
@@ -68,16 +72,16 @@ module Kubevirt
         h[k.to_sym] = v
       }
 
+      if attributes.key?(:'discard_granularity')
+        self.discard_granularity = attributes[:'discard_granularity']
+      end
+
       if attributes.key?(:'logical')
         self.logical = attributes[:'logical']
-      else
-        self.logical = 0
       end
 
       if attributes.key?(:'physical')
         self.physical = attributes[:'physical']
-      else
-        self.physical = 0
       end
     end
 
@@ -86,14 +90,6 @@ module Kubevirt
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @logical.nil?
-        invalid_properties.push('invalid value for "logical", logical cannot be nil.')
-      end
-
-      if @physical.nil?
-        invalid_properties.push('invalid value for "physical", physical cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -101,29 +97,7 @@ module Kubevirt
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @logical.nil?
-      return false if @physical.nil?
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] logical Value to be assigned
-    def logical=(logical)
-      if logical.nil?
-        fail ArgumentError, 'logical cannot be nil'
-      end
-
-      @logical = logical
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] physical Value to be assigned
-    def physical=(physical)
-      if physical.nil?
-        fail ArgumentError, 'physical cannot be nil'
-      end
-
-      @physical = physical
     end
 
     # Checks equality by comparing each attribute.
@@ -131,6 +105,7 @@ module Kubevirt
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          discard_granularity == o.discard_granularity &&
           logical == o.logical &&
           physical == o.physical
     end
@@ -144,7 +119,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [logical, physical].hash
+      [discard_granularity, logical, physical].hash
     end
 
     # Builds the object from hash
