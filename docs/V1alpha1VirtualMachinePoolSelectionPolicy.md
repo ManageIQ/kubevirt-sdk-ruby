@@ -4,7 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **base_policy** | **String** | BasePolicy is a catch-all policy [Random|DescendingOrder] | [optional] |
+| **selectors** | [**V1alpha1VirtualMachinePoolSelectors**](V1alpha1VirtualMachinePoolSelectors.md) |  | [optional] |
+| **sort_policy** | **String** | SortPolicy is a catch-all policy [AscendingOrder|DescendingOrder|Newest|Oldest|Random] | [optional] |
 
 ## Example
 
@@ -12,7 +13,8 @@
 require 'kubevirt'
 
 instance = Kubevirt::V1alpha1VirtualMachinePoolSelectionPolicy.new(
-  base_policy: null
+  selectors: null,
+  sort_policy: null
 )
 ```
 

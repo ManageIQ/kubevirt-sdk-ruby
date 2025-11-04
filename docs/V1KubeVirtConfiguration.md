@@ -26,7 +26,7 @@
 | **mediated_devices_configuration** | [**V1MediatedDevicesConfiguration**](V1MediatedDevicesConfiguration.md) |  | [optional] |
 | **mem_balloon_stats_period** | **Integer** |  | [optional] |
 | **migrations** | [**V1MigrationConfiguration**](V1MigrationConfiguration.md) |  | [optional] |
-| **min_cpu_model** | **String** |  | [optional] |
+| **min_cpu_model** | **String** | deprecated | [optional] |
 | **network** | [**V1NetworkConfiguration**](V1NetworkConfiguration.md) |  | [optional] |
 | **obsolete_cpu_models** | **Hash&lt;String, Boolean&gt;** |  | [optional] |
 | **ovmf_path** | **String** | Deprecated. Use architectureConfiguration instead. | [optional] |

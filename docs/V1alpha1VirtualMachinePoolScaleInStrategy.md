@@ -4,7 +4,9 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **opportunistic** | [**V1alpha1VirtualMachinePoolOpportunisticScaleInStrategy**](V1alpha1VirtualMachinePoolOpportunisticScaleInStrategy.md) |  | [optional] |
 | **proactive** | [**V1alpha1VirtualMachinePoolProactiveScaleInStrategy**](V1alpha1VirtualMachinePoolProactiveScaleInStrategy.md) |  | [optional] |
+| **unmanaged** | **Object** |  | [optional] |
 
 ## Example
 
@@ -12,7 +14,9 @@
 require 'kubevirt'
 
 instance = Kubevirt::V1alpha1VirtualMachinePoolScaleInStrategy.new(
-  proactive: null
+  opportunistic: null,
+  proactive: null,
+  unmanaged: null
 )
 ```
 

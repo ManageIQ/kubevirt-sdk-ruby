@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **sev** | [**V1SEV**](V1SEV.md) |  | [optional] |
 | **snp** | **Object** |  | [optional] |
+| **tdx** | **Object** |  | [optional] |
 
 ## Example
 
@@ -14,7 +15,8 @@ require 'kubevirt'
 
 instance = Kubevirt::V1LaunchSecurity.new(
   sev: null,
-  snp: null
+  snp: null,
+  tdx: null
 )
 ```
 
