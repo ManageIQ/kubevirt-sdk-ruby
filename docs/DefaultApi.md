@@ -13,7 +13,7 @@ All URIs are relative to *http://localhost*
 | [**create_namespaced_virtual_machine_instance_preset**](DefaultApi.md#create_namespaced_virtual_machine_instance_preset) | **POST** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancepresets |  |
 | [**create_namespaced_virtual_machine_instance_replica_set**](DefaultApi.md#create_namespaced_virtual_machine_instance_replica_set) | **POST** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancereplicasets |  |
 | [**create_namespaced_virtual_machine_instancetype**](DefaultApi.md#create_namespaced_virtual_machine_instancetype) | **POST** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachineinstancetypes |  |
-| [**create_namespaced_virtual_machine_pool**](DefaultApi.md#create_namespaced_virtual_machine_pool) | **POST** /apis/pool.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinepools |  |
+| [**create_namespaced_virtual_machine_pool**](DefaultApi.md#create_namespaced_virtual_machine_pool) | **POST** /apis/pool.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepools |  |
 | [**create_namespaced_virtual_machine_preference**](DefaultApi.md#create_namespaced_virtual_machine_preference) | **POST** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepreferences |  |
 | [**create_namespaced_virtual_machine_restore**](DefaultApi.md#create_namespaced_virtual_machine_restore) | **POST** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinerestores |  |
 | [**create_namespaced_virtual_machine_snapshot**](DefaultApi.md#create_namespaced_virtual_machine_snapshot) | **POST** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinesnapshots |  |
@@ -30,7 +30,7 @@ All URIs are relative to *http://localhost*
 | [**delete_collection_namespaced_virtual_machine_instance_preset**](DefaultApi.md#delete_collection_namespaced_virtual_machine_instance_preset) | **DELETE** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancepresets |  |
 | [**delete_collection_namespaced_virtual_machine_instance_replica_set**](DefaultApi.md#delete_collection_namespaced_virtual_machine_instance_replica_set) | **DELETE** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancereplicasets |  |
 | [**delete_collection_namespaced_virtual_machine_instancetype**](DefaultApi.md#delete_collection_namespaced_virtual_machine_instancetype) | **DELETE** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachineinstancetypes |  |
-| [**delete_collection_namespaced_virtual_machine_pool**](DefaultApi.md#delete_collection_namespaced_virtual_machine_pool) | **DELETE** /apis/pool.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinepools |  |
+| [**delete_collection_namespaced_virtual_machine_pool**](DefaultApi.md#delete_collection_namespaced_virtual_machine_pool) | **DELETE** /apis/pool.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepools |  |
 | [**delete_collection_namespaced_virtual_machine_preference**](DefaultApi.md#delete_collection_namespaced_virtual_machine_preference) | **DELETE** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepreferences |  |
 | [**delete_collection_namespaced_virtual_machine_restore**](DefaultApi.md#delete_collection_namespaced_virtual_machine_restore) | **DELETE** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinerestores |  |
 | [**delete_collection_namespaced_virtual_machine_snapshot**](DefaultApi.md#delete_collection_namespaced_virtual_machine_snapshot) | **DELETE** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinesnapshots |  |
@@ -47,7 +47,7 @@ All URIs are relative to *http://localhost*
 | [**delete_namespaced_virtual_machine_instance_preset**](DefaultApi.md#delete_namespaced_virtual_machine_instance_preset) | **DELETE** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancepresets/{name} |  |
 | [**delete_namespaced_virtual_machine_instance_replica_set**](DefaultApi.md#delete_namespaced_virtual_machine_instance_replica_set) | **DELETE** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancereplicasets/{name} |  |
 | [**delete_namespaced_virtual_machine_instancetype**](DefaultApi.md#delete_namespaced_virtual_machine_instancetype) | **DELETE** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachineinstancetypes/{name} |  |
-| [**delete_namespaced_virtual_machine_pool**](DefaultApi.md#delete_namespaced_virtual_machine_pool) | **DELETE** /apis/pool.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinepools/{name} |  |
+| [**delete_namespaced_virtual_machine_pool**](DefaultApi.md#delete_namespaced_virtual_machine_pool) | **DELETE** /apis/pool.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepools/{name} |  |
 | [**delete_namespaced_virtual_machine_preference**](DefaultApi.md#delete_namespaced_virtual_machine_preference) | **DELETE** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepreferences/{name} |  |
 | [**delete_namespaced_virtual_machine_restore**](DefaultApi.md#delete_namespaced_virtual_machine_restore) | **DELETE** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinerestores/{name} |  |
 | [**delete_namespaced_virtual_machine_snapshot**](DefaultApi.md#delete_namespaced_virtual_machine_snapshot) | **DELETE** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinesnapshots/{name} |  |
@@ -70,7 +70,7 @@ All URIs are relative to *http://localhost*
 | [**get_api_resources_instancetype_kubevirt_io_v1beta1**](DefaultApi.md#get_api_resources_instancetype_kubevirt_io_v1beta1) | **GET** /apis/instancetype.kubevirt.io/v1beta1/ |  |
 | [**get_api_resources_kubevirt_io_v1**](DefaultApi.md#get_api_resources_kubevirt_io_v1) | **GET** /apis/kubevirt.io/v1/ |  |
 | [**get_api_resources_migrations_kubevirt_io_v1alpha1**](DefaultApi.md#get_api_resources_migrations_kubevirt_io_v1alpha1) | **GET** /apis/migrations.kubevirt.io/v1alpha1/ |  |
-| [**get_api_resources_pool_kubevirt_io_v1alpha1**](DefaultApi.md#get_api_resources_pool_kubevirt_io_v1alpha1) | **GET** /apis/pool.kubevirt.io/v1alpha1/ |  |
+| [**get_api_resources_pool_kubevirt_io_v1beta1**](DefaultApi.md#get_api_resources_pool_kubevirt_io_v1beta1) | **GET** /apis/pool.kubevirt.io/v1beta1/ |  |
 | [**get_api_resources_snapshot_kubevirt_io_v1beta1**](DefaultApi.md#get_api_resources_snapshot_kubevirt_io_v1beta1) | **GET** /apis/snapshot.kubevirt.io/v1beta1/ |  |
 | [**get_root_paths**](DefaultApi.md#get_root_paths) | **GET** / |  |
 | [**handle_dump_profiler**](DefaultApi.md#handle_dump_profiler) | **GET** /dump-profiler |  |
@@ -86,7 +86,7 @@ All URIs are relative to *http://localhost*
 | [**list_namespaced_virtual_machine_instance_preset**](DefaultApi.md#list_namespaced_virtual_machine_instance_preset) | **GET** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancepresets |  |
 | [**list_namespaced_virtual_machine_instance_replica_set**](DefaultApi.md#list_namespaced_virtual_machine_instance_replica_set) | **GET** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancereplicasets |  |
 | [**list_namespaced_virtual_machine_instancetype**](DefaultApi.md#list_namespaced_virtual_machine_instancetype) | **GET** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachineinstancetypes |  |
-| [**list_namespaced_virtual_machine_pool**](DefaultApi.md#list_namespaced_virtual_machine_pool) | **GET** /apis/pool.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinepools |  |
+| [**list_namespaced_virtual_machine_pool**](DefaultApi.md#list_namespaced_virtual_machine_pool) | **GET** /apis/pool.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepools |  |
 | [**list_namespaced_virtual_machine_preference**](DefaultApi.md#list_namespaced_virtual_machine_preference) | **GET** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepreferences |  |
 | [**list_namespaced_virtual_machine_restore**](DefaultApi.md#list_namespaced_virtual_machine_restore) | **GET** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinerestores |  |
 | [**list_namespaced_virtual_machine_snapshot**](DefaultApi.md#list_namespaced_virtual_machine_snapshot) | **GET** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinesnapshots |  |
@@ -101,7 +101,7 @@ All URIs are relative to *http://localhost*
 | [**list_virtual_machine_instance_preset_for_all_namespaces**](DefaultApi.md#list_virtual_machine_instance_preset_for_all_namespaces) | **GET** /apis/kubevirt.io/v1/virtualmachineinstancepresets |  |
 | [**list_virtual_machine_instance_replica_set_for_all_namespaces**](DefaultApi.md#list_virtual_machine_instance_replica_set_for_all_namespaces) | **GET** /apis/kubevirt.io/v1/virtualmachineinstancereplicasets |  |
 | [**list_virtual_machine_instancetype_for_all_namespaces**](DefaultApi.md#list_virtual_machine_instancetype_for_all_namespaces) | **GET** /apis/instancetype.kubevirt.io/v1beta1/virtualmachineinstancetypes |  |
-| [**list_virtual_machine_pool_for_all_namespaces**](DefaultApi.md#list_virtual_machine_pool_for_all_namespaces) | **GET** /apis/pool.kubevirt.io/v1alpha1/virtualmachinepools |  |
+| [**list_virtual_machine_pool_for_all_namespaces**](DefaultApi.md#list_virtual_machine_pool_for_all_namespaces) | **GET** /apis/pool.kubevirt.io/v1beta1/virtualmachinepools |  |
 | [**list_virtual_machine_preference_for_all_namespaces**](DefaultApi.md#list_virtual_machine_preference_for_all_namespaces) | **GET** /apis/instancetype.kubevirt.io/v1beta1/virtualmachinepreferences |  |
 | [**list_virtual_machine_restore_for_all_namespaces**](DefaultApi.md#list_virtual_machine_restore_for_all_namespaces) | **GET** /apis/snapshot.kubevirt.io/v1beta1/virtualmachinerestores |  |
 | [**list_virtual_machine_snapshot_content_for_all_namespaces**](DefaultApi.md#list_virtual_machine_snapshot_content_for_all_namespaces) | **GET** /apis/snapshot.kubevirt.io/v1beta1/virtualmachinesnapshotcontents |  |
@@ -115,7 +115,7 @@ All URIs are relative to *http://localhost*
 | [**patch_namespaced_virtual_machine_instance_preset**](DefaultApi.md#patch_namespaced_virtual_machine_instance_preset) | **PATCH** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancepresets/{name} |  |
 | [**patch_namespaced_virtual_machine_instance_replica_set**](DefaultApi.md#patch_namespaced_virtual_machine_instance_replica_set) | **PATCH** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancereplicasets/{name} |  |
 | [**patch_namespaced_virtual_machine_instancetype**](DefaultApi.md#patch_namespaced_virtual_machine_instancetype) | **PATCH** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachineinstancetypes/{name} |  |
-| [**patch_namespaced_virtual_machine_pool**](DefaultApi.md#patch_namespaced_virtual_machine_pool) | **PATCH** /apis/pool.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinepools/{name} |  |
+| [**patch_namespaced_virtual_machine_pool**](DefaultApi.md#patch_namespaced_virtual_machine_pool) | **PATCH** /apis/pool.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepools/{name} |  |
 | [**patch_namespaced_virtual_machine_preference**](DefaultApi.md#patch_namespaced_virtual_machine_preference) | **PATCH** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepreferences/{name} |  |
 | [**patch_namespaced_virtual_machine_restore**](DefaultApi.md#patch_namespaced_virtual_machine_restore) | **PATCH** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinerestores/{name} |  |
 | [**patch_namespaced_virtual_machine_snapshot**](DefaultApi.md#patch_namespaced_virtual_machine_snapshot) | **PATCH** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinesnapshots/{name} |  |
@@ -132,7 +132,7 @@ All URIs are relative to *http://localhost*
 | [**read_namespaced_virtual_machine_instance_preset**](DefaultApi.md#read_namespaced_virtual_machine_instance_preset) | **GET** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancepresets/{name} |  |
 | [**read_namespaced_virtual_machine_instance_replica_set**](DefaultApi.md#read_namespaced_virtual_machine_instance_replica_set) | **GET** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancereplicasets/{name} |  |
 | [**read_namespaced_virtual_machine_instancetype**](DefaultApi.md#read_namespaced_virtual_machine_instancetype) | **GET** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachineinstancetypes/{name} |  |
-| [**read_namespaced_virtual_machine_pool**](DefaultApi.md#read_namespaced_virtual_machine_pool) | **GET** /apis/pool.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinepools/{name} |  |
+| [**read_namespaced_virtual_machine_pool**](DefaultApi.md#read_namespaced_virtual_machine_pool) | **GET** /apis/pool.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepools/{name} |  |
 | [**read_namespaced_virtual_machine_preference**](DefaultApi.md#read_namespaced_virtual_machine_preference) | **GET** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepreferences/{name} |  |
 | [**read_namespaced_virtual_machine_restore**](DefaultApi.md#read_namespaced_virtual_machine_restore) | **GET** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinerestores/{name} |  |
 | [**read_namespaced_virtual_machine_snapshot**](DefaultApi.md#read_namespaced_virtual_machine_snapshot) | **GET** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinesnapshots/{name} |  |
@@ -149,7 +149,7 @@ All URIs are relative to *http://localhost*
 | [**replace_namespaced_virtual_machine_instance_preset**](DefaultApi.md#replace_namespaced_virtual_machine_instance_preset) | **PUT** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancepresets/{name} |  |
 | [**replace_namespaced_virtual_machine_instance_replica_set**](DefaultApi.md#replace_namespaced_virtual_machine_instance_replica_set) | **PUT** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancereplicasets/{name} |  |
 | [**replace_namespaced_virtual_machine_instancetype**](DefaultApi.md#replace_namespaced_virtual_machine_instancetype) | **PUT** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachineinstancetypes/{name} |  |
-| [**replace_namespaced_virtual_machine_pool**](DefaultApi.md#replace_namespaced_virtual_machine_pool) | **PUT** /apis/pool.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinepools/{name} |  |
+| [**replace_namespaced_virtual_machine_pool**](DefaultApi.md#replace_namespaced_virtual_machine_pool) | **PUT** /apis/pool.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepools/{name} |  |
 | [**replace_namespaced_virtual_machine_preference**](DefaultApi.md#replace_namespaced_virtual_machine_preference) | **PUT** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepreferences/{name} |  |
 | [**replace_namespaced_virtual_machine_restore**](DefaultApi.md#replace_namespaced_virtual_machine_restore) | **PUT** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinerestores/{name} |  |
 | [**replace_namespaced_virtual_machine_snapshot**](DefaultApi.md#replace_namespaced_virtual_machine_snapshot) | **PUT** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinesnapshots/{name} |  |
@@ -254,7 +254,7 @@ All URIs are relative to *http://localhost*
 | [**watch_namespaced_virtual_machine_instance_preset**](DefaultApi.md#watch_namespaced_virtual_machine_instance_preset) | **GET** /apis/kubevirt.io/v1/watch/namespaces/{namespace}/virtualmachineinstancepresets |  |
 | [**watch_namespaced_virtual_machine_instance_replica_set**](DefaultApi.md#watch_namespaced_virtual_machine_instance_replica_set) | **GET** /apis/kubevirt.io/v1/watch/namespaces/{namespace}/virtualmachineinstancereplicasets |  |
 | [**watch_namespaced_virtual_machine_instancetype**](DefaultApi.md#watch_namespaced_virtual_machine_instancetype) | **GET** /apis/instancetype.kubevirt.io/v1beta1/watch/namespaces/{namespace}/virtualmachineinstancetypes |  |
-| [**watch_namespaced_virtual_machine_pool**](DefaultApi.md#watch_namespaced_virtual_machine_pool) | **GET** /apis/pool.kubevirt.io/v1alpha1/watch/namespaces/{namespace}/virtualmachinepools |  |
+| [**watch_namespaced_virtual_machine_pool**](DefaultApi.md#watch_namespaced_virtual_machine_pool) | **GET** /apis/pool.kubevirt.io/v1beta1/watch/namespaces/{namespace}/virtualmachinepools |  |
 | [**watch_namespaced_virtual_machine_preference**](DefaultApi.md#watch_namespaced_virtual_machine_preference) | **GET** /apis/instancetype.kubevirt.io/v1beta1/watch/namespaces/{namespace}/virtualmachinepreferences |  |
 | [**watch_namespaced_virtual_machine_restore**](DefaultApi.md#watch_namespaced_virtual_machine_restore) | **GET** /apis/snapshot.kubevirt.io/v1beta1/watch/namespaces/{namespace}/virtualmachinerestores |  |
 | [**watch_namespaced_virtual_machine_snapshot**](DefaultApi.md#watch_namespaced_virtual_machine_snapshot) | **GET** /apis/snapshot.kubevirt.io/v1beta1/watch/namespaces/{namespace}/virtualmachinesnapshots |  |
@@ -269,7 +269,7 @@ All URIs are relative to *http://localhost*
 | [**watch_virtual_machine_instance_replica_set_list_for_all_namespaces**](DefaultApi.md#watch_virtual_machine_instance_replica_set_list_for_all_namespaces) | **GET** /apis/kubevirt.io/v1/watch/virtualmachineinstancereplicasets |  |
 | [**watch_virtual_machine_instancetype_list_for_all_namespaces**](DefaultApi.md#watch_virtual_machine_instancetype_list_for_all_namespaces) | **GET** /apis/instancetype.kubevirt.io/v1beta1/watch/virtualmachineinstancetypes |  |
 | [**watch_virtual_machine_list_for_all_namespaces**](DefaultApi.md#watch_virtual_machine_list_for_all_namespaces) | **GET** /apis/kubevirt.io/v1/watch/virtualmachines |  |
-| [**watch_virtual_machine_pool_list_for_all_namespaces**](DefaultApi.md#watch_virtual_machine_pool_list_for_all_namespaces) | **GET** /apis/pool.kubevirt.io/v1alpha1/watch/virtualmachinepools |  |
+| [**watch_virtual_machine_pool_list_for_all_namespaces**](DefaultApi.md#watch_virtual_machine_pool_list_for_all_namespaces) | **GET** /apis/pool.kubevirt.io/v1beta1/watch/virtualmachinepools |  |
 | [**watch_virtual_machine_preference_list_for_all_namespaces**](DefaultApi.md#watch_virtual_machine_preference_list_for_all_namespaces) | **GET** /apis/instancetype.kubevirt.io/v1beta1/watch/virtualmachinepreferences |  |
 | [**watch_virtual_machine_restore_list_for_all_namespaces**](DefaultApi.md#watch_virtual_machine_restore_list_for_all_namespaces) | **GET** /apis/snapshot.kubevirt.io/v1beta1/watch/virtualmachinerestores |  |
 | [**watch_virtual_machine_snapshot_content_list_for_all_namespaces**](DefaultApi.md#watch_virtual_machine_snapshot_content_list_for_all_namespaces) | **GET** /apis/snapshot.kubevirt.io/v1beta1/watch/virtualmachinesnapshotcontents |  |
@@ -870,7 +870,7 @@ No authorization required
 
 ## create_namespaced_virtual_machine_pool
 
-> <V1alpha1VirtualMachinePool> create_namespaced_virtual_machine_pool(namespace, body)
+> <V1beta1VirtualMachinePool> create_namespaced_virtual_machine_pool(namespace, body)
 
 
 
@@ -884,7 +884,7 @@ require 'kubevirt'
 
 api_instance = Kubevirt::DefaultApi.new
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::V1alpha1VirtualMachinePool.new({spec: Kubevirt::V1alpha1VirtualMachinePoolSpec.new({selector: Kubevirt::K8sIoApimachineryPkgApisMetaV1LabelSelector.new, virtual_machine_template: Kubevirt::V1alpha1VirtualMachineTemplateSpec.new})}) # V1alpha1VirtualMachinePool | 
+body = Kubevirt::V1beta1VirtualMachinePool.new({spec: Kubevirt::V1beta1VirtualMachinePoolSpec.new({selector: Kubevirt::K8sIoApimachineryPkgApisMetaV1LabelSelector.new, virtual_machine_template: Kubevirt::V1beta1VirtualMachineTemplateSpec.new})}) # V1beta1VirtualMachinePool | 
 
 begin
   
@@ -899,7 +899,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<V1alpha1VirtualMachinePool>, Integer, Hash)> create_namespaced_virtual_machine_pool_with_http_info(namespace, body)
+> <Array(<V1beta1VirtualMachinePool>, Integer, Hash)> create_namespaced_virtual_machine_pool_with_http_info(namespace, body)
 
 ```ruby
 begin
@@ -907,7 +907,7 @@ begin
   data, status_code, headers = api_instance.create_namespaced_virtual_machine_pool_with_http_info(namespace, body)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <V1alpha1VirtualMachinePool>
+  p data # => <V1beta1VirtualMachinePool>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->create_namespaced_virtual_machine_pool_with_http_info: #{e}"
 end
@@ -918,11 +918,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
-| **body** | [**V1alpha1VirtualMachinePool**](V1alpha1VirtualMachinePool.md) |  |  |
+| **body** | [**V1beta1VirtualMachinePool**](V1beta1VirtualMachinePool.md) |  |  |
 
 ### Return type
 
-[**V1alpha1VirtualMachinePool**](V1alpha1VirtualMachinePool.md)
+[**V1beta1VirtualMachinePool**](V1beta1VirtualMachinePool.md)
 
 ### Authorization
 
@@ -4945,9 +4945,9 @@ No authorization required
 - **Accept**: application/json
 
 
-## get_api_resources_pool_kubevirt_io_v1alpha1
+## get_api_resources_pool_kubevirt_io_v1beta1
 
-> <K8sIoApimachineryPkgApisMetaV1APIResourceList> get_api_resources_pool_kubevirt_io_v1alpha1
+> <K8sIoApimachineryPkgApisMetaV1APIResourceList> get_api_resources_pool_kubevirt_io_v1beta1
 
 
 
@@ -4963,28 +4963,28 @@ api_instance = Kubevirt::DefaultApi.new
 
 begin
   
-  result = api_instance.get_api_resources_pool_kubevirt_io_v1alpha1
+  result = api_instance.get_api_resources_pool_kubevirt_io_v1beta1
   p result
 rescue Kubevirt::ApiError => e
-  puts "Error when calling DefaultApi->get_api_resources_pool_kubevirt_io_v1alpha1: #{e}"
+  puts "Error when calling DefaultApi->get_api_resources_pool_kubevirt_io_v1beta1: #{e}"
 end
 ```
 
-#### Using the get_api_resources_pool_kubevirt_io_v1alpha1_with_http_info variant
+#### Using the get_api_resources_pool_kubevirt_io_v1beta1_with_http_info variant
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> get_api_resources_pool_kubevirt_io_v1alpha1_with_http_info
+> <Array(<K8sIoApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> get_api_resources_pool_kubevirt_io_v1beta1_with_http_info
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.get_api_resources_pool_kubevirt_io_v1alpha1_with_http_info
+  data, status_code, headers = api_instance.get_api_resources_pool_kubevirt_io_v1beta1_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <K8sIoApimachineryPkgApisMetaV1APIResourceList>
 rescue Kubevirt::ApiError => e
-  puts "Error when calling DefaultApi->get_api_resources_pool_kubevirt_io_v1alpha1_with_http_info: #{e}"
+  puts "Error when calling DefaultApi->get_api_resources_pool_kubevirt_io_v1beta1_with_http_info: #{e}"
 end
 ```
 
@@ -6126,7 +6126,7 @@ No authorization required
 
 ## list_namespaced_virtual_machine_pool
 
-> <V1alpha1VirtualMachinePoolList> list_namespaced_virtual_machine_pool(namespace, opts)
+> <V1beta1VirtualMachinePoolList> list_namespaced_virtual_machine_pool(namespace, opts)
 
 
 
@@ -6164,7 +6164,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<V1alpha1VirtualMachinePoolList>, Integer, Hash)> list_namespaced_virtual_machine_pool_with_http_info(namespace, opts)
+> <Array(<V1beta1VirtualMachinePoolList>, Integer, Hash)> list_namespaced_virtual_machine_pool_with_http_info(namespace, opts)
 
 ```ruby
 begin
@@ -6172,7 +6172,7 @@ begin
   data, status_code, headers = api_instance.list_namespaced_virtual_machine_pool_with_http_info(namespace, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <V1alpha1VirtualMachinePoolList>
+  p data # => <V1beta1VirtualMachinePoolList>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->list_namespaced_virtual_machine_pool_with_http_info: #{e}"
 end
@@ -6194,7 +6194,7 @@ end
 
 ### Return type
 
-[**V1alpha1VirtualMachinePoolList**](V1alpha1VirtualMachinePoolList.md)
+[**V1beta1VirtualMachinePoolList**](V1beta1VirtualMachinePoolList.md)
 
 ### Authorization
 
@@ -7336,7 +7336,7 @@ No authorization required
 
 ## list_virtual_machine_pool_for_all_namespaces
 
-> <V1alpha1VirtualMachinePoolList> list_virtual_machine_pool_for_all_namespaces(opts)
+> <V1beta1VirtualMachinePoolList> list_virtual_machine_pool_for_all_namespaces(opts)
 
 
 
@@ -7373,7 +7373,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<V1alpha1VirtualMachinePoolList>, Integer, Hash)> list_virtual_machine_pool_for_all_namespaces_with_http_info(opts)
+> <Array(<V1beta1VirtualMachinePoolList>, Integer, Hash)> list_virtual_machine_pool_for_all_namespaces_with_http_info(opts)
 
 ```ruby
 begin
@@ -7381,7 +7381,7 @@ begin
   data, status_code, headers = api_instance.list_virtual_machine_pool_for_all_namespaces_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <V1alpha1VirtualMachinePoolList>
+  p data # => <V1beta1VirtualMachinePoolList>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->list_virtual_machine_pool_for_all_namespaces_with_http_info: #{e}"
 end
@@ -7402,7 +7402,7 @@ end
 
 ### Return type
 
-[**V1alpha1VirtualMachinePoolList**](V1alpha1VirtualMachinePoolList.md)
+[**V1beta1VirtualMachinePoolList**](V1beta1VirtualMachinePoolList.md)
 
 ### Authorization
 
@@ -8346,7 +8346,7 @@ No authorization required
 
 ## patch_namespaced_virtual_machine_pool
 
-> <V1alpha1VirtualMachinePool> patch_namespaced_virtual_machine_pool(name, namespace, body)
+> <V1beta1VirtualMachinePool> patch_namespaced_virtual_machine_pool(name, namespace, body)
 
 
 
@@ -8376,7 +8376,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<V1alpha1VirtualMachinePool>, Integer, Hash)> patch_namespaced_virtual_machine_pool_with_http_info(name, namespace, body)
+> <Array(<V1beta1VirtualMachinePool>, Integer, Hash)> patch_namespaced_virtual_machine_pool_with_http_info(name, namespace, body)
 
 ```ruby
 begin
@@ -8384,7 +8384,7 @@ begin
   data, status_code, headers = api_instance.patch_namespaced_virtual_machine_pool_with_http_info(name, namespace, body)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <V1alpha1VirtualMachinePool>
+  p data # => <V1beta1VirtualMachinePool>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->patch_namespaced_virtual_machine_pool_with_http_info: #{e}"
 end
@@ -8400,7 +8400,7 @@ end
 
 ### Return type
 
-[**V1alpha1VirtualMachinePool**](V1alpha1VirtualMachinePool.md)
+[**V1beta1VirtualMachinePool**](V1beta1VirtualMachinePool.md)
 
 ### Authorization
 
@@ -9530,7 +9530,7 @@ No authorization required
 
 ## read_namespaced_virtual_machine_pool
 
-> <V1alpha1VirtualMachinePool> read_namespaced_virtual_machine_pool(name, namespace, opts)
+> <V1beta1VirtualMachinePool> read_namespaced_virtual_machine_pool(name, namespace, opts)
 
 
 
@@ -9563,7 +9563,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<V1alpha1VirtualMachinePool>, Integer, Hash)> read_namespaced_virtual_machine_pool_with_http_info(name, namespace, opts)
+> <Array(<V1beta1VirtualMachinePool>, Integer, Hash)> read_namespaced_virtual_machine_pool_with_http_info(name, namespace, opts)
 
 ```ruby
 begin
@@ -9571,7 +9571,7 @@ begin
   data, status_code, headers = api_instance.read_namespaced_virtual_machine_pool_with_http_info(name, namespace, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <V1alpha1VirtualMachinePool>
+  p data # => <V1beta1VirtualMachinePool>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->read_namespaced_virtual_machine_pool_with_http_info: #{e}"
 end
@@ -9588,7 +9588,7 @@ end
 
 ### Return type
 
-[**V1alpha1VirtualMachinePool**](V1alpha1VirtualMachinePool.md)
+[**V1beta1VirtualMachinePool**](V1beta1VirtualMachinePool.md)
 
 ### Authorization
 
@@ -10710,7 +10710,7 @@ No authorization required
 
 ## replace_namespaced_virtual_machine_pool
 
-> <V1alpha1VirtualMachinePool> replace_namespaced_virtual_machine_pool(name, namespace, body)
+> <V1beta1VirtualMachinePool> replace_namespaced_virtual_machine_pool(name, namespace, body)
 
 
 
@@ -10725,7 +10725,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::V1alpha1VirtualMachinePool.new({spec: Kubevirt::V1alpha1VirtualMachinePoolSpec.new({selector: Kubevirt::K8sIoApimachineryPkgApisMetaV1LabelSelector.new, virtual_machine_template: Kubevirt::V1alpha1VirtualMachineTemplateSpec.new})}) # V1alpha1VirtualMachinePool | 
+body = Kubevirt::V1beta1VirtualMachinePool.new({spec: Kubevirt::V1beta1VirtualMachinePoolSpec.new({selector: Kubevirt::K8sIoApimachineryPkgApisMetaV1LabelSelector.new, virtual_machine_template: Kubevirt::V1beta1VirtualMachineTemplateSpec.new})}) # V1beta1VirtualMachinePool | 
 
 begin
   
@@ -10740,7 +10740,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<V1alpha1VirtualMachinePool>, Integer, Hash)> replace_namespaced_virtual_machine_pool_with_http_info(name, namespace, body)
+> <Array(<V1beta1VirtualMachinePool>, Integer, Hash)> replace_namespaced_virtual_machine_pool_with_http_info(name, namespace, body)
 
 ```ruby
 begin
@@ -10748,7 +10748,7 @@ begin
   data, status_code, headers = api_instance.replace_namespaced_virtual_machine_pool_with_http_info(name, namespace, body)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <V1alpha1VirtualMachinePool>
+  p data # => <V1beta1VirtualMachinePool>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->replace_namespaced_virtual_machine_pool_with_http_info: #{e}"
 end
@@ -10760,11 +10760,11 @@ end
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Name of the resource |  |
 | **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
-| **body** | [**V1alpha1VirtualMachinePool**](V1alpha1VirtualMachinePool.md) |  |  |
+| **body** | [**V1beta1VirtualMachinePool**](V1beta1VirtualMachinePool.md) |  |  |
 
 ### Return type
 
-[**V1alpha1VirtualMachinePool**](V1alpha1VirtualMachinePool.md)
+[**V1beta1VirtualMachinePool**](V1beta1VirtualMachinePool.md)
 
 ### Authorization
 

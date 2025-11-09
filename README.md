@@ -85,7 +85,7 @@ Class | Method | HTTP request | Description
 *Kubevirt::DefaultApi* | [**create_namespaced_virtual_machine_instance_preset**](docs/DefaultApi.md#create_namespaced_virtual_machine_instance_preset) | **POST** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancepresets | 
 *Kubevirt::DefaultApi* | [**create_namespaced_virtual_machine_instance_replica_set**](docs/DefaultApi.md#create_namespaced_virtual_machine_instance_replica_set) | **POST** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancereplicasets | 
 *Kubevirt::DefaultApi* | [**create_namespaced_virtual_machine_instancetype**](docs/DefaultApi.md#create_namespaced_virtual_machine_instancetype) | **POST** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachineinstancetypes | 
-*Kubevirt::DefaultApi* | [**create_namespaced_virtual_machine_pool**](docs/DefaultApi.md#create_namespaced_virtual_machine_pool) | **POST** /apis/pool.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinepools | 
+*Kubevirt::DefaultApi* | [**create_namespaced_virtual_machine_pool**](docs/DefaultApi.md#create_namespaced_virtual_machine_pool) | **POST** /apis/pool.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepools | 
 *Kubevirt::DefaultApi* | [**create_namespaced_virtual_machine_preference**](docs/DefaultApi.md#create_namespaced_virtual_machine_preference) | **POST** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepreferences | 
 *Kubevirt::DefaultApi* | [**create_namespaced_virtual_machine_restore**](docs/DefaultApi.md#create_namespaced_virtual_machine_restore) | **POST** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinerestores | 
 *Kubevirt::DefaultApi* | [**create_namespaced_virtual_machine_snapshot**](docs/DefaultApi.md#create_namespaced_virtual_machine_snapshot) | **POST** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinesnapshots | 
@@ -102,7 +102,7 @@ Class | Method | HTTP request | Description
 *Kubevirt::DefaultApi* | [**delete_collection_namespaced_virtual_machine_instance_preset**](docs/DefaultApi.md#delete_collection_namespaced_virtual_machine_instance_preset) | **DELETE** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancepresets | 
 *Kubevirt::DefaultApi* | [**delete_collection_namespaced_virtual_machine_instance_replica_set**](docs/DefaultApi.md#delete_collection_namespaced_virtual_machine_instance_replica_set) | **DELETE** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancereplicasets | 
 *Kubevirt::DefaultApi* | [**delete_collection_namespaced_virtual_machine_instancetype**](docs/DefaultApi.md#delete_collection_namespaced_virtual_machine_instancetype) | **DELETE** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachineinstancetypes | 
-*Kubevirt::DefaultApi* | [**delete_collection_namespaced_virtual_machine_pool**](docs/DefaultApi.md#delete_collection_namespaced_virtual_machine_pool) | **DELETE** /apis/pool.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinepools | 
+*Kubevirt::DefaultApi* | [**delete_collection_namespaced_virtual_machine_pool**](docs/DefaultApi.md#delete_collection_namespaced_virtual_machine_pool) | **DELETE** /apis/pool.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepools | 
 *Kubevirt::DefaultApi* | [**delete_collection_namespaced_virtual_machine_preference**](docs/DefaultApi.md#delete_collection_namespaced_virtual_machine_preference) | **DELETE** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepreferences | 
 *Kubevirt::DefaultApi* | [**delete_collection_namespaced_virtual_machine_restore**](docs/DefaultApi.md#delete_collection_namespaced_virtual_machine_restore) | **DELETE** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinerestores | 
 *Kubevirt::DefaultApi* | [**delete_collection_namespaced_virtual_machine_snapshot**](docs/DefaultApi.md#delete_collection_namespaced_virtual_machine_snapshot) | **DELETE** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinesnapshots | 
@@ -119,7 +119,7 @@ Class | Method | HTTP request | Description
 *Kubevirt::DefaultApi* | [**delete_namespaced_virtual_machine_instance_preset**](docs/DefaultApi.md#delete_namespaced_virtual_machine_instance_preset) | **DELETE** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancepresets/{name} | 
 *Kubevirt::DefaultApi* | [**delete_namespaced_virtual_machine_instance_replica_set**](docs/DefaultApi.md#delete_namespaced_virtual_machine_instance_replica_set) | **DELETE** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancereplicasets/{name} | 
 *Kubevirt::DefaultApi* | [**delete_namespaced_virtual_machine_instancetype**](docs/DefaultApi.md#delete_namespaced_virtual_machine_instancetype) | **DELETE** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachineinstancetypes/{name} | 
-*Kubevirt::DefaultApi* | [**delete_namespaced_virtual_machine_pool**](docs/DefaultApi.md#delete_namespaced_virtual_machine_pool) | **DELETE** /apis/pool.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinepools/{name} | 
+*Kubevirt::DefaultApi* | [**delete_namespaced_virtual_machine_pool**](docs/DefaultApi.md#delete_namespaced_virtual_machine_pool) | **DELETE** /apis/pool.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepools/{name} | 
 *Kubevirt::DefaultApi* | [**delete_namespaced_virtual_machine_preference**](docs/DefaultApi.md#delete_namespaced_virtual_machine_preference) | **DELETE** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepreferences/{name} | 
 *Kubevirt::DefaultApi* | [**delete_namespaced_virtual_machine_restore**](docs/DefaultApi.md#delete_namespaced_virtual_machine_restore) | **DELETE** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinerestores/{name} | 
 *Kubevirt::DefaultApi* | [**delete_namespaced_virtual_machine_snapshot**](docs/DefaultApi.md#delete_namespaced_virtual_machine_snapshot) | **DELETE** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinesnapshots/{name} | 
@@ -142,7 +142,7 @@ Class | Method | HTTP request | Description
 *Kubevirt::DefaultApi* | [**get_api_resources_instancetype_kubevirt_io_v1beta1**](docs/DefaultApi.md#get_api_resources_instancetype_kubevirt_io_v1beta1) | **GET** /apis/instancetype.kubevirt.io/v1beta1/ | 
 *Kubevirt::DefaultApi* | [**get_api_resources_kubevirt_io_v1**](docs/DefaultApi.md#get_api_resources_kubevirt_io_v1) | **GET** /apis/kubevirt.io/v1/ | 
 *Kubevirt::DefaultApi* | [**get_api_resources_migrations_kubevirt_io_v1alpha1**](docs/DefaultApi.md#get_api_resources_migrations_kubevirt_io_v1alpha1) | **GET** /apis/migrations.kubevirt.io/v1alpha1/ | 
-*Kubevirt::DefaultApi* | [**get_api_resources_pool_kubevirt_io_v1alpha1**](docs/DefaultApi.md#get_api_resources_pool_kubevirt_io_v1alpha1) | **GET** /apis/pool.kubevirt.io/v1alpha1/ | 
+*Kubevirt::DefaultApi* | [**get_api_resources_pool_kubevirt_io_v1beta1**](docs/DefaultApi.md#get_api_resources_pool_kubevirt_io_v1beta1) | **GET** /apis/pool.kubevirt.io/v1beta1/ | 
 *Kubevirt::DefaultApi* | [**get_api_resources_snapshot_kubevirt_io_v1beta1**](docs/DefaultApi.md#get_api_resources_snapshot_kubevirt_io_v1beta1) | **GET** /apis/snapshot.kubevirt.io/v1beta1/ | 
 *Kubevirt::DefaultApi* | [**get_root_paths**](docs/DefaultApi.md#get_root_paths) | **GET** / | 
 *Kubevirt::DefaultApi* | [**handle_dump_profiler**](docs/DefaultApi.md#handle_dump_profiler) | **GET** /dump-profiler | 
@@ -158,7 +158,7 @@ Class | Method | HTTP request | Description
 *Kubevirt::DefaultApi* | [**list_namespaced_virtual_machine_instance_preset**](docs/DefaultApi.md#list_namespaced_virtual_machine_instance_preset) | **GET** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancepresets | 
 *Kubevirt::DefaultApi* | [**list_namespaced_virtual_machine_instance_replica_set**](docs/DefaultApi.md#list_namespaced_virtual_machine_instance_replica_set) | **GET** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancereplicasets | 
 *Kubevirt::DefaultApi* | [**list_namespaced_virtual_machine_instancetype**](docs/DefaultApi.md#list_namespaced_virtual_machine_instancetype) | **GET** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachineinstancetypes | 
-*Kubevirt::DefaultApi* | [**list_namespaced_virtual_machine_pool**](docs/DefaultApi.md#list_namespaced_virtual_machine_pool) | **GET** /apis/pool.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinepools | 
+*Kubevirt::DefaultApi* | [**list_namespaced_virtual_machine_pool**](docs/DefaultApi.md#list_namespaced_virtual_machine_pool) | **GET** /apis/pool.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepools | 
 *Kubevirt::DefaultApi* | [**list_namespaced_virtual_machine_preference**](docs/DefaultApi.md#list_namespaced_virtual_machine_preference) | **GET** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepreferences | 
 *Kubevirt::DefaultApi* | [**list_namespaced_virtual_machine_restore**](docs/DefaultApi.md#list_namespaced_virtual_machine_restore) | **GET** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinerestores | 
 *Kubevirt::DefaultApi* | [**list_namespaced_virtual_machine_snapshot**](docs/DefaultApi.md#list_namespaced_virtual_machine_snapshot) | **GET** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinesnapshots | 
@@ -173,7 +173,7 @@ Class | Method | HTTP request | Description
 *Kubevirt::DefaultApi* | [**list_virtual_machine_instance_preset_for_all_namespaces**](docs/DefaultApi.md#list_virtual_machine_instance_preset_for_all_namespaces) | **GET** /apis/kubevirt.io/v1/virtualmachineinstancepresets | 
 *Kubevirt::DefaultApi* | [**list_virtual_machine_instance_replica_set_for_all_namespaces**](docs/DefaultApi.md#list_virtual_machine_instance_replica_set_for_all_namespaces) | **GET** /apis/kubevirt.io/v1/virtualmachineinstancereplicasets | 
 *Kubevirt::DefaultApi* | [**list_virtual_machine_instancetype_for_all_namespaces**](docs/DefaultApi.md#list_virtual_machine_instancetype_for_all_namespaces) | **GET** /apis/instancetype.kubevirt.io/v1beta1/virtualmachineinstancetypes | 
-*Kubevirt::DefaultApi* | [**list_virtual_machine_pool_for_all_namespaces**](docs/DefaultApi.md#list_virtual_machine_pool_for_all_namespaces) | **GET** /apis/pool.kubevirt.io/v1alpha1/virtualmachinepools | 
+*Kubevirt::DefaultApi* | [**list_virtual_machine_pool_for_all_namespaces**](docs/DefaultApi.md#list_virtual_machine_pool_for_all_namespaces) | **GET** /apis/pool.kubevirt.io/v1beta1/virtualmachinepools | 
 *Kubevirt::DefaultApi* | [**list_virtual_machine_preference_for_all_namespaces**](docs/DefaultApi.md#list_virtual_machine_preference_for_all_namespaces) | **GET** /apis/instancetype.kubevirt.io/v1beta1/virtualmachinepreferences | 
 *Kubevirt::DefaultApi* | [**list_virtual_machine_restore_for_all_namespaces**](docs/DefaultApi.md#list_virtual_machine_restore_for_all_namespaces) | **GET** /apis/snapshot.kubevirt.io/v1beta1/virtualmachinerestores | 
 *Kubevirt::DefaultApi* | [**list_virtual_machine_snapshot_content_for_all_namespaces**](docs/DefaultApi.md#list_virtual_machine_snapshot_content_for_all_namespaces) | **GET** /apis/snapshot.kubevirt.io/v1beta1/virtualmachinesnapshotcontents | 
@@ -187,7 +187,7 @@ Class | Method | HTTP request | Description
 *Kubevirt::DefaultApi* | [**patch_namespaced_virtual_machine_instance_preset**](docs/DefaultApi.md#patch_namespaced_virtual_machine_instance_preset) | **PATCH** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancepresets/{name} | 
 *Kubevirt::DefaultApi* | [**patch_namespaced_virtual_machine_instance_replica_set**](docs/DefaultApi.md#patch_namespaced_virtual_machine_instance_replica_set) | **PATCH** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancereplicasets/{name} | 
 *Kubevirt::DefaultApi* | [**patch_namespaced_virtual_machine_instancetype**](docs/DefaultApi.md#patch_namespaced_virtual_machine_instancetype) | **PATCH** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachineinstancetypes/{name} | 
-*Kubevirt::DefaultApi* | [**patch_namespaced_virtual_machine_pool**](docs/DefaultApi.md#patch_namespaced_virtual_machine_pool) | **PATCH** /apis/pool.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinepools/{name} | 
+*Kubevirt::DefaultApi* | [**patch_namespaced_virtual_machine_pool**](docs/DefaultApi.md#patch_namespaced_virtual_machine_pool) | **PATCH** /apis/pool.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepools/{name} | 
 *Kubevirt::DefaultApi* | [**patch_namespaced_virtual_machine_preference**](docs/DefaultApi.md#patch_namespaced_virtual_machine_preference) | **PATCH** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepreferences/{name} | 
 *Kubevirt::DefaultApi* | [**patch_namespaced_virtual_machine_restore**](docs/DefaultApi.md#patch_namespaced_virtual_machine_restore) | **PATCH** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinerestores/{name} | 
 *Kubevirt::DefaultApi* | [**patch_namespaced_virtual_machine_snapshot**](docs/DefaultApi.md#patch_namespaced_virtual_machine_snapshot) | **PATCH** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinesnapshots/{name} | 
@@ -204,7 +204,7 @@ Class | Method | HTTP request | Description
 *Kubevirt::DefaultApi* | [**read_namespaced_virtual_machine_instance_preset**](docs/DefaultApi.md#read_namespaced_virtual_machine_instance_preset) | **GET** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancepresets/{name} | 
 *Kubevirt::DefaultApi* | [**read_namespaced_virtual_machine_instance_replica_set**](docs/DefaultApi.md#read_namespaced_virtual_machine_instance_replica_set) | **GET** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancereplicasets/{name} | 
 *Kubevirt::DefaultApi* | [**read_namespaced_virtual_machine_instancetype**](docs/DefaultApi.md#read_namespaced_virtual_machine_instancetype) | **GET** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachineinstancetypes/{name} | 
-*Kubevirt::DefaultApi* | [**read_namespaced_virtual_machine_pool**](docs/DefaultApi.md#read_namespaced_virtual_machine_pool) | **GET** /apis/pool.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinepools/{name} | 
+*Kubevirt::DefaultApi* | [**read_namespaced_virtual_machine_pool**](docs/DefaultApi.md#read_namespaced_virtual_machine_pool) | **GET** /apis/pool.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepools/{name} | 
 *Kubevirt::DefaultApi* | [**read_namespaced_virtual_machine_preference**](docs/DefaultApi.md#read_namespaced_virtual_machine_preference) | **GET** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepreferences/{name} | 
 *Kubevirt::DefaultApi* | [**read_namespaced_virtual_machine_restore**](docs/DefaultApi.md#read_namespaced_virtual_machine_restore) | **GET** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinerestores/{name} | 
 *Kubevirt::DefaultApi* | [**read_namespaced_virtual_machine_snapshot**](docs/DefaultApi.md#read_namespaced_virtual_machine_snapshot) | **GET** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinesnapshots/{name} | 
@@ -221,7 +221,7 @@ Class | Method | HTTP request | Description
 *Kubevirt::DefaultApi* | [**replace_namespaced_virtual_machine_instance_preset**](docs/DefaultApi.md#replace_namespaced_virtual_machine_instance_preset) | **PUT** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancepresets/{name} | 
 *Kubevirt::DefaultApi* | [**replace_namespaced_virtual_machine_instance_replica_set**](docs/DefaultApi.md#replace_namespaced_virtual_machine_instance_replica_set) | **PUT** /apis/kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstancereplicasets/{name} | 
 *Kubevirt::DefaultApi* | [**replace_namespaced_virtual_machine_instancetype**](docs/DefaultApi.md#replace_namespaced_virtual_machine_instancetype) | **PUT** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachineinstancetypes/{name} | 
-*Kubevirt::DefaultApi* | [**replace_namespaced_virtual_machine_pool**](docs/DefaultApi.md#replace_namespaced_virtual_machine_pool) | **PUT** /apis/pool.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinepools/{name} | 
+*Kubevirt::DefaultApi* | [**replace_namespaced_virtual_machine_pool**](docs/DefaultApi.md#replace_namespaced_virtual_machine_pool) | **PUT** /apis/pool.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepools/{name} | 
 *Kubevirt::DefaultApi* | [**replace_namespaced_virtual_machine_preference**](docs/DefaultApi.md#replace_namespaced_virtual_machine_preference) | **PUT** /apis/instancetype.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepreferences/{name} | 
 *Kubevirt::DefaultApi* | [**replace_namespaced_virtual_machine_restore**](docs/DefaultApi.md#replace_namespaced_virtual_machine_restore) | **PUT** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinerestores/{name} | 
 *Kubevirt::DefaultApi* | [**replace_namespaced_virtual_machine_snapshot**](docs/DefaultApi.md#replace_namespaced_virtual_machine_snapshot) | **PUT** /apis/snapshot.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinesnapshots/{name} | 
@@ -326,7 +326,7 @@ Class | Method | HTTP request | Description
 *Kubevirt::DefaultApi* | [**watch_namespaced_virtual_machine_instance_preset**](docs/DefaultApi.md#watch_namespaced_virtual_machine_instance_preset) | **GET** /apis/kubevirt.io/v1/watch/namespaces/{namespace}/virtualmachineinstancepresets | 
 *Kubevirt::DefaultApi* | [**watch_namespaced_virtual_machine_instance_replica_set**](docs/DefaultApi.md#watch_namespaced_virtual_machine_instance_replica_set) | **GET** /apis/kubevirt.io/v1/watch/namespaces/{namespace}/virtualmachineinstancereplicasets | 
 *Kubevirt::DefaultApi* | [**watch_namespaced_virtual_machine_instancetype**](docs/DefaultApi.md#watch_namespaced_virtual_machine_instancetype) | **GET** /apis/instancetype.kubevirt.io/v1beta1/watch/namespaces/{namespace}/virtualmachineinstancetypes | 
-*Kubevirt::DefaultApi* | [**watch_namespaced_virtual_machine_pool**](docs/DefaultApi.md#watch_namespaced_virtual_machine_pool) | **GET** /apis/pool.kubevirt.io/v1alpha1/watch/namespaces/{namespace}/virtualmachinepools | 
+*Kubevirt::DefaultApi* | [**watch_namespaced_virtual_machine_pool**](docs/DefaultApi.md#watch_namespaced_virtual_machine_pool) | **GET** /apis/pool.kubevirt.io/v1beta1/watch/namespaces/{namespace}/virtualmachinepools | 
 *Kubevirt::DefaultApi* | [**watch_namespaced_virtual_machine_preference**](docs/DefaultApi.md#watch_namespaced_virtual_machine_preference) | **GET** /apis/instancetype.kubevirt.io/v1beta1/watch/namespaces/{namespace}/virtualmachinepreferences | 
 *Kubevirt::DefaultApi* | [**watch_namespaced_virtual_machine_restore**](docs/DefaultApi.md#watch_namespaced_virtual_machine_restore) | **GET** /apis/snapshot.kubevirt.io/v1beta1/watch/namespaces/{namespace}/virtualmachinerestores | 
 *Kubevirt::DefaultApi* | [**watch_namespaced_virtual_machine_snapshot**](docs/DefaultApi.md#watch_namespaced_virtual_machine_snapshot) | **GET** /apis/snapshot.kubevirt.io/v1beta1/watch/namespaces/{namespace}/virtualmachinesnapshots | 
@@ -341,7 +341,7 @@ Class | Method | HTTP request | Description
 *Kubevirt::DefaultApi* | [**watch_virtual_machine_instance_replica_set_list_for_all_namespaces**](docs/DefaultApi.md#watch_virtual_machine_instance_replica_set_list_for_all_namespaces) | **GET** /apis/kubevirt.io/v1/watch/virtualmachineinstancereplicasets | 
 *Kubevirt::DefaultApi* | [**watch_virtual_machine_instancetype_list_for_all_namespaces**](docs/DefaultApi.md#watch_virtual_machine_instancetype_list_for_all_namespaces) | **GET** /apis/instancetype.kubevirt.io/v1beta1/watch/virtualmachineinstancetypes | 
 *Kubevirt::DefaultApi* | [**watch_virtual_machine_list_for_all_namespaces**](docs/DefaultApi.md#watch_virtual_machine_list_for_all_namespaces) | **GET** /apis/kubevirt.io/v1/watch/virtualmachines | 
-*Kubevirt::DefaultApi* | [**watch_virtual_machine_pool_list_for_all_namespaces**](docs/DefaultApi.md#watch_virtual_machine_pool_list_for_all_namespaces) | **GET** /apis/pool.kubevirt.io/v1alpha1/watch/virtualmachinepools | 
+*Kubevirt::DefaultApi* | [**watch_virtual_machine_pool_list_for_all_namespaces**](docs/DefaultApi.md#watch_virtual_machine_pool_list_for_all_namespaces) | **GET** /apis/pool.kubevirt.io/v1beta1/watch/virtualmachinepools | 
 *Kubevirt::DefaultApi* | [**watch_virtual_machine_preference_list_for_all_namespaces**](docs/DefaultApi.md#watch_virtual_machine_preference_list_for_all_namespaces) | **GET** /apis/instancetype.kubevirt.io/v1beta1/watch/virtualmachinepreferences | 
 *Kubevirt::DefaultApi* | [**watch_virtual_machine_restore_list_for_all_namespaces**](docs/DefaultApi.md#watch_virtual_machine_restore_list_for_all_namespaces) | **GET** /apis/snapshot.kubevirt.io/v1beta1/watch/virtualmachinerestores | 
 *Kubevirt::DefaultApi* | [**watch_virtual_machine_snapshot_content_list_for_all_namespaces**](docs/DefaultApi.md#watch_virtual_machine_snapshot_content_list_for_all_namespaces) | **GET** /apis/snapshot.kubevirt.io/v1beta1/watch/virtualmachinesnapshotcontents | 
@@ -582,7 +582,6 @@ Class | Method | HTTP request | Description
  - [Kubevirt::V1VirtualMachineInstanceFileSystemList](docs/V1VirtualMachineInstanceFileSystemList.md)
  - [Kubevirt::V1VirtualMachineInstanceGuestAgentInfo](docs/V1VirtualMachineInstanceGuestAgentInfo.md)
  - [Kubevirt::V1VirtualMachineInstanceGuestOSInfo](docs/V1VirtualMachineInstanceGuestOSInfo.md)
- - [Kubevirt::V1VirtualMachineInstanceGuestOSLoad](docs/V1VirtualMachineInstanceGuestOSLoad.md)
  - [Kubevirt::V1VirtualMachineInstanceGuestOSUser](docs/V1VirtualMachineInstanceGuestOSUser.md)
  - [Kubevirt::V1VirtualMachineInstanceGuestOSUserList](docs/V1VirtualMachineInstanceGuestOSUserList.md)
  - [Kubevirt::V1VirtualMachineInstanceList](docs/V1VirtualMachineInstanceList.md)
@@ -629,21 +628,6 @@ Class | Method | HTTP request | Description
  - [Kubevirt::V1alpha1MigrationPolicyList](docs/V1alpha1MigrationPolicyList.md)
  - [Kubevirt::V1alpha1MigrationPolicySpec](docs/V1alpha1MigrationPolicySpec.md)
  - [Kubevirt::V1alpha1Selectors](docs/V1alpha1Selectors.md)
- - [Kubevirt::V1alpha1VirtualMachinePool](docs/V1alpha1VirtualMachinePool.md)
- - [Kubevirt::V1alpha1VirtualMachinePoolAutohealingStrategy](docs/V1alpha1VirtualMachinePoolAutohealingStrategy.md)
- - [Kubevirt::V1alpha1VirtualMachinePoolCondition](docs/V1alpha1VirtualMachinePoolCondition.md)
- - [Kubevirt::V1alpha1VirtualMachinePoolList](docs/V1alpha1VirtualMachinePoolList.md)
- - [Kubevirt::V1alpha1VirtualMachinePoolNameGeneration](docs/V1alpha1VirtualMachinePoolNameGeneration.md)
- - [Kubevirt::V1alpha1VirtualMachinePoolOpportunisticScaleInStrategy](docs/V1alpha1VirtualMachinePoolOpportunisticScaleInStrategy.md)
- - [Kubevirt::V1alpha1VirtualMachinePoolProactiveScaleInStrategy](docs/V1alpha1VirtualMachinePoolProactiveScaleInStrategy.md)
- - [Kubevirt::V1alpha1VirtualMachinePoolProactiveUpdateStrategy](docs/V1alpha1VirtualMachinePoolProactiveUpdateStrategy.md)
- - [Kubevirt::V1alpha1VirtualMachinePoolScaleInStrategy](docs/V1alpha1VirtualMachinePoolScaleInStrategy.md)
- - [Kubevirt::V1alpha1VirtualMachinePoolSelectionPolicy](docs/V1alpha1VirtualMachinePoolSelectionPolicy.md)
- - [Kubevirt::V1alpha1VirtualMachinePoolSelectors](docs/V1alpha1VirtualMachinePoolSelectors.md)
- - [Kubevirt::V1alpha1VirtualMachinePoolSpec](docs/V1alpha1VirtualMachinePoolSpec.md)
- - [Kubevirt::V1alpha1VirtualMachinePoolStatus](docs/V1alpha1VirtualMachinePoolStatus.md)
- - [Kubevirt::V1alpha1VirtualMachinePoolUpdateStrategy](docs/V1alpha1VirtualMachinePoolUpdateStrategy.md)
- - [Kubevirt::V1alpha1VirtualMachineTemplateSpec](docs/V1alpha1VirtualMachineTemplateSpec.md)
  - [Kubevirt::V1beta1CPUInstancetype](docs/V1beta1CPUInstancetype.md)
  - [Kubevirt::V1beta1CPUPreferenceRequirement](docs/V1beta1CPUPreferenceRequirement.md)
  - [Kubevirt::V1beta1CPUPreferences](docs/V1beta1CPUPreferences.md)
@@ -672,6 +656,7 @@ Class | Method | HTTP request | Description
  - [Kubevirt::V1beta1PlatformOptions](docs/V1beta1PlatformOptions.md)
  - [Kubevirt::V1beta1PreferenceRequirements](docs/V1beta1PreferenceRequirements.md)
  - [Kubevirt::V1beta1SnapshotVolumesLists](docs/V1beta1SnapshotVolumesLists.md)
+ - [Kubevirt::V1beta1SourceIndication](docs/V1beta1SourceIndication.md)
  - [Kubevirt::V1beta1SourceSpec](docs/V1beta1SourceSpec.md)
  - [Kubevirt::V1beta1SpreadOptions](docs/V1beta1SpreadOptions.md)
  - [Kubevirt::V1beta1StorageSpec](docs/V1beta1StorageSpec.md)
@@ -697,6 +682,20 @@ Class | Method | HTTP request | Description
  - [Kubevirt::V1beta1VirtualMachineInstancetype](docs/V1beta1VirtualMachineInstancetype.md)
  - [Kubevirt::V1beta1VirtualMachineInstancetypeList](docs/V1beta1VirtualMachineInstancetypeList.md)
  - [Kubevirt::V1beta1VirtualMachineInstancetypeSpec](docs/V1beta1VirtualMachineInstancetypeSpec.md)
+ - [Kubevirt::V1beta1VirtualMachinePool](docs/V1beta1VirtualMachinePool.md)
+ - [Kubevirt::V1beta1VirtualMachinePoolAutohealingStrategy](docs/V1beta1VirtualMachinePoolAutohealingStrategy.md)
+ - [Kubevirt::V1beta1VirtualMachinePoolCondition](docs/V1beta1VirtualMachinePoolCondition.md)
+ - [Kubevirt::V1beta1VirtualMachinePoolList](docs/V1beta1VirtualMachinePoolList.md)
+ - [Kubevirt::V1beta1VirtualMachinePoolNameGeneration](docs/V1beta1VirtualMachinePoolNameGeneration.md)
+ - [Kubevirt::V1beta1VirtualMachinePoolOpportunisticScaleInStrategy](docs/V1beta1VirtualMachinePoolOpportunisticScaleInStrategy.md)
+ - [Kubevirt::V1beta1VirtualMachinePoolProactiveScaleInStrategy](docs/V1beta1VirtualMachinePoolProactiveScaleInStrategy.md)
+ - [Kubevirt::V1beta1VirtualMachinePoolProactiveUpdateStrategy](docs/V1beta1VirtualMachinePoolProactiveUpdateStrategy.md)
+ - [Kubevirt::V1beta1VirtualMachinePoolScaleInStrategy](docs/V1beta1VirtualMachinePoolScaleInStrategy.md)
+ - [Kubevirt::V1beta1VirtualMachinePoolSelectionPolicy](docs/V1beta1VirtualMachinePoolSelectionPolicy.md)
+ - [Kubevirt::V1beta1VirtualMachinePoolSelectors](docs/V1beta1VirtualMachinePoolSelectors.md)
+ - [Kubevirt::V1beta1VirtualMachinePoolSpec](docs/V1beta1VirtualMachinePoolSpec.md)
+ - [Kubevirt::V1beta1VirtualMachinePoolStatus](docs/V1beta1VirtualMachinePoolStatus.md)
+ - [Kubevirt::V1beta1VirtualMachinePoolUpdateStrategy](docs/V1beta1VirtualMachinePoolUpdateStrategy.md)
  - [Kubevirt::V1beta1VirtualMachinePreference](docs/V1beta1VirtualMachinePreference.md)
  - [Kubevirt::V1beta1VirtualMachinePreferenceList](docs/V1beta1VirtualMachinePreferenceList.md)
  - [Kubevirt::V1beta1VirtualMachinePreferenceSpec](docs/V1beta1VirtualMachinePreferenceSpec.md)
@@ -712,6 +711,7 @@ Class | Method | HTTP request | Description
  - [Kubevirt::V1beta1VirtualMachineSnapshotList](docs/V1beta1VirtualMachineSnapshotList.md)
  - [Kubevirt::V1beta1VirtualMachineSnapshotSpec](docs/V1beta1VirtualMachineSnapshotSpec.md)
  - [Kubevirt::V1beta1VirtualMachineSnapshotStatus](docs/V1beta1VirtualMachineSnapshotStatus.md)
+ - [Kubevirt::V1beta1VirtualMachineTemplateSpec](docs/V1beta1VirtualMachineTemplateSpec.md)
  - [Kubevirt::V1beta1VolumeBackup](docs/V1beta1VolumeBackup.md)
  - [Kubevirt::V1beta1VolumePreferences](docs/V1beta1VolumePreferences.md)
  - [Kubevirt::V1beta1VolumeRestore](docs/V1beta1VolumeRestore.md)

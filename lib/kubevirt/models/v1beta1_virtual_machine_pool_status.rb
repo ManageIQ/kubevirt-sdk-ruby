@@ -14,43 +14,23 @@ require 'date'
 require 'time'
 
 module Kubevirt
-  # VirtualMachineSnapshotStatus is the status for a VirtualMachineSnapshot resource
-  class V1beta1VirtualMachineSnapshotStatus < ApiModelBase
+  class V1beta1VirtualMachinePoolStatus < ApiModelBase
     attr_accessor :conditions
 
-    # Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers.
-    attr_accessor :creation_time
+    # Canonical form of the label selector for HPA which consumes it through the scale subresource.
+    attr_accessor :label_selector
 
-    attr_accessor :error
+    attr_accessor :ready_replicas
 
-    # Deprecated: Use SourceIndications instead. This field will be removed in a future version.
-    attr_accessor :indications
-
-    attr_accessor :phase
-
-    attr_accessor :ready_to_use
-
-    attr_accessor :snapshot_volumes
-
-    attr_accessor :source_indications
-
-    attr_accessor :source_uid
-
-    attr_accessor :virtual_machine_snapshot_content_name
+    attr_accessor :replicas
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'conditions' => :'conditions',
-        :'creation_time' => :'creationTime',
-        :'error' => :'error',
-        :'indications' => :'indications',
-        :'phase' => :'phase',
-        :'ready_to_use' => :'readyToUse',
-        :'snapshot_volumes' => :'snapshotVolumes',
-        :'source_indications' => :'sourceIndications',
-        :'source_uid' => :'sourceUID',
-        :'virtual_machine_snapshot_content_name' => :'virtualMachineSnapshotContentName'
+        :'label_selector' => :'labelSelector',
+        :'ready_replicas' => :'readyReplicas',
+        :'replicas' => :'replicas'
       }
     end
 
@@ -67,16 +47,10 @@ module Kubevirt
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'conditions' => :'Array<V1beta1Condition>',
-        :'creation_time' => :'Time',
-        :'error' => :'V1beta1Error',
-        :'indications' => :'Array<String>',
-        :'phase' => :'String',
-        :'ready_to_use' => :'Boolean',
-        :'snapshot_volumes' => :'V1beta1SnapshotVolumesLists',
-        :'source_indications' => :'Array<V1beta1SourceIndication>',
-        :'source_uid' => :'String',
-        :'virtual_machine_snapshot_content_name' => :'String'
+        :'conditions' => :'Array<V1beta1VirtualMachinePoolCondition>',
+        :'label_selector' => :'String',
+        :'ready_replicas' => :'Integer',
+        :'replicas' => :'Integer'
       }
     end
 
@@ -90,14 +64,14 @@ module Kubevirt
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1beta1VirtualMachineSnapshotStatus` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1beta1VirtualMachinePoolStatus` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1beta1VirtualMachineSnapshotStatus`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1beta1VirtualMachinePoolStatus`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -108,44 +82,16 @@ module Kubevirt
         end
       end
 
-      if attributes.key?(:'creation_time')
-        self.creation_time = attributes[:'creation_time']
+      if attributes.key?(:'label_selector')
+        self.label_selector = attributes[:'label_selector']
       end
 
-      if attributes.key?(:'error')
-        self.error = attributes[:'error']
+      if attributes.key?(:'ready_replicas')
+        self.ready_replicas = attributes[:'ready_replicas']
       end
 
-      if attributes.key?(:'indications')
-        if (value = attributes[:'indications']).is_a?(Array)
-          self.indications = value
-        end
-      end
-
-      if attributes.key?(:'phase')
-        self.phase = attributes[:'phase']
-      end
-
-      if attributes.key?(:'ready_to_use')
-        self.ready_to_use = attributes[:'ready_to_use']
-      end
-
-      if attributes.key?(:'snapshot_volumes')
-        self.snapshot_volumes = attributes[:'snapshot_volumes']
-      end
-
-      if attributes.key?(:'source_indications')
-        if (value = attributes[:'source_indications']).is_a?(Array)
-          self.source_indications = value
-        end
-      end
-
-      if attributes.key?(:'source_uid')
-        self.source_uid = attributes[:'source_uid']
-      end
-
-      if attributes.key?(:'virtual_machine_snapshot_content_name')
-        self.virtual_machine_snapshot_content_name = attributes[:'virtual_machine_snapshot_content_name']
+      if attributes.key?(:'replicas')
+        self.replicas = attributes[:'replicas']
       end
     end
 
@@ -170,15 +116,9 @@ module Kubevirt
       return true if self.equal?(o)
       self.class == o.class &&
           conditions == o.conditions &&
-          creation_time == o.creation_time &&
-          error == o.error &&
-          indications == o.indications &&
-          phase == o.phase &&
-          ready_to_use == o.ready_to_use &&
-          snapshot_volumes == o.snapshot_volumes &&
-          source_indications == o.source_indications &&
-          source_uid == o.source_uid &&
-          virtual_machine_snapshot_content_name == o.virtual_machine_snapshot_content_name
+          label_selector == o.label_selector &&
+          ready_replicas == o.ready_replicas &&
+          replicas == o.replicas
     end
 
     # @see the `==` method
@@ -190,7 +130,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [conditions, creation_time, error, indications, phase, ready_to_use, snapshot_volumes, source_indications, source_uid, virtual_machine_snapshot_content_name].hash
+      [conditions, label_selector, ready_replicas, replicas].hash
     end
 
     # Builds the object from hash

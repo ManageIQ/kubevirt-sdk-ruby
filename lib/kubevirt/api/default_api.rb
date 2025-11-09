@@ -663,9 +663,9 @@ module Kubevirt
 
     # Create a VirtualMachinePool object.
     # @param namespace [String] Object name and auth scope, such as for teams and projects
-    # @param body [V1alpha1VirtualMachinePool] 
+    # @param body [V1beta1VirtualMachinePool] 
     # @param [Hash] opts the optional parameters
-    # @return [V1alpha1VirtualMachinePool]
+    # @return [V1beta1VirtualMachinePool]
     def create_namespaced_virtual_machine_pool(namespace, body, opts = {})
       data, _status_code, _headers = create_namespaced_virtual_machine_pool_with_http_info(namespace, body, opts)
       data
@@ -673,9 +673,9 @@ module Kubevirt
 
     # Create a VirtualMachinePool object.
     # @param namespace [String] Object name and auth scope, such as for teams and projects
-    # @param body [V1alpha1VirtualMachinePool] 
+    # @param body [V1beta1VirtualMachinePool] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(V1alpha1VirtualMachinePool, Integer, Hash)>] V1alpha1VirtualMachinePool data, response status code and response headers
+    # @return [Array<(V1beta1VirtualMachinePool, Integer, Hash)>] V1beta1VirtualMachinePool data, response status code and response headers
     def create_namespaced_virtual_machine_pool_with_http_info(namespace, body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.create_namespaced_virtual_machine_pool ...'
@@ -689,7 +689,7 @@ module Kubevirt
         fail ArgumentError, "Missing the required parameter 'body' when calling DefaultApi.create_namespaced_virtual_machine_pool"
       end
       # resource path
-      local_var_path = '/apis/pool.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinepools'.sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
+      local_var_path = '/apis/pool.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepools'.sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -711,7 +711,7 @@ module Kubevirt
       post_body = opts[:debug_body] || @api_client.object_to_http_body(body)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'V1alpha1VirtualMachinePool'
+      return_type = opts[:debug_return_type] || 'V1beta1VirtualMachinePool'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -1962,7 +1962,7 @@ module Kubevirt
         @api_client.config.logger.debug 'Calling API: DefaultApi.delete_collection_namespaced_virtual_machine_pool ...'
       end
       # resource path
-      local_var_path = '/apis/pool.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinepools'
+      local_var_path = '/apis/pool.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepools'
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -3379,7 +3379,7 @@ module Kubevirt
         fail ArgumentError, "Missing the required parameter 'body' when calling DefaultApi.delete_namespaced_virtual_machine_pool"
       end
       # resource path
-      local_var_path = '/apis/pool.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinepools/{name}'.sub('{' + 'name' + '}', CGI.escape(name.to_s)).sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
+      local_var_path = '/apis/pool.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepools/{name}'.sub('{' + 'name' + '}', CGI.escape(name.to_s)).sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -4839,20 +4839,20 @@ module Kubevirt
     # Get KubeVirt API Resources
     # @param [Hash] opts the optional parameters
     # @return [K8sIoApimachineryPkgApisMetaV1APIResourceList]
-    def get_api_resources_pool_kubevirt_io_v1alpha1(opts = {})
-      data, _status_code, _headers = get_api_resources_pool_kubevirt_io_v1alpha1_with_http_info(opts)
+    def get_api_resources_pool_kubevirt_io_v1beta1(opts = {})
+      data, _status_code, _headers = get_api_resources_pool_kubevirt_io_v1beta1_with_http_info(opts)
       data
     end
 
     # Get KubeVirt API Resources
     # @param [Hash] opts the optional parameters
     # @return [Array<(K8sIoApimachineryPkgApisMetaV1APIResourceList, Integer, Hash)>] K8sIoApimachineryPkgApisMetaV1APIResourceList data, response status code and response headers
-    def get_api_resources_pool_kubevirt_io_v1alpha1_with_http_info(opts = {})
+    def get_api_resources_pool_kubevirt_io_v1beta1_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DefaultApi.get_api_resources_pool_kubevirt_io_v1alpha1 ...'
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_api_resources_pool_kubevirt_io_v1beta1 ...'
       end
       # resource path
-      local_var_path = '/apis/pool.kubevirt.io/v1alpha1/'
+      local_var_path = '/apis/pool.kubevirt.io/v1beta1/'
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -4875,7 +4875,7 @@ module Kubevirt
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"DefaultApi.get_api_resources_pool_kubevirt_io_v1alpha1",
+        :operation => :"DefaultApi.get_api_resources_pool_kubevirt_io_v1beta1",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -4886,7 +4886,7 @@ module Kubevirt
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DefaultApi#get_api_resources_pool_kubevirt_io_v1alpha1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DefaultApi#get_api_resources_pool_kubevirt_io_v1beta1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -6009,7 +6009,7 @@ module Kubevirt
     # @option opts [String] :resource_version When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
     # @option opts [Integer] :timeout_seconds TimeoutSeconds for the list/watch call.
     # @option opts [Boolean] :watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-    # @return [V1alpha1VirtualMachinePoolList]
+    # @return [V1beta1VirtualMachinePoolList]
     def list_namespaced_virtual_machine_pool(namespace, opts = {})
       data, _status_code, _headers = list_namespaced_virtual_machine_pool_with_http_info(namespace, opts)
       data
@@ -6026,7 +6026,7 @@ module Kubevirt
     # @option opts [String] :resource_version When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
     # @option opts [Integer] :timeout_seconds TimeoutSeconds for the list/watch call.
     # @option opts [Boolean] :watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-    # @return [Array<(V1alpha1VirtualMachinePoolList, Integer, Hash)>] V1alpha1VirtualMachinePoolList data, response status code and response headers
+    # @return [Array<(V1beta1VirtualMachinePoolList, Integer, Hash)>] V1beta1VirtualMachinePoolList data, response status code and response headers
     def list_namespaced_virtual_machine_pool_with_http_info(namespace, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.list_namespaced_virtual_machine_pool ...'
@@ -6036,7 +6036,7 @@ module Kubevirt
         fail ArgumentError, "Missing the required parameter 'namespace' when calling DefaultApi.list_namespaced_virtual_machine_pool"
       end
       # resource path
-      local_var_path = '/apis/pool.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinepools'.sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
+      local_var_path = '/apis/pool.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepools'.sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -6061,7 +6061,7 @@ module Kubevirt
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'V1alpha1VirtualMachinePoolList'
+      return_type = opts[:debug_return_type] || 'V1beta1VirtualMachinePoolList'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -7223,7 +7223,7 @@ module Kubevirt
     # @option opts [String] :resource_version When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
     # @option opts [Integer] :timeout_seconds TimeoutSeconds for the list/watch call.
     # @option opts [Boolean] :watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-    # @return [V1alpha1VirtualMachinePoolList]
+    # @return [V1beta1VirtualMachinePoolList]
     def list_virtual_machine_pool_for_all_namespaces(opts = {})
       data, _status_code, _headers = list_virtual_machine_pool_for_all_namespaces_with_http_info(opts)
       data
@@ -7239,13 +7239,13 @@ module Kubevirt
     # @option opts [String] :resource_version When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
     # @option opts [Integer] :timeout_seconds TimeoutSeconds for the list/watch call.
     # @option opts [Boolean] :watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-    # @return [Array<(V1alpha1VirtualMachinePoolList, Integer, Hash)>] V1alpha1VirtualMachinePoolList data, response status code and response headers
+    # @return [Array<(V1beta1VirtualMachinePoolList, Integer, Hash)>] V1beta1VirtualMachinePoolList data, response status code and response headers
     def list_virtual_machine_pool_for_all_namespaces_with_http_info(opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.list_virtual_machine_pool_for_all_namespaces ...'
       end
       # resource path
-      local_var_path = '/apis/pool.kubevirt.io/v1alpha1/virtualmachinepools'
+      local_var_path = '/apis/pool.kubevirt.io/v1beta1/virtualmachinepools'
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -7270,7 +7270,7 @@ module Kubevirt
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'V1alpha1VirtualMachinePoolList'
+      return_type = opts[:debug_return_type] || 'V1beta1VirtualMachinePoolList'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -8309,7 +8309,7 @@ module Kubevirt
     # @param namespace [String] Object name and auth scope, such as for teams and projects
     # @param body [Object] 
     # @param [Hash] opts the optional parameters
-    # @return [V1alpha1VirtualMachinePool]
+    # @return [V1beta1VirtualMachinePool]
     def patch_namespaced_virtual_machine_pool(name, namespace, body, opts = {})
       data, _status_code, _headers = patch_namespaced_virtual_machine_pool_with_http_info(name, namespace, body, opts)
       data
@@ -8320,7 +8320,7 @@ module Kubevirt
     # @param namespace [String] Object name and auth scope, such as for teams and projects
     # @param body [Object] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(V1alpha1VirtualMachinePool, Integer, Hash)>] V1alpha1VirtualMachinePool data, response status code and response headers
+    # @return [Array<(V1beta1VirtualMachinePool, Integer, Hash)>] V1beta1VirtualMachinePool data, response status code and response headers
     def patch_namespaced_virtual_machine_pool_with_http_info(name, namespace, body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.patch_namespaced_virtual_machine_pool ...'
@@ -8338,7 +8338,7 @@ module Kubevirt
         fail ArgumentError, "Missing the required parameter 'body' when calling DefaultApi.patch_namespaced_virtual_machine_pool"
       end
       # resource path
-      local_var_path = '/apis/pool.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinepools/{name}'.sub('{' + 'name' + '}', CGI.escape(name.to_s)).sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
+      local_var_path = '/apis/pool.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepools/{name}'.sub('{' + 'name' + '}', CGI.escape(name.to_s)).sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -8360,7 +8360,7 @@ module Kubevirt
       post_body = opts[:debug_body] || @api_client.object_to_http_body(body)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'V1alpha1VirtualMachinePool'
+      return_type = opts[:debug_return_type] || 'V1beta1VirtualMachinePool'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -9567,7 +9567,7 @@ module Kubevirt
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :exact Should the export be exact. Exact export maintains cluster-specific fields like &#39;Namespace&#39;.
     # @option opts [Boolean] :export Should this value be exported. Export strips fields that a user can not specify.
-    # @return [V1alpha1VirtualMachinePool]
+    # @return [V1beta1VirtualMachinePool]
     def read_namespaced_virtual_machine_pool(name, namespace, opts = {})
       data, _status_code, _headers = read_namespaced_virtual_machine_pool_with_http_info(name, namespace, opts)
       data
@@ -9579,7 +9579,7 @@ module Kubevirt
     # @param [Hash] opts the optional parameters
     # @option opts [Boolean] :exact Should the export be exact. Exact export maintains cluster-specific fields like &#39;Namespace&#39;.
     # @option opts [Boolean] :export Should this value be exported. Export strips fields that a user can not specify.
-    # @return [Array<(V1alpha1VirtualMachinePool, Integer, Hash)>] V1alpha1VirtualMachinePool data, response status code and response headers
+    # @return [Array<(V1beta1VirtualMachinePool, Integer, Hash)>] V1beta1VirtualMachinePool data, response status code and response headers
     def read_namespaced_virtual_machine_pool_with_http_info(name, namespace, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.read_namespaced_virtual_machine_pool ...'
@@ -9593,7 +9593,7 @@ module Kubevirt
         fail ArgumentError, "Missing the required parameter 'namespace' when calling DefaultApi.read_namespaced_virtual_machine_pool"
       end
       # resource path
-      local_var_path = '/apis/pool.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinepools/{name}'.sub('{' + 'name' + '}', CGI.escape(name.to_s)).sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
+      local_var_path = '/apis/pool.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepools/{name}'.sub('{' + 'name' + '}', CGI.escape(name.to_s)).sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -9612,7 +9612,7 @@ module Kubevirt
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'V1alpha1VirtualMachinePool'
+      return_type = opts[:debug_return_type] || 'V1beta1VirtualMachinePool'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -10826,9 +10826,9 @@ module Kubevirt
     # Update a VirtualMachinePool object.
     # @param name [String] Name of the resource
     # @param namespace [String] Object name and auth scope, such as for teams and projects
-    # @param body [V1alpha1VirtualMachinePool] 
+    # @param body [V1beta1VirtualMachinePool] 
     # @param [Hash] opts the optional parameters
-    # @return [V1alpha1VirtualMachinePool]
+    # @return [V1beta1VirtualMachinePool]
     def replace_namespaced_virtual_machine_pool(name, namespace, body, opts = {})
       data, _status_code, _headers = replace_namespaced_virtual_machine_pool_with_http_info(name, namespace, body, opts)
       data
@@ -10837,9 +10837,9 @@ module Kubevirt
     # Update a VirtualMachinePool object.
     # @param name [String] Name of the resource
     # @param namespace [String] Object name and auth scope, such as for teams and projects
-    # @param body [V1alpha1VirtualMachinePool] 
+    # @param body [V1beta1VirtualMachinePool] 
     # @param [Hash] opts the optional parameters
-    # @return [Array<(V1alpha1VirtualMachinePool, Integer, Hash)>] V1alpha1VirtualMachinePool data, response status code and response headers
+    # @return [Array<(V1beta1VirtualMachinePool, Integer, Hash)>] V1beta1VirtualMachinePool data, response status code and response headers
     def replace_namespaced_virtual_machine_pool_with_http_info(name, namespace, body, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: DefaultApi.replace_namespaced_virtual_machine_pool ...'
@@ -10857,7 +10857,7 @@ module Kubevirt
         fail ArgumentError, "Missing the required parameter 'body' when calling DefaultApi.replace_namespaced_virtual_machine_pool"
       end
       # resource path
-      local_var_path = '/apis/pool.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinepools/{name}'.sub('{' + 'name' + '}', CGI.escape(name.to_s)).sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
+      local_var_path = '/apis/pool.kubevirt.io/v1beta1/namespaces/{namespace}/virtualmachinepools/{name}'.sub('{' + 'name' + '}', CGI.escape(name.to_s)).sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -10879,7 +10879,7 @@ module Kubevirt
       post_body = opts[:debug_body] || @api_client.object_to_http_body(body)
 
       # return_type
-      return_type = opts[:debug_return_type] || 'V1alpha1VirtualMachinePool'
+      return_type = opts[:debug_return_type] || 'V1beta1VirtualMachinePool'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || []
@@ -18170,7 +18170,7 @@ module Kubevirt
         fail ArgumentError, "Missing the required parameter 'namespace' when calling DefaultApi.watch_namespaced_virtual_machine_pool"
       end
       # resource path
-      local_var_path = '/apis/pool.kubevirt.io/v1alpha1/watch/namespaces/{namespace}/virtualmachinepools'.sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
+      local_var_path = '/apis/pool.kubevirt.io/v1beta1/watch/namespaces/{namespace}/virtualmachinepools'.sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -19379,7 +19379,7 @@ module Kubevirt
         @api_client.config.logger.debug 'Calling API: DefaultApi.watch_virtual_machine_pool_list_for_all_namespaces ...'
       end
       # resource path
-      local_var_path = '/apis/pool.kubevirt.io/v1alpha1/watch/virtualmachinepools'
+      local_var_path = '/apis/pool.kubevirt.io/v1beta1/watch/virtualmachinepools'
 
       # query parameters
       query_params = opts[:query_params] || {}

@@ -14,49 +14,25 @@ require 'date'
 require 'time'
 
 module Kubevirt
-  # VirtualMachineInstanceGuestAgentInfo represents information from the installed guest agent
-  class V1VirtualMachineInstanceGuestAgentInfo < ApiModelBase
+  # VirtualMachinePoolList is a list of VirtualMachinePool resources.
+  class V1beta1VirtualMachinePoolList < ApiModelBase
     # APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
     attr_accessor :api_version
 
-    # FSFreezeStatus indicates whether a freeze operation was requested for the guest filesystem. It will be set to \"frozen\" if the request was made, or unset otherwise. This does not reflect the actual state of the guest filesystem.
-    attr_accessor :fs_freeze_status
-
-    attr_accessor :fs_info
-
-    # GAVersion is a version of currently installed guest agent
-    attr_accessor :guest_agent_version
-
-    # Hostname represents FQDN of a guest
-    attr_accessor :hostname
+    attr_accessor :items
 
     # Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
     attr_accessor :kind
 
-    attr_accessor :os
-
-    # Return command list the guest agent supports
-    attr_accessor :supported_commands
-
-    # Timezone is guest os current timezone
-    attr_accessor :timezone
-
-    # UserList is a list of active guest OS users
-    attr_accessor :user_list
+    attr_accessor :metadata
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'api_version' => :'apiVersion',
-        :'fs_freeze_status' => :'fsFreezeStatus',
-        :'fs_info' => :'fsInfo',
-        :'guest_agent_version' => :'guestAgentVersion',
-        :'hostname' => :'hostname',
+        :'items' => :'items',
         :'kind' => :'kind',
-        :'os' => :'os',
-        :'supported_commands' => :'supportedCommands',
-        :'timezone' => :'timezone',
-        :'user_list' => :'userList'
+        :'metadata' => :'metadata'
       }
     end
 
@@ -74,15 +50,9 @@ module Kubevirt
     def self.openapi_types
       {
         :'api_version' => :'String',
-        :'fs_freeze_status' => :'String',
-        :'fs_info' => :'V1VirtualMachineInstanceFileSystemInfo',
-        :'guest_agent_version' => :'String',
-        :'hostname' => :'String',
+        :'items' => :'Array<V1beta1VirtualMachinePool>',
         :'kind' => :'String',
-        :'os' => :'V1VirtualMachineInstanceGuestOSInfo',
-        :'supported_commands' => :'Array<V1GuestAgentCommandInfo>',
-        :'timezone' => :'String',
-        :'user_list' => :'Array<V1VirtualMachineInstanceGuestOSUser>'
+        :'metadata' => :'K8sIoApimachineryPkgApisMetaV1ListMeta'
       }
     end
 
@@ -96,14 +66,14 @@ module Kubevirt
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1VirtualMachineInstanceGuestAgentInfo` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1beta1VirtualMachinePoolList` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1VirtualMachineInstanceGuestAgentInfo`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1beta1VirtualMachinePoolList`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -112,44 +82,20 @@ module Kubevirt
         self.api_version = attributes[:'api_version']
       end
 
-      if attributes.key?(:'fs_freeze_status')
-        self.fs_freeze_status = attributes[:'fs_freeze_status']
-      end
-
-      if attributes.key?(:'fs_info')
-        self.fs_info = attributes[:'fs_info']
-      end
-
-      if attributes.key?(:'guest_agent_version')
-        self.guest_agent_version = attributes[:'guest_agent_version']
-      end
-
-      if attributes.key?(:'hostname')
-        self.hostname = attributes[:'hostname']
+      if attributes.key?(:'items')
+        if (value = attributes[:'items']).is_a?(Array)
+          self.items = value
+        end
+      else
+        self.items = nil
       end
 
       if attributes.key?(:'kind')
         self.kind = attributes[:'kind']
       end
 
-      if attributes.key?(:'os')
-        self.os = attributes[:'os']
-      end
-
-      if attributes.key?(:'supported_commands')
-        if (value = attributes[:'supported_commands']).is_a?(Array)
-          self.supported_commands = value
-        end
-      end
-
-      if attributes.key?(:'timezone')
-        self.timezone = attributes[:'timezone']
-      end
-
-      if attributes.key?(:'user_list')
-        if (value = attributes[:'user_list']).is_a?(Array)
-          self.user_list = value
-        end
+      if attributes.key?(:'metadata')
+        self.metadata = attributes[:'metadata']
       end
     end
 
@@ -158,6 +104,10 @@ module Kubevirt
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
+      if @items.nil?
+        invalid_properties.push('invalid value for "items", items cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -165,7 +115,18 @@ module Kubevirt
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      return false if @items.nil?
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] items Value to be assigned
+    def items=(items)
+      if items.nil?
+        fail ArgumentError, 'items cannot be nil'
+      end
+
+      @items = items
     end
 
     # Checks equality by comparing each attribute.
@@ -174,15 +135,9 @@ module Kubevirt
       return true if self.equal?(o)
       self.class == o.class &&
           api_version == o.api_version &&
-          fs_freeze_status == o.fs_freeze_status &&
-          fs_info == o.fs_info &&
-          guest_agent_version == o.guest_agent_version &&
-          hostname == o.hostname &&
+          items == o.items &&
           kind == o.kind &&
-          os == o.os &&
-          supported_commands == o.supported_commands &&
-          timezone == o.timezone &&
-          user_list == o.user_list
+          metadata == o.metadata
     end
 
     # @see the `==` method
@@ -194,7 +149,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [api_version, fs_freeze_status, fs_info, guest_agent_version, hostname, kind, os, supported_commands, timezone, user_list].hash
+      [api_version, items, kind, metadata].hash
     end
 
     # Builds the object from hash
