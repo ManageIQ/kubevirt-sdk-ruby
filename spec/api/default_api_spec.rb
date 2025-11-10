@@ -144,7 +144,7 @@ describe 'DefaultApi' do
   # @param namespace Object name and auth scope, such as for teams and projects
   # @param body 
   # @param [Hash] opts the optional parameters
-  # @return [V1alpha1VirtualMachinePool]
+  # @return [V1beta1VirtualMachinePool]
   describe 'create_namespaced_virtual_machine_pool test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -955,11 +955,11 @@ describe 'DefaultApi' do
     end
   end
 
-  # unit tests for get_api_resources_pool_kubevirt_io_v1alpha1
+  # unit tests for get_api_resources_pool_kubevirt_io_v1beta1
   # Get KubeVirt API Resources
   # @param [Hash] opts the optional parameters
   # @return [K8sIoApimachineryPkgApisMetaV1APIResourceList]
-  describe 'get_api_resources_pool_kubevirt_io_v1alpha1 test' do
+  describe 'get_api_resources_pool_kubevirt_io_v1beta1 test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
@@ -1215,7 +1215,7 @@ describe 'DefaultApi' do
   # @option opts [String] :resource_version When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
   # @option opts [Integer] :timeout_seconds TimeoutSeconds for the list/watch call.
   # @option opts [Boolean] :watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-  # @return [V1alpha1VirtualMachinePoolList]
+  # @return [V1beta1VirtualMachinePoolList]
   describe 'list_namespaced_virtual_machine_pool test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1489,7 +1489,7 @@ describe 'DefaultApi' do
   # @option opts [String] :resource_version When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
   # @option opts [Integer] :timeout_seconds TimeoutSeconds for the list/watch call.
   # @option opts [Boolean] :watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
-  # @return [V1alpha1VirtualMachinePoolList]
+  # @return [V1beta1VirtualMachinePoolList]
   describe 'list_virtual_machine_pool_for_all_namespaces test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1690,7 +1690,7 @@ describe 'DefaultApi' do
   # @param namespace Object name and auth scope, such as for teams and projects
   # @param body 
   # @param [Hash] opts the optional parameters
-  # @return [V1alpha1VirtualMachinePool]
+  # @return [V1beta1VirtualMachinePool]
   describe 'patch_namespaced_virtual_machine_pool test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -1917,7 +1917,7 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Boolean] :exact Should the export be exact. Exact export maintains cluster-specific fields like &#39;Namespace&#39;.
   # @option opts [Boolean] :export Should this value be exported. Export strips fields that a user can not specify.
-  # @return [V1alpha1VirtualMachinePool]
+  # @return [V1beta1VirtualMachinePool]
   describe 'read_namespaced_virtual_machine_pool test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -2141,7 +2141,7 @@ describe 'DefaultApi' do
   # @param namespace Object name and auth scope, such as for teams and projects
   # @param body 
   # @param [Hash] opts the optional parameters
-  # @return [V1alpha1VirtualMachinePool]
+  # @return [V1beta1VirtualMachinePool]
   describe 'replace_namespaced_virtual_machine_pool test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
