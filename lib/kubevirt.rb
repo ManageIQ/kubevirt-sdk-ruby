@@ -118,6 +118,7 @@ Kubevirt.autoload :V1DownwardAPIVolumeSource, 'kubevirt/models/v1_downward_api_v
 Kubevirt.autoload :V1EFI, 'kubevirt/models/v1_efi'
 Kubevirt.autoload :V1EmptyDiskSource, 'kubevirt/models/v1_empty_disk_source'
 Kubevirt.autoload :V1EphemeralVolumeSource, 'kubevirt/models/v1_ephemeral_volume_source'
+Kubevirt.autoload :V1EvacuateCancelOptions, 'kubevirt/models/v1_evacuate_cancel_options'
 Kubevirt.autoload :V1FeatureAPIC, 'kubevirt/models/v1_feature_apic'
 Kubevirt.autoload :V1FeatureHyperv, 'kubevirt/models/v1_feature_hyperv'
 Kubevirt.autoload :V1FeatureKVM, 'kubevirt/models/v1_feature_kvm'

@@ -103,6 +103,7 @@ docs/V1DownwardAPIVolumeSource.md
 docs/V1EFI.md
 docs/V1EmptyDiskSource.md
 docs/V1EphemeralVolumeSource.md
+docs/V1EvacuateCancelOptions.md
 docs/V1FeatureAPIC.md
 docs/V1FeatureHyperv.md
 docs/V1FeatureKVM.md
@@ -478,6 +479,7 @@ lib/kubevirt/models/v1_downward_api_volume_source.rb
 lib/kubevirt/models/v1_efi.rb
 lib/kubevirt/models/v1_empty_disk_source.rb
 lib/kubevirt/models/v1_ephemeral_volume_source.rb
+lib/kubevirt/models/v1_evacuate_cancel_options.rb
 lib/kubevirt/models/v1_feature_apic.rb
 lib/kubevirt/models/v1_feature_hyperv.rb
 lib/kubevirt/models/v1_feature_kvm.rb
@@ -847,6 +849,7 @@ spec/models/v1_downward_api_volume_source_spec.rb
 spec/models/v1_efi_spec.rb
 spec/models/v1_empty_disk_source_spec.rb
 spec/models/v1_ephemeral_volume_source_spec.rb
+spec/models/v1_evacuate_cancel_options_spec.rb
 spec/models/v1_feature_apic_spec.rb
 spec/models/v1_feature_hyperv_spec.rb
 spec/models/v1_feature_kvm_spec.rb
