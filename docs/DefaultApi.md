@@ -55,7 +55,7 @@ All URIs are relative to *http://localhost*
 | [**delete_virtual_machine_clone**](DefaultApi.md#delete_virtual_machine_clone) | **DELETE** /apis/clone.kubevirt.io/v1beta1/virtualmachineclones/{name} |  |
 | [**delete_virtual_machine_cluster_instancetype**](DefaultApi.md#delete_virtual_machine_cluster_instancetype) | **DELETE** /apis/instancetype.kubevirt.io/v1beta1/virtualmachineclusterinstancetypes/{name} |  |
 | [**delete_virtual_machine_cluster_preference**](DefaultApi.md#delete_virtual_machine_cluster_preference) | **DELETE** /apis/instancetype.kubevirt.io/v1beta1/virtualmachineclusterpreferences/{name} |  |
-| [**func13**](DefaultApi.md#func13) | **GET** /healthz |  |
+| [**func15**](DefaultApi.md#func15) | **GET** /healthz |  |
 | [**func6**](DefaultApi.md#func6) | **GET** /openapi/v2 |  |
 | [**get_api_group_clone_kubevirt_io**](DefaultApi.md#get_api_group_clone_kubevirt_io) | **GET** /apis/clone.kubevirt.io/ |  |
 | [**get_api_group_export_kubevirt_io**](DefaultApi.md#get_api_group_export_kubevirt_io) | **GET** /apis/export.kubevirt.io/ |  |
@@ -218,12 +218,14 @@ All URIs are relative to *http://localhost*
 | [**v1alpha3stop_cluster_profiler**](DefaultApi.md#v1alpha3stop_cluster_profiler) | **GET** /apis/subresources.kubevirt.io/v1alpha3/stop-cluster-profiler |  |
 | [**v1alpha3usbredir**](DefaultApi.md#v1alpha3usbredir) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/usbredir |  |
 | [**v1alpha3vm_addvolume**](DefaultApi.md#v1alpha3vm_addvolume) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/addvolume |  |
+| [**v1alpha3vm_evacuatecancel**](DefaultApi.md#v1alpha3vm_evacuatecancel) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/evacuate/cancel |  |
 | [**v1alpha3vm_expand_spec**](DefaultApi.md#v1alpha3vm_expand_spec) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/expand-spec |  |
 | [**v1alpha3vm_objectgraph**](DefaultApi.md#v1alpha3vm_objectgraph) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/objectgraph |  |
 | [**v1alpha3vm_port_forward**](DefaultApi.md#v1alpha3vm_port_forward) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/portforward/{port} |  |
 | [**v1alpha3vm_port_forward_with_protocol**](DefaultApi.md#v1alpha3vm_port_forward_with_protocol) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/portforward/{port}/{protocol} |  |
 | [**v1alpha3vm_removevolume**](DefaultApi.md#v1alpha3vm_removevolume) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/removevolume |  |
 | [**v1alpha3vmi_addvolume**](DefaultApi.md#v1alpha3vmi_addvolume) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/addvolume |  |
+| [**v1alpha3vmi_evacuatecancel**](DefaultApi.md#v1alpha3vmi_evacuatecancel) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/evacuate/cancel |  |
 | [**v1alpha3vmi_objectgraph**](DefaultApi.md#v1alpha3vmi_objectgraph) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/objectgraph |  |
 | [**v1alpha3vmi_port_forward**](DefaultApi.md#v1alpha3vmi_port_forward) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/portforward/{port} |  |
 | [**v1alpha3vmi_port_forward_with_protocol**](DefaultApi.md#v1alpha3vmi_port_forward_with_protocol) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/portforward/{port}/{protocol} |  |
@@ -234,12 +236,14 @@ All URIs are relative to *http://localhost*
 | [**v1stop_cluster_profiler**](DefaultApi.md#v1stop_cluster_profiler) | **GET** /apis/subresources.kubevirt.io/v1/stop-cluster-profiler |  |
 | [**v1usbredir**](DefaultApi.md#v1usbredir) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/usbredir |  |
 | [**v1vm_addvolume**](DefaultApi.md#v1vm_addvolume) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/addvolume |  |
+| [**v1vm_evacuatecancel**](DefaultApi.md#v1vm_evacuatecancel) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/evacuate/cancel |  |
 | [**v1vm_expand_spec**](DefaultApi.md#v1vm_expand_spec) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/expand-spec |  |
 | [**v1vm_objectgraph**](DefaultApi.md#v1vm_objectgraph) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/objectgraph |  |
 | [**v1vm_port_forward**](DefaultApi.md#v1vm_port_forward) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/portforward/{port} |  |
 | [**v1vm_port_forward_with_protocol**](DefaultApi.md#v1vm_port_forward_with_protocol) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/portforward/{port}/{protocol} |  |
 | [**v1vm_removevolume**](DefaultApi.md#v1vm_removevolume) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/removevolume |  |
 | [**v1vmi_addvolume**](DefaultApi.md#v1vmi_addvolume) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/addvolume |  |
+| [**v1vmi_evacuatecancel**](DefaultApi.md#v1vmi_evacuatecancel) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/evacuate/cancel |  |
 | [**v1vmi_objectgraph**](DefaultApi.md#v1vmi_objectgraph) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/objectgraph |  |
 | [**v1vmi_port_forward**](DefaultApi.md#v1vmi_port_forward) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/portforward/{port} |  |
 | [**v1vmi_port_forward_with_protocol**](DefaultApi.md#v1vmi_port_forward_with_protocol) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/portforward/{port}/{protocol} |  |
@@ -4034,9 +4038,9 @@ No authorization required
 - **Accept**: application/json, application/yaml
 
 
-## func13
+## func15
 
-> func13
+> func15
 
 
 
@@ -4052,27 +4056,27 @@ api_instance = Kubevirt::DefaultApi.new
 
 begin
   
-  api_instance.func13
+  api_instance.func15
 rescue Kubevirt::ApiError => e
-  puts "Error when calling DefaultApi->func13: #{e}"
+  puts "Error when calling DefaultApi->func15: #{e}"
 end
 ```
 
-#### Using the func13_with_http_info variant
+#### Using the func15_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> func13_with_http_info
+> <Array(nil, Integer, Hash)> func15_with_http_info
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.func13_with_http_info
+  data, status_code, headers = api_instance.func15_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue Kubevirt::ApiError => e
-  puts "Error when calling DefaultApi->func13_with_http_info: #{e}"
+  puts "Error when calling DefaultApi->func15_with_http_info: #{e}"
 end
 ```
 
@@ -15263,6 +15267,74 @@ No authorization required
 - **Accept**: */*
 
 
+## v1alpha3vm_evacuatecancel
+
+> String v1alpha3vm_evacuatecancel(name, namespace, body)
+
+
+
+Cancel evacuation Virtual Machine
+
+### Examples
+
+```ruby
+require 'time'
+require 'kubevirt'
+
+api_instance = Kubevirt::DefaultApi.new
+name = 'name_example' # String | Name of the resource
+namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
+body = Kubevirt::V1EvacuateCancelOptions.new({evacuation_node_name: 'evacuation_node_name_example'}) # V1EvacuateCancelOptions | 
+
+begin
+  
+  result = api_instance.v1alpha3vm_evacuatecancel(name, namespace, body)
+  p result
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->v1alpha3vm_evacuatecancel: #{e}"
+end
+```
+
+#### Using the v1alpha3vm_evacuatecancel_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(String, Integer, Hash)> v1alpha3vm_evacuatecancel_with_http_info(name, namespace, body)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.v1alpha3vm_evacuatecancel_with_http_info(name, namespace, body)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => String
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->v1alpha3vm_evacuatecancel_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **name** | **String** | Name of the resource |  |
+| **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
+| **body** | [**V1EvacuateCancelOptions**](V1EvacuateCancelOptions.md) |  |  |
+
+### Return type
+
+**String**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
 ## v1alpha3vm_expand_spec
 
 > String v1alpha3vm_expand_spec(name, namespace)
@@ -15654,6 +15726,74 @@ end
 | **name** | **String** | Name of the resource |  |
 | **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
 | **body** | [**V1AddVolumeOptions**](V1AddVolumeOptions.md) |  |  |
+
+### Return type
+
+**String**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
+## v1alpha3vmi_evacuatecancel
+
+> String v1alpha3vmi_evacuatecancel(name, namespace, body)
+
+
+
+Cancel evacuation Virtual Machine Instance
+
+### Examples
+
+```ruby
+require 'time'
+require 'kubevirt'
+
+api_instance = Kubevirt::DefaultApi.new
+name = 'name_example' # String | Name of the resource
+namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
+body = Kubevirt::V1EvacuateCancelOptions.new({evacuation_node_name: 'evacuation_node_name_example'}) # V1EvacuateCancelOptions | 
+
+begin
+  
+  result = api_instance.v1alpha3vmi_evacuatecancel(name, namespace, body)
+  p result
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->v1alpha3vmi_evacuatecancel: #{e}"
+end
+```
+
+#### Using the v1alpha3vmi_evacuatecancel_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(String, Integer, Hash)> v1alpha3vmi_evacuatecancel_with_http_info(name, namespace, body)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.v1alpha3vmi_evacuatecancel_with_http_info(name, namespace, body)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => String
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->v1alpha3vmi_evacuatecancel_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **name** | **String** | Name of the resource |  |
+| **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
+| **body** | [**V1EvacuateCancelOptions**](V1EvacuateCancelOptions.md) |  |  |
 
 ### Return type
 
@@ -16309,6 +16449,74 @@ No authorization required
 - **Accept**: */*
 
 
+## v1vm_evacuatecancel
+
+> String v1vm_evacuatecancel(name, namespace, body)
+
+
+
+Cancel evacuation Virtual Machine
+
+### Examples
+
+```ruby
+require 'time'
+require 'kubevirt'
+
+api_instance = Kubevirt::DefaultApi.new
+name = 'name_example' # String | Name of the resource
+namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
+body = Kubevirt::V1EvacuateCancelOptions.new({evacuation_node_name: 'evacuation_node_name_example'}) # V1EvacuateCancelOptions | 
+
+begin
+  
+  result = api_instance.v1vm_evacuatecancel(name, namespace, body)
+  p result
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->v1vm_evacuatecancel: #{e}"
+end
+```
+
+#### Using the v1vm_evacuatecancel_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(String, Integer, Hash)> v1vm_evacuatecancel_with_http_info(name, namespace, body)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.v1vm_evacuatecancel_with_http_info(name, namespace, body)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => String
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->v1vm_evacuatecancel_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **name** | **String** | Name of the resource |  |
+| **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
+| **body** | [**V1EvacuateCancelOptions**](V1EvacuateCancelOptions.md) |  |  |
+
+### Return type
+
+**String**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
 ## v1vm_expand_spec
 
 > String v1vm_expand_spec(name, namespace)
@@ -16700,6 +16908,74 @@ end
 | **name** | **String** | Name of the resource |  |
 | **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
 | **body** | [**V1AddVolumeOptions**](V1AddVolumeOptions.md) |  |  |
+
+### Return type
+
+**String**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
+## v1vmi_evacuatecancel
+
+> String v1vmi_evacuatecancel(name, namespace, body)
+
+
+
+Cancel evacuation Virtual Machine Instance
+
+### Examples
+
+```ruby
+require 'time'
+require 'kubevirt'
+
+api_instance = Kubevirt::DefaultApi.new
+name = 'name_example' # String | Name of the resource
+namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
+body = Kubevirt::V1EvacuateCancelOptions.new({evacuation_node_name: 'evacuation_node_name_example'}) # V1EvacuateCancelOptions | 
+
+begin
+  
+  result = api_instance.v1vmi_evacuatecancel(name, namespace, body)
+  p result
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->v1vmi_evacuatecancel: #{e}"
+end
+```
+
+#### Using the v1vmi_evacuatecancel_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(String, Integer, Hash)> v1vmi_evacuatecancel_with_http_info(name, namespace, body)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.v1vmi_evacuatecancel_with_http_info(name, namespace, body)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => String
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->v1vmi_evacuatecancel_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **name** | **String** | Name of the resource |  |
+| **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
+| **body** | [**V1EvacuateCancelOptions**](V1EvacuateCancelOptions.md) |  |  |
 
 ### Return type
 

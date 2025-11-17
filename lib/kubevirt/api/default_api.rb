@@ -4020,17 +4020,17 @@ module Kubevirt
     # Health endpoint
     # @param [Hash] opts the optional parameters
     # @return [nil]
-    def func13(opts = {})
-      func13_with_http_info(opts)
+    def func15(opts = {})
+      func15_with_http_info(opts)
       nil
     end
 
     # Health endpoint
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
-    def func13_with_http_info(opts = {})
+    def func15_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: DefaultApi.func13 ...'
+        @api_client.config.logger.debug 'Calling API: DefaultApi.func15 ...'
       end
       # resource path
       local_var_path = '/healthz'
@@ -4054,7 +4054,7 @@ module Kubevirt
       auth_names = opts[:debug_auth_names] || []
 
       new_options = opts.merge(
-        :operation => :"DefaultApi.func13",
+        :operation => :"DefaultApi.func15",
         :header_params => header_params,
         :query_params => query_params,
         :form_params => form_params,
@@ -4065,7 +4065,7 @@ module Kubevirt
 
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DefaultApi#func13\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DefaultApi#func15\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -15472,6 +15472,79 @@ module Kubevirt
       return data, status_code, headers
     end
 
+    # Cancel evacuation Virtual Machine
+    # @param name [String] Name of the resource
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param body [V1EvacuateCancelOptions] 
+    # @param [Hash] opts the optional parameters
+    # @return [String]
+    def v1alpha3vm_evacuatecancel(name, namespace, body, opts = {})
+      data, _status_code, _headers = v1alpha3vm_evacuatecancel_with_http_info(name, namespace, body, opts)
+      data
+    end
+
+    # Cancel evacuation Virtual Machine
+    # @param name [String] Name of the resource
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param body [V1EvacuateCancelOptions] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(String, Integer, Hash)>] String data, response status code and response headers
+    def v1alpha3vm_evacuatecancel_with_http_info(name, namespace, body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.v1alpha3vm_evacuatecancel ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling DefaultApi.v1alpha3vm_evacuatecancel"
+      end
+      # verify the required parameter 'namespace' is set
+      if @api_client.config.client_side_validation && namespace.nil?
+        fail ArgumentError, "Missing the required parameter 'namespace' when calling DefaultApi.v1alpha3vm_evacuatecancel"
+      end
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling DefaultApi.v1alpha3vm_evacuatecancel"
+      end
+      # resource path
+      local_var_path = '/apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/evacuate/cancel'.sub('{' + 'name' + '}', CGI.escape(name.to_s)).sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['*/*']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'String'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.v1alpha3vm_evacuatecancel",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#v1alpha3vm_evacuatecancel\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get VirtualMachine object with expanded instancetype and preference.
     # @param name [String] Name of the resource
     # @param namespace [String] Object name and auth scope, such as for teams and projects
@@ -15907,6 +15980,79 @@ module Kubevirt
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#v1alpha3vmi_addvolume\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Cancel evacuation Virtual Machine Instance
+    # @param name [String] Name of the resource
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param body [V1EvacuateCancelOptions] 
+    # @param [Hash] opts the optional parameters
+    # @return [String]
+    def v1alpha3vmi_evacuatecancel(name, namespace, body, opts = {})
+      data, _status_code, _headers = v1alpha3vmi_evacuatecancel_with_http_info(name, namespace, body, opts)
+      data
+    end
+
+    # Cancel evacuation Virtual Machine Instance
+    # @param name [String] Name of the resource
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param body [V1EvacuateCancelOptions] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(String, Integer, Hash)>] String data, response status code and response headers
+    def v1alpha3vmi_evacuatecancel_with_http_info(name, namespace, body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.v1alpha3vmi_evacuatecancel ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling DefaultApi.v1alpha3vmi_evacuatecancel"
+      end
+      # verify the required parameter 'namespace' is set
+      if @api_client.config.client_side_validation && namespace.nil?
+        fail ArgumentError, "Missing the required parameter 'namespace' when calling DefaultApi.v1alpha3vmi_evacuatecancel"
+      end
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling DefaultApi.v1alpha3vmi_evacuatecancel"
+      end
+      # resource path
+      local_var_path = '/apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/evacuate/cancel'.sub('{' + 'name' + '}', CGI.escape(name.to_s)).sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['*/*']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'String'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.v1alpha3vmi_evacuatecancel",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#v1alpha3vmi_evacuatecancel\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -16556,6 +16702,79 @@ module Kubevirt
       return data, status_code, headers
     end
 
+    # Cancel evacuation Virtual Machine
+    # @param name [String] Name of the resource
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param body [V1EvacuateCancelOptions] 
+    # @param [Hash] opts the optional parameters
+    # @return [String]
+    def v1vm_evacuatecancel(name, namespace, body, opts = {})
+      data, _status_code, _headers = v1vm_evacuatecancel_with_http_info(name, namespace, body, opts)
+      data
+    end
+
+    # Cancel evacuation Virtual Machine
+    # @param name [String] Name of the resource
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param body [V1EvacuateCancelOptions] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(String, Integer, Hash)>] String data, response status code and response headers
+    def v1vm_evacuatecancel_with_http_info(name, namespace, body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.v1vm_evacuatecancel ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling DefaultApi.v1vm_evacuatecancel"
+      end
+      # verify the required parameter 'namespace' is set
+      if @api_client.config.client_side_validation && namespace.nil?
+        fail ArgumentError, "Missing the required parameter 'namespace' when calling DefaultApi.v1vm_evacuatecancel"
+      end
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling DefaultApi.v1vm_evacuatecancel"
+      end
+      # resource path
+      local_var_path = '/apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/evacuate/cancel'.sub('{' + 'name' + '}', CGI.escape(name.to_s)).sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['*/*']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'String'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.v1vm_evacuatecancel",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#v1vm_evacuatecancel\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get VirtualMachine object with expanded instancetype and preference.
     # @param name [String] Name of the resource
     # @param namespace [String] Object name and auth scope, such as for teams and projects
@@ -16991,6 +17210,79 @@ module Kubevirt
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#v1vmi_addvolume\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Cancel evacuation Virtual Machine Instance
+    # @param name [String] Name of the resource
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param body [V1EvacuateCancelOptions] 
+    # @param [Hash] opts the optional parameters
+    # @return [String]
+    def v1vmi_evacuatecancel(name, namespace, body, opts = {})
+      data, _status_code, _headers = v1vmi_evacuatecancel_with_http_info(name, namespace, body, opts)
+      data
+    end
+
+    # Cancel evacuation Virtual Machine Instance
+    # @param name [String] Name of the resource
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param body [V1EvacuateCancelOptions] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(String, Integer, Hash)>] String data, response status code and response headers
+    def v1vmi_evacuatecancel_with_http_info(name, namespace, body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.v1vmi_evacuatecancel ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling DefaultApi.v1vmi_evacuatecancel"
+      end
+      # verify the required parameter 'namespace' is set
+      if @api_client.config.client_side_validation && namespace.nil?
+        fail ArgumentError, "Missing the required parameter 'namespace' when calling DefaultApi.v1vmi_evacuatecancel"
+      end
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling DefaultApi.v1vmi_evacuatecancel"
+      end
+      # resource path
+      local_var_path = '/apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/evacuate/cancel'.sub('{' + 'name' + '}', CGI.escape(name.to_s)).sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['*/*']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'String'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.v1vmi_evacuatecancel",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#v1vmi_evacuatecancel\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

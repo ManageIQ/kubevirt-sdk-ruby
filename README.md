@@ -127,7 +127,7 @@ Class | Method | HTTP request | Description
 *Kubevirt::DefaultApi* | [**delete_virtual_machine_clone**](docs/DefaultApi.md#delete_virtual_machine_clone) | **DELETE** /apis/clone.kubevirt.io/v1beta1/virtualmachineclones/{name} | 
 *Kubevirt::DefaultApi* | [**delete_virtual_machine_cluster_instancetype**](docs/DefaultApi.md#delete_virtual_machine_cluster_instancetype) | **DELETE** /apis/instancetype.kubevirt.io/v1beta1/virtualmachineclusterinstancetypes/{name} | 
 *Kubevirt::DefaultApi* | [**delete_virtual_machine_cluster_preference**](docs/DefaultApi.md#delete_virtual_machine_cluster_preference) | **DELETE** /apis/instancetype.kubevirt.io/v1beta1/virtualmachineclusterpreferences/{name} | 
-*Kubevirt::DefaultApi* | [**func13**](docs/DefaultApi.md#func13) | **GET** /healthz | 
+*Kubevirt::DefaultApi* | [**func15**](docs/DefaultApi.md#func15) | **GET** /healthz | 
 *Kubevirt::DefaultApi* | [**func6**](docs/DefaultApi.md#func6) | **GET** /openapi/v2 | 
 *Kubevirt::DefaultApi* | [**get_api_group_clone_kubevirt_io**](docs/DefaultApi.md#get_api_group_clone_kubevirt_io) | **GET** /apis/clone.kubevirt.io/ | 
 *Kubevirt::DefaultApi* | [**get_api_group_export_kubevirt_io**](docs/DefaultApi.md#get_api_group_export_kubevirt_io) | **GET** /apis/export.kubevirt.io/ | 
@@ -290,12 +290,14 @@ Class | Method | HTTP request | Description
 *Kubevirt::DefaultApi* | [**v1alpha3stop_cluster_profiler**](docs/DefaultApi.md#v1alpha3stop_cluster_profiler) | **GET** /apis/subresources.kubevirt.io/v1alpha3/stop-cluster-profiler | 
 *Kubevirt::DefaultApi* | [**v1alpha3usbredir**](docs/DefaultApi.md#v1alpha3usbredir) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/usbredir | 
 *Kubevirt::DefaultApi* | [**v1alpha3vm_addvolume**](docs/DefaultApi.md#v1alpha3vm_addvolume) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/addvolume | 
+*Kubevirt::DefaultApi* | [**v1alpha3vm_evacuatecancel**](docs/DefaultApi.md#v1alpha3vm_evacuatecancel) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/evacuate/cancel | 
 *Kubevirt::DefaultApi* | [**v1alpha3vm_expand_spec**](docs/DefaultApi.md#v1alpha3vm_expand_spec) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/expand-spec | 
 *Kubevirt::DefaultApi* | [**v1alpha3vm_objectgraph**](docs/DefaultApi.md#v1alpha3vm_objectgraph) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/objectgraph | 
 *Kubevirt::DefaultApi* | [**v1alpha3vm_port_forward**](docs/DefaultApi.md#v1alpha3vm_port_forward) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/portforward/{port} | 
 *Kubevirt::DefaultApi* | [**v1alpha3vm_port_forward_with_protocol**](docs/DefaultApi.md#v1alpha3vm_port_forward_with_protocol) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/portforward/{port}/{protocol} | 
 *Kubevirt::DefaultApi* | [**v1alpha3vm_removevolume**](docs/DefaultApi.md#v1alpha3vm_removevolume) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/removevolume | 
 *Kubevirt::DefaultApi* | [**v1alpha3vmi_addvolume**](docs/DefaultApi.md#v1alpha3vmi_addvolume) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/addvolume | 
+*Kubevirt::DefaultApi* | [**v1alpha3vmi_evacuatecancel**](docs/DefaultApi.md#v1alpha3vmi_evacuatecancel) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/evacuate/cancel | 
 *Kubevirt::DefaultApi* | [**v1alpha3vmi_objectgraph**](docs/DefaultApi.md#v1alpha3vmi_objectgraph) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/objectgraph | 
 *Kubevirt::DefaultApi* | [**v1alpha3vmi_port_forward**](docs/DefaultApi.md#v1alpha3vmi_port_forward) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/portforward/{port} | 
 *Kubevirt::DefaultApi* | [**v1alpha3vmi_port_forward_with_protocol**](docs/DefaultApi.md#v1alpha3vmi_port_forward_with_protocol) | **GET** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/portforward/{port}/{protocol} | 
@@ -306,12 +308,14 @@ Class | Method | HTTP request | Description
 *Kubevirt::DefaultApi* | [**v1stop_cluster_profiler**](docs/DefaultApi.md#v1stop_cluster_profiler) | **GET** /apis/subresources.kubevirt.io/v1/stop-cluster-profiler | 
 *Kubevirt::DefaultApi* | [**v1usbredir**](docs/DefaultApi.md#v1usbredir) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/usbredir | 
 *Kubevirt::DefaultApi* | [**v1vm_addvolume**](docs/DefaultApi.md#v1vm_addvolume) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/addvolume | 
+*Kubevirt::DefaultApi* | [**v1vm_evacuatecancel**](docs/DefaultApi.md#v1vm_evacuatecancel) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/evacuate/cancel | 
 *Kubevirt::DefaultApi* | [**v1vm_expand_spec**](docs/DefaultApi.md#v1vm_expand_spec) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/expand-spec | 
 *Kubevirt::DefaultApi* | [**v1vm_objectgraph**](docs/DefaultApi.md#v1vm_objectgraph) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/objectgraph | 
 *Kubevirt::DefaultApi* | [**v1vm_port_forward**](docs/DefaultApi.md#v1vm_port_forward) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/portforward/{port} | 
 *Kubevirt::DefaultApi* | [**v1vm_port_forward_with_protocol**](docs/DefaultApi.md#v1vm_port_forward_with_protocol) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/portforward/{port}/{protocol} | 
 *Kubevirt::DefaultApi* | [**v1vm_removevolume**](docs/DefaultApi.md#v1vm_removevolume) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/removevolume | 
 *Kubevirt::DefaultApi* | [**v1vmi_addvolume**](docs/DefaultApi.md#v1vmi_addvolume) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/addvolume | 
+*Kubevirt::DefaultApi* | [**v1vmi_evacuatecancel**](docs/DefaultApi.md#v1vmi_evacuatecancel) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/evacuate/cancel | 
 *Kubevirt::DefaultApi* | [**v1vmi_objectgraph**](docs/DefaultApi.md#v1vmi_objectgraph) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/objectgraph | 
 *Kubevirt::DefaultApi* | [**v1vmi_port_forward**](docs/DefaultApi.md#v1vmi_port_forward) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/portforward/{port} | 
 *Kubevirt::DefaultApi* | [**v1vmi_port_forward_with_protocol**](docs/DefaultApi.md#v1vmi_port_forward_with_protocol) | **GET** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/portforward/{port}/{protocol} | 
@@ -450,6 +454,7 @@ Class | Method | HTTP request | Description
  - [Kubevirt::V1EFI](docs/V1EFI.md)
  - [Kubevirt::V1EmptyDiskSource](docs/V1EmptyDiskSource.md)
  - [Kubevirt::V1EphemeralVolumeSource](docs/V1EphemeralVolumeSource.md)
+ - [Kubevirt::V1EvacuateCancelOptions](docs/V1EvacuateCancelOptions.md)
  - [Kubevirt::V1FeatureAPIC](docs/V1FeatureAPIC.md)
  - [Kubevirt::V1FeatureHyperv](docs/V1FeatureHyperv.md)
  - [Kubevirt::V1FeatureKVM](docs/V1FeatureKVM.md)

@@ -806,11 +806,11 @@ describe 'DefaultApi' do
     end
   end
 
-  # unit tests for func13
+  # unit tests for func15
   # Health endpoint
   # @param [Hash] opts the optional parameters
   # @return [nil]
-  describe 'func13 test' do
+  describe 'func15 test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
@@ -2966,6 +2966,19 @@ describe 'DefaultApi' do
     end
   end
 
+  # unit tests for v1alpha3vm_evacuatecancel
+  # Cancel evacuation Virtual Machine
+  # @param name Name of the resource
+  # @param namespace Object name and auth scope, such as for teams and projects
+  # @param body 
+  # @param [Hash] opts the optional parameters
+  # @return [String]
+  describe 'v1alpha3vm_evacuatecancel test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   # unit tests for v1alpha3vm_expand_spec
   # Get VirtualMachine object with expanded instancetype and preference.
   # @param name Name of the resource
@@ -3039,6 +3052,19 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [String]
   describe 'v1alpha3vmi_addvolume test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  # unit tests for v1alpha3vmi_evacuatecancel
+  # Cancel evacuation Virtual Machine Instance
+  # @param name Name of the resource
+  # @param namespace Object name and auth scope, such as for teams and projects
+  # @param body 
+  # @param [Hash] opts the optional parameters
+  # @return [String]
+  describe 'v1alpha3vmi_evacuatecancel test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
@@ -3159,6 +3185,19 @@ describe 'DefaultApi' do
     end
   end
 
+  # unit tests for v1vm_evacuatecancel
+  # Cancel evacuation Virtual Machine
+  # @param name Name of the resource
+  # @param namespace Object name and auth scope, such as for teams and projects
+  # @param body 
+  # @param [Hash] opts the optional parameters
+  # @return [String]
+  describe 'v1vm_evacuatecancel test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   # unit tests for v1vm_expand_spec
   # Get VirtualMachine object with expanded instancetype and preference.
   # @param name Name of the resource
@@ -3232,6 +3271,19 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [String]
   describe 'v1vmi_addvolume test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  # unit tests for v1vmi_evacuatecancel
+  # Cancel evacuation Virtual Machine Instance
+  # @param name Name of the resource
+  # @param namespace Object name and auth scope, such as for teams and projects
+  # @param body 
+  # @param [Hash] opts the optional parameters
+  # @return [String]
+  describe 'v1vmi_evacuatecancel test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
