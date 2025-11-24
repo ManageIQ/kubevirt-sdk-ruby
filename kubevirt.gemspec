@@ -32,8 +32,14 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'rspec', '~> 3.6', '>= 3.6.0'
 
-  s.files         = `find *`.split("\n").uniq.sort.select { |f| !f.empty? }
-  s.test_files    = `find spec/*`.split("\n")
-  s.executables   = []
+  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
+  gemspec = File.basename(__FILE__)
+  s.files = IO.popen(%w[git ls-files -z], chdir: __dir__, err: IO::NULL) do |ls|
+    ls.readlines("\x0", chomp: true).reject do |f|
+      (f == gemspec) ||
+        f.start_with?(*%w[bin/ test/ spec/ features/ .git .github appveyor Gemfile])
+    end
+  end
+  s.executables   = s.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   s.require_paths = ["lib"]
 end
