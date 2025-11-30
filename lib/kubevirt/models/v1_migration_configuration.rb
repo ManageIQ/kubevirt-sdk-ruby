@@ -55,6 +55,9 @@ module Kubevirt
     # UnsafeMigrationOverride allows live migrations to occur even if the compatibility check indicates the migration will be unsafe to the guest. Defaults to false
     attr_accessor :unsafe_migration_override
 
+    # UtilityVolumesTimeout is the maximum number of seconds a migration can wait in Pending state for utility volumes to be detached. If utility volumes are still present after this timeout, the migration will be marked as Failed. Defaults to 150
+    attr_accessor :utility_volumes_timeout
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -70,7 +73,8 @@ module Kubevirt
         :'parallel_migrations_per_cluster' => :'parallelMigrationsPerCluster',
         :'parallel_outbound_migrations_per_node' => :'parallelOutboundMigrationsPerNode',
         :'progress_timeout' => :'progressTimeout',
-        :'unsafe_migration_override' => :'unsafeMigrationOverride'
+        :'unsafe_migration_override' => :'unsafeMigrationOverride',
+        :'utility_volumes_timeout' => :'utilityVolumesTimeout'
       }
     end
 
@@ -99,7 +103,8 @@ module Kubevirt
         :'parallel_migrations_per_cluster' => :'Integer',
         :'parallel_outbound_migrations_per_node' => :'Integer',
         :'progress_timeout' => :'Integer',
-        :'unsafe_migration_override' => :'Boolean'
+        :'unsafe_migration_override' => :'Boolean',
+        :'utility_volumes_timeout' => :'Integer'
       }
     end
 
@@ -176,6 +181,10 @@ module Kubevirt
       if attributes.key?(:'unsafe_migration_override')
         self.unsafe_migration_override = attributes[:'unsafe_migration_override']
       end
+
+      if attributes.key?(:'utility_volumes_timeout')
+        self.utility_volumes_timeout = attributes[:'utility_volumes_timeout']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -210,7 +219,8 @@ module Kubevirt
           parallel_migrations_per_cluster == o.parallel_migrations_per_cluster &&
           parallel_outbound_migrations_per_node == o.parallel_outbound_migrations_per_node &&
           progress_timeout == o.progress_timeout &&
-          unsafe_migration_override == o.unsafe_migration_override
+          unsafe_migration_override == o.unsafe_migration_override &&
+          utility_volumes_timeout == o.utility_volumes_timeout
     end
 
     # @see the `==` method
@@ -222,7 +232,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [allow_auto_converge, allow_post_copy, allow_workload_disruption, bandwidth_per_migration, completion_timeout_per_gi_b, disable_tls, match_se_linux_level_on_migration, network, node_drain_taint_key, parallel_migrations_per_cluster, parallel_outbound_migrations_per_node, progress_timeout, unsafe_migration_override].hash
+      [allow_auto_converge, allow_post_copy, allow_workload_disruption, bandwidth_per_migration, completion_timeout_per_gi_b, disable_tls, match_se_linux_level_on_migration, network, node_drain_taint_key, parallel_migrations_per_cluster, parallel_outbound_migrations_per_node, progress_timeout, unsafe_migration_override, utility_volumes_timeout].hash
     end
 
     # Builds the object from hash

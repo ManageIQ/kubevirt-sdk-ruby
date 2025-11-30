@@ -71,6 +71,9 @@ module Kubevirt
     # TopologySpreadConstraints describes how a group of VMIs will be spread across a given topology domains. K8s scheduler will schedule VMI pods in a way which abides by the constraints.
     attr_accessor :topology_spread_constraints
 
+    # List of utility volumes that can be mounted to the vmi virt-launcher pod without having a matching disk in the domain. Used to collect data for various operational workflows.
+    attr_accessor :utility_volumes
+
     # List of volumes that can be mounted by disks belonging to the vmi.
     attr_accessor :volumes
 
@@ -119,6 +122,7 @@ module Kubevirt
         :'termination_grace_period_seconds' => :'terminationGracePeriodSeconds',
         :'tolerations' => :'tolerations',
         :'topology_spread_constraints' => :'topologySpreadConstraints',
+        :'utility_volumes' => :'utilityVolumes',
         :'volumes' => :'volumes'
       }
     end
@@ -156,6 +160,7 @@ module Kubevirt
         :'termination_grace_period_seconds' => :'Integer',
         :'tolerations' => :'Array<K8sIoApiCoreV1Toleration>',
         :'topology_spread_constraints' => :'Array<K8sIoApiCoreV1TopologySpreadConstraint>',
+        :'utility_volumes' => :'Array<V1UtilityVolume>',
         :'volumes' => :'Array<V1Volume>'
       }
     end
@@ -276,6 +281,12 @@ module Kubevirt
         end
       end
 
+      if attributes.key?(:'utility_volumes')
+        if (value = attributes[:'utility_volumes']).is_a?(Array)
+          self.utility_volumes = value
+        end
+      end
+
       if attributes.key?(:'volumes')
         if (value = attributes[:'volumes']).is_a?(Array)
           self.volumes = value
@@ -350,6 +361,7 @@ module Kubevirt
           termination_grace_period_seconds == o.termination_grace_period_seconds &&
           tolerations == o.tolerations &&
           topology_spread_constraints == o.topology_spread_constraints &&
+          utility_volumes == o.utility_volumes &&
           volumes == o.volumes
     end
 
@@ -362,7 +374,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [access_credentials, affinity, architecture, dns_config, dns_policy, domain, eviction_strategy, hostname, liveness_probe, networks, node_selector, priority_class_name, readiness_probe, resource_claims, scheduler_name, start_strategy, subdomain, termination_grace_period_seconds, tolerations, topology_spread_constraints, volumes].hash
+      [access_credentials, affinity, architecture, dns_config, dns_policy, domain, eviction_strategy, hostname, liveness_probe, networks, node_selector, priority_class_name, readiness_probe, resource_claims, scheduler_name, start_strategy, subdomain, termination_grace_period_seconds, tolerations, topology_spread_constraints, utility_volumes, volumes].hash
     end
 
     # Builds the object from hash
