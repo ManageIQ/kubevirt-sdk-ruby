@@ -23,7 +23,7 @@ module Kubevirt
 
     attr_accessor :preference
 
-    # Running state indicates the requested running state of the VirtualMachineInstance mutually exclusive with Running
+    # Running state indicates the requested running state of the VirtualMachineInstance mutually exclusive with Running Following are allowed values: - \"Always\": VMI should always be running. - \"Halted\": VMI should never be running. - \"Manual\": VMI can be started/stopped using API endpoints. - \"RerunOnFailure\": VMI will initially be running and restarted if a failure occurs, but will not be restarted upon successful completion. - \"Once\": VMI will run once and not be restarted upon completion regardless if the completion is of phase Failure or Success.
     attr_accessor :run_strategy
 
     # Running controls whether the associatied VirtualMachineInstance is created or not Mutually exclusive with RunStrategy Deprecated: VirtualMachineInstance field \"Running\" is now deprecated, please use RunStrategy instead.
