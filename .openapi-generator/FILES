@@ -223,6 +223,7 @@ docs/V1UnpauseOptions.md
 docs/V1UserPasswordAccessCredential.md
 docs/V1UserPasswordAccessCredentialPropagationMethod.md
 docs/V1UserPasswordAccessCredentialSource.md
+docs/V1UtilityVolume.md
 docs/V1VGPUDisplayOptions.md
 docs/V1VGPUOptions.md
 docs/V1VideoDevice.md
@@ -599,6 +600,7 @@ lib/kubevirt/models/v1_usb_selector.rb
 lib/kubevirt/models/v1_user_password_access_credential.rb
 lib/kubevirt/models/v1_user_password_access_credential_propagation_method.rb
 lib/kubevirt/models/v1_user_password_access_credential_source.rb
+lib/kubevirt/models/v1_utility_volume.rb
 lib/kubevirt/models/v1_vgpu_display_options.rb
 lib/kubevirt/models/v1_vgpu_options.rb
 lib/kubevirt/models/v1_video_device.rb
@@ -969,6 +971,7 @@ spec/models/v1_usb_selector_spec.rb
 spec/models/v1_user_password_access_credential_propagation_method_spec.rb
 spec/models/v1_user_password_access_credential_source_spec.rb
 spec/models/v1_user_password_access_credential_spec.rb
+spec/models/v1_utility_volume_spec.rb
 spec/models/v1_vgpu_display_options_spec.rb
 spec/models/v1_vgpu_options_spec.rb
 spec/models/v1_video_device_spec.rb

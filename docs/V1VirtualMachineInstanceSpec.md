@@ -24,6 +24,7 @@
 | **termination_grace_period_seconds** | **Integer** | Grace period observed after signalling a VirtualMachineInstance to stop after which the VirtualMachineInstance is force terminated. | [optional] |
 | **tolerations** | [**Array&lt;K8sIoApiCoreV1Toleration&gt;**](K8sIoApiCoreV1Toleration.md) | If toleration is specified, obey all the toleration rules. | [optional] |
 | **topology_spread_constraints** | [**Array&lt;K8sIoApiCoreV1TopologySpreadConstraint&gt;**](K8sIoApiCoreV1TopologySpreadConstraint.md) | TopologySpreadConstraints describes how a group of VMIs will be spread across a given topology domains. K8s scheduler will schedule VMI pods in a way which abides by the constraints. | [optional] |
+| **utility_volumes** | [**Array&lt;V1UtilityVolume&gt;**](V1UtilityVolume.md) | List of utility volumes that can be mounted to the vmi virt-launcher pod without having a matching disk in the domain. Used to collect data for various operational workflows. | [optional] |
 | **volumes** | [**Array&lt;V1Volume&gt;**](V1Volume.md) | List of volumes that can be mounted by disks belonging to the vmi. | [optional] |
 
 ## Example
@@ -52,6 +53,7 @@ instance = Kubevirt::V1VirtualMachineInstanceSpec.new(
   termination_grace_period_seconds: null,
   tolerations: null,
   topology_spread_constraints: null,
+  utility_volumes: null,
   volumes: null
 )
 ```
