@@ -229,6 +229,78 @@ module Kubevirt
       return data, status_code, headers
     end
 
+    # Create a VirtualMachineBackup object.
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param body [V1alpha1VirtualMachineBackup] 
+    # @param [Hash] opts the optional parameters
+    # @return [V1alpha1VirtualMachineBackup]
+    def create_namespaced_virtual_machine_backup(namespace, body, opts = {})
+      data, _status_code, _headers = create_namespaced_virtual_machine_backup_with_http_info(namespace, body, opts)
+      data
+    end
+
+    # Create a VirtualMachineBackup object.
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param body [V1alpha1VirtualMachineBackup] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(V1alpha1VirtualMachineBackup, Integer, Hash)>] V1alpha1VirtualMachineBackup data, response status code and response headers
+    def create_namespaced_virtual_machine_backup_with_http_info(namespace, body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.create_namespaced_virtual_machine_backup ...'
+      end
+      # verify the required parameter 'namespace' is set
+      if @api_client.config.client_side_validation && namespace.nil?
+        fail ArgumentError, "Missing the required parameter 'namespace' when calling DefaultApi.create_namespaced_virtual_machine_backup"
+      end
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling DefaultApi.create_namespaced_virtual_machine_backup"
+      end
+      # resource path
+      local_var_path = '/apis/backup.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinebackups'.sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/yaml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/yaml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'V1alpha1VirtualMachineBackup'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.create_namespaced_virtual_machine_backup",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#create_namespaced_virtual_machine_backup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Create a VirtualMachineExport object.
     # @param namespace [String] Object name and auth scope, such as for teams and projects
     # @param body [V1beta1VirtualMachineExport] 
@@ -1452,6 +1524,85 @@ module Kubevirt
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#delete_collection_namespaced_virtual_machine\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Delete a collection of VirtualMachineBackup objects.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+    # @option opts [String] :field_selector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+    # @option opts [Boolean] :include_uninitialized If true, partially initialized resources are included in the response.
+    # @option opts [String] :label_selector A selector to restrict the list of returned objects by their labels. Defaults to everything
+    # @option opts [Integer] :limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+    # @option opts [String] :resource_version When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+    # @option opts [Integer] :timeout_seconds TimeoutSeconds for the list/watch call.
+    # @option opts [Boolean] :watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+    # @return [K8sIoApimachineryPkgApisMetaV1Status]
+    def delete_collection_namespaced_virtual_machine_backup(opts = {})
+      data, _status_code, _headers = delete_collection_namespaced_virtual_machine_backup_with_http_info(opts)
+      data
+    end
+
+    # Delete a collection of VirtualMachineBackup objects.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+    # @option opts [String] :field_selector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+    # @option opts [Boolean] :include_uninitialized If true, partially initialized resources are included in the response.
+    # @option opts [String] :label_selector A selector to restrict the list of returned objects by their labels. Defaults to everything
+    # @option opts [Integer] :limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+    # @option opts [String] :resource_version When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+    # @option opts [Integer] :timeout_seconds TimeoutSeconds for the list/watch call.
+    # @option opts [Boolean] :watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+    # @return [Array<(K8sIoApimachineryPkgApisMetaV1Status, Integer, Hash)>] K8sIoApimachineryPkgApisMetaV1Status data, response status code and response headers
+    def delete_collection_namespaced_virtual_machine_backup_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.delete_collection_namespaced_virtual_machine_backup ...'
+      end
+      # resource path
+      local_var_path = '/apis/backup.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinebackups'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'continue'] = opts[:'continue'] if !opts[:'continue'].nil?
+      query_params[:'fieldSelector'] = opts[:'field_selector'] if !opts[:'field_selector'].nil?
+      query_params[:'includeUninitialized'] = opts[:'include_uninitialized'] if !opts[:'include_uninitialized'].nil?
+      query_params[:'labelSelector'] = opts[:'label_selector'] if !opts[:'label_selector'].nil?
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'resourceVersion'] = opts[:'resource_version'] if !opts[:'resource_version'].nil?
+      query_params[:'timeoutSeconds'] = opts[:'timeout_seconds'] if !opts[:'timeout_seconds'].nil?
+      query_params[:'watch'] = opts[:'watch'] if !opts[:'watch'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/yaml']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'K8sIoApimachineryPkgApisMetaV1Status'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.delete_collection_namespaced_virtual_machine_backup",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#delete_collection_namespaced_virtual_machine_backup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -2817,6 +2968,93 @@ module Kubevirt
       return data, status_code, headers
     end
 
+    # Delete a VirtualMachineBackup object.
+    # @param name [String] Name of the resource
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param body [K8sIoApimachineryPkgApisMetaV1DeleteOptions] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :grace_period_seconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+    # @option opts [Boolean] :orphan_dependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both.
+    # @option opts [String] :propagation_policy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground.
+    # @return [K8sIoApimachineryPkgApisMetaV1Status]
+    def delete_namespaced_virtual_machine_backup(name, namespace, body, opts = {})
+      data, _status_code, _headers = delete_namespaced_virtual_machine_backup_with_http_info(name, namespace, body, opts)
+      data
+    end
+
+    # Delete a VirtualMachineBackup object.
+    # @param name [String] Name of the resource
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param body [K8sIoApimachineryPkgApisMetaV1DeleteOptions] 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :grace_period_seconds The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
+    # @option opts [Boolean] :orphan_dependents Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both.
+    # @option opts [String] :propagation_policy Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground.
+    # @return [Array<(K8sIoApimachineryPkgApisMetaV1Status, Integer, Hash)>] K8sIoApimachineryPkgApisMetaV1Status data, response status code and response headers
+    def delete_namespaced_virtual_machine_backup_with_http_info(name, namespace, body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.delete_namespaced_virtual_machine_backup ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling DefaultApi.delete_namespaced_virtual_machine_backup"
+      end
+      # verify the required parameter 'namespace' is set
+      if @api_client.config.client_side_validation && namespace.nil?
+        fail ArgumentError, "Missing the required parameter 'namespace' when calling DefaultApi.delete_namespaced_virtual_machine_backup"
+      end
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling DefaultApi.delete_namespaced_virtual_machine_backup"
+      end
+      # resource path
+      local_var_path = '/apis/backup.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinebackups/{name}'.sub('{' + 'name' + '}', CGI.escape(name.to_s)).sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'gracePeriodSeconds'] = opts[:'grace_period_seconds'] if !opts[:'grace_period_seconds'].nil?
+      query_params[:'orphanDependents'] = opts[:'orphan_dependents'] if !opts[:'orphan_dependents'].nil?
+      query_params[:'propagationPolicy'] = opts[:'propagation_policy'] if !opts[:'propagation_policy'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/yaml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/yaml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'K8sIoApimachineryPkgApisMetaV1Status'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.delete_namespaced_virtual_machine_backup",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#delete_namespaced_virtual_machine_backup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Delete a VirtualMachineExport object.
     # @param name [String] Name of the resource
     # @param namespace [String] Object name and auth scope, such as for teams and projects
@@ -4124,6 +4362,61 @@ module Kubevirt
     # Get a KubeVirt API group
     # @param [Hash] opts the optional parameters
     # @return [K8sIoApimachineryPkgApisMetaV1APIGroup]
+    def get_api_group_backup_kubevirt_io(opts = {})
+      data, _status_code, _headers = get_api_group_backup_kubevirt_io_with_http_info(opts)
+      data
+    end
+
+    # Get a KubeVirt API group
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(K8sIoApimachineryPkgApisMetaV1APIGroup, Integer, Hash)>] K8sIoApimachineryPkgApisMetaV1APIGroup data, response status code and response headers
+    def get_api_group_backup_kubevirt_io_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_api_group_backup_kubevirt_io ...'
+      end
+      # resource path
+      local_var_path = '/apis/backup.kubevirt.io/'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'K8sIoApimachineryPkgApisMetaV1APIGroup'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_api_group_backup_kubevirt_io",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_api_group_backup_kubevirt_io\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get a KubeVirt API group
+    # @param [Hash] opts the optional parameters
+    # @return [K8sIoApimachineryPkgApisMetaV1APIGroup]
     def get_api_group_clone_kubevirt_io(opts = {})
       data, _status_code, _headers = get_api_group_clone_kubevirt_io_with_http_info(opts)
       data
@@ -4557,6 +4850,61 @@ module Kubevirt
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#get_api_group_snapshot_kubevirt_io\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get KubeVirt API Resources
+    # @param [Hash] opts the optional parameters
+    # @return [K8sIoApimachineryPkgApisMetaV1APIResourceList]
+    def get_api_resources_backup_kubevirt_io_v1alpha1(opts = {})
+      data, _status_code, _headers = get_api_resources_backup_kubevirt_io_v1alpha1_with_http_info(opts)
+      data
+    end
+
+    # Get KubeVirt API Resources
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(K8sIoApimachineryPkgApisMetaV1APIResourceList, Integer, Hash)>] K8sIoApimachineryPkgApisMetaV1APIResourceList data, response status code and response headers
+    def get_api_resources_backup_kubevirt_io_v1alpha1_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.get_api_resources_backup_kubevirt_io_v1alpha1 ...'
+      end
+      # resource path
+      local_var_path = '/apis/backup.kubevirt.io/v1alpha1/'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'K8sIoApimachineryPkgApisMetaV1APIResourceList'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.get_api_resources_backup_kubevirt_io_v1alpha1",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#get_api_resources_backup_kubevirt_io_v1alpha1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -5484,6 +5832,91 @@ module Kubevirt
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#list_namespaced_virtual_machine\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get a list of VirtualMachineBackup objects.
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+    # @option opts [String] :field_selector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+    # @option opts [Boolean] :include_uninitialized If true, partially initialized resources are included in the response.
+    # @option opts [String] :label_selector A selector to restrict the list of returned objects by their labels. Defaults to everything
+    # @option opts [Integer] :limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+    # @option opts [String] :resource_version When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+    # @option opts [Integer] :timeout_seconds TimeoutSeconds for the list/watch call.
+    # @option opts [Boolean] :watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+    # @return [V1alpha1VirtualMachineBackupList]
+    def list_namespaced_virtual_machine_backup(namespace, opts = {})
+      data, _status_code, _headers = list_namespaced_virtual_machine_backup_with_http_info(namespace, opts)
+      data
+    end
+
+    # Get a list of VirtualMachineBackup objects.
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+    # @option opts [String] :field_selector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+    # @option opts [Boolean] :include_uninitialized If true, partially initialized resources are included in the response.
+    # @option opts [String] :label_selector A selector to restrict the list of returned objects by their labels. Defaults to everything
+    # @option opts [Integer] :limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+    # @option opts [String] :resource_version When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+    # @option opts [Integer] :timeout_seconds TimeoutSeconds for the list/watch call.
+    # @option opts [Boolean] :watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+    # @return [Array<(V1alpha1VirtualMachineBackupList, Integer, Hash)>] V1alpha1VirtualMachineBackupList data, response status code and response headers
+    def list_namespaced_virtual_machine_backup_with_http_info(namespace, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_namespaced_virtual_machine_backup ...'
+      end
+      # verify the required parameter 'namespace' is set
+      if @api_client.config.client_side_validation && namespace.nil?
+        fail ArgumentError, "Missing the required parameter 'namespace' when calling DefaultApi.list_namespaced_virtual_machine_backup"
+      end
+      # resource path
+      local_var_path = '/apis/backup.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinebackups'.sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'continue'] = opts[:'continue'] if !opts[:'continue'].nil?
+      query_params[:'fieldSelector'] = opts[:'field_selector'] if !opts[:'field_selector'].nil?
+      query_params[:'includeUninitialized'] = opts[:'include_uninitialized'] if !opts[:'include_uninitialized'].nil?
+      query_params[:'labelSelector'] = opts[:'label_selector'] if !opts[:'label_selector'].nil?
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'resourceVersion'] = opts[:'resource_version'] if !opts[:'resource_version'].nil?
+      query_params[:'timeoutSeconds'] = opts[:'timeout_seconds'] if !opts[:'timeout_seconds'].nil?
+      query_params[:'watch'] = opts[:'watch'] if !opts[:'watch'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/yaml', 'application/json;stream=watch']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'V1alpha1VirtualMachineBackupList'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.list_namespaced_virtual_machine_backup",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_namespaced_virtual_machine_backup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -6419,6 +6852,85 @@ module Kubevirt
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#list_namespaced_virtual_machine_snapshot_content\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Get a list of all VirtualMachineBackup objects.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+    # @option opts [String] :field_selector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+    # @option opts [Boolean] :include_uninitialized If true, partially initialized resources are included in the response.
+    # @option opts [String] :label_selector A selector to restrict the list of returned objects by their labels. Defaults to everything
+    # @option opts [Integer] :limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+    # @option opts [String] :resource_version When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+    # @option opts [Integer] :timeout_seconds TimeoutSeconds for the list/watch call.
+    # @option opts [Boolean] :watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+    # @return [V1alpha1VirtualMachineBackupList]
+    def list_virtual_machine_backup_for_all_namespaces(opts = {})
+      data, _status_code, _headers = list_virtual_machine_backup_for_all_namespaces_with_http_info(opts)
+      data
+    end
+
+    # Get a list of all VirtualMachineBackup objects.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+    # @option opts [String] :field_selector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+    # @option opts [Boolean] :include_uninitialized If true, partially initialized resources are included in the response.
+    # @option opts [String] :label_selector A selector to restrict the list of returned objects by their labels. Defaults to everything
+    # @option opts [Integer] :limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+    # @option opts [String] :resource_version When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+    # @option opts [Integer] :timeout_seconds TimeoutSeconds for the list/watch call.
+    # @option opts [Boolean] :watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+    # @return [Array<(V1alpha1VirtualMachineBackupList, Integer, Hash)>] V1alpha1VirtualMachineBackupList data, response status code and response headers
+    def list_virtual_machine_backup_for_all_namespaces_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.list_virtual_machine_backup_for_all_namespaces ...'
+      end
+      # resource path
+      local_var_path = '/apis/backup.kubevirt.io/v1alpha1/virtualmachinebackups'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'continue'] = opts[:'continue'] if !opts[:'continue'].nil?
+      query_params[:'fieldSelector'] = opts[:'field_selector'] if !opts[:'field_selector'].nil?
+      query_params[:'includeUninitialized'] = opts[:'include_uninitialized'] if !opts[:'include_uninitialized'].nil?
+      query_params[:'labelSelector'] = opts[:'label_selector'] if !opts[:'label_selector'].nil?
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'resourceVersion'] = opts[:'resource_version'] if !opts[:'resource_version'].nil?
+      query_params[:'timeoutSeconds'] = opts[:'timeout_seconds'] if !opts[:'timeout_seconds'].nil?
+      query_params[:'watch'] = opts[:'watch'] if !opts[:'watch'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/yaml', 'application/json;stream=watch']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'V1alpha1VirtualMachineBackupList'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.list_virtual_machine_backup_for_all_namespaces",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#list_virtual_machine_backup_for_all_namespaces\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -7836,6 +8348,84 @@ module Kubevirt
       return data, status_code, headers
     end
 
+    # Patch a VirtualMachineBackup object.
+    # @param name [String] Name of the resource
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param body [Object] 
+    # @param [Hash] opts the optional parameters
+    # @return [V1alpha1VirtualMachineBackup]
+    def patch_namespaced_virtual_machine_backup(name, namespace, body, opts = {})
+      data, _status_code, _headers = patch_namespaced_virtual_machine_backup_with_http_info(name, namespace, body, opts)
+      data
+    end
+
+    # Patch a VirtualMachineBackup object.
+    # @param name [String] Name of the resource
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param body [Object] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(V1alpha1VirtualMachineBackup, Integer, Hash)>] V1alpha1VirtualMachineBackup data, response status code and response headers
+    def patch_namespaced_virtual_machine_backup_with_http_info(name, namespace, body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.patch_namespaced_virtual_machine_backup ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling DefaultApi.patch_namespaced_virtual_machine_backup"
+      end
+      # verify the required parameter 'namespace' is set
+      if @api_client.config.client_side_validation && namespace.nil?
+        fail ArgumentError, "Missing the required parameter 'namespace' when calling DefaultApi.patch_namespaced_virtual_machine_backup"
+      end
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling DefaultApi.patch_namespaced_virtual_machine_backup"
+      end
+      # resource path
+      local_var_path = '/apis/backup.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinebackups/{name}'.sub('{' + 'name' + '}', CGI.escape(name.to_s)).sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json-patch+json', 'application/merge-patch+json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'V1alpha1VirtualMachineBackup'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.patch_namespaced_virtual_machine_backup",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PATCH, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#patch_namespaced_virtual_machine_backup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Patch a VirtualMachineExport object.
     # @param name [String] Name of the resource
     # @param namespace [String] Object name and auth scope, such as for teams and projects
@@ -9123,6 +9713,79 @@ module Kubevirt
       return data, status_code, headers
     end
 
+    # Get a VirtualMachineBackup object.
+    # @param name [String] Name of the resource
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Boolean] :exact Should the export be exact. Exact export maintains cluster-specific fields like &#39;Namespace&#39;.
+    # @option opts [Boolean] :export Should this value be exported. Export strips fields that a user can not specify.
+    # @return [V1alpha1VirtualMachineBackup]
+    def read_namespaced_virtual_machine_backup(name, namespace, opts = {})
+      data, _status_code, _headers = read_namespaced_virtual_machine_backup_with_http_info(name, namespace, opts)
+      data
+    end
+
+    # Get a VirtualMachineBackup object.
+    # @param name [String] Name of the resource
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param [Hash] opts the optional parameters
+    # @option opts [Boolean] :exact Should the export be exact. Exact export maintains cluster-specific fields like &#39;Namespace&#39;.
+    # @option opts [Boolean] :export Should this value be exported. Export strips fields that a user can not specify.
+    # @return [Array<(V1alpha1VirtualMachineBackup, Integer, Hash)>] V1alpha1VirtualMachineBackup data, response status code and response headers
+    def read_namespaced_virtual_machine_backup_with_http_info(name, namespace, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.read_namespaced_virtual_machine_backup ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling DefaultApi.read_namespaced_virtual_machine_backup"
+      end
+      # verify the required parameter 'namespace' is set
+      if @api_client.config.client_side_validation && namespace.nil?
+        fail ArgumentError, "Missing the required parameter 'namespace' when calling DefaultApi.read_namespaced_virtual_machine_backup"
+      end
+      # resource path
+      local_var_path = '/apis/backup.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinebackups/{name}'.sub('{' + 'name' + '}', CGI.escape(name.to_s)).sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'exact'] = opts[:'exact'] if !opts[:'exact'].nil?
+      query_params[:'export'] = opts[:'export'] if !opts[:'export'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/yaml', 'application/json;stream=watch']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'V1alpha1VirtualMachineBackup'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.read_namespaced_virtual_machine_backup",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#read_namespaced_virtual_machine_backup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Get a VirtualMachineExport object.
     # @param name [String] Name of the resource
     # @param namespace [String] Object name and auth scope, such as for teams and projects
@@ -10355,6 +11018,84 @@ module Kubevirt
       return data, status_code, headers
     end
 
+    # Update a VirtualMachineBackup object.
+    # @param name [String] Name of the resource
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param body [V1alpha1VirtualMachineBackup] 
+    # @param [Hash] opts the optional parameters
+    # @return [V1alpha1VirtualMachineBackup]
+    def replace_namespaced_virtual_machine_backup(name, namespace, body, opts = {})
+      data, _status_code, _headers = replace_namespaced_virtual_machine_backup_with_http_info(name, namespace, body, opts)
+      data
+    end
+
+    # Update a VirtualMachineBackup object.
+    # @param name [String] Name of the resource
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param body [V1alpha1VirtualMachineBackup] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(V1alpha1VirtualMachineBackup, Integer, Hash)>] V1alpha1VirtualMachineBackup data, response status code and response headers
+    def replace_namespaced_virtual_machine_backup_with_http_info(name, namespace, body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.replace_namespaced_virtual_machine_backup ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling DefaultApi.replace_namespaced_virtual_machine_backup"
+      end
+      # verify the required parameter 'namespace' is set
+      if @api_client.config.client_side_validation && namespace.nil?
+        fail ArgumentError, "Missing the required parameter 'namespace' when calling DefaultApi.replace_namespaced_virtual_machine_backup"
+      end
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling DefaultApi.replace_namespaced_virtual_machine_backup"
+      end
+      # resource path
+      local_var_path = '/apis/backup.kubevirt.io/v1alpha1/namespaces/{namespace}/virtualmachinebackups/{name}'.sub('{' + 'name' + '}', CGI.escape(name.to_s)).sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json', 'application/yaml']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json', 'application/yaml'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'V1alpha1VirtualMachineBackup'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.replace_namespaced_virtual_machine_backup",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#replace_namespaced_virtual_machine_backup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Update a VirtualMachineExport object.
     # @param name [String] Name of the resource
     # @param namespace [String] Object name and auth scope, such as for teams and projects
@@ -11425,6 +12166,79 @@ module Kubevirt
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#replace_virtual_machine_cluster_preference\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Initiate a VirtualMachineInstance backup.
+    # @param name [String] Name of the resource
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param body [V1alpha1BackupOptions] 
+    # @param [Hash] opts the optional parameters
+    # @return [String]
+    def v1_backup(name, namespace, body, opts = {})
+      data, _status_code, _headers = v1_backup_with_http_info(name, namespace, body, opts)
+      data
+    end
+
+    # Initiate a VirtualMachineInstance backup.
+    # @param name [String] Name of the resource
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param body [V1alpha1BackupOptions] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(String, Integer, Hash)>] String data, response status code and response headers
+    def v1_backup_with_http_info(name, namespace, body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.v1_backup ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling DefaultApi.v1_backup"
+      end
+      # verify the required parameter 'namespace' is set
+      if @api_client.config.client_side_validation && namespace.nil?
+        fail ArgumentError, "Missing the required parameter 'namespace' when calling DefaultApi.v1_backup"
+      end
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling DefaultApi.v1_backup"
+      end
+      # resource path
+      local_var_path = '/apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/backup'.sub('{' + 'name' + '}', CGI.escape(name.to_s)).sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['*/*']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'String'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.v1_backup",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#v1_backup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -13301,6 +14115,79 @@ module Kubevirt
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#v1_vsock\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Initiate a VirtualMachineInstance backup.
+    # @param name [String] Name of the resource
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param body [V1alpha1BackupOptions] 
+    # @param [Hash] opts the optional parameters
+    # @return [String]
+    def v1alpha3_backup(name, namespace, body, opts = {})
+      data, _status_code, _headers = v1alpha3_backup_with_http_info(name, namespace, body, opts)
+      data
+    end
+
+    # Initiate a VirtualMachineInstance backup.
+    # @param name [String] Name of the resource
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param body [V1alpha1BackupOptions] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(String, Integer, Hash)>] String data, response status code and response headers
+    def v1alpha3_backup_with_http_info(name, namespace, body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.v1alpha3_backup ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling DefaultApi.v1alpha3_backup"
+      end
+      # verify the required parameter 'namespace' is set
+      if @api_client.config.client_side_validation && namespace.nil?
+        fail ArgumentError, "Missing the required parameter 'namespace' when calling DefaultApi.v1alpha3_backup"
+      end
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling DefaultApi.v1alpha3_backup"
+      end
+      # resource path
+      local_var_path = '/apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/backup'.sub('{' + 'name' + '}', CGI.escape(name.to_s)).sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['*/*']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(body)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'String'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.v1alpha3_backup",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#v1alpha3_backup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -17914,6 +18801,91 @@ module Kubevirt
       return data, status_code, headers
     end
 
+    # Watch a VirtualMachineBackup object.
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+    # @option opts [String] :field_selector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+    # @option opts [Boolean] :include_uninitialized If true, partially initialized resources are included in the response.
+    # @option opts [String] :label_selector A selector to restrict the list of returned objects by their labels. Defaults to everything
+    # @option opts [Integer] :limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+    # @option opts [String] :resource_version When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+    # @option opts [Integer] :timeout_seconds TimeoutSeconds for the list/watch call.
+    # @option opts [Boolean] :watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+    # @return [K8sIoApimachineryPkgApisMetaV1WatchEvent]
+    def watch_namespaced_virtual_machine_backup(namespace, opts = {})
+      data, _status_code, _headers = watch_namespaced_virtual_machine_backup_with_http_info(namespace, opts)
+      data
+    end
+
+    # Watch a VirtualMachineBackup object.
+    # @param namespace [String] Object name and auth scope, such as for teams and projects
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+    # @option opts [String] :field_selector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+    # @option opts [Boolean] :include_uninitialized If true, partially initialized resources are included in the response.
+    # @option opts [String] :label_selector A selector to restrict the list of returned objects by their labels. Defaults to everything
+    # @option opts [Integer] :limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+    # @option opts [String] :resource_version When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+    # @option opts [Integer] :timeout_seconds TimeoutSeconds for the list/watch call.
+    # @option opts [Boolean] :watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+    # @return [Array<(K8sIoApimachineryPkgApisMetaV1WatchEvent, Integer, Hash)>] K8sIoApimachineryPkgApisMetaV1WatchEvent data, response status code and response headers
+    def watch_namespaced_virtual_machine_backup_with_http_info(namespace, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.watch_namespaced_virtual_machine_backup ...'
+      end
+      # verify the required parameter 'namespace' is set
+      if @api_client.config.client_side_validation && namespace.nil?
+        fail ArgumentError, "Missing the required parameter 'namespace' when calling DefaultApi.watch_namespaced_virtual_machine_backup"
+      end
+      # resource path
+      local_var_path = '/apis/backup.kubevirt.io/v1alpha1/watch/namespaces/{namespace}/virtualmachinebackups'.sub('{' + 'namespace' + '}', CGI.escape(namespace.to_s))
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'continue'] = opts[:'continue'] if !opts[:'continue'].nil?
+      query_params[:'fieldSelector'] = opts[:'field_selector'] if !opts[:'field_selector'].nil?
+      query_params[:'includeUninitialized'] = opts[:'include_uninitialized'] if !opts[:'include_uninitialized'].nil?
+      query_params[:'labelSelector'] = opts[:'label_selector'] if !opts[:'label_selector'].nil?
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'resourceVersion'] = opts[:'resource_version'] if !opts[:'resource_version'].nil?
+      query_params[:'timeoutSeconds'] = opts[:'timeout_seconds'] if !opts[:'timeout_seconds'].nil?
+      query_params[:'watch'] = opts[:'watch'] if !opts[:'watch'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'K8sIoApimachineryPkgApisMetaV1WatchEvent'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.watch_namespaced_virtual_machine_backup",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#watch_namespaced_virtual_machine_backup\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # Watch a VirtualMachineExport object.
     # @param namespace [String] Object name and auth scope, such as for teams and projects
     # @param [Hash] opts the optional parameters
@@ -18845,6 +19817,85 @@ module Kubevirt
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: DefaultApi#watch_namespaced_virtual_machine_snapshot_content\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # Watch a VirtualMachineBackupList object.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+    # @option opts [String] :field_selector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+    # @option opts [Boolean] :include_uninitialized If true, partially initialized resources are included in the response.
+    # @option opts [String] :label_selector A selector to restrict the list of returned objects by their labels. Defaults to everything
+    # @option opts [Integer] :limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+    # @option opts [String] :resource_version When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+    # @option opts [Integer] :timeout_seconds TimeoutSeconds for the list/watch call.
+    # @option opts [Boolean] :watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+    # @return [K8sIoApimachineryPkgApisMetaV1WatchEvent]
+    def watch_virtual_machine_backup_list_for_all_namespaces(opts = {})
+      data, _status_code, _headers = watch_virtual_machine_backup_list_for_all_namespaces_with_http_info(opts)
+      data
+    end
+
+    # Watch a VirtualMachineBackupList object.
+    # @param [Hash] opts the optional parameters
+    # @option opts [String] :continue The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.
+    # @option opts [String] :field_selector A selector to restrict the list of returned objects by their fields. Defaults to everything.
+    # @option opts [Boolean] :include_uninitialized If true, partially initialized resources are included in the response.
+    # @option opts [String] :label_selector A selector to restrict the list of returned objects by their labels. Defaults to everything
+    # @option opts [Integer] :limit limit is a maximum number of responses to return for a list call. If more items exist, the server will set the &#x60;continue&#x60; field on the list metadata to a value that can be used with the same initial query to retrieve the next set of results. Setting a limit may return fewer than the requested amount of items (up to zero items) in the event all requested objects are filtered out and clients should only use the presence of the continue field to determine whether more results are available. Servers may choose not to support the limit argument and will return all of the available results. If limit is specified and the continue field is empty, clients may assume that no more results are available. This field is not supported if watch is true.  The server guarantees that the objects returned when using continue will be identical to issuing a single list call without a limit - that is, no objects created, modified, or deleted after the first request is issued will be included in any subsequent continued requests. This is sometimes referred to as a consistent snapshot, and ensures that a client that is using limit to receive smaller chunks of a very large result can ensure they see all possible objects. If objects are updated during a chunked list the version of the object that was present at the time the first list result was calculated is returned.
+    # @option opts [String] :resource_version When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.
+    # @option opts [Integer] :timeout_seconds TimeoutSeconds for the list/watch call.
+    # @option opts [Boolean] :watch Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.
+    # @return [Array<(K8sIoApimachineryPkgApisMetaV1WatchEvent, Integer, Hash)>] K8sIoApimachineryPkgApisMetaV1WatchEvent data, response status code and response headers
+    def watch_virtual_machine_backup_list_for_all_namespaces_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: DefaultApi.watch_virtual_machine_backup_list_for_all_namespaces ...'
+      end
+      # resource path
+      local_var_path = '/apis/backup.kubevirt.io/v1alpha1/watch/virtualmachinebackups'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+      query_params[:'continue'] = opts[:'continue'] if !opts[:'continue'].nil?
+      query_params[:'fieldSelector'] = opts[:'field_selector'] if !opts[:'field_selector'].nil?
+      query_params[:'includeUninitialized'] = opts[:'include_uninitialized'] if !opts[:'include_uninitialized'].nil?
+      query_params[:'labelSelector'] = opts[:'label_selector'] if !opts[:'label_selector'].nil?
+      query_params[:'limit'] = opts[:'limit'] if !opts[:'limit'].nil?
+      query_params[:'resourceVersion'] = opts[:'resource_version'] if !opts[:'resource_version'].nil?
+      query_params[:'timeoutSeconds'] = opts[:'timeout_seconds'] if !opts[:'timeout_seconds'].nil?
+      query_params[:'watch'] = opts[:'watch'] if !opts[:'watch'].nil?
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body]
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'K8sIoApimachineryPkgApisMetaV1WatchEvent'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || []
+
+      new_options = opts.merge(
+        :operation => :"DefaultApi.watch_virtual_machine_backup_list_for_all_namespaces",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#watch_virtual_machine_backup_list_for_all_namespaces\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

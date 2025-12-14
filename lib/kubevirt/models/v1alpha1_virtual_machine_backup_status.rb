@@ -14,18 +14,18 @@ require 'date'
 require 'time'
 
 module Kubevirt
-  # ChangedBlockTrackingStatus represents the status of ChangedBlockTracking for a VM
-  class V1ChangedBlockTrackingStatus < ApiModelBase
-    attr_accessor :backup_status
+  # VirtualMachineBackupStatus is the status for a VirtualMachineBackup resource
+  class V1alpha1VirtualMachineBackupStatus < ApiModelBase
+    attr_accessor :conditions
 
-    # State represents the current CBT state
-    attr_accessor :state
+    # Type indicates if the backup was full or incremental
+    attr_accessor :type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'backup_status' => :'backupStatus',
-        :'state' => :'state'
+        :'conditions' => :'conditions',
+        :'type' => :'type'
       }
     end
 
@@ -42,8 +42,8 @@ module Kubevirt
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'backup_status' => :'V1VirtualMachineInstanceBackupStatus',
-        :'state' => :'String'
+        :'conditions' => :'Array<V1alpha1Condition>',
+        :'type' => :'String'
       }
     end
 
@@ -57,26 +57,26 @@ module Kubevirt
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1ChangedBlockTrackingStatus` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1alpha1VirtualMachineBackupStatus` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1ChangedBlockTrackingStatus`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1alpha1VirtualMachineBackupStatus`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'backup_status')
-        self.backup_status = attributes[:'backup_status']
+      if attributes.key?(:'conditions')
+        if (value = attributes[:'conditions']).is_a?(Array)
+          self.conditions = value
+        end
       end
 
-      if attributes.key?(:'state')
-        self.state = attributes[:'state']
-      else
-        self.state = ''
+      if attributes.key?(:'type')
+        self.type = attributes[:'type']
       end
     end
 
@@ -85,10 +85,6 @@ module Kubevirt
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @state.nil?
-        invalid_properties.push('invalid value for "state", state cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -96,18 +92,7 @@ module Kubevirt
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @state.nil?
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] state Value to be assigned
-    def state=(state)
-      if state.nil?
-        fail ArgumentError, 'state cannot be nil'
-      end
-
-      @state = state
     end
 
     # Checks equality by comparing each attribute.
@@ -115,8 +100,8 @@ module Kubevirt
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          backup_status == o.backup_status &&
-          state == o.state
+          conditions == o.conditions &&
+          type == o.type
     end
 
     # @see the `==` method
@@ -128,7 +113,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [backup_status, state].hash
+      [conditions, type].hash
     end
 
     # Builds the object from hash
