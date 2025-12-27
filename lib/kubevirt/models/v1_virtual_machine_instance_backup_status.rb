@@ -14,18 +14,31 @@ require 'date'
 require 'time'
 
 module Kubevirt
-  # ChangedBlockTrackingStatus represents the status of ChangedBlockTracking for a VM
-  class V1ChangedBlockTrackingStatus < ApiModelBase
-    attr_accessor :backup_status
+  # VirtualMachineInstanceBackupStatus tracks the information of the executed backup
+  class V1VirtualMachineInstanceBackupStatus < ApiModelBase
+    # BackupMsg resturns any relevant information like failure reason unfreeze failed etc...
+    attr_accessor :backup_msg
 
-    # State represents the current CBT state
-    attr_accessor :state
+    # BackupName is the name of the executed backup
+    attr_accessor :backup_name
+
+    # Completed indicates the backup completed
+    attr_accessor :completed
+
+    # Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers.
+    attr_accessor :end_timestamp
+
+    # Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers.
+    attr_accessor :start_timestamp
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'backup_status' => :'backupStatus',
-        :'state' => :'state'
+        :'backup_msg' => :'backupMsg',
+        :'backup_name' => :'backupName',
+        :'completed' => :'completed',
+        :'end_timestamp' => :'endTimestamp',
+        :'start_timestamp' => :'startTimestamp'
       }
     end
 
@@ -42,8 +55,11 @@ module Kubevirt
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'backup_status' => :'V1VirtualMachineInstanceBackupStatus',
-        :'state' => :'String'
+        :'backup_msg' => :'String',
+        :'backup_name' => :'String',
+        :'completed' => :'Boolean',
+        :'end_timestamp' => :'Time',
+        :'start_timestamp' => :'Time'
       }
     end
 
@@ -57,26 +73,36 @@ module Kubevirt
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1ChangedBlockTrackingStatus` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1VirtualMachineInstanceBackupStatus` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1ChangedBlockTrackingStatus`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1VirtualMachineInstanceBackupStatus`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'backup_status')
-        self.backup_status = attributes[:'backup_status']
+      if attributes.key?(:'backup_msg')
+        self.backup_msg = attributes[:'backup_msg']
       end
 
-      if attributes.key?(:'state')
-        self.state = attributes[:'state']
-      else
-        self.state = ''
+      if attributes.key?(:'backup_name')
+        self.backup_name = attributes[:'backup_name']
+      end
+
+      if attributes.key?(:'completed')
+        self.completed = attributes[:'completed']
+      end
+
+      if attributes.key?(:'end_timestamp')
+        self.end_timestamp = attributes[:'end_timestamp']
+      end
+
+      if attributes.key?(:'start_timestamp')
+        self.start_timestamp = attributes[:'start_timestamp']
       end
     end
 
@@ -85,10 +111,6 @@ module Kubevirt
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @state.nil?
-        invalid_properties.push('invalid value for "state", state cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -96,18 +118,7 @@ module Kubevirt
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @state.nil?
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] state Value to be assigned
-    def state=(state)
-      if state.nil?
-        fail ArgumentError, 'state cannot be nil'
-      end
-
-      @state = state
     end
 
     # Checks equality by comparing each attribute.
@@ -115,8 +126,11 @@ module Kubevirt
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          backup_status == o.backup_status &&
-          state == o.state
+          backup_msg == o.backup_msg &&
+          backup_name == o.backup_name &&
+          completed == o.completed &&
+          end_timestamp == o.end_timestamp &&
+          start_timestamp == o.start_timestamp
     end
 
     # @see the `==` method
@@ -128,7 +142,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [backup_status, state].hash
+      [backup_msg, backup_name, completed, end_timestamp, start_timestamp].hash
     end
 
     # Builds the object from hash
