@@ -506,7 +506,7 @@ require 'kubevirt'
 
 api_instance = Kubevirt::DefaultApi.new
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::V1alpha1VirtualMachineBackup.new({spec: Kubevirt::V1alpha1VirtualMachineBackupSpec.new}) # V1alpha1VirtualMachineBackup | 
+body = Kubevirt::V1alpha1VirtualMachineBackup.new({spec: Kubevirt::V1alpha1VirtualMachineBackupSpec.new({source: Kubevirt::K8sIoApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'})})}) # V1alpha1VirtualMachineBackup | 
 
 begin
   
@@ -10981,7 +10981,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::V1alpha1VirtualMachineBackup.new({spec: Kubevirt::V1alpha1VirtualMachineBackupSpec.new}) # V1alpha1VirtualMachineBackup | 
+body = Kubevirt::V1alpha1VirtualMachineBackup.new({spec: Kubevirt::V1alpha1VirtualMachineBackupSpec.new({source: Kubevirt::K8sIoApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'})})}) # V1alpha1VirtualMachineBackup | 
 
 begin
   
