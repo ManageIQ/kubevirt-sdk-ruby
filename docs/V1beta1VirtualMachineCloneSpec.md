@@ -12,6 +12,7 @@
 | **source** | [**K8sIoApiCoreV1TypedLocalObjectReference**](K8sIoApiCoreV1TypedLocalObjectReference.md) |  |  |
 | **target** | [**K8sIoApiCoreV1TypedLocalObjectReference**](K8sIoApiCoreV1TypedLocalObjectReference.md) |  | [optional] |
 | **template** | [**V1beta1VirtualMachineCloneTemplateFilters**](V1beta1VirtualMachineCloneTemplateFilters.md) |  | [optional] |
+| **volume_name_policy** | **String** | VolumeNamePolicy defines how to handle volume naming during the clone operation | [optional] |
 
 ## Example
 
@@ -26,7 +27,8 @@ instance = Kubevirt::V1beta1VirtualMachineCloneSpec.new(
   patches: null,
   source: null,
   target: null,
-  template: null
+  template: null,
+  volume_name_policy: null
 )
 ```
 
