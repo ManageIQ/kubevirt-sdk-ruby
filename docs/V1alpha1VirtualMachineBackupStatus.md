@@ -4,6 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **checkpoint_name** | **String** | CheckpointName the name of the checkpoint created for the current backup | [optional] |
 | **conditions** | [**Array&lt;V1alpha1Condition&gt;**](V1alpha1Condition.md) |  | [optional] |
 | **type** | **String** | Type indicates if the backup was full or incremental | [optional] |
 
@@ -13,6 +14,7 @@
 require 'kubevirt'
 
 instance = Kubevirt::V1alpha1VirtualMachineBackupStatus.new(
+  checkpoint_name: null,
   conditions: null,
   type: null
 )
