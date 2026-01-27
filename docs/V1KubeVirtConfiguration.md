@@ -18,6 +18,7 @@
 | **emulated_machines** | **Array&lt;String&gt;** | Deprecated. Use architectureConfiguration instead. | [optional] |
 | **eviction_strategy** | **String** | EvictionStrategy defines at the cluster level if the VirtualMachineInstance should be migrated instead of shut-off in case of a node drain. If the VirtualMachineInstance specific field is set it overrides the cluster level one. | [optional] |
 | **handler_configuration** | [**V1ReloadableComponentConfiguration**](V1ReloadableComponentConfiguration.md) |  | [optional] |
+| **hypervisors** | [**Array&lt;V1HypervisorConfiguration&gt;**](V1HypervisorConfiguration.md) | Hypervisors holds information regarding the hypervisor configurations supported on this cluster. | [optional] |
 | **image_pull_policy** | **String** | Possible enum values:  - &#x60;\&quot;Always\&quot;&#x60; means that kubelet always attempts to pull the latest image. Container will fail If the pull fails.  - &#x60;\&quot;IfNotPresent\&quot;&#x60; means that kubelet pulls if the image isn&#39;t present on disk. Container will fail if the image isn&#39;t present and the pull fails.  - &#x60;\&quot;Never\&quot;&#x60; means that kubelet never pulls an image, but only uses a local image. Container will fail if the image isn&#39;t present | [optional] |
 | **instancetype** | [**V1InstancetypeConfiguration**](V1InstancetypeConfiguration.md) |  | [optional] |
 | **ksm_configuration** | [**V1KSMConfiguration**](V1KSMConfiguration.md) |  | [optional] |
@@ -63,6 +64,7 @@ instance = Kubevirt::V1KubeVirtConfiguration.new(
   emulated_machines: null,
   eviction_strategy: null,
   handler_configuration: null,
+  hypervisors: null,
   image_pull_policy: null,
   instancetype: null,
   ksm_configuration: null,

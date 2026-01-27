@@ -126,6 +126,7 @@ docs/V1HotplugVolumeStatus.md
 docs/V1Hugepages.md
 docs/V1HyperVPassthrough.md
 docs/V1HypervTimer.md
+docs/V1HypervisorConfiguration.md
 docs/V1I6300ESBWatchdog.md
 docs/V1InitrdInfo.md
 docs/V1Input.md
@@ -510,6 +511,7 @@ lib/kubevirt/models/v1_hpet_timer.rb
 lib/kubevirt/models/v1_hugepages.rb
 lib/kubevirt/models/v1_hyper_v_passthrough.rb
 lib/kubevirt/models/v1_hyperv_timer.rb
+lib/kubevirt/models/v1_hypervisor_configuration.rb
 lib/kubevirt/models/v1_i6300_esb_watchdog.rb
 lib/kubevirt/models/v1_initrd_info.rb
 lib/kubevirt/models/v1_input.rb
@@ -888,6 +890,7 @@ spec/models/v1_hpet_timer_spec.rb
 spec/models/v1_hugepages_spec.rb
 spec/models/v1_hyper_v_passthrough_spec.rb
 spec/models/v1_hyperv_timer_spec.rb
+spec/models/v1_hypervisor_configuration_spec.rb
 spec/models/v1_i6300_esb_watchdog_spec.rb
 spec/models/v1_initrd_info_spec.rb
 spec/models/v1_input_spec.rb
