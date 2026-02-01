@@ -213,6 +213,7 @@ docs/V1StorageMigratedVolumeInfo.md
 docs/V1SupportContainerResources.md
 docs/V1SyNICTimer.md
 docs/V1SysprepSource.md
+docs/V1TLBFlush.md
 docs/V1TLSConfiguration.md
 docs/V1TPMDevice.md
 docs/V1Timer.md
@@ -599,6 +600,7 @@ lib/kubevirt/models/v1_support_container_resources.rb
 lib/kubevirt/models/v1_sy_nic_timer.rb
 lib/kubevirt/models/v1_sysprep_source.rb
 lib/kubevirt/models/v1_timer.rb
+lib/kubevirt/models/v1_tlb_flush.rb
 lib/kubevirt/models/v1_tls_configuration.rb
 lib/kubevirt/models/v1_token_bucket_rate_limiter.rb
 lib/kubevirt/models/v1_topology_hints.rb
@@ -978,6 +980,7 @@ spec/models/v1_support_container_resources_spec.rb
 spec/models/v1_sy_nic_timer_spec.rb
 spec/models/v1_sysprep_source_spec.rb
 spec/models/v1_timer_spec.rb
+spec/models/v1_tlb_flush_spec.rb
 spec/models/v1_tls_configuration_spec.rb
 spec/models/v1_token_bucket_rate_limiter_spec.rb
 spec/models/v1_topology_hints_spec.rb

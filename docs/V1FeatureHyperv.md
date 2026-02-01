@@ -14,7 +14,7 @@
 | **spinlocks** | [**V1FeatureSpinlocks**](V1FeatureSpinlocks.md) |  | [optional] |
 | **synic** | [**V1FeatureState**](V1FeatureState.md) |  | [optional] |
 | **synictimer** | [**V1SyNICTimer**](V1SyNICTimer.md) |  | [optional] |
-| **tlbflush** | [**V1FeatureState**](V1FeatureState.md) |  | [optional] |
+| **tlbflush** | [**V1TLBFlush**](V1TLBFlush.md) |  | [optional] |
 | **vapic** | [**V1FeatureState**](V1FeatureState.md) |  | [optional] |
 | **vendorid** | [**V1FeatureVendorID**](V1FeatureVendorID.md) |  | [optional] |
 | **vpindex** | [**V1FeatureState**](V1FeatureState.md) |  | [optional] |

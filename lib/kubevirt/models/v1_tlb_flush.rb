@@ -14,17 +14,20 @@ require 'date'
 require 'time'
 
 module Kubevirt
-  class V1SyNICTimer < ApiModelBase
+  class V1TLBFlush < ApiModelBase
     attr_accessor :direct
 
     # Enabled determines if the feature should be enabled or disabled on the guest. Defaults to true.
     attr_accessor :enabled
 
+    attr_accessor :extended
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'direct' => :'direct',
-        :'enabled' => :'enabled'
+        :'enabled' => :'enabled',
+        :'extended' => :'extended'
       }
     end
 
@@ -42,7 +45,8 @@ module Kubevirt
     def self.openapi_types
       {
         :'direct' => :'V1FeatureState',
-        :'enabled' => :'Boolean'
+        :'enabled' => :'Boolean',
+        :'extended' => :'V1FeatureState'
       }
     end
 
@@ -56,14 +60,14 @@ module Kubevirt
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1SyNICTimer` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1TLBFlush` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1SyNICTimer`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1TLBFlush`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -74,6 +78,10 @@ module Kubevirt
 
       if attributes.key?(:'enabled')
         self.enabled = attributes[:'enabled']
+      end
+
+      if attributes.key?(:'extended')
+        self.extended = attributes[:'extended']
       end
     end
 
@@ -98,7 +106,8 @@ module Kubevirt
       return true if self.equal?(o)
       self.class == o.class &&
           direct == o.direct &&
-          enabled == o.enabled
+          enabled == o.enabled &&
+          extended == o.extended
     end
 
     # @see the `==` method
@@ -110,7 +119,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [direct, enabled].hash
+      [direct, enabled, extended].hash
     end
 
     # Builds the object from hash

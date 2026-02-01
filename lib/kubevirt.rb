@@ -228,6 +228,7 @@ Kubevirt.autoload :V1StorageMigratedVolumeInfo, 'kubevirt/models/v1_storage_migr
 Kubevirt.autoload :V1SupportContainerResources, 'kubevirt/models/v1_support_container_resources'
 Kubevirt.autoload :V1SyNICTimer, 'kubevirt/models/v1_sy_nic_timer'
 Kubevirt.autoload :V1SysprepSource, 'kubevirt/models/v1_sysprep_source'
+Kubevirt.autoload :V1TLBFlush, 'kubevirt/models/v1_tlb_flush'
 Kubevirt.autoload :V1TLSConfiguration, 'kubevirt/models/v1_tls_configuration'
 Kubevirt.autoload :V1TPMDevice, 'kubevirt/models/v1_tpm_device'
 Kubevirt.autoload :V1Timer, 'kubevirt/models/v1_timer'
