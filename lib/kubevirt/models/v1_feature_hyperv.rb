@@ -87,7 +87,7 @@ module Kubevirt
         :'spinlocks' => :'V1FeatureSpinlocks',
         :'synic' => :'V1FeatureState',
         :'synictimer' => :'V1SyNICTimer',
-        :'tlbflush' => :'V1FeatureState',
+        :'tlbflush' => :'V1TLBFlush',
         :'vapic' => :'V1FeatureState',
         :'vendorid' => :'V1FeatureVendorID',
         :'vpindex' => :'V1FeatureState'

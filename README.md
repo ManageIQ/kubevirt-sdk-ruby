@@ -578,6 +578,7 @@ Class | Method | HTTP request | Description
  - [Kubevirt::V1SupportContainerResources](docs/V1SupportContainerResources.md)
  - [Kubevirt::V1SyNICTimer](docs/V1SyNICTimer.md)
  - [Kubevirt::V1SysprepSource](docs/V1SysprepSource.md)
+ - [Kubevirt::V1TLBFlush](docs/V1TLBFlush.md)
  - [Kubevirt::V1TLSConfiguration](docs/V1TLSConfiguration.md)
  - [Kubevirt::V1TPMDevice](docs/V1TPMDevice.md)
  - [Kubevirt::V1Timer](docs/V1Timer.md)
