@@ -22,9 +22,12 @@ module Kubevirt
     # For each requested virtual CPU, CPUAllocationRatio defines how much physical CPU to request per VMI from the hosting node. The value is in fraction of a CPU thread (or core on non-hyperthreaded nodes). For example, a value of 1 means 1 physical CPU thread per VMI CPU thread. A value of 100 would be 1% of a physical thread allocated for each requested VMI thread. This option has no effect on VMIs that request dedicated CPUs. More information at: https://kubevirt.io/user-guide/operations/node_overcommit/#node-cpu-allocation-ratio Defaults to 10
     attr_accessor :cpu_allocation_ratio
 
+    # DisabledFeatureGates specifies a list of experimental feature gates to disable. A feature gate must not appear in both FeatureGates and DisabledFeatureGates.
+    attr_accessor :disabled_feature_gates
+
     attr_accessor :disk_verification
 
-    # FeatureGates is the list of experimental features to enable. Defaults to none
+    # FeatureGates specifies a list of experimental feature gates to enable. Defaults to none. A feature gate must not appear in both FeatureGates and DisabledFeatureGates.
     attr_accessor :feature_gates
 
     attr_accessor :log_verbosity
@@ -52,6 +55,7 @@ module Kubevirt
       {
         :'cluster_profiler' => :'clusterProfiler',
         :'cpu_allocation_ratio' => :'cpuAllocationRatio',
+        :'disabled_feature_gates' => :'disabledFeatureGates',
         :'disk_verification' => :'diskVerification',
         :'feature_gates' => :'featureGates',
         :'log_verbosity' => :'logVerbosity',
@@ -79,6 +83,7 @@ module Kubevirt
       {
         :'cluster_profiler' => :'Boolean',
         :'cpu_allocation_ratio' => :'Integer',
+        :'disabled_feature_gates' => :'Array<String>',
         :'disk_verification' => :'V1DiskVerification',
         :'feature_gates' => :'Array<String>',
         :'log_verbosity' => :'V1LogVerbosity',
@@ -119,6 +124,12 @@ module Kubevirt
 
       if attributes.key?(:'cpu_allocation_ratio')
         self.cpu_allocation_ratio = attributes[:'cpu_allocation_ratio']
+      end
+
+      if attributes.key?(:'disabled_feature_gates')
+        if (value = attributes[:'disabled_feature_gates']).is_a?(Array)
+          self.disabled_feature_gates = value
+        end
       end
 
       if attributes.key?(:'disk_verification')
@@ -184,6 +195,7 @@ module Kubevirt
       self.class == o.class &&
           cluster_profiler == o.cluster_profiler &&
           cpu_allocation_ratio == o.cpu_allocation_ratio &&
+          disabled_feature_gates == o.disabled_feature_gates &&
           disk_verification == o.disk_verification &&
           feature_gates == o.feature_gates &&
           log_verbosity == o.log_verbosity &&
@@ -204,7 +216,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [cluster_profiler, cpu_allocation_ratio, disk_verification, feature_gates, log_verbosity, memory_overcommit, minimum_cluster_tsc_frequency, minimum_reserve_pvc_bytes, node_selectors, pvc_tolerate_less_space_up_to_percent, use_emulation].hash
+      [cluster_profiler, cpu_allocation_ratio, disabled_feature_gates, disk_verification, feature_gates, log_verbosity, memory_overcommit, minimum_cluster_tsc_frequency, minimum_reserve_pvc_bytes, node_selectors, pvc_tolerate_less_space_up_to_percent, use_emulation].hash
     end
 
     # Builds the object from hash

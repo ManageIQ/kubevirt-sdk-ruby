@@ -14,38 +14,20 @@ require 'date'
 require 'time'
 
 module Kubevirt
-  # VirtualMachineInstanceBackupStatus tracks the information of the executed backup
-  class V1VirtualMachineInstanceBackupStatus < ApiModelBase
-    # BackupMsg resturns any relevant information like failure reason unfreeze failed etc...
-    attr_accessor :backup_msg
-
-    # BackupName is the name of the executed backup
-    attr_accessor :backup_name
-
-    # CheckpointName is the name of the checkpoint created for the backup
-    attr_accessor :checkpoint_name
-
-    # Completed indicates the backup completed
-    attr_accessor :completed
-
+  class V1alpha1BackupCheckpoint < ApiModelBase
     # Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers.
-    attr_accessor :end_timestamp
+    attr_accessor :creation_time
 
-    # Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers.
-    attr_accessor :start_timestamp
+    attr_accessor :name
 
-    # Volumes lists the volumes included in the backup
+    # Volumes lists volumes and their disk targets at backup time
     attr_accessor :volumes
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'backup_msg' => :'backupMsg',
-        :'backup_name' => :'backupName',
-        :'checkpoint_name' => :'checkpointName',
-        :'completed' => :'completed',
-        :'end_timestamp' => :'endTimestamp',
-        :'start_timestamp' => :'startTimestamp',
+        :'creation_time' => :'creationTime',
+        :'name' => :'name',
         :'volumes' => :'volumes'
       }
     end
@@ -63,12 +45,8 @@ module Kubevirt
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'backup_msg' => :'String',
-        :'backup_name' => :'String',
-        :'checkpoint_name' => :'String',
-        :'completed' => :'Boolean',
-        :'end_timestamp' => :'Time',
-        :'start_timestamp' => :'Time',
+        :'creation_time' => :'Time',
+        :'name' => :'String',
         :'volumes' => :'Array<V1alpha1BackupVolumeInfo>'
       }
     end
@@ -83,40 +61,24 @@ module Kubevirt
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1VirtualMachineInstanceBackupStatus` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1alpha1BackupCheckpoint` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1VirtualMachineInstanceBackupStatus`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1alpha1BackupCheckpoint`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'backup_msg')
-        self.backup_msg = attributes[:'backup_msg']
+      if attributes.key?(:'creation_time')
+        self.creation_time = attributes[:'creation_time']
       end
 
-      if attributes.key?(:'backup_name')
-        self.backup_name = attributes[:'backup_name']
-      end
-
-      if attributes.key?(:'checkpoint_name')
-        self.checkpoint_name = attributes[:'checkpoint_name']
-      end
-
-      if attributes.key?(:'completed')
-        self.completed = attributes[:'completed']
-      end
-
-      if attributes.key?(:'end_timestamp')
-        self.end_timestamp = attributes[:'end_timestamp']
-      end
-
-      if attributes.key?(:'start_timestamp')
-        self.start_timestamp = attributes[:'start_timestamp']
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.key?(:'volumes')
@@ -146,12 +108,8 @@ module Kubevirt
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          backup_msg == o.backup_msg &&
-          backup_name == o.backup_name &&
-          checkpoint_name == o.checkpoint_name &&
-          completed == o.completed &&
-          end_timestamp == o.end_timestamp &&
-          start_timestamp == o.start_timestamp &&
+          creation_time == o.creation_time &&
+          name == o.name &&
           volumes == o.volumes
     end
 
@@ -164,7 +122,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [backup_msg, backup_name, checkpoint_name, completed, end_timestamp, start_timestamp, volumes].hash
+      [creation_time, name, volumes].hash
     end
 
     # Builds the object from hash

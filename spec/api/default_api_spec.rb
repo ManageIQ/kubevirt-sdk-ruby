@@ -2520,6 +2520,19 @@ describe 'DefaultApi' do
     end
   end
 
+  # unit tests for v1_redefine_checkpoint
+  # Redefine a checkpoint for a VirtualMachineInstance.
+  # @param name Name of the resource
+  # @param namespace Object name and auth scope, such as for teams and projects
+  # @param body 
+  # @param [Hash] opts the optional parameters
+  # @return [String]
+  describe 'v1_redefine_checkpoint test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   # unit tests for v1_remove_memory_dump
   # Remove memory dump association.
   # @param name Name of the resource
@@ -2857,6 +2870,19 @@ describe 'DefaultApi' do
   # @param [Hash] opts the optional parameters
   # @return [String]
   describe 'v1alpha3_pause test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  # unit tests for v1alpha3_redefine_checkpoint
+  # Redefine a checkpoint for a VirtualMachineInstance.
+  # @param name Name of the resource
+  # @param namespace Object name and auth scope, such as for teams and projects
+  # @param body 
+  # @param [Hash] opts the optional parameters
+  # @return [String]
+  describe 'v1alpha3_redefine_checkpoint test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end

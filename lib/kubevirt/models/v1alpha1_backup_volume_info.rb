@@ -14,39 +14,19 @@ require 'date'
 require 'time'
 
 module Kubevirt
-  # VirtualMachineInstanceBackupStatus tracks the information of the executed backup
-  class V1VirtualMachineInstanceBackupStatus < ApiModelBase
-    # BackupMsg resturns any relevant information like failure reason unfreeze failed etc...
-    attr_accessor :backup_msg
+  # BackupVolumeInfo contains information about a volume included in a backup
+  class V1alpha1BackupVolumeInfo < ApiModelBase
+    # DiskTarget is the disk target device name at backup time
+    attr_accessor :disk_target
 
-    # BackupName is the name of the executed backup
-    attr_accessor :backup_name
-
-    # CheckpointName is the name of the checkpoint created for the backup
-    attr_accessor :checkpoint_name
-
-    # Completed indicates the backup completed
-    attr_accessor :completed
-
-    # Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers.
-    attr_accessor :end_timestamp
-
-    # Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers.
-    attr_accessor :start_timestamp
-
-    # Volumes lists the volumes included in the backup
-    attr_accessor :volumes
+    # VolumeName is the volume name from VMI spec
+    attr_accessor :volume_name
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'backup_msg' => :'backupMsg',
-        :'backup_name' => :'backupName',
-        :'checkpoint_name' => :'checkpointName',
-        :'completed' => :'completed',
-        :'end_timestamp' => :'endTimestamp',
-        :'start_timestamp' => :'startTimestamp',
-        :'volumes' => :'volumes'
+        :'disk_target' => :'diskTarget',
+        :'volume_name' => :'volumeName'
       }
     end
 
@@ -63,13 +43,8 @@ module Kubevirt
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'backup_msg' => :'String',
-        :'backup_name' => :'String',
-        :'checkpoint_name' => :'String',
-        :'completed' => :'Boolean',
-        :'end_timestamp' => :'Time',
-        :'start_timestamp' => :'Time',
-        :'volumes' => :'Array<V1alpha1BackupVolumeInfo>'
+        :'disk_target' => :'String',
+        :'volume_name' => :'String'
       }
     end
 
@@ -83,46 +58,28 @@ module Kubevirt
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1VirtualMachineInstanceBackupStatus` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1alpha1BackupVolumeInfo` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1VirtualMachineInstanceBackupStatus`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1alpha1BackupVolumeInfo`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'backup_msg')
-        self.backup_msg = attributes[:'backup_msg']
+      if attributes.key?(:'disk_target')
+        self.disk_target = attributes[:'disk_target']
+      else
+        self.disk_target = ''
       end
 
-      if attributes.key?(:'backup_name')
-        self.backup_name = attributes[:'backup_name']
-      end
-
-      if attributes.key?(:'checkpoint_name')
-        self.checkpoint_name = attributes[:'checkpoint_name']
-      end
-
-      if attributes.key?(:'completed')
-        self.completed = attributes[:'completed']
-      end
-
-      if attributes.key?(:'end_timestamp')
-        self.end_timestamp = attributes[:'end_timestamp']
-      end
-
-      if attributes.key?(:'start_timestamp')
-        self.start_timestamp = attributes[:'start_timestamp']
-      end
-
-      if attributes.key?(:'volumes')
-        if (value = attributes[:'volumes']).is_a?(Array)
-          self.volumes = value
-        end
+      if attributes.key?(:'volume_name')
+        self.volume_name = attributes[:'volume_name']
+      else
+        self.volume_name = ''
       end
     end
 
@@ -131,6 +88,14 @@ module Kubevirt
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
+      if @disk_target.nil?
+        invalid_properties.push('invalid value for "disk_target", disk_target cannot be nil.')
+      end
+
+      if @volume_name.nil?
+        invalid_properties.push('invalid value for "volume_name", volume_name cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -138,7 +103,29 @@ module Kubevirt
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      return false if @disk_target.nil?
+      return false if @volume_name.nil?
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] disk_target Value to be assigned
+    def disk_target=(disk_target)
+      if disk_target.nil?
+        fail ArgumentError, 'disk_target cannot be nil'
+      end
+
+      @disk_target = disk_target
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] volume_name Value to be assigned
+    def volume_name=(volume_name)
+      if volume_name.nil?
+        fail ArgumentError, 'volume_name cannot be nil'
+      end
+
+      @volume_name = volume_name
     end
 
     # Checks equality by comparing each attribute.
@@ -146,13 +133,8 @@ module Kubevirt
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          backup_msg == o.backup_msg &&
-          backup_name == o.backup_name &&
-          checkpoint_name == o.checkpoint_name &&
-          completed == o.completed &&
-          end_timestamp == o.end_timestamp &&
-          start_timestamp == o.start_timestamp &&
-          volumes == o.volumes
+          disk_target == o.disk_target &&
+          volume_name == o.volume_name
     end
 
     # @see the `==` method
@@ -164,7 +146,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [backup_msg, backup_name, checkpoint_name, completed, end_timestamp, start_timestamp, volumes].hash
+      [disk_target, volume_name].hash
     end
 
     # Builds the object from hash
