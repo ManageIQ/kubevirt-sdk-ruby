@@ -21,6 +21,9 @@ module Kubevirt
 
     attr_accessor :conditions
 
+    # IncludedVolumes lists the volumes that were included in the backup
+    attr_accessor :included_volumes
+
     # Type indicates if the backup was full or incremental
     attr_accessor :type
 
@@ -29,6 +32,7 @@ module Kubevirt
       {
         :'checkpoint_name' => :'checkpointName',
         :'conditions' => :'conditions',
+        :'included_volumes' => :'includedVolumes',
         :'type' => :'type'
       }
     end
@@ -48,6 +52,7 @@ module Kubevirt
       {
         :'checkpoint_name' => :'String',
         :'conditions' => :'Array<V1alpha1Condition>',
+        :'included_volumes' => :'Array<V1alpha1BackupVolumeInfo>',
         :'type' => :'String'
       }
     end
@@ -84,6 +89,12 @@ module Kubevirt
         end
       end
 
+      if attributes.key?(:'included_volumes')
+        if (value = attributes[:'included_volumes']).is_a?(Array)
+          self.included_volumes = value
+        end
+      end
+
       if attributes.key?(:'type')
         self.type = attributes[:'type']
       end
@@ -111,6 +122,7 @@ module Kubevirt
       self.class == o.class &&
           checkpoint_name == o.checkpoint_name &&
           conditions == o.conditions &&
+          included_volumes == o.included_volumes &&
           type == o.type
     end
 
@@ -123,7 +135,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [checkpoint_name, conditions, type].hash
+      [checkpoint_name, conditions, included_volumes, type].hash
     end
 
     # Builds the object from hash

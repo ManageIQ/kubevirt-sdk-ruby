@@ -179,6 +179,7 @@ All URIs are relative to *http://localhost*
 | [**v1_memory_dump**](DefaultApi.md#v1_memory_dump) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/memorydump |  |
 | [**v1_migrate**](DefaultApi.md#v1_migrate) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/migrate |  |
 | [**v1_pause**](DefaultApi.md#v1_pause) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/pause |  |
+| [**v1_redefine_checkpoint**](DefaultApi.md#v1_redefine_checkpoint) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/redefine-checkpoint |  |
 | [**v1_remove_memory_dump**](DefaultApi.md#v1_remove_memory_dump) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/removememorydump |  |
 | [**v1_reset**](DefaultApi.md#v1_reset) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/reset |  |
 | [**v1_restart**](DefaultApi.md#v1_restart) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/restart |  |
@@ -207,6 +208,7 @@ All URIs are relative to *http://localhost*
 | [**v1alpha3_memory_dump**](DefaultApi.md#v1alpha3_memory_dump) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/memorydump |  |
 | [**v1alpha3_migrate**](DefaultApi.md#v1alpha3_migrate) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/migrate |  |
 | [**v1alpha3_pause**](DefaultApi.md#v1alpha3_pause) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/pause |  |
+| [**v1alpha3_redefine_checkpoint**](DefaultApi.md#v1alpha3_redefine_checkpoint) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/redefine-checkpoint |  |
 | [**v1alpha3_remove_memory_dump**](DefaultApi.md#v1alpha3_remove_memory_dump) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/removememorydump |  |
 | [**v1alpha3_reset**](DefaultApi.md#v1alpha3_reset) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/reset |  |
 | [**v1alpha3_restart**](DefaultApi.md#v1alpha3_restart) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/restart |  |
@@ -12760,6 +12762,74 @@ No authorization required
 - **Accept**: */*
 
 
+## v1_redefine_checkpoint
+
+> String v1_redefine_checkpoint(name, namespace, body)
+
+
+
+Redefine a checkpoint for a VirtualMachineInstance.
+
+### Examples
+
+```ruby
+require 'time'
+require 'kubevirt'
+
+api_instance = Kubevirt::DefaultApi.new
+name = 'name_example' # String | Name of the resource
+namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
+body = Kubevirt::V1alpha1BackupCheckpoint.new # V1alpha1BackupCheckpoint | 
+
+begin
+  
+  result = api_instance.v1_redefine_checkpoint(name, namespace, body)
+  p result
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->v1_redefine_checkpoint: #{e}"
+end
+```
+
+#### Using the v1_redefine_checkpoint_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(String, Integer, Hash)> v1_redefine_checkpoint_with_http_info(name, namespace, body)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.v1_redefine_checkpoint_with_http_info(name, namespace, body)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => String
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->v1_redefine_checkpoint_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **name** | **String** | Name of the resource |  |
+| **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
+| **body** | [**V1alpha1BackupCheckpoint**](V1alpha1BackupCheckpoint.md) |  |  |
+
+### Return type
+
+**String**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
 ## v1_remove_memory_dump
 
 > String v1_remove_memory_dump(name, namespace)
@@ -14607,6 +14677,74 @@ end
 | **name** | **String** | Name of the resource |  |
 | **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
 | **body** | [**V1PauseOptions**](V1PauseOptions.md) |  |  |
+
+### Return type
+
+**String**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
+## v1alpha3_redefine_checkpoint
+
+> String v1alpha3_redefine_checkpoint(name, namespace, body)
+
+
+
+Redefine a checkpoint for a VirtualMachineInstance.
+
+### Examples
+
+```ruby
+require 'time'
+require 'kubevirt'
+
+api_instance = Kubevirt::DefaultApi.new
+name = 'name_example' # String | Name of the resource
+namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
+body = Kubevirt::V1alpha1BackupCheckpoint.new # V1alpha1BackupCheckpoint | 
+
+begin
+  
+  result = api_instance.v1alpha3_redefine_checkpoint(name, namespace, body)
+  p result
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->v1alpha3_redefine_checkpoint: #{e}"
+end
+```
+
+#### Using the v1alpha3_redefine_checkpoint_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(String, Integer, Hash)> v1alpha3_redefine_checkpoint_with_http_info(name, namespace, body)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.v1alpha3_redefine_checkpoint_with_http_info(name, namespace, body)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => String
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->v1alpha3_redefine_checkpoint_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **name** | **String** | Name of the resource |  |
+| **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
+| **body** | [**V1alpha1BackupCheckpoint**](V1alpha1BackupCheckpoint.md) |  |  |
 
 ### Return type
 
