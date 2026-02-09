@@ -251,6 +251,7 @@ Class | Method | HTTP request | Description
 *Kubevirt::DefaultApi* | [**v1_memory_dump**](docs/DefaultApi.md#v1_memory_dump) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/memorydump | 
 *Kubevirt::DefaultApi* | [**v1_migrate**](docs/DefaultApi.md#v1_migrate) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/migrate | 
 *Kubevirt::DefaultApi* | [**v1_pause**](docs/DefaultApi.md#v1_pause) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/pause | 
+*Kubevirt::DefaultApi* | [**v1_redefine_checkpoint**](docs/DefaultApi.md#v1_redefine_checkpoint) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/redefine-checkpoint | 
 *Kubevirt::DefaultApi* | [**v1_remove_memory_dump**](docs/DefaultApi.md#v1_remove_memory_dump) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/removememorydump | 
 *Kubevirt::DefaultApi* | [**v1_reset**](docs/DefaultApi.md#v1_reset) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachineinstances/{name}/reset | 
 *Kubevirt::DefaultApi* | [**v1_restart**](docs/DefaultApi.md#v1_restart) | **PUT** /apis/subresources.kubevirt.io/v1/namespaces/{namespace}/virtualmachines/{name}/restart | 
@@ -279,6 +280,7 @@ Class | Method | HTTP request | Description
 *Kubevirt::DefaultApi* | [**v1alpha3_memory_dump**](docs/DefaultApi.md#v1alpha3_memory_dump) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/memorydump | 
 *Kubevirt::DefaultApi* | [**v1alpha3_migrate**](docs/DefaultApi.md#v1alpha3_migrate) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/migrate | 
 *Kubevirt::DefaultApi* | [**v1alpha3_pause**](docs/DefaultApi.md#v1alpha3_pause) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/pause | 
+*Kubevirt::DefaultApi* | [**v1alpha3_redefine_checkpoint**](docs/DefaultApi.md#v1alpha3_redefine_checkpoint) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/redefine-checkpoint | 
 *Kubevirt::DefaultApi* | [**v1alpha3_remove_memory_dump**](docs/DefaultApi.md#v1alpha3_remove_memory_dump) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/removememorydump | 
 *Kubevirt::DefaultApi* | [**v1alpha3_reset**](docs/DefaultApi.md#v1alpha3_reset) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachineinstances/{name}/reset | 
 *Kubevirt::DefaultApi* | [**v1alpha3_restart**](docs/DefaultApi.md#v1alpha3_restart) | **PUT** /apis/subresources.kubevirt.io/v1alpha3/namespaces/{namespace}/virtualmachines/{name}/restart | 
@@ -647,7 +649,9 @@ Class | Method | HTTP request | Description
  - [Kubevirt::V1VolumeStatus](docs/V1VolumeStatus.md)
  - [Kubevirt::V1VolumeUpdateState](docs/V1VolumeUpdateState.md)
  - [Kubevirt::V1Watchdog](docs/V1Watchdog.md)
+ - [Kubevirt::V1alpha1BackupCheckpoint](docs/V1alpha1BackupCheckpoint.md)
  - [Kubevirt::V1alpha1BackupOptions](docs/V1alpha1BackupOptions.md)
+ - [Kubevirt::V1alpha1BackupVolumeInfo](docs/V1alpha1BackupVolumeInfo.md)
  - [Kubevirt::V1alpha1Condition](docs/V1alpha1Condition.md)
  - [Kubevirt::V1alpha1MigrationPolicy](docs/V1alpha1MigrationPolicy.md)
  - [Kubevirt::V1alpha1MigrationPolicyList](docs/V1alpha1MigrationPolicyList.md)

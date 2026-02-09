@@ -282,7 +282,9 @@ docs/V1VolumeSnapshotStatus.md
 docs/V1VolumeStatus.md
 docs/V1VolumeUpdateState.md
 docs/V1Watchdog.md
+docs/V1alpha1BackupCheckpoint.md
 docs/V1alpha1BackupOptions.md
+docs/V1alpha1BackupVolumeInfo.md
 docs/V1alpha1Condition.md
 docs/V1alpha1MigrationPolicy.md
 docs/V1alpha1MigrationPolicyList.md
@@ -668,7 +670,9 @@ lib/kubevirt/models/v1_volume_snapshot_status.rb
 lib/kubevirt/models/v1_volume_status.rb
 lib/kubevirt/models/v1_volume_update_state.rb
 lib/kubevirt/models/v1_watchdog.rb
+lib/kubevirt/models/v1alpha1_backup_checkpoint.rb
 lib/kubevirt/models/v1alpha1_backup_options.rb
+lib/kubevirt/models/v1alpha1_backup_volume_info.rb
 lib/kubevirt/models/v1alpha1_condition.rb
 lib/kubevirt/models/v1alpha1_migration_policy.rb
 lib/kubevirt/models/v1alpha1_migration_policy_list.rb
@@ -1048,7 +1052,9 @@ spec/models/v1_volume_spec.rb
 spec/models/v1_volume_status_spec.rb
 spec/models/v1_volume_update_state_spec.rb
 spec/models/v1_watchdog_spec.rb
+spec/models/v1alpha1_backup_checkpoint_spec.rb
 spec/models/v1alpha1_backup_options_spec.rb
+spec/models/v1alpha1_backup_volume_info_spec.rb
 spec/models/v1alpha1_condition_spec.rb
 spec/models/v1alpha1_migration_policy_list_spec.rb
 spec/models/v1alpha1_migration_policy_spec.rb
