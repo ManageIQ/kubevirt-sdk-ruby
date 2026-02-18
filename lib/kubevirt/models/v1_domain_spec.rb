@@ -38,6 +38,9 @@ module Kubevirt
 
     attr_accessor :memory
 
+    # RebootPolicy specifies how the guest should behave on reboot. Reboot (default): The guest is allowed to reboot silently. Terminate: The VMI will be terminated on guest reboot, allowing higher level controllers (such as the VM controller) to recreate the VMI with any updated configuration such as boot order changes.
+    attr_accessor :reboot_policy
+
     attr_accessor :resources
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -54,6 +57,7 @@ module Kubevirt
         :'launch_security' => :'launchSecurity',
         :'machine' => :'machine',
         :'memory' => :'memory',
+        :'reboot_policy' => :'rebootPolicy',
         :'resources' => :'resources'
       }
     end
@@ -82,6 +86,7 @@ module Kubevirt
         :'launch_security' => :'V1LaunchSecurity',
         :'machine' => :'V1Machine',
         :'memory' => :'V1Memory',
+        :'reboot_policy' => :'String',
         :'resources' => :'V1ResourceRequirements'
       }
     end
@@ -154,6 +159,10 @@ module Kubevirt
         self.memory = attributes[:'memory']
       end
 
+      if attributes.key?(:'reboot_policy')
+        self.reboot_policy = attributes[:'reboot_policy']
+      end
+
       if attributes.key?(:'resources')
         self.resources = attributes[:'resources']
       end
@@ -205,6 +214,7 @@ module Kubevirt
           launch_security == o.launch_security &&
           machine == o.machine &&
           memory == o.memory &&
+          reboot_policy == o.reboot_policy &&
           resources == o.resources
     end
 
@@ -217,7 +227,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [chassis, clock, cpu, devices, features, firmware, io_threads, io_threads_policy, launch_security, machine, memory, resources].hash
+      [chassis, clock, cpu, devices, features, firmware, io_threads, io_threads_policy, launch_security, machine, memory, reboot_policy, resources].hash
     end
 
     # Builds the object from hash
