@@ -10,6 +10,7 @@
 | **auto_cpu_limit_namespace_label_selector** | [**K8sIoApimachineryPkgApisMetaV1LabelSelector**](K8sIoApimachineryPkgApisMetaV1LabelSelector.md) |  | [optional] |
 | **changed_block_tracking_label_selectors** | [**V1ChangedBlockTrackingSelectors**](V1ChangedBlockTrackingSelectors.md) |  | [optional] |
 | **common_instancetypes_deployment** | [**V1CommonInstancetypesDeployment**](V1CommonInstancetypesDeployment.md) |  | [optional] |
+| **confidential_compute** | [**V1ConfidentialComputeConfiguration**](V1ConfidentialComputeConfiguration.md) |  | [optional] |
 | **controller_configuration** | [**V1ReloadableComponentConfiguration**](V1ReloadableComponentConfiguration.md) |  | [optional] |
 | **cpu_model** | **String** |  | [optional] |
 | **cpu_request** | **Object** | Quantity is a fixed-point representation of a number. It provides convenient marshaling/unmarshaling in JSON and YAML, in addition to String() and AsInt64() accessors.  The serialization format is:  &#x60;&#x60;&#x60; &lt;quantity&gt;        ::&#x3D; &lt;signedNumber&gt;&lt;suffix&gt;   (Note that &lt;suffix&gt; may be empty, from the \&quot;\&quot; case in &lt;decimalSI&gt;.)  &lt;digit&gt;           ::&#x3D; 0 | 1 | ... | 9 &lt;digits&gt;          ::&#x3D; &lt;digit&gt; | &lt;digit&gt;&lt;digits&gt; &lt;number&gt;          ::&#x3D; &lt;digits&gt; | &lt;digits&gt;.&lt;digits&gt; | &lt;digits&gt;. | .&lt;digits&gt; &lt;sign&gt;            ::&#x3D; \&quot;+\&quot; | \&quot;-\&quot; &lt;signedNumber&gt;    ::&#x3D; &lt;number&gt; | &lt;sign&gt;&lt;number&gt; &lt;suffix&gt;          ::&#x3D; &lt;binarySI&gt; | &lt;decimalExponent&gt; | &lt;decimalSI&gt; &lt;binarySI&gt;        ::&#x3D; Ki | Mi | Gi | Ti | Pi | Ei   (International System of units; See: http://physics.nist.gov/cuu/Units/binary.html)  &lt;decimalSI&gt;       ::&#x3D; m | \&quot;\&quot; | k | M | G | T | P | E   (Note that 1024 &#x3D; 1Ki but 1000 &#x3D; 1k; I didn&#39;t choose the capitalization.)  &lt;decimalExponent&gt; ::&#x3D; \&quot;e\&quot; &lt;signedNumber&gt; | \&quot;E\&quot; &lt;signedNumber&gt; &#x60;&#x60;&#x60;  No matter which of the three exponent forms is used, no quantity may represent a number greater than 2^63-1 in magnitude, nor may it have more than 3 decimal places. Numbers larger or more precise will be capped or rounded up. (E.g.: 0.1m will rounded up to 1m.) This may be extended in the future if we require larger or smaller quantities.  When a Quantity is parsed from a string, it will remember the type of suffix it had, and will use the same type again when it is serialized.  Before serializing, Quantity will be put in \&quot;canonical form\&quot;. This means that Exponent/suffix will be adjusted up or down (with a corresponding increase or decrease in Mantissa) such that:  - No precision is lost - No fractional digits will be emitted - The exponent (or suffix) is as large as possible.  The sign will be omitted unless the number is negative.  Examples:  - 1.5 will be serialized as \&quot;1500m\&quot; - 1.5Gi will be serialized as \&quot;1536Mi\&quot;  Note that the quantity will NEVER be internally represented by a floating point number. That is the whole point of this exercise.  Non-canonical values will still parse as long as they are well formed, but will be re-emitted in their canonical form. (So always use canonical form, or don&#39;t diff.)  This format is intended to make it difficult to use these numbers without writing some sort of special handling code in the hopes that that will cause implementors to also use a fixed point implementation. | [optional] |
@@ -32,12 +33,14 @@
 | **obsolete_cpu_models** | **Hash&lt;String, Boolean&gt;** |  | [optional] |
 | **ovmf_path** | **String** | Deprecated. Use architectureConfiguration instead. | [optional] |
 | **permitted_host_devices** | [**V1PermittedHostDevices**](V1PermittedHostDevices.md) |  | [optional] |
+| **role_aggregation_strategy** | **String** | RoleAggregationStrategy controls whether RBAC cluster roles should be aggregated to the default Kubernetes roles (admin, edit, view). When set to \&quot;AggregateToDefault\&quot; (default) or not specified, the aggregate-to-* labels are added to the cluster roles. When set to \&quot;Manual\&quot;, the labels are not added, and roles will not be aggregated to the default roles. Setting this field to \&quot;Manual\&quot; requires the OptOutRoleAggregation feature gate to be enabled. This is an Alpha feature and subject to change. | [optional] |
 | **seccomp_configuration** | [**V1SeccompConfiguration**](V1SeccompConfiguration.md) |  | [optional] |
 | **selinux_launcher_type** | **String** |  | [optional] |
 | **smbios** | [**V1SMBiosConfiguration**](V1SMBiosConfiguration.md) |  | [optional] |
 | **support_container_resources** | [**Array&lt;V1SupportContainerResources&gt;**](V1SupportContainerResources.md) | SupportContainerResources specifies the resource requirements for various types of supporting containers such as container disks/virtiofs/sidecars and hotplug attachment pods. If omitted a sensible default will be supplied. | [optional] |
 | **supported_guest_agent_versions** | **Array&lt;String&gt;** | deprecated | [optional] |
 | **tls_configuration** | [**V1TLSConfiguration**](V1TLSConfiguration.md) |  | [optional] |
+| **virt_template_deployment** | [**V1VirtTemplateDeployment**](V1VirtTemplateDeployment.md) |  | [optional] |
 | **virtual_machine_instances_per_node** | **Integer** |  | [optional] |
 | **virtual_machine_options** | [**V1VirtualMachineOptions**](V1VirtualMachineOptions.md) |  | [optional] |
 | **vm_rollout_strategy** | **String** | VMRolloutStrategy defines how live-updatable fields, like CPU sockets, memory, tolerations, and affinity, are propagated from a VM to its VMI. | [optional] |
@@ -56,6 +59,7 @@ instance = Kubevirt::V1KubeVirtConfiguration.new(
   auto_cpu_limit_namespace_label_selector: null,
   changed_block_tracking_label_selectors: null,
   common_instancetypes_deployment: null,
+  confidential_compute: null,
   controller_configuration: null,
   cpu_model: null,
   cpu_request: null,
@@ -78,12 +82,14 @@ instance = Kubevirt::V1KubeVirtConfiguration.new(
   obsolete_cpu_models: null,
   ovmf_path: null,
   permitted_host_devices: null,
+  role_aggregation_strategy: null,
   seccomp_configuration: null,
   selinux_launcher_type: null,
   smbios: null,
   support_container_resources: null,
   supported_guest_agent_versions: null,
   tls_configuration: null,
+  virt_template_deployment: null,
   virtual_machine_instances_per_node: null,
   virtual_machine_options: null,
   vm_rollout_strategy: null,

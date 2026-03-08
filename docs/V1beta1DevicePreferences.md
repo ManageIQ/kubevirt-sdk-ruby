@@ -28,6 +28,7 @@
 | **preferred_sound_model** | **String** | PreferredSoundModel optionally defines the preferred model for Sound devices. | [optional] |
 | **preferred_tpm** | [**V1TPMDevice**](V1TPMDevice.md) |  | [optional] |
 | **preferred_use_virtio_transitional** | **Boolean** | PreferredUseVirtioTransitional optionally defines the preferred value of UseVirtioTransitional | [optional] |
+| **preferred_video_type** | **String** | PreferredVideoType optionally defines the preferred type for Video devices. | [optional] |
 | **preferred_virtual_gpu_options** | [**V1VGPUOptions**](V1VGPUOptions.md) |  | [optional] |
 
 ## Example
@@ -60,6 +61,7 @@ instance = Kubevirt::V1beta1DevicePreferences.new(
   preferred_sound_model: null,
   preferred_tpm: null,
   preferred_use_virtio_transitional: null,
+  preferred_video_type: null,
   preferred_virtual_gpu_options: null
 )
 ```

@@ -74,9 +74,11 @@ docs/V1CloudInitConfigDriveSource.md
 docs/V1CloudInitNoCloudSource.md
 docs/V1CommonInstancetypesDeployment.md
 docs/V1ComponentConfig.md
+docs/V1ConfidentialComputeConfiguration.md
 docs/V1ConfigMapVolumeSource.md
 docs/V1ContainerDiskInfo.md
 docs/V1ContainerDiskSource.md
+docs/V1ContainerPathVolumeSource.md
 docs/V1ControllerRevisionRef.md
 docs/V1CustomBlockSize.md
 docs/V1CustomProfile.md
@@ -190,6 +192,7 @@ docs/V1RateLimiter.md
 docs/V1Realtime.md
 docs/V1ReloadableComponentConfiguration.md
 docs/V1RemoveVolumeOptions.md
+docs/V1ReservedOverhead.md
 docs/V1ResourceRequirements.md
 docs/V1ResourceRequirementsWithoutClaims.md
 docs/V1RestartOptions.md
@@ -213,6 +216,8 @@ docs/V1StorageMigratedVolumeInfo.md
 docs/V1SupportContainerResources.md
 docs/V1SyNICTimer.md
 docs/V1SysprepSource.md
+docs/V1TDXAttestationConfiguration.md
+docs/V1TDXConfiguration.md
 docs/V1TLBFlush.md
 docs/V1TLSConfiguration.md
 docs/V1TPMDevice.md
@@ -229,6 +234,7 @@ docs/V1UtilityVolume.md
 docs/V1VGPUDisplayOptions.md
 docs/V1VGPUOptions.md
 docs/V1VideoDevice.md
+docs/V1VirtTemplateDeployment.md
 docs/V1VirtualMachine.md
 docs/V1VirtualMachineCondition.md
 docs/V1VirtualMachineInstance.md
@@ -337,6 +343,8 @@ docs/V1beta1VirtualMachineClusterInstancetypeList.md
 docs/V1beta1VirtualMachineClusterPreference.md
 docs/V1beta1VirtualMachineClusterPreferenceList.md
 docs/V1beta1VirtualMachineExport.md
+docs/V1beta1VirtualMachineExportBackup.md
+docs/V1beta1VirtualMachineExportBackupEndpoint.md
 docs/V1beta1VirtualMachineExportLink.md
 docs/V1beta1VirtualMachineExportLinks.md
 docs/V1beta1VirtualMachineExportList.md
@@ -459,9 +467,11 @@ lib/kubevirt/models/v1_cloud_init_config_drive_source.rb
 lib/kubevirt/models/v1_cloud_init_no_cloud_source.rb
 lib/kubevirt/models/v1_common_instancetypes_deployment.rb
 lib/kubevirt/models/v1_component_config.rb
+lib/kubevirt/models/v1_confidential_compute_configuration.rb
 lib/kubevirt/models/v1_config_map_volume_source.rb
 lib/kubevirt/models/v1_container_disk_info.rb
 lib/kubevirt/models/v1_container_disk_source.rb
+lib/kubevirt/models/v1_container_path_volume_source.rb
 lib/kubevirt/models/v1_controller_revision_ref.rb
 lib/kubevirt/models/v1_cpu.rb
 lib/kubevirt/models/v1_cpu_feature.rb
@@ -576,6 +586,7 @@ lib/kubevirt/models/v1_rate_limiter.rb
 lib/kubevirt/models/v1_realtime.rb
 lib/kubevirt/models/v1_reloadable_component_configuration.rb
 lib/kubevirt/models/v1_remove_volume_options.rb
+lib/kubevirt/models/v1_reserved_overhead.rb
 lib/kubevirt/models/v1_resource_requirements.rb
 lib/kubevirt/models/v1_resource_requirements_without_claims.rb
 lib/kubevirt/models/v1_rest_client_configuration.rb
@@ -601,6 +612,8 @@ lib/kubevirt/models/v1_storage_migrated_volume_info.rb
 lib/kubevirt/models/v1_support_container_resources.rb
 lib/kubevirt/models/v1_sy_nic_timer.rb
 lib/kubevirt/models/v1_sysprep_source.rb
+lib/kubevirt/models/v1_tdx_attestation_configuration.rb
+lib/kubevirt/models/v1_tdx_configuration.rb
 lib/kubevirt/models/v1_timer.rb
 lib/kubevirt/models/v1_tlb_flush.rb
 lib/kubevirt/models/v1_tls_configuration.rb
@@ -617,6 +630,7 @@ lib/kubevirt/models/v1_utility_volume.rb
 lib/kubevirt/models/v1_vgpu_display_options.rb
 lib/kubevirt/models/v1_vgpu_options.rb
 lib/kubevirt/models/v1_video_device.rb
+lib/kubevirt/models/v1_virt_template_deployment.rb
 lib/kubevirt/models/v1_virtual_machine.rb
 lib/kubevirt/models/v1_virtual_machine_condition.rb
 lib/kubevirt/models/v1_virtual_machine_instance.rb
@@ -725,6 +739,8 @@ lib/kubevirt/models/v1beta1_virtual_machine_cluster_instancetype_list.rb
 lib/kubevirt/models/v1beta1_virtual_machine_cluster_preference.rb
 lib/kubevirt/models/v1beta1_virtual_machine_cluster_preference_list.rb
 lib/kubevirt/models/v1beta1_virtual_machine_export.rb
+lib/kubevirt/models/v1beta1_virtual_machine_export_backup.rb
+lib/kubevirt/models/v1beta1_virtual_machine_export_backup_endpoint.rb
 lib/kubevirt/models/v1beta1_virtual_machine_export_link.rb
 lib/kubevirt/models/v1beta1_virtual_machine_export_links.rb
 lib/kubevirt/models/v1beta1_virtual_machine_export_list.rb
@@ -841,9 +857,11 @@ spec/models/v1_cloud_init_config_drive_source_spec.rb
 spec/models/v1_cloud_init_no_cloud_source_spec.rb
 spec/models/v1_common_instancetypes_deployment_spec.rb
 spec/models/v1_component_config_spec.rb
+spec/models/v1_confidential_compute_configuration_spec.rb
 spec/models/v1_config_map_volume_source_spec.rb
 spec/models/v1_container_disk_info_spec.rb
 spec/models/v1_container_disk_source_spec.rb
+spec/models/v1_container_path_volume_source_spec.rb
 spec/models/v1_controller_revision_ref_spec.rb
 spec/models/v1_cpu_feature_spec.rb
 spec/models/v1_cpu_spec.rb
@@ -958,6 +976,7 @@ spec/models/v1_rate_limiter_spec.rb
 spec/models/v1_realtime_spec.rb
 spec/models/v1_reloadable_component_configuration_spec.rb
 spec/models/v1_remove_volume_options_spec.rb
+spec/models/v1_reserved_overhead_spec.rb
 spec/models/v1_resource_requirements_spec.rb
 spec/models/v1_resource_requirements_without_claims_spec.rb
 spec/models/v1_rest_client_configuration_spec.rb
@@ -983,6 +1002,8 @@ spec/models/v1_storage_migrated_volume_info_spec.rb
 spec/models/v1_support_container_resources_spec.rb
 spec/models/v1_sy_nic_timer_spec.rb
 spec/models/v1_sysprep_source_spec.rb
+spec/models/v1_tdx_attestation_configuration_spec.rb
+spec/models/v1_tdx_configuration_spec.rb
 spec/models/v1_timer_spec.rb
 spec/models/v1_tlb_flush_spec.rb
 spec/models/v1_tls_configuration_spec.rb
@@ -999,6 +1020,7 @@ spec/models/v1_utility_volume_spec.rb
 spec/models/v1_vgpu_display_options_spec.rb
 spec/models/v1_vgpu_options_spec.rb
 spec/models/v1_video_device_spec.rb
+spec/models/v1_virt_template_deployment_spec.rb
 spec/models/v1_virtual_machine_condition_spec.rb
 spec/models/v1_virtual_machine_instance_backup_status_spec.rb
 spec/models/v1_virtual_machine_instance_condition_spec.rb
@@ -1105,6 +1127,8 @@ spec/models/v1beta1_virtual_machine_cluster_instancetype_list_spec.rb
 spec/models/v1beta1_virtual_machine_cluster_instancetype_spec.rb
 spec/models/v1beta1_virtual_machine_cluster_preference_list_spec.rb
 spec/models/v1beta1_virtual_machine_cluster_preference_spec.rb
+spec/models/v1beta1_virtual_machine_export_backup_endpoint_spec.rb
+spec/models/v1beta1_virtual_machine_export_backup_spec.rb
 spec/models/v1beta1_virtual_machine_export_link_spec.rb
 spec/models/v1beta1_virtual_machine_export_links_spec.rb
 spec/models/v1beta1_virtual_machine_export_list_spec.rb
