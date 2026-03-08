@@ -15,6 +15,7 @@
 | **model** | **String** | Interface model. One of: e1000, e1000e, igb, ne2k_pci, pcnet, rtl8139, virtio. Defaults to virtio. | [optional] |
 | **name** | **String** | Logical name of the interface as well as a reference to the associated networks. Must match the Name of a Network. | [default to &#39;&#39;] |
 | **passt** | **Object** | DeprecatedInterfacePasst is an alias to the deprecated InterfacePasst Deprecated: Removed in v1.3 | [optional] |
+| **passt_binding** | **Object** | InterfacePasstBinding connects to a given network using passt usermode networking. | [optional] |
 | **pci_address** | **String** | If specified, the virtual network interface will be placed on the guests pci address with the specified PCI address. For example: 0000:81:01.10 | [optional] |
 | **ports** | [**Array&lt;V1Port&gt;**](V1Port.md) | List of ports to be forwarded to the virtual machine. | [optional] |
 | **slirp** | **Object** | DeprecatedInterfaceSlirp is an alias to the deprecated InterfaceSlirp that connects to a given network using QEMU user networking mode. Deprecated: Removed in v1.3 | [optional] |
@@ -39,6 +40,7 @@ instance = Kubevirt::V1Interface.new(
   model: null,
   name: null,
   passt: null,
+  passt_binding: null,
   pci_address: null,
   ports: null,
   slirp: null,

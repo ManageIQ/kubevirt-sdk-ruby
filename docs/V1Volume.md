@@ -8,6 +8,7 @@
 | **cloud_init_no_cloud** | [**V1CloudInitNoCloudSource**](V1CloudInitNoCloudSource.md) |  | [optional] |
 | **config_map** | [**V1ConfigMapVolumeSource**](V1ConfigMapVolumeSource.md) |  | [optional] |
 | **container_disk** | [**V1ContainerDiskSource**](V1ContainerDiskSource.md) |  | [optional] |
+| **container_path** | [**V1ContainerPathVolumeSource**](V1ContainerPathVolumeSource.md) |  | [optional] |
 | **data_volume** | [**V1DataVolumeSource**](V1DataVolumeSource.md) |  | [optional] |
 | **downward_api** | [**V1DownwardAPIVolumeSource**](V1DownwardAPIVolumeSource.md) |  | [optional] |
 | **downward_metrics** | **Object** | DownwardMetricsVolumeSource adds a very small disk to VMIs which contains a limited view of host and guest metrics. The disk content is compatible with vhostmd (https://github.com/vhostmd/vhostmd) and vm-dump-metrics. | [optional] |
@@ -31,6 +32,7 @@ instance = Kubevirt::V1Volume.new(
   cloud_init_no_cloud: null,
   config_map: null,
   container_disk: null,
+  container_path: null,
   data_volume: null,
   downward_api: null,
   downward_metrics: null,
