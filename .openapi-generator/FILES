@@ -89,10 +89,6 @@ docs/V1DHCPPrivateOptions.md
 docs/V1DataVolumeSource.md
 docs/V1DataVolumeTemplateSpec.md
 docs/V1DeveloperConfiguration.md
-docs/V1DeviceAttribute.md
-docs/V1DeviceResourceClaimStatus.md
-docs/V1DeviceStatus.md
-docs/V1DeviceStatusInfo.md
 docs/V1Devices.md
 docs/V1Diag288Watchdog.md
 docs/V1Disk.md
@@ -483,10 +479,6 @@ lib/kubevirt/models/v1_customize_components_patch.rb
 lib/kubevirt/models/v1_data_volume_source.rb
 lib/kubevirt/models/v1_data_volume_template_spec.rb
 lib/kubevirt/models/v1_developer_configuration.rb
-lib/kubevirt/models/v1_device_attribute.rb
-lib/kubevirt/models/v1_device_resource_claim_status.rb
-lib/kubevirt/models/v1_device_status.rb
-lib/kubevirt/models/v1_device_status_info.rb
 lib/kubevirt/models/v1_devices.rb
 lib/kubevirt/models/v1_dhcp_options.rb
 lib/kubevirt/models/v1_dhcp_private_options.rb
@@ -873,10 +865,6 @@ spec/models/v1_customize_components_spec.rb
 spec/models/v1_data_volume_source_spec.rb
 spec/models/v1_data_volume_template_spec_spec.rb
 spec/models/v1_developer_configuration_spec.rb
-spec/models/v1_device_attribute_spec.rb
-spec/models/v1_device_resource_claim_status_spec.rb
-spec/models/v1_device_status_info_spec.rb
-spec/models/v1_device_status_spec.rb
 spec/models/v1_devices_spec.rb
 spec/models/v1_dhcp_options_spec.rb
 spec/models/v1_dhcp_private_options_spec.rb
