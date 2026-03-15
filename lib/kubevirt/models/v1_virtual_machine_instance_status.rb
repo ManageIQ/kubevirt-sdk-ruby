@@ -29,8 +29,6 @@ module Kubevirt
 
     attr_accessor :current_cpu_topology
 
-    attr_accessor :device_status
-
     # EvacuationNodeName is used to track the eviction process of a VMI. It stores the name of the node that we want to evacuate. It is meant to be used by KubeVirt core components only and can't be set or modified by users.
     attr_accessor :evacuation_node_name
 
@@ -121,7 +119,6 @@ module Kubevirt
         :'changed_block_tracking' => :'changedBlockTracking',
         :'conditions' => :'conditions',
         :'current_cpu_topology' => :'currentCPUTopology',
-        :'device_status' => :'deviceStatus',
         :'evacuation_node_name' => :'evacuationNodeName',
         :'fs_freeze_status' => :'fsFreezeStatus',
         :'guest_os_info' => :'guestOSInfo',
@@ -165,7 +162,6 @@ module Kubevirt
         :'changed_block_tracking' => :'V1ChangedBlockTrackingStatus',
         :'conditions' => :'Array<V1VirtualMachineInstanceCondition>',
         :'current_cpu_topology' => :'V1CPUTopology',
-        :'device_status' => :'V1DeviceStatus',
         :'evacuation_node_name' => :'String',
         :'fs_freeze_status' => :'String',
         :'guest_os_info' => :'V1VirtualMachineInstanceGuestOSInfo',
@@ -235,10 +231,6 @@ module Kubevirt
 
       if attributes.key?(:'current_cpu_topology')
         self.current_cpu_topology = attributes[:'current_cpu_topology']
-      end
-
-      if attributes.key?(:'device_status')
-        self.device_status = attributes[:'device_status']
       end
 
       if attributes.key?(:'evacuation_node_name')
@@ -377,7 +369,6 @@ module Kubevirt
           changed_block_tracking == o.changed_block_tracking &&
           conditions == o.conditions &&
           current_cpu_topology == o.current_cpu_topology &&
-          device_status == o.device_status &&
           evacuation_node_name == o.evacuation_node_name &&
           fs_freeze_status == o.fs_freeze_status &&
           guest_os_info == o.guest_os_info &&
@@ -411,7 +402,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [vsockcid, active_pods, changed_block_tracking, conditions, current_cpu_topology, device_status, evacuation_node_name, fs_freeze_status, guest_os_info, interfaces, kernel_boot_status, launcher_container_image_version, machine, memory, migrated_volumes, migration_method, migration_state, migration_transport, node_name, phase, phase_transition_timestamps, qos_class, reason, runtime_user, selinux_context, topology_hints, virtual_machine_revision_name, volume_status].hash
+      [vsockcid, active_pods, changed_block_tracking, conditions, current_cpu_topology, evacuation_node_name, fs_freeze_status, guest_os_info, interfaces, kernel_boot_status, launcher_container_image_version, machine, memory, migrated_volumes, migration_method, migration_state, migration_transport, node_name, phase, phase_transition_timestamps, qos_class, reason, runtime_user, selinux_context, topology_hints, virtual_machine_revision_name, volume_status].hash
     end
 
     # Builds the object from hash

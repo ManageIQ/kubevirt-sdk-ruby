@@ -9,7 +9,6 @@
 | **changed_block_tracking** | [**V1ChangedBlockTrackingStatus**](V1ChangedBlockTrackingStatus.md) |  | [optional] |
 | **conditions** | [**Array&lt;V1VirtualMachineInstanceCondition&gt;**](V1VirtualMachineInstanceCondition.md) | Conditions are specific points in VirtualMachineInstance&#39;s pod runtime. | [optional] |
 | **current_cpu_topology** | [**V1CPUTopology**](V1CPUTopology.md) |  | [optional] |
-| **device_status** | [**V1DeviceStatus**](V1DeviceStatus.md) |  | [optional] |
 | **evacuation_node_name** | **String** | EvacuationNodeName is used to track the eviction process of a VMI. It stores the name of the node that we want to evacuate. It is meant to be used by KubeVirt core components only and can&#39;t be set or modified by users. | [optional] |
 | **fs_freeze_status** | **String** | FSFreezeStatus indicates whether a freeze operation was requested for the guest filesystem. It will be set to \&quot;frozen\&quot; if the request was made, or unset otherwise. This does not reflect the actual state of the guest filesystem. | [optional] |
 | **guest_os_info** | [**V1VirtualMachineInstanceGuestOSInfo**](V1VirtualMachineInstanceGuestOSInfo.md) |  | [optional] |
@@ -44,7 +43,6 @@ instance = Kubevirt::V1VirtualMachineInstanceStatus.new(
   changed_block_tracking: null,
   conditions: null,
   current_cpu_topology: null,
-  device_status: null,
   evacuation_node_name: null,
   fs_freeze_status: null,
   guest_os_info: null,
