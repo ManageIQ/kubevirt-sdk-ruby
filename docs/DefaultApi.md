@@ -58,7 +58,7 @@ All URIs are relative to *http://localhost*
 | [**delete_virtual_machine_clone**](DefaultApi.md#delete_virtual_machine_clone) | **DELETE** /apis/clone.kubevirt.io/v1beta1/virtualmachineclones/{name} |  |
 | [**delete_virtual_machine_cluster_instancetype**](DefaultApi.md#delete_virtual_machine_cluster_instancetype) | **DELETE** /apis/instancetype.kubevirt.io/v1beta1/virtualmachineclusterinstancetypes/{name} |  |
 | [**delete_virtual_machine_cluster_preference**](DefaultApi.md#delete_virtual_machine_cluster_preference) | **DELETE** /apis/instancetype.kubevirt.io/v1beta1/virtualmachineclusterpreferences/{name} |  |
-| [**func15**](DefaultApi.md#func15) | **GET** /healthz |  |
+| [**func17**](DefaultApi.md#func17) | **GET** /healthz |  |
 | [**func6**](DefaultApi.md#func6) | **GET** /openapi/v2 |  |
 | [**get_api_group_backup_kubevirt_io**](DefaultApi.md#get_api_group_backup_kubevirt_io) | **GET** /apis/backup.kubevirt.io/ |  |
 | [**get_api_group_clone_kubevirt_io**](DefaultApi.md#get_api_group_clone_kubevirt_io) | **GET** /apis/clone.kubevirt.io/ |  |
@@ -77,6 +77,9 @@ All URIs are relative to *http://localhost*
 | [**get_api_resources_migrations_kubevirt_io_v1alpha1**](DefaultApi.md#get_api_resources_migrations_kubevirt_io_v1alpha1) | **GET** /apis/migrations.kubevirt.io/v1alpha1/ |  |
 | [**get_api_resources_pool_kubevirt_io_v1beta1**](DefaultApi.md#get_api_resources_pool_kubevirt_io_v1beta1) | **GET** /apis/pool.kubevirt.io/v1beta1/ |  |
 | [**get_api_resources_snapshot_kubevirt_io_v1beta1**](DefaultApi.md#get_api_resources_snapshot_kubevirt_io_v1beta1) | **GET** /apis/snapshot.kubevirt.io/v1beta1/ |  |
+| [**get_open_apiv3_discovery**](DefaultApi.md#get_open_apiv3_discovery) | **GET** /openapi/v3 |  |
+| [**get_open_apiv3_spec_subresources_kubevirt_io_v1**](DefaultApi.md#get_open_apiv3_spec_subresources_kubevirt_io_v1) | **GET** /openapi/v3/apis/subresources.kubevirt.io/v1 |  |
+| [**get_open_apiv3_spec_subresources_kubevirt_io_v1alpha3**](DefaultApi.md#get_open_apiv3_spec_subresources_kubevirt_io_v1alpha3) | **GET** /openapi/v3/apis/subresources.kubevirt.io/v1alpha3 |  |
 | [**get_root_paths**](DefaultApi.md#get_root_paths) | **GET** / |  |
 | [**handle_dump_profiler**](DefaultApi.md#handle_dump_profiler) | **GET** /dump-profiler |  |
 | [**handle_start_profiler**](DefaultApi.md#handle_start_profiler) | **GET** /start-profiler |  |
@@ -4276,9 +4279,9 @@ No authorization required
 - **Accept**: application/json, application/yaml
 
 
-## func15
+## func17
 
-> func15
+> func17
 
 
 
@@ -4294,27 +4297,27 @@ api_instance = Kubevirt::DefaultApi.new
 
 begin
   
-  api_instance.func15
+  api_instance.func17
 rescue Kubevirt::ApiError => e
-  puts "Error when calling DefaultApi->func15: #{e}"
+  puts "Error when calling DefaultApi->func17: #{e}"
 end
 ```
 
-#### Using the func15_with_http_info variant
+#### Using the func17_with_http_info variant
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> func15_with_http_info
+> <Array(nil, Integer, Hash)> func17_with_http_info
 
 ```ruby
 begin
   
-  data, status_code, headers = api_instance.func15_with_http_info
+  data, status_code, headers = api_instance.func17_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
 rescue Kubevirt::ApiError => e
-  puts "Error when calling DefaultApi->func15_with_http_info: #{e}"
+  puts "Error when calling DefaultApi->func17_with_http_info: #{e}"
 end
 ```
 
@@ -5420,6 +5423,188 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**K8sIoApimachineryPkgApisMetaV1APIResourceList**](K8sIoApimachineryPkgApisMetaV1APIResourceList.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_open_apiv3_discovery
+
+> get_open_apiv3_discovery
+
+
+
+Get OpenAPI v3 discovery
+
+### Examples
+
+```ruby
+require 'time'
+require 'kubevirt'
+
+api_instance = Kubevirt::DefaultApi.new
+
+begin
+  
+  api_instance.get_open_apiv3_discovery
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->get_open_apiv3_discovery: #{e}"
+end
+```
+
+#### Using the get_open_apiv3_discovery_with_http_info variant
+
+This returns an Array which contains the response data (`nil` in this case), status code and headers.
+
+> <Array(nil, Integer, Hash)> get_open_apiv3_discovery_with_http_info
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.get_open_apiv3_discovery_with_http_info
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => nil
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->get_open_apiv3_discovery_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## get_open_apiv3_spec_subresources_kubevirt_io_v1
+
+> String get_open_apiv3_spec_subresources_kubevirt_io_v1
+
+
+
+Get OpenAPI v3 specification for subresources.kubevirt.io/v1
+
+### Examples
+
+```ruby
+require 'time'
+require 'kubevirt'
+
+api_instance = Kubevirt::DefaultApi.new
+
+begin
+  
+  result = api_instance.get_open_apiv3_spec_subresources_kubevirt_io_v1
+  p result
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->get_open_apiv3_spec_subresources_kubevirt_io_v1: #{e}"
+end
+```
+
+#### Using the get_open_apiv3_spec_subresources_kubevirt_io_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(String, Integer, Hash)> get_open_apiv3_spec_subresources_kubevirt_io_v1_with_http_info
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.get_open_apiv3_spec_subresources_kubevirt_io_v1_with_http_info
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => String
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->get_open_apiv3_spec_subresources_kubevirt_io_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**String**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_open_apiv3_spec_subresources_kubevirt_io_v1alpha3
+
+> String get_open_apiv3_spec_subresources_kubevirt_io_v1alpha3
+
+
+
+Get OpenAPI v3 specification for subresources.kubevirt.io/v1alpha3
+
+### Examples
+
+```ruby
+require 'time'
+require 'kubevirt'
+
+api_instance = Kubevirt::DefaultApi.new
+
+begin
+  
+  result = api_instance.get_open_apiv3_spec_subresources_kubevirt_io_v1alpha3
+  p result
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->get_open_apiv3_spec_subresources_kubevirt_io_v1alpha3: #{e}"
+end
+```
+
+#### Using the get_open_apiv3_spec_subresources_kubevirt_io_v1alpha3_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(String, Integer, Hash)> get_open_apiv3_spec_subresources_kubevirt_io_v1alpha3_with_http_info
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.get_open_apiv3_spec_subresources_kubevirt_io_v1alpha3_with_http_info
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => String
+rescue Kubevirt::ApiError => e
+  puts "Error when calling DefaultApi->get_open_apiv3_spec_subresources_kubevirt_io_v1alpha3_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**String**
 
 ### Authorization
 
