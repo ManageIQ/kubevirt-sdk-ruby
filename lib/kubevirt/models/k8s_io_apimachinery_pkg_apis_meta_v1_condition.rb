@@ -14,20 +14,28 @@ require 'date'
 require 'time'
 
 module Kubevirt
-  # Condition defines conditions
-  class V1alpha1Condition < ApiModelBase
+  # Condition contains details for one aspect of the current state of this API Resource.
+  class K8sIoApimachineryPkgApisMetaV1Condition < ApiModelBase
+    # message is a human readable message indicating details about the transition. This may be an empty string.
     attr_accessor :message
 
+    # observedGeneration represents the .metadata.generation that the condition was set based upon. For instance, if .metadata.generation is currently 12, but the .status.conditions[x].observedGeneration is 9, the condition is out of date with respect to the current state of the instance.
+    attr_accessor :observed_generation
+
+    # reason contains a programmatic identifier indicating the reason for the condition's last transition. Producers of specific condition types may define expected values and meanings for this field, and whether the values are considered a guaranteed API. The value should be a CamelCase string. This field may not be empty.
     attr_accessor :reason
 
+    # status of the condition, one of True, False, Unknown.
     attr_accessor :status
 
+    # type of condition in CamelCase or in foo.example.com/CamelCase.
     attr_accessor :type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'message' => :'message',
+        :'observed_generation' => :'observedGeneration',
         :'reason' => :'reason',
         :'status' => :'status',
         :'type' => :'type'
@@ -48,6 +56,7 @@ module Kubevirt
     def self.openapi_types
       {
         :'message' => :'String',
+        :'observed_generation' => :'Integer',
         :'reason' => :'String',
         :'status' => :'String',
         :'type' => :'String'
@@ -64,24 +73,32 @@ module Kubevirt
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1alpha1Condition` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::K8sIoApimachineryPkgApisMetaV1Condition` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1alpha1Condition`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::K8sIoApimachineryPkgApisMetaV1Condition`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
       if attributes.key?(:'message')
         self.message = attributes[:'message']
+      else
+        self.message = ''
+      end
+
+      if attributes.key?(:'observed_generation')
+        self.observed_generation = attributes[:'observed_generation']
       end
 
       if attributes.key?(:'reason')
         self.reason = attributes[:'reason']
+      else
+        self.reason = ''
       end
 
       if attributes.key?(:'status')
@@ -102,6 +119,14 @@ module Kubevirt
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
+      if @message.nil?
+        invalid_properties.push('invalid value for "message", message cannot be nil.')
+      end
+
+      if @reason.nil?
+        invalid_properties.push('invalid value for "reason", reason cannot be nil.')
+      end
+
       if @status.nil?
         invalid_properties.push('invalid value for "status", status cannot be nil.')
       end
@@ -117,9 +142,31 @@ module Kubevirt
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      return false if @message.nil?
+      return false if @reason.nil?
       return false if @status.nil?
       return false if @type.nil?
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] message Value to be assigned
+    def message=(message)
+      if message.nil?
+        fail ArgumentError, 'message cannot be nil'
+      end
+
+      @message = message
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] reason Value to be assigned
+    def reason=(reason)
+      if reason.nil?
+        fail ArgumentError, 'reason cannot be nil'
+      end
+
+      @reason = reason
     end
 
     # Custom attribute writer method with validation
@@ -148,6 +195,7 @@ module Kubevirt
       return true if self.equal?(o)
       self.class == o.class &&
           message == o.message &&
+          observed_generation == o.observed_generation &&
           reason == o.reason &&
           status == o.status &&
           type == o.type
@@ -162,7 +210,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [message, reason, status, type].hash
+      [message, observed_generation, reason, status, type].hash
     end
 
     # Builds the object from hash
