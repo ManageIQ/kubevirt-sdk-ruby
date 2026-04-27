@@ -55,7 +55,7 @@ module Kubevirt
     def self.openapi_types
       {
         :'checkpoint_name' => :'String',
-        :'conditions' => :'Array<V1alpha1Condition>',
+        :'conditions' => :'Array<K8sIoApimachineryPkgApisMetaV1Condition>',
         :'endpoint_cert' => :'String',
         :'included_volumes' => :'Array<V1alpha1BackupVolumeInfo>',
         :'type' => :'String'
