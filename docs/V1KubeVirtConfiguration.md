@@ -33,6 +33,7 @@
 | **obsolete_cpu_models** | **Hash&lt;String, Boolean&gt;** |  | [optional] |
 | **ovmf_path** | **String** | Deprecated. Use architectureConfiguration instead. | [optional] |
 | **permitted_host_devices** | [**V1PermittedHostDevices**](V1PermittedHostDevices.md) |  | [optional] |
+| **persistent_reservation_configuration** | [**V1PersistentReservationConfiguration**](V1PersistentReservationConfiguration.md) |  | [optional] |
 | **role_aggregation_strategy** | **String** | RoleAggregationStrategy controls whether RBAC cluster roles should be aggregated to the default Kubernetes roles (admin, edit, view). When set to \&quot;AggregateToDefault\&quot; (default) or not specified, the aggregate-to-* labels are added to the cluster roles. When set to \&quot;Manual\&quot;, the labels are not added, and roles will not be aggregated to the default roles. Setting this field to \&quot;Manual\&quot; requires the OptOutRoleAggregation feature gate to be enabled. This is an Alpha feature and subject to change. | [optional] |
 | **seccomp_configuration** | [**V1SeccompConfiguration**](V1SeccompConfiguration.md) |  | [optional] |
 | **selinux_launcher_type** | **String** |  | [optional] |
@@ -82,6 +83,7 @@ instance = Kubevirt::V1KubeVirtConfiguration.new(
   obsolete_cpu_models: null,
   ovmf_path: null,
   permitted_host_devices: null,
+  persistent_reservation_configuration: null,
   role_aggregation_strategy: null,
   seccomp_configuration: null,
   selinux_launcher_type: null,

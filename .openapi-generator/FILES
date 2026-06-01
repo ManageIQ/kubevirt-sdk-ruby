@@ -176,6 +176,7 @@ docs/V1PanicDevice.md
 docs/V1PauseOptions.md
 docs/V1PciHostDevice.md
 docs/V1PermittedHostDevices.md
+docs/V1PersistentReservationConfiguration.md
 docs/V1PersistentVolumeClaimInfo.md
 docs/V1PersistentVolumeClaimVolumeSource.md
 docs/V1PluginBinding.md
@@ -568,6 +569,7 @@ lib/kubevirt/models/v1_panic_device.rb
 lib/kubevirt/models/v1_pause_options.rb
 lib/kubevirt/models/v1_pci_host_device.rb
 lib/kubevirt/models/v1_permitted_host_devices.rb
+lib/kubevirt/models/v1_persistent_reservation_configuration.rb
 lib/kubevirt/models/v1_persistent_volume_claim_info.rb
 lib/kubevirt/models/v1_persistent_volume_claim_volume_source.rb
 lib/kubevirt/models/v1_pit_timer.rb
@@ -955,6 +957,7 @@ spec/models/v1_panic_device_spec.rb
 spec/models/v1_pause_options_spec.rb
 spec/models/v1_pci_host_device_spec.rb
 spec/models/v1_permitted_host_devices_spec.rb
+spec/models/v1_persistent_reservation_configuration_spec.rb
 spec/models/v1_persistent_volume_claim_info_spec.rb
 spec/models/v1_persistent_volume_claim_volume_source_spec.rb
 spec/models/v1_pit_timer_spec.rb
