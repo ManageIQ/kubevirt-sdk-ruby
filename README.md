@@ -438,6 +438,7 @@ Class | Method | HTTP request | Description
  - [Kubevirt::V1ChangedBlockTrackingSelectors](docs/V1ChangedBlockTrackingSelectors.md)
  - [Kubevirt::V1ChangedBlockTrackingStatus](docs/V1ChangedBlockTrackingStatus.md)
  - [Kubevirt::V1Chassis](docs/V1Chassis.md)
+ - [Kubevirt::V1ClaimRequest](docs/V1ClaimRequest.md)
  - [Kubevirt::V1Clock](docs/V1Clock.md)
  - [Kubevirt::V1ClockOffset](docs/V1ClockOffset.md)
  - [Kubevirt::V1ClockOffsetUTC](docs/V1ClockOffsetUTC.md)

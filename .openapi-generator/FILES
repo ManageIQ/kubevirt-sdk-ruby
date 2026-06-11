@@ -68,6 +68,7 @@ docs/V1CertConfig.md
 docs/V1ChangedBlockTrackingSelectors.md
 docs/V1ChangedBlockTrackingStatus.md
 docs/V1Chassis.md
+docs/V1ClaimRequest.md
 docs/V1Clock.md
 docs/V1ClockOffset.md
 docs/V1ClockOffsetUTC.md
@@ -459,6 +460,7 @@ lib/kubevirt/models/v1_cert_config.rb
 lib/kubevirt/models/v1_changed_block_tracking_selectors.rb
 lib/kubevirt/models/v1_changed_block_tracking_status.rb
 lib/kubevirt/models/v1_chassis.rb
+lib/kubevirt/models/v1_claim_request.rb
 lib/kubevirt/models/v1_clock.rb
 lib/kubevirt/models/v1_clock_offset.rb
 lib/kubevirt/models/v1_clock_offset_utc.rb
@@ -847,6 +849,7 @@ spec/models/v1_cert_config_spec.rb
 spec/models/v1_changed_block_tracking_selectors_spec.rb
 spec/models/v1_changed_block_tracking_status_spec.rb
 spec/models/v1_chassis_spec.rb
+spec/models/v1_claim_request_spec.rb
 spec/models/v1_clock_offset_spec.rb
 spec/models/v1_clock_offset_utc_spec.rb
 spec/models/v1_clock_spec.rb

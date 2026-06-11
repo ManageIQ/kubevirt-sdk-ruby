@@ -14,24 +14,18 @@ require 'date'
 require 'time'
 
 module Kubevirt
-  # Network represents a network type and a resource that should be connected to the vm.
-  class V1Network < ApiModelBase
-    attr_accessor :multus
+  class V1ClaimRequest < ApiModelBase
+    # ClaimName references the name of an entry in the VMI's spec.resourceClaims[] array. The referenced entry may use either resourceClaimName or resourceClaimTemplateName.
+    attr_accessor :claim_name
 
-    # Network name. Must be a DNS_LABEL and unique within the vm. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-    attr_accessor :name
-
-    attr_accessor :pod
-
-    attr_accessor :resource_claim
+    # RequestName specifies which request from the ResourceClaim/ResourceClaimTemplate spec.devices.requests array this claim request corresponds to.
+    attr_accessor :request_name
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'multus' => :'multus',
-        :'name' => :'name',
-        :'pod' => :'pod',
-        :'resource_claim' => :'resourceClaim'
+        :'claim_name' => :'claimName',
+        :'request_name' => :'requestName'
       }
     end
 
@@ -48,10 +42,8 @@ module Kubevirt
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'multus' => :'V1MultusNetwork',
-        :'name' => :'String',
-        :'pod' => :'V1PodNetwork',
-        :'resource_claim' => :'V1ClaimRequest'
+        :'claim_name' => :'String',
+        :'request_name' => :'String'
       }
     end
 
@@ -65,34 +57,24 @@ module Kubevirt
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1Network` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1ClaimRequest` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1Network`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1ClaimRequest`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'multus')
-        self.multus = attributes[:'multus']
+      if attributes.key?(:'claim_name')
+        self.claim_name = attributes[:'claim_name']
       end
 
-      if attributes.key?(:'name')
-        self.name = attributes[:'name']
-      else
-        self.name = ''
-      end
-
-      if attributes.key?(:'pod')
-        self.pod = attributes[:'pod']
-      end
-
-      if attributes.key?(:'resource_claim')
-        self.resource_claim = attributes[:'resource_claim']
+      if attributes.key?(:'request_name')
+        self.request_name = attributes[:'request_name']
       end
     end
 
@@ -101,10 +83,6 @@ module Kubevirt
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @name.nil?
-        invalid_properties.push('invalid value for "name", name cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -112,18 +90,7 @@ module Kubevirt
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @name.nil?
       true
-    end
-
-    # Custom attribute writer method with validation
-    # @param [Object] name Value to be assigned
-    def name=(name)
-      if name.nil?
-        fail ArgumentError, 'name cannot be nil'
-      end
-
-      @name = name
     end
 
     # Checks equality by comparing each attribute.
@@ -131,10 +98,8 @@ module Kubevirt
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          multus == o.multus &&
-          name == o.name &&
-          pod == o.pod &&
-          resource_claim == o.resource_claim
+          claim_name == o.claim_name &&
+          request_name == o.request_name
     end
 
     # @see the `==` method
@@ -146,7 +111,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [multus, name, pod, resource_claim].hash
+      [claim_name, request_name].hash
     end
 
     # Builds the object from hash
