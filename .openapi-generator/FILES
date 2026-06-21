@@ -21,7 +21,6 @@ docs/K8sIoApiCoreV1PodAffinityTerm.md
 docs/K8sIoApiCoreV1PodAntiAffinity.md
 docs/K8sIoApiCoreV1PodDNSConfig.md
 docs/K8sIoApiCoreV1PodDNSConfigOption.md
-docs/K8sIoApiCoreV1PodResourceClaim.md
 docs/K8sIoApiCoreV1PreferredSchedulingTerm.md
 docs/K8sIoApiCoreV1ResourceFieldSelector.md
 docs/K8sIoApiCoreV1TCPSocketAction.md
@@ -282,6 +281,7 @@ docs/V1VirtualMachineInstanceReplicaSetCondition.md
 docs/V1VirtualMachineInstanceReplicaSetList.md
 docs/V1VirtualMachineInstanceReplicaSetSpec.md
 docs/V1VirtualMachineInstanceReplicaSetStatus.md
+docs/V1VirtualMachineInstanceResourceClaim.md
 docs/V1VirtualMachineInstanceSpec.md
 docs/V1VirtualMachineInstanceStatus.md
 docs/V1VirtualMachineInstanceTemplateSpec.md
@@ -416,7 +416,6 @@ lib/kubevirt/models/k8s_io_api_core_v1_pod_affinity_term.rb
 lib/kubevirt/models/k8s_io_api_core_v1_pod_anti_affinity.rb
 lib/kubevirt/models/k8s_io_api_core_v1_pod_dns_config.rb
 lib/kubevirt/models/k8s_io_api_core_v1_pod_dns_config_option.rb
-lib/kubevirt/models/k8s_io_api_core_v1_pod_resource_claim.rb
 lib/kubevirt/models/k8s_io_api_core_v1_preferred_scheduling_term.rb
 lib/kubevirt/models/k8s_io_api_core_v1_resource_field_selector.rb
 lib/kubevirt/models/k8s_io_api_core_v1_tcp_socket_action.rb
@@ -677,6 +676,7 @@ lib/kubevirt/models/v1_virtual_machine_instance_replica_set_condition.rb
 lib/kubevirt/models/v1_virtual_machine_instance_replica_set_list.rb
 lib/kubevirt/models/v1_virtual_machine_instance_replica_set_spec.rb
 lib/kubevirt/models/v1_virtual_machine_instance_replica_set_status.rb
+lib/kubevirt/models/v1_virtual_machine_instance_resource_claim.rb
 lib/kubevirt/models/v1_virtual_machine_instance_spec.rb
 lib/kubevirt/models/v1_virtual_machine_instance_status.rb
 lib/kubevirt/models/v1_virtual_machine_instance_template_spec.rb
@@ -805,7 +805,6 @@ spec/models/k8s_io_api_core_v1_pod_affinity_term_spec.rb
 spec/models/k8s_io_api_core_v1_pod_anti_affinity_spec.rb
 spec/models/k8s_io_api_core_v1_pod_dns_config_option_spec.rb
 spec/models/k8s_io_api_core_v1_pod_dns_config_spec.rb
-spec/models/k8s_io_api_core_v1_pod_resource_claim_spec.rb
 spec/models/k8s_io_api_core_v1_preferred_scheduling_term_spec.rb
 spec/models/k8s_io_api_core_v1_resource_field_selector_spec.rb
 spec/models/k8s_io_api_core_v1_tcp_socket_action_spec.rb
@@ -1064,6 +1063,7 @@ spec/models/v1_virtual_machine_instance_replica_set_list_spec.rb
 spec/models/v1_virtual_machine_instance_replica_set_spec.rb
 spec/models/v1_virtual_machine_instance_replica_set_spec_spec.rb
 spec/models/v1_virtual_machine_instance_replica_set_status_spec.rb
+spec/models/v1_virtual_machine_instance_resource_claim_spec.rb
 spec/models/v1_virtual_machine_instance_spec.rb
 spec/models/v1_virtual_machine_instance_spec_spec.rb
 spec/models/v1_virtual_machine_instance_status_spec.rb
