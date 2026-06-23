@@ -17,8 +17,9 @@
 | **node_selector** | **Hash&lt;String, String&gt;** | NodeSelector is a selector which must be true for the vmi to fit on a node. Selector which must match a node&#39;s labels for the vmi to be scheduled on that node. More info: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/ | [optional] |
 | **priority_class_name** | **String** | If specified, indicates the pod&#39;s priority. If not specified, the pod priority will be default or zero if there is no default. | [optional] |
 | **readiness_probe** | [**V1Probe**](V1Probe.md) |  | [optional] |
-| **resource_claims** | [**Array&lt;K8sIoApiCoreV1PodResourceClaim&gt;**](K8sIoApiCoreV1PodResourceClaim.md) | ResourceClaims define which ResourceClaims must be allocated and reserved before the VMI, hence virt-launcher pod is allowed to start. The resources will be made available to the domain which consumes them by name.  This is an alpha field and requires enabling the DynamicResourceAllocation feature gate in kubernetes  https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/ This field should only be configured if one of the feature-gates GPUsWithDRA, HostDevicesWithDRA, or NetworkDevicesWithDRA is enabled. This feature is in alpha. | [optional] |
+| **resource_claims** | [**Array&lt;V1VirtualMachineInstanceResourceClaim&gt;**](V1VirtualMachineInstanceResourceClaim.md) | ResourceClaims define which ResourceClaims must be allocated and reserved before the VMI, hence virt-launcher pod is allowed to start. The resources will be made available to the domain which consumes them by name.  This is an alpha field and requires enabling the DynamicResourceAllocation feature gate in kubernetes  https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/ This field should only be configured if one of the feature-gates GPUsWithDRA, HostDevicesWithDRA, or NetworkDevicesWithDRA is enabled. This feature is in alpha. | [optional] |
 | **scheduler_name** | **String** | If specified, the VMI will be dispatched by specified scheduler. If not specified, the VMI will be dispatched by default scheduler. | [optional] |
+| **service_account_name** | **String** | ServiceAccountName is the name of the ServiceAccount to use to run the virt-launcher pod. This sets pod.spec.serviceAccountName but does NOT automatically expose the service account token to the VM guest. To expose the token to the VM, use a serviceAccount volume. | [optional] |
 | **start_strategy** | **String** | StartStrategy can be set to \&quot;Paused\&quot; if Virtual Machine should be started in paused state. | [optional] |
 | **subdomain** | **String** | If specified, the fully qualified vmi hostname will be \&quot;&lt;hostname&gt;.&lt;subdomain&gt;.&lt;pod namespace&gt;.svc.&lt;cluster domain&gt;\&quot;. If not specified, the vmi will not have a domainname at all. The DNS entry will resolve to the vmi, no matter if the vmi itself can pick up a hostname. | [optional] |
 | **termination_grace_period_seconds** | **Integer** | Grace period observed after signalling a VirtualMachineInstance to stop after which the VirtualMachineInstance is force terminated. | [optional] |
@@ -48,6 +49,7 @@ instance = Kubevirt::V1VirtualMachineInstanceSpec.new(
   readiness_probe: null,
   resource_claims: null,
   scheduler_name: null,
+  service_account_name: null,
   start_strategy: null,
   subdomain: null,
   termination_grace_period_seconds: null,
