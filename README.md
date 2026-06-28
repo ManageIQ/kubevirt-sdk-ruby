@@ -602,6 +602,7 @@ Class | Method | HTTP request | Description
  - [Kubevirt::V1UtilityVolume](docs/V1UtilityVolume.md)
  - [Kubevirt::V1VGPUDisplayOptions](docs/V1VGPUDisplayOptions.md)
  - [Kubevirt::V1VGPUOptions](docs/V1VGPUOptions.md)
+ - [Kubevirt::V1VMIMConfigurationOptions](docs/V1VMIMConfigurationOptions.md)
  - [Kubevirt::V1VideoDevice](docs/V1VideoDevice.md)
  - [Kubevirt::V1VirtTemplateDeployment](docs/V1VirtTemplateDeployment.md)
  - [Kubevirt::V1VirtualMachine](docs/V1VirtualMachine.md)

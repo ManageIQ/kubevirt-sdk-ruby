@@ -247,6 +247,7 @@ Kubevirt.autoload :V1UserPasswordAccessCredentialSource, 'kubevirt/models/v1_use
 Kubevirt.autoload :V1UtilityVolume, 'kubevirt/models/v1_utility_volume'
 Kubevirt.autoload :V1VGPUDisplayOptions, 'kubevirt/models/v1_vgpu_display_options'
 Kubevirt.autoload :V1VGPUOptions, 'kubevirt/models/v1_vgpu_options'
+Kubevirt.autoload :V1VMIMConfigurationOptions, 'kubevirt/models/v1_vmim_configuration_options'
 Kubevirt.autoload :V1VideoDevice, 'kubevirt/models/v1_video_device'
 Kubevirt.autoload :V1VirtTemplateDeployment, 'kubevirt/models/v1_virt_template_deployment'
 Kubevirt.autoload :V1VirtualMachine, 'kubevirt/models/v1_virtual_machine'

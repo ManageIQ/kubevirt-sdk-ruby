@@ -10,6 +10,7 @@
 | **completed** | **Boolean** | Completed indicates the backup completed | [optional] |
 | **end_timestamp** | **Time** | Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. | [optional] |
 | **failed** | **Boolean** | Failed indicates that the backup failed | [optional] |
+| **quiesce_status** | **String** | QuiesceStatus indicates whether filesystem freeze succeeded, failed, or was skipped. | [optional] |
 | **start_timestamp** | **Time** | Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. | [optional] |
 | **volumes** | [**Array&lt;V1alpha1BackupVolumeInfo&gt;**](V1alpha1BackupVolumeInfo.md) | Volumes lists the volumes included in the backup | [optional] |
 
@@ -25,6 +26,7 @@ instance = Kubevirt::V1VirtualMachineInstanceBackupStatus.new(
   completed: null,
   end_timestamp: null,
   failed: null,
+  quiesce_status: null,
   start_timestamp: null,
   volumes: null
 )

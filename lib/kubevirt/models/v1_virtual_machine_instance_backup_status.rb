@@ -34,6 +34,9 @@ module Kubevirt
     # Failed indicates that the backup failed
     attr_accessor :failed
 
+    # QuiesceStatus indicates whether filesystem freeze succeeded, failed, or was skipped.
+    attr_accessor :quiesce_status
+
     # Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers.
     attr_accessor :start_timestamp
 
@@ -49,6 +52,7 @@ module Kubevirt
         :'completed' => :'completed',
         :'end_timestamp' => :'endTimestamp',
         :'failed' => :'failed',
+        :'quiesce_status' => :'quiesceStatus',
         :'start_timestamp' => :'startTimestamp',
         :'volumes' => :'volumes'
       }
@@ -73,6 +77,7 @@ module Kubevirt
         :'completed' => :'Boolean',
         :'end_timestamp' => :'Time',
         :'failed' => :'Boolean',
+        :'quiesce_status' => :'String',
         :'start_timestamp' => :'Time',
         :'volumes' => :'Array<V1alpha1BackupVolumeInfo>'
       }
@@ -124,6 +129,10 @@ module Kubevirt
         self.failed = attributes[:'failed']
       end
 
+      if attributes.key?(:'quiesce_status')
+        self.quiesce_status = attributes[:'quiesce_status']
+      end
+
       if attributes.key?(:'start_timestamp')
         self.start_timestamp = attributes[:'start_timestamp']
       end
@@ -161,6 +170,7 @@ module Kubevirt
           completed == o.completed &&
           end_timestamp == o.end_timestamp &&
           failed == o.failed &&
+          quiesce_status == o.quiesce_status &&
           start_timestamp == o.start_timestamp &&
           volumes == o.volumes
     end
@@ -174,7 +184,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [backup_msg, backup_name, checkpoint_name, completed, end_timestamp, failed, start_timestamp, volumes].hash
+      [backup_msg, backup_name, checkpoint_name, completed, end_timestamp, failed, quiesce_status, start_timestamp, volumes].hash
     end
 
     # Builds the object from hash

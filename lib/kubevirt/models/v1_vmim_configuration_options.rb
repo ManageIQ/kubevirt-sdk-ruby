@@ -14,8 +14,8 @@ require 'date'
 require 'time'
 
 module Kubevirt
-  # MigrationConfiguration holds migration options. Can be overridden for specific groups of VMs though migration policies. Visit https://kubevirt.io/user-guide/operations/migration_policies/ for more information.
-  class V1MigrationConfiguration < ApiModelBase
+  # VMIMConfigurationOptions holds the resolved migration options for a single migration. It is written to VirtualMachineInstanceMigrationState and represents the effective configuration after merging KubeVirt defaults with any matched MigrationPolicy.
+  class V1VMIMConfigurationOptions < ApiModelBase
     # AllowAutoConverge allows the platform to compromise performance/availability of VMIs to guarantee successful VMI live migrations. Defaults to false
     attr_accessor :allow_auto_converge
 
@@ -33,6 +33,9 @@ module Kubevirt
 
     # When set to true, DisableTLS will disable the additional layer of live migration encryption provided by KubeVirt. This is usually a bad idea. Defaults to false
     attr_accessor :disable_tls
+
+    # ExperimentalMigrationOptions is an alpha API for experimental migration tunables. It is intended for experimental purposes only and will be removed in the future.
+    attr_accessor :experimental
 
     # By default, the SELinux level of target virt-launcher pods is forced to the level of the source virt-launcher. When set to true, MatchSELinuxLevelOnMigration lets the CRI auto-assign a random level to the target. That will ensure the target virt-launcher doesn't share categories with another pod on the node. However, migrations will fail when using RWX volumes that don't automatically deal with SELinux levels.
     attr_accessor :match_se_linux_level_on_migration
@@ -70,6 +73,7 @@ module Kubevirt
         :'bandwidth_per_migration' => :'bandwidthPerMigration',
         :'completion_timeout_per_gi_b' => :'completionTimeoutPerGiB',
         :'disable_tls' => :'disableTLS',
+        :'experimental' => :'experimental',
         :'match_se_linux_level_on_migration' => :'matchSELinuxLevelOnMigration',
         :'max_downtime_ms' => :'maxDowntimeMs',
         :'network' => :'network',
@@ -101,6 +105,7 @@ module Kubevirt
         :'bandwidth_per_migration' => :'Object',
         :'completion_timeout_per_gi_b' => :'Integer',
         :'disable_tls' => :'Boolean',
+        :'experimental' => :'Object',
         :'match_se_linux_level_on_migration' => :'Boolean',
         :'max_downtime_ms' => :'Integer',
         :'network' => :'String',
@@ -123,14 +128,14 @@ module Kubevirt
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1MigrationConfiguration` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1VMIMConfigurationOptions` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1MigrationConfiguration`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1VMIMConfigurationOptions`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -157,6 +162,10 @@ module Kubevirt
 
       if attributes.key?(:'disable_tls')
         self.disable_tls = attributes[:'disable_tls']
+      end
+
+      if attributes.key?(:'experimental')
+        self.experimental = attributes[:'experimental']
       end
 
       if attributes.key?(:'match_se_linux_level_on_migration')
@@ -222,6 +231,7 @@ module Kubevirt
           bandwidth_per_migration == o.bandwidth_per_migration &&
           completion_timeout_per_gi_b == o.completion_timeout_per_gi_b &&
           disable_tls == o.disable_tls &&
+          experimental == o.experimental &&
           match_se_linux_level_on_migration == o.match_se_linux_level_on_migration &&
           max_downtime_ms == o.max_downtime_ms &&
           network == o.network &&
@@ -242,7 +252,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [allow_auto_converge, allow_post_copy, allow_workload_disruption, bandwidth_per_migration, completion_timeout_per_gi_b, disable_tls, match_se_linux_level_on_migration, max_downtime_ms, network, node_drain_taint_key, parallel_migrations_per_cluster, parallel_outbound_migrations_per_node, progress_timeout, unsafe_migration_override, utility_volumes_timeout].hash
+      [allow_auto_converge, allow_post_copy, allow_workload_disruption, bandwidth_per_migration, completion_timeout_per_gi_b, disable_tls, experimental, match_se_linux_level_on_migration, max_downtime_ms, network, node_drain_taint_key, parallel_migrations_per_cluster, parallel_outbound_migrations_per_node, progress_timeout, unsafe_migration_override, utility_volumes_timeout].hash
     end
 
     # Builds the object from hash
