@@ -10,7 +10,7 @@
 | **end_timestamp** | **Time** | Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. | [optional] |
 | **failed** | **Boolean** | Indicates that the migration failed | [optional] |
 | **failure_reason** | **String** | Contains the reason why the migration failed | [optional] |
-| **migration_configuration** | [**V1MigrationConfiguration**](V1MigrationConfiguration.md) |  | [optional] |
+| **migration_configuration** | [**V1VMIMConfigurationOptions**](V1VMIMConfigurationOptions.md) |  | [optional] |
 | **migration_network_type** | **String** | The type of migration network, either &#39;pod&#39; or &#39;migration&#39; | [optional] |
 | **migration_policy_name** | **String** | Name of the migration policy. If string is empty, no policy is matched | [optional] |
 | **migration_uid** | **String** | The VirtualMachineInstanceMigration object associated with this migration | [optional] |

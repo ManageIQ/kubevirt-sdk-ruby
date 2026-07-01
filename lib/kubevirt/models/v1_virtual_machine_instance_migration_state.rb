@@ -148,7 +148,7 @@ module Kubevirt
         :'end_timestamp' => :'Time',
         :'failed' => :'Boolean',
         :'failure_reason' => :'String',
-        :'migration_configuration' => :'V1MigrationConfiguration',
+        :'migration_configuration' => :'V1VMIMConfigurationOptions',
         :'migration_network_type' => :'String',
         :'migration_policy_name' => :'String',
         :'migration_uid' => :'String',

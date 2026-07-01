@@ -26,6 +26,11 @@ module Kubevirt
 
     attr_accessor :completion_timeout_per_gi_b
 
+    # ExperimentalMigrationOptions is an alpha API for experimental migration tunables. It is intended for experimental purposes only and will be removed in the future.
+    attr_accessor :experimental
+
+    attr_accessor :max_downtime_ms
+
     attr_accessor :selectors
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -36,6 +41,8 @@ module Kubevirt
         :'allow_workload_disruption' => :'allowWorkloadDisruption',
         :'bandwidth_per_migration' => :'bandwidthPerMigration',
         :'completion_timeout_per_gi_b' => :'completionTimeoutPerGiB',
+        :'experimental' => :'experimental',
+        :'max_downtime_ms' => :'maxDowntimeMs',
         :'selectors' => :'selectors'
       }
     end
@@ -58,6 +65,8 @@ module Kubevirt
         :'allow_workload_disruption' => :'Boolean',
         :'bandwidth_per_migration' => :'Object',
         :'completion_timeout_per_gi_b' => :'Integer',
+        :'experimental' => :'Object',
+        :'max_downtime_ms' => :'Integer',
         :'selectors' => :'V1alpha1Selectors'
       }
     end
@@ -102,6 +111,14 @@ module Kubevirt
 
       if attributes.key?(:'completion_timeout_per_gi_b')
         self.completion_timeout_per_gi_b = attributes[:'completion_timeout_per_gi_b']
+      end
+
+      if attributes.key?(:'experimental')
+        self.experimental = attributes[:'experimental']
+      end
+
+      if attributes.key?(:'max_downtime_ms')
+        self.max_downtime_ms = attributes[:'max_downtime_ms']
       end
 
       if attributes.key?(:'selectors')
@@ -151,6 +168,8 @@ module Kubevirt
           allow_workload_disruption == o.allow_workload_disruption &&
           bandwidth_per_migration == o.bandwidth_per_migration &&
           completion_timeout_per_gi_b == o.completion_timeout_per_gi_b &&
+          experimental == o.experimental &&
+          max_downtime_ms == o.max_downtime_ms &&
           selectors == o.selectors
     end
 
@@ -163,7 +182,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [allow_auto_converge, allow_post_copy, allow_workload_disruption, bandwidth_per_migration, completion_timeout_per_gi_b, selectors].hash
+      [allow_auto_converge, allow_post_copy, allow_workload_disruption, bandwidth_per_migration, completion_timeout_per_gi_b, experimental, max_downtime_ms, selectors].hash
     end
 
     # Builds the object from hash
