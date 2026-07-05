@@ -34,7 +34,6 @@ module Kubevirt
     # When set to true, DisableTLS will disable the additional layer of live migration encryption provided by KubeVirt. This is usually a bad idea. Defaults to false
     attr_accessor :disable_tls
 
-    # ExperimentalMigrationOptions is an alpha API for experimental migration tunables. It is intended for experimental purposes only and will be removed in the future.
     attr_accessor :experimental
 
     # By default, the SELinux level of target virt-launcher pods is forced to the level of the source virt-launcher. When set to true, MatchSELinuxLevelOnMigration lets the CRI auto-assign a random level to the target. That will ensure the target virt-launcher doesn't share categories with another pod on the node. However, migrations will fail when using RWX volumes that don't automatically deal with SELinux levels.
@@ -105,7 +104,7 @@ module Kubevirt
         :'bandwidth_per_migration' => :'Object',
         :'completion_timeout_per_gi_b' => :'Integer',
         :'disable_tls' => :'Boolean',
-        :'experimental' => :'Object',
+        :'experimental' => :'V1ExperimentalMigrationOptions',
         :'match_se_linux_level_on_migration' => :'Boolean',
         :'max_downtime_ms' => :'Integer',
         :'network' => :'String',

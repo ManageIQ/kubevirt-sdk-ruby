@@ -52,7 +52,10 @@ module Kubevirt
     # If specified, the virtual network interface will be placed on the guests pci address with the specified PCI address. For example: 0000:81:01.10
     attr_accessor :pci_address
 
-    # List of ports to be forwarded to the virtual machine.
+    # List of port ranges to be forwarded to the virtual machine. Mutually exclusive with ports. Only supported on masquerade interfaces. This feature is in Alpha.
+    attr_accessor :port_ranges
+
+    # List of ports to be forwarded to the virtual machine. Mutually exclusive with portRanges.
     attr_accessor :ports
 
     # DeprecatedInterfaceSlirp is an alias to the deprecated InterfaceSlirp that connects to a given network using QEMU user networking mode. Deprecated: Removed in v1.3
@@ -83,6 +86,7 @@ module Kubevirt
         :'passt' => :'passt',
         :'passt_binding' => :'passtBinding',
         :'pci_address' => :'pciAddress',
+        :'port_ranges' => :'portRanges',
         :'ports' => :'ports',
         :'slirp' => :'slirp',
         :'sriov' => :'sriov',
@@ -117,6 +121,7 @@ module Kubevirt
         :'passt' => :'Object',
         :'passt_binding' => :'Object',
         :'pci_address' => :'String',
+        :'port_ranges' => :'Array<V1PortRange>',
         :'ports' => :'Array<V1Port>',
         :'slirp' => :'Object',
         :'sriov' => :'Object',
@@ -201,6 +206,12 @@ module Kubevirt
         self.pci_address = attributes[:'pci_address']
       end
 
+      if attributes.key?(:'port_ranges')
+        if (value = attributes[:'port_ranges']).is_a?(Array)
+          self.port_ranges = value
+        end
+      end
+
       if attributes.key?(:'ports')
         if (value = attributes[:'ports']).is_a?(Array)
           self.ports = value
@@ -272,6 +283,7 @@ module Kubevirt
           passt == o.passt &&
           passt_binding == o.passt_binding &&
           pci_address == o.pci_address &&
+          port_ranges == o.port_ranges &&
           ports == o.ports &&
           slirp == o.slirp &&
           sriov == o.sriov &&
@@ -288,7 +300,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [acpi_index, binding, boot_order, bridge, dhcp_options, mac_address, macvtap, masquerade, model, name, passt, passt_binding, pci_address, ports, slirp, sriov, state, tag].hash
+      [acpi_index, binding, boot_order, bridge, dhcp_options, mac_address, macvtap, masquerade, model, name, passt, passt_binding, pci_address, port_ranges, ports, slirp, sriov, state, tag].hash
     end
 
     # Builds the object from hash

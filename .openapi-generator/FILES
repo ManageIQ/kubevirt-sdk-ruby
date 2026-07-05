@@ -104,6 +104,7 @@ docs/V1EFI.md
 docs/V1EmptyDiskSource.md
 docs/V1EphemeralVolumeSource.md
 docs/V1EvacuateCancelOptions.md
+docs/V1ExperimentalMigrationOptions.md
 docs/V1FeatureAPIC.md
 docs/V1FeatureHyperv.md
 docs/V1FeatureKVM.md
@@ -182,6 +183,7 @@ docs/V1PersistentVolumeClaimVolumeSource.md
 docs/V1PluginBinding.md
 docs/V1PodNetwork.md
 docs/V1Port.md
+docs/V1PortRange.md
 docs/V1PreferenceMatcher.md
 docs/V1Probe.md
 docs/V1QemuGuestAgentSSHPublicKeyAccessCredentialPropagation.md
@@ -209,6 +211,7 @@ docs/V1SeccompConfiguration.md
 docs/V1SecretVolumeSource.md
 docs/V1ServiceAccountVolumeSource.md
 docs/V1SoundDevice.md
+docs/V1StallDetectorOptions.md
 docs/V1StartOptions.md
 docs/V1StopOptions.md
 docs/V1StorageMigratedVolumeInfo.md
@@ -500,6 +503,7 @@ lib/kubevirt/models/v1_efi.rb
 lib/kubevirt/models/v1_empty_disk_source.rb
 lib/kubevirt/models/v1_ephemeral_volume_source.rb
 lib/kubevirt/models/v1_evacuate_cancel_options.rb
+lib/kubevirt/models/v1_experimental_migration_options.rb
 lib/kubevirt/models/v1_feature_apic.rb
 lib/kubevirt/models/v1_feature_hyperv.rb
 lib/kubevirt/models/v1_feature_kvm.rb
@@ -578,6 +582,7 @@ lib/kubevirt/models/v1_pit_timer.rb
 lib/kubevirt/models/v1_plugin_binding.rb
 lib/kubevirt/models/v1_pod_network.rb
 lib/kubevirt/models/v1_port.rb
+lib/kubevirt/models/v1_port_range.rb
 lib/kubevirt/models/v1_preference_matcher.rb
 lib/kubevirt/models/v1_probe.rb
 lib/kubevirt/models/v1_qemu_guest_agent_ssh_public_key_access_credential_propagation.rb
@@ -605,6 +610,7 @@ lib/kubevirt/models/v1_sound_device.rb
 lib/kubevirt/models/v1_ssh_public_key_access_credential.rb
 lib/kubevirt/models/v1_ssh_public_key_access_credential_propagation_method.rb
 lib/kubevirt/models/v1_ssh_public_key_access_credential_source.rb
+lib/kubevirt/models/v1_stall_detector_options.rb
 lib/kubevirt/models/v1_start_options.rb
 lib/kubevirt/models/v1_stop_options.rb
 lib/kubevirt/models/v1_storage_migrated_volume_info.rb
@@ -890,6 +896,7 @@ spec/models/v1_efi_spec.rb
 spec/models/v1_empty_disk_source_spec.rb
 spec/models/v1_ephemeral_volume_source_spec.rb
 spec/models/v1_evacuate_cancel_options_spec.rb
+spec/models/v1_experimental_migration_options_spec.rb
 spec/models/v1_feature_apic_spec.rb
 spec/models/v1_feature_hyperv_spec.rb
 spec/models/v1_feature_kvm_spec.rb
@@ -967,6 +974,7 @@ spec/models/v1_persistent_volume_claim_volume_source_spec.rb
 spec/models/v1_pit_timer_spec.rb
 spec/models/v1_plugin_binding_spec.rb
 spec/models/v1_pod_network_spec.rb
+spec/models/v1_port_range_spec.rb
 spec/models/v1_port_spec.rb
 spec/models/v1_preference_matcher_spec.rb
 spec/models/v1_probe_spec.rb
@@ -995,6 +1003,7 @@ spec/models/v1_sound_device_spec.rb
 spec/models/v1_ssh_public_key_access_credential_propagation_method_spec.rb
 spec/models/v1_ssh_public_key_access_credential_source_spec.rb
 spec/models/v1_ssh_public_key_access_credential_spec.rb
+spec/models/v1_stall_detector_options_spec.rb
 spec/models/v1_start_options_spec.rb
 spec/models/v1_stop_options_spec.rb
 spec/models/v1_storage_migrated_volume_info_spec.rb

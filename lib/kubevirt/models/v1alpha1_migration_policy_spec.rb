@@ -26,7 +26,6 @@ module Kubevirt
 
     attr_accessor :completion_timeout_per_gi_b
 
-    # ExperimentalMigrationOptions is an alpha API for experimental migration tunables. It is intended for experimental purposes only and will be removed in the future.
     attr_accessor :experimental
 
     attr_accessor :max_downtime_ms
@@ -65,7 +64,7 @@ module Kubevirt
         :'allow_workload_disruption' => :'Boolean',
         :'bandwidth_per_migration' => :'Object',
         :'completion_timeout_per_gi_b' => :'Integer',
-        :'experimental' => :'Object',
+        :'experimental' => :'V1ExperimentalMigrationOptions',
         :'max_downtime_ms' => :'Integer',
         :'selectors' => :'V1alpha1Selectors'
       }
