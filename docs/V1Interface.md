@@ -17,7 +17,8 @@
 | **passt** | **Object** | DeprecatedInterfacePasst is an alias to the deprecated InterfacePasst Deprecated: Removed in v1.3 | [optional] |
 | **passt_binding** | **Object** | InterfacePasstBinding connects to a given network using passt usermode networking. | [optional] |
 | **pci_address** | **String** | If specified, the virtual network interface will be placed on the guests pci address with the specified PCI address. For example: 0000:81:01.10 | [optional] |
-| **ports** | [**Array&lt;V1Port&gt;**](V1Port.md) | List of ports to be forwarded to the virtual machine. | [optional] |
+| **port_ranges** | [**Array&lt;V1PortRange&gt;**](V1PortRange.md) | List of port ranges to be forwarded to the virtual machine. Mutually exclusive with ports. Only supported on masquerade interfaces. This feature is in Alpha. | [optional] |
+| **ports** | [**Array&lt;V1Port&gt;**](V1Port.md) | List of ports to be forwarded to the virtual machine. Mutually exclusive with portRanges. | [optional] |
 | **slirp** | **Object** | DeprecatedInterfaceSlirp is an alias to the deprecated InterfaceSlirp that connects to a given network using QEMU user networking mode. Deprecated: Removed in v1.3 | [optional] |
 | **sriov** | **Object** | InterfaceSRIOV connects to a given network by passing-through an SR-IOV PCI device via vfio. | [optional] |
 | **state** | **String** | State represents the requested operational state of the interface. The supported values are: &#x60;absent&#x60;, expressing a request to remove the interface. &#x60;down&#x60;, expressing a request to set the link down. &#x60;up&#x60;, expressing a request to set the link up. Empty value functions as &#x60;up&#x60;. | [optional] |
@@ -42,6 +43,7 @@ instance = Kubevirt::V1Interface.new(
   passt: null,
   passt_binding: null,
   pci_address: null,
+  port_ranges: null,
   ports: null,
   slirp: null,
   sriov: null,

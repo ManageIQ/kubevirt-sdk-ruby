@@ -105,6 +105,12 @@ describe Kubevirt::V1Interface do
     end
   end
 
+  describe 'test attribute "port_ranges"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "ports"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
