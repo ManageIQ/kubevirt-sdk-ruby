@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **creation_time** | **Time** | Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON.  Wrappers are provided for many of the factory methods that the time package offers. | [optional] |
 | **name** | **String** |  | [optional] |
-| **volumes** | [**Array&lt;V1alpha1BackupVolumeInfo&gt;**](V1alpha1BackupVolumeInfo.md) | Volumes lists volumes and their disk targets at backup time | [optional] |
+| **volumes** | [**Array&lt;V1alpha1BackupVolumeInfo&gt;**](V1alpha1BackupVolumeInfo.md) | Volumes lists volumes included in the backup | [optional] |
 
 ## Example
 
