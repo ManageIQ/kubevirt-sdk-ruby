@@ -253,6 +253,7 @@ docs/V1VirtualMachineExportVolume.md
 docs/V1VirtualMachineExportVolumeFormat.md
 docs/V1VirtualMachineInstance.md
 docs/V1VirtualMachineInstanceBackupStatus.md
+docs/V1VirtualMachineInstanceBackupVolumeInfo.md
 docs/V1VirtualMachineInstanceCondition.md
 docs/V1VirtualMachineInstanceFileSystem.md
 docs/V1VirtualMachineInstanceFileSystemDisk.md
@@ -651,6 +652,7 @@ lib/kubevirt/models/v1_virtual_machine_export_volume.rb
 lib/kubevirt/models/v1_virtual_machine_export_volume_format.rb
 lib/kubevirt/models/v1_virtual_machine_instance.rb
 lib/kubevirt/models/v1_virtual_machine_instance_backup_status.rb
+lib/kubevirt/models/v1_virtual_machine_instance_backup_volume_info.rb
 lib/kubevirt/models/v1_virtual_machine_instance_condition.rb
 lib/kubevirt/models/v1_virtual_machine_instance_file_system.rb
 lib/kubevirt/models/v1_virtual_machine_instance_file_system_disk.rb
@@ -1042,6 +1044,7 @@ spec/models/v1_virtual_machine_export_status_spec.rb
 spec/models/v1_virtual_machine_export_volume_format_spec.rb
 spec/models/v1_virtual_machine_export_volume_spec.rb
 spec/models/v1_virtual_machine_instance_backup_status_spec.rb
+spec/models/v1_virtual_machine_instance_backup_volume_info_spec.rb
 spec/models/v1_virtual_machine_instance_condition_spec.rb
 spec/models/v1_virtual_machine_instance_file_system_disk_spec.rb
 spec/models/v1_virtual_machine_instance_file_system_info_spec.rb
