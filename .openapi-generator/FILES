@@ -99,6 +99,7 @@ docs/V1DiskTarget.md
 docs/V1DiskVerification.md
 docs/V1DomainMemoryDumpInfo.md
 docs/V1DomainSpec.md
+docs/V1DowntimeTuningOptions.md
 docs/V1DownwardAPIVolumeSource.md
 docs/V1EFI.md
 docs/V1EmptyDiskSource.md
@@ -499,6 +500,7 @@ lib/kubevirt/models/v1_disk_target.rb
 lib/kubevirt/models/v1_disk_verification.rb
 lib/kubevirt/models/v1_domain_memory_dump_info.rb
 lib/kubevirt/models/v1_domain_spec.rb
+lib/kubevirt/models/v1_downtime_tuning_options.rb
 lib/kubevirt/models/v1_downward_api_volume_source.rb
 lib/kubevirt/models/v1_efi.rb
 lib/kubevirt/models/v1_empty_disk_source.rb
@@ -893,6 +895,7 @@ spec/models/v1_disk_target_spec.rb
 spec/models/v1_disk_verification_spec.rb
 spec/models/v1_domain_memory_dump_info_spec.rb
 spec/models/v1_domain_spec_spec.rb
+spec/models/v1_downtime_tuning_options_spec.rb
 spec/models/v1_downward_api_volume_source_spec.rb
 spec/models/v1_efi_spec.rb
 spec/models/v1_empty_disk_source_spec.rb

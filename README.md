@@ -469,6 +469,7 @@ Class | Method | HTTP request | Description
  - [Kubevirt::V1DiskVerification](docs/V1DiskVerification.md)
  - [Kubevirt::V1DomainMemoryDumpInfo](docs/V1DomainMemoryDumpInfo.md)
  - [Kubevirt::V1DomainSpec](docs/V1DomainSpec.md)
+ - [Kubevirt::V1DowntimeTuningOptions](docs/V1DowntimeTuningOptions.md)
  - [Kubevirt::V1DownwardAPIVolumeSource](docs/V1DownwardAPIVolumeSource.md)
  - [Kubevirt::V1EFI](docs/V1EFI.md)
  - [Kubevirt::V1EmptyDiskSource](docs/V1EmptyDiskSource.md)

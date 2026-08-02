@@ -14,21 +14,27 @@ require 'date'
 require 'time'
 
 module Kubevirt
-  # ExperimentalMigrationOptions is an alpha API for experimental migration tunables. It is intended for experimental purposes only and will be removed in the future.
-  class V1ExperimentalMigrationOptions < ApiModelBase
-    # Compression selects the algorithm for compressing the live migration data stream. When omitted (nil) or set to \"none\", compression is disabled.
-    attr_accessor :compression
+  # DowntimeTuningOptions controls how virt-launcher gradually increases max_downtime during live migration to help convergence.
+  class V1DowntimeTuningOptions < ApiModelBase
+    # CooldownSeconds is the minimum interval in seconds between successive downtime increases. Defaults to 10.
+    attr_accessor :cooldown_seconds
 
-    attr_accessor :downtime_tuning
+    # InitialMs is the initial max_downtime value in milliseconds set at the start of migration. Tuning steps increase from this value. Defaults to 150.
+    attr_accessor :initial_ms
 
-    attr_accessor :stall_detector
+    # StartAfterIteration is the memory copy iteration after which downtime tuning begins. Defaults to 3.
+    attr_accessor :start_after_iteration
+
+    # Steps is the number of equal increments used to ramp from InitialMs to the cluster-level MaxDowntimeMs. Defaults to 7.
+    attr_accessor :steps
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'compression' => :'compression',
-        :'downtime_tuning' => :'downtimeTuning',
-        :'stall_detector' => :'stallDetector'
+        :'cooldown_seconds' => :'cooldownSeconds',
+        :'initial_ms' => :'initialMs',
+        :'start_after_iteration' => :'startAfterIteration',
+        :'steps' => :'steps'
       }
     end
 
@@ -45,9 +51,10 @@ module Kubevirt
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'compression' => :'String',
-        :'downtime_tuning' => :'V1DowntimeTuningOptions',
-        :'stall_detector' => :'V1StallDetectorOptions'
+        :'cooldown_seconds' => :'Integer',
+        :'initial_ms' => :'Integer',
+        :'start_after_iteration' => :'Integer',
+        :'steps' => :'Integer'
       }
     end
 
@@ -61,28 +68,32 @@ module Kubevirt
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1ExperimentalMigrationOptions` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `Kubevirt::V1DowntimeTuningOptions` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       acceptable_attribute_map = self.class.acceptable_attribute_map
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!acceptable_attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1ExperimentalMigrationOptions`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `Kubevirt::V1DowntimeTuningOptions`. Please check the name to make sure it's valid. List of attributes: " + acceptable_attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'compression')
-        self.compression = attributes[:'compression']
+      if attributes.key?(:'cooldown_seconds')
+        self.cooldown_seconds = attributes[:'cooldown_seconds']
       end
 
-      if attributes.key?(:'downtime_tuning')
-        self.downtime_tuning = attributes[:'downtime_tuning']
+      if attributes.key?(:'initial_ms')
+        self.initial_ms = attributes[:'initial_ms']
       end
 
-      if attributes.key?(:'stall_detector')
-        self.stall_detector = attributes[:'stall_detector']
+      if attributes.key?(:'start_after_iteration')
+        self.start_after_iteration = attributes[:'start_after_iteration']
+      end
+
+      if attributes.key?(:'steps')
+        self.steps = attributes[:'steps']
       end
     end
 
@@ -106,9 +117,10 @@ module Kubevirt
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          compression == o.compression &&
-          downtime_tuning == o.downtime_tuning &&
-          stall_detector == o.stall_detector
+          cooldown_seconds == o.cooldown_seconds &&
+          initial_ms == o.initial_ms &&
+          start_after_iteration == o.start_after_iteration &&
+          steps == o.steps
     end
 
     # @see the `==` method
@@ -120,7 +132,7 @@ module Kubevirt
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [compression, downtime_tuning, stall_detector].hash
+      [cooldown_seconds, initial_ms, start_after_iteration, steps].hash
     end
 
     # Builds the object from hash
