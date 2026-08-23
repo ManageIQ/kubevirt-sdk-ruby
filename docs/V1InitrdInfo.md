@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **checksum** | **Integer** | Checksum is the checksum of the initrd file | [optional] |
+| **checksum** | **Integer** | deprecated; Checksum is the checksum of the initrd file | [optional] |
 
 ## Example
 
