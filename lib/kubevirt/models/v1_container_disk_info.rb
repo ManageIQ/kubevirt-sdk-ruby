@@ -16,7 +16,7 @@ require 'time'
 module Kubevirt
   # ContainerDiskInfo shows info about the containerdisk
   class V1ContainerDiskInfo < ApiModelBase
-    # Checksum is the checksum of the rootdisk or kernel artifacts inside the containerdisk
+    # deprecated; Checksum is the checksum of the rootdisk or kernel artifacts inside the containerdisk
     attr_accessor :checksum
 
     # Attribute mapping from ruby-style variable name to JSON key.

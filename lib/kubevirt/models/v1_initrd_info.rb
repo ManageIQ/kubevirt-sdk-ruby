@@ -16,7 +16,7 @@ require 'time'
 module Kubevirt
   # InitrdInfo show info about the initrd file
   class V1InitrdInfo < ApiModelBase
-    # Checksum is the checksum of the initrd file
+    # deprecated; Checksum is the checksum of the initrd file
     attr_accessor :checksum
 
     # Attribute mapping from ruby-style variable name to JSON key.

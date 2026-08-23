@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **checksum** | **Integer** | Checksum is the checksum of the kernel image | [optional] |
+| **checksum** | **Integer** | deprecated; Checksum is the checksum of the kernel image | [optional] |
 
 ## Example
 

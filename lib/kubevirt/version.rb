@@ -11,5 +11,5 @@ Generator version: 7.24.0
 =end
 
 module Kubevirt
-  VERSION = '0.3.0'
+  VERSION = '0.2.1'
 end

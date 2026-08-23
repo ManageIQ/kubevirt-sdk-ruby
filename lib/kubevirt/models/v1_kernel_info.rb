@@ -16,7 +16,7 @@ require 'time'
 module Kubevirt
   # KernelInfo show info about the kernel image
   class V1KernelInfo < ApiModelBase
-    # Checksum is the checksum of the kernel image
+    # deprecated; Checksum is the checksum of the kernel image
     attr_accessor :checksum
 
     # Attribute mapping from ruby-style variable name to JSON key.
