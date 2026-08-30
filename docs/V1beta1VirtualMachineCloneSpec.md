@@ -9,8 +9,8 @@
 | **new_mac_addresses** | **Hash&lt;String, String&gt;** | NewMacAddresses manually sets that target interfaces&#39; mac addresses. The key is the interface name and the value is the new mac address. If this field is not specified, a new MAC address will be generated automatically, as for any interface that is not included in this map. | [optional] |
 | **new_sm_bios_serial** | **String** | NewSMBiosSerial manually sets that target&#39;s SMbios serial. If this field is not specified, a new serial will be generated automatically. | [optional] |
 | **patches** | **Array&lt;String&gt;** | Patches holds JSON patches to apply to target. Patches should fit the target&#39;s Kind. Example: &#39;{\&quot;op\&quot;: \&quot;add\&quot;, \&quot;path\&quot;: \&quot;/spec/template/metadata/labels/example\&quot;, \&quot;value\&quot;: \&quot;new-label\&quot;}&#39; | [optional] |
-| **source** | [**K8sIoApiCoreV1TypedLocalObjectReference**](K8sIoApiCoreV1TypedLocalObjectReference.md) |  |  |
-| **target** | [**K8sIoApiCoreV1TypedLocalObjectReference**](K8sIoApiCoreV1TypedLocalObjectReference.md) |  | [optional] |
+| **source** | [**IoK8sApiCoreV1TypedLocalObjectReference**](IoK8sApiCoreV1TypedLocalObjectReference.md) |  |  |
+| **target** | [**IoK8sApiCoreV1TypedLocalObjectReference**](IoK8sApiCoreV1TypedLocalObjectReference.md) |  | [optional] |
 | **template** | [**V1beta1VirtualMachineCloneTemplateFilters**](V1beta1VirtualMachineCloneTemplateFilters.md) |  | [optional] |
 | **volume_name_policy** | **String** | VolumeNamePolicy defines how to handle volume naming during the clone operation | [optional] |
 
