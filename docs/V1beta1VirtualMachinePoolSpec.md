@@ -10,7 +10,7 @@
 | **paused** | **Boolean** | Indicates that the pool is paused. | [optional] |
 | **replicas** | **Integer** | Number of desired pods. This is a pointer to distinguish between explicit zero and not specified. Defaults to 1. | [optional] |
 | **scale_in_strategy** | [**V1beta1VirtualMachinePoolScaleInStrategy**](V1beta1VirtualMachinePoolScaleInStrategy.md) |  | [optional] |
-| **selector** | [**K8sIoApimachineryPkgApisMetaV1LabelSelector**](K8sIoApimachineryPkgApisMetaV1LabelSelector.md) |  |  |
+| **selector** | [**IoK8sApimachineryPkgApisMetaV1LabelSelector**](IoK8sApimachineryPkgApisMetaV1LabelSelector.md) |  |  |
 | **update_strategy** | [**V1beta1VirtualMachinePoolUpdateStrategy**](V1beta1VirtualMachinePoolUpdateStrategy.md) |  | [optional] |
 | **virtual_machine_template** | [**V1beta1VirtualMachineTemplateSpec**](V1beta1VirtualMachineTemplateSpec.md) |  |  |
 
