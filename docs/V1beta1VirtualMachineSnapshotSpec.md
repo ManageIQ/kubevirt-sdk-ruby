@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **deletion_policy** | **String** |  | [optional] |
 | **failure_deadline** | **String** | Duration is a wrapper around time.Duration which supports correct marshaling to YAML and JSON. In particular, it marshals into strings, which can be used as map keys in json. | [optional] |
-| **source** | [**K8sIoApiCoreV1TypedLocalObjectReference**](K8sIoApiCoreV1TypedLocalObjectReference.md) |  |  |
+| **source** | [**IoK8sApiCoreV1TypedLocalObjectReference**](IoK8sApiCoreV1TypedLocalObjectReference.md) |  |  |
 
 ## Example
 
