@@ -8,7 +8,7 @@
 | **mode** | **String** | Mode specifies the way the backup output will be recieved | [optional] |
 | **pvc_name** | **String** | PvcName required in push mode. Specifies the name of the PVC where the backup output will be stored | [optional] |
 | **skip_quiesce** | **Boolean** | SkipQuiesce indicates whether the VM&#39;s filesystem shoule not be quiesced before the backup | [optional] |
-| **source** | [**K8sIoApiCoreV1TypedLocalObjectReference**](K8sIoApiCoreV1TypedLocalObjectReference.md) |  |  |
+| **source** | [**IoK8sApiCoreV1TypedLocalObjectReference**](IoK8sApiCoreV1TypedLocalObjectReference.md) |  |  |
 | **token_secret_ref** | **String** | TokenSecretRef is the name of the secret that will be used to pull the backup from an associated endpoint | [optional] |
 | **ttl_duration** | **String** | Duration is a wrapper around time.Duration which supports correct marshaling to YAML and JSON. In particular, it marshals into strings, which can be used as map keys in json. | [optional] |
 

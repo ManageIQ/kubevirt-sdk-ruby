@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **persistent_volume_claim** | [**K8sIoApiCoreV1PersistentVolumeClaimVolumeSource**](K8sIoApiCoreV1PersistentVolumeClaimVolumeSource.md) |  | [optional] |
+| **persistent_volume_claim** | [**IoK8sApiCoreV1PersistentVolumeClaimVolumeSource**](IoK8sApiCoreV1PersistentVolumeClaimVolumeSource.md) |  | [optional] |
 
 ## Example
 

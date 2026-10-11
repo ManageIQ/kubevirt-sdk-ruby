@@ -8,7 +8,7 @@
 | **children** | [**Array&lt;V1ObjectGraphNode&gt;**](V1ObjectGraphNode.md) |  | [optional] |
 | **kind** | **String** | Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds | [optional] |
 | **labels** | **Hash&lt;String, String&gt;** |  | [optional] |
-| **object_reference** | [**K8sIoApiCoreV1TypedObjectReference**](K8sIoApiCoreV1TypedObjectReference.md) |  |  |
+| **object_reference** | [**IoK8sApiCoreV1TypedObjectReference**](IoK8sApiCoreV1TypedObjectReference.md) |  |  |
 | **optional** | **Boolean** |  | [optional] |
 
 ## Example
