@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **config_map** | [**K8sIoApiCoreV1LocalObjectReference**](K8sIoApiCoreV1LocalObjectReference.md) |  | [optional] |
-| **secret** | [**K8sIoApiCoreV1LocalObjectReference**](K8sIoApiCoreV1LocalObjectReference.md) |  | [optional] |
+| **config_map** | [**IoK8sApiCoreV1LocalObjectReference**](IoK8sApiCoreV1LocalObjectReference.md) |  | [optional] |
+| **secret** | [**IoK8sApiCoreV1LocalObjectReference**](IoK8sApiCoreV1LocalObjectReference.md) |  | [optional] |
 
 ## Example
 

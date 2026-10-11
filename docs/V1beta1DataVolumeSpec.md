@@ -9,7 +9,7 @@
 | **final_checkpoint** | **Boolean** | FinalCheckpoint indicates whether the current DataVolumeCheckpoint is the final checkpoint. | [optional] |
 | **preallocation** | **Boolean** | Preallocation controls whether storage for DataVolumes should be allocated in advance. | [optional] |
 | **priority_class_name** | **String** | PriorityClassName for Importer, Cloner and Uploader pod | [optional] |
-| **pvc** | [**K8sIoApiCoreV1PersistentVolumeClaimSpec**](K8sIoApiCoreV1PersistentVolumeClaimSpec.md) |  | [optional] |
+| **pvc** | [**IoK8sApiCoreV1PersistentVolumeClaimSpec**](IoK8sApiCoreV1PersistentVolumeClaimSpec.md) |  | [optional] |
 | **source** | [**V1beta1DataVolumeSource**](V1beta1DataVolumeSource.md) |  | [optional] |
 | **source_ref** | [**V1beta1DataVolumeSourceRef**](V1beta1DataVolumeSourceRef.md) |  | [optional] |
 | **storage** | [**V1beta1StorageSpec**](V1beta1StorageSpec.md) |  | [optional] |

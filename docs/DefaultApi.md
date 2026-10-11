@@ -511,7 +511,7 @@ require 'kubevirt'
 
 api_instance = Kubevirt::DefaultApi.new
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::V1alpha1VirtualMachineBackup.new({spec: Kubevirt::V1alpha1VirtualMachineBackupSpec.new({source: Kubevirt::K8sIoApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'})})}) # V1alpha1VirtualMachineBackup | 
+body = Kubevirt::V1alpha1VirtualMachineBackup.new({spec: Kubevirt::V1alpha1VirtualMachineBackupSpec.new({source: Kubevirt::IoK8sApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'})})}) # V1alpha1VirtualMachineBackup | 
 
 begin
   
@@ -577,7 +577,7 @@ require 'kubevirt'
 
 api_instance = Kubevirt::DefaultApi.new
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::V1VirtualMachineExport.new({spec: Kubevirt::V1VirtualMachineExportSpec.new({source: Kubevirt::K8sIoApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'})})}) # V1VirtualMachineExport | 
+body = Kubevirt::V1VirtualMachineExport.new({spec: Kubevirt::V1VirtualMachineExportSpec.new({source: Kubevirt::IoK8sApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'})})}) # V1VirtualMachineExport | 
 
 begin
   
@@ -841,7 +841,7 @@ require 'kubevirt'
 
 api_instance = Kubevirt::DefaultApi.new
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::V1VirtualMachineInstanceReplicaSet.new({spec: Kubevirt::V1VirtualMachineInstanceReplicaSetSpec.new({selector: Kubevirt::K8sIoApimachineryPkgApisMetaV1LabelSelector.new, template: Kubevirt::V1VirtualMachineInstanceTemplateSpec.new})}) # V1VirtualMachineInstanceReplicaSet | 
+body = Kubevirt::V1VirtualMachineInstanceReplicaSet.new({spec: Kubevirt::V1VirtualMachineInstanceReplicaSetSpec.new({selector: Kubevirt::IoK8sApimachineryPkgApisMetaV1LabelSelector.new, template: Kubevirt::V1VirtualMachineInstanceTemplateSpec.new})}) # V1VirtualMachineInstanceReplicaSet | 
 
 begin
   
@@ -973,7 +973,7 @@ require 'kubevirt'
 
 api_instance = Kubevirt::DefaultApi.new
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::V1beta1VirtualMachinePool.new({spec: Kubevirt::V1beta1VirtualMachinePoolSpec.new({selector: Kubevirt::K8sIoApimachineryPkgApisMetaV1LabelSelector.new, virtual_machine_template: Kubevirt::V1beta1VirtualMachineTemplateSpec.new})}) # V1beta1VirtualMachinePool | 
+body = Kubevirt::V1beta1VirtualMachinePool.new({spec: Kubevirt::V1beta1VirtualMachinePoolSpec.new({selector: Kubevirt::IoK8sApimachineryPkgApisMetaV1LabelSelector.new, virtual_machine_template: Kubevirt::V1beta1VirtualMachineTemplateSpec.new})}) # V1beta1VirtualMachinePool | 
 
 begin
   
@@ -1105,7 +1105,7 @@ require 'kubevirt'
 
 api_instance = Kubevirt::DefaultApi.new
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::V1beta1VirtualMachineRestore.new({spec: Kubevirt::V1beta1VirtualMachineRestoreSpec.new({target: Kubevirt::K8sIoApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'}), virtual_machine_snapshot_name: 'virtual_machine_snapshot_name_example'})}) # V1beta1VirtualMachineRestore | 
+body = Kubevirt::V1beta1VirtualMachineRestore.new({spec: Kubevirt::V1beta1VirtualMachineRestoreSpec.new({target: Kubevirt::IoK8sApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'}), virtual_machine_snapshot_name: 'virtual_machine_snapshot_name_example'})}) # V1beta1VirtualMachineRestore | 
 
 begin
   
@@ -1171,7 +1171,7 @@ require 'kubevirt'
 
 api_instance = Kubevirt::DefaultApi.new
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::V1beta1VirtualMachineSnapshot.new({spec: Kubevirt::V1beta1VirtualMachineSnapshotSpec.new({source: Kubevirt::K8sIoApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'})})}) # V1beta1VirtualMachineSnapshot | 
+body = Kubevirt::V1beta1VirtualMachineSnapshot.new({spec: Kubevirt::V1beta1VirtualMachineSnapshotSpec.new({source: Kubevirt::IoK8sApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'})})}) # V1beta1VirtualMachineSnapshot | 
 
 begin
   
@@ -1302,7 +1302,7 @@ require 'time'
 require 'kubevirt'
 
 api_instance = Kubevirt::DefaultApi.new
-body = Kubevirt::V1beta1VirtualMachineClone.new({spec: Kubevirt::V1beta1VirtualMachineCloneSpec.new({source: Kubevirt::K8sIoApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'})})}) # V1beta1VirtualMachineClone | 
+body = Kubevirt::V1beta1VirtualMachineClone.new({spec: Kubevirt::V1beta1VirtualMachineCloneSpec.new({source: Kubevirt::IoK8sApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'})})}) # V1beta1VirtualMachineClone | 
 
 begin
   
@@ -1481,7 +1481,7 @@ No authorization required
 
 ## delete_collection_migration_policy
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_collection_migration_policy(opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_collection_migration_policy(opts)
 
 
 
@@ -1518,7 +1518,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_migration_policy_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_migration_policy_with_http_info(opts)
 
 ```ruby
 begin
@@ -1526,7 +1526,7 @@ begin
   data, status_code, headers = api_instance.delete_collection_migration_policy_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_collection_migration_policy_with_http_info: #{e}"
 end
@@ -1547,7 +1547,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -1561,7 +1561,7 @@ No authorization required
 
 ## delete_collection_namespaced_kube_virt
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_collection_namespaced_kube_virt(opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_collection_namespaced_kube_virt(opts)
 
 
 
@@ -1598,7 +1598,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_kube_virt_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_kube_virt_with_http_info(opts)
 
 ```ruby
 begin
@@ -1606,7 +1606,7 @@ begin
   data, status_code, headers = api_instance.delete_collection_namespaced_kube_virt_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_collection_namespaced_kube_virt_with_http_info: #{e}"
 end
@@ -1627,7 +1627,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -1641,7 +1641,7 @@ No authorization required
 
 ## delete_collection_namespaced_virtual_machine
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine(opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine(opts)
 
 
 
@@ -1678,7 +1678,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_with_http_info(opts)
 
 ```ruby
 begin
@@ -1686,7 +1686,7 @@ begin
   data, status_code, headers = api_instance.delete_collection_namespaced_virtual_machine_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_collection_namespaced_virtual_machine_with_http_info: #{e}"
 end
@@ -1707,7 +1707,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -1721,7 +1721,7 @@ No authorization required
 
 ## delete_collection_namespaced_virtual_machine_backup
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_backup(opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_backup(opts)
 
 
 
@@ -1758,7 +1758,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_backup_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_backup_with_http_info(opts)
 
 ```ruby
 begin
@@ -1766,7 +1766,7 @@ begin
   data, status_code, headers = api_instance.delete_collection_namespaced_virtual_machine_backup_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_collection_namespaced_virtual_machine_backup_with_http_info: #{e}"
 end
@@ -1787,7 +1787,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -1801,7 +1801,7 @@ No authorization required
 
 ## delete_collection_namespaced_virtual_machine_export
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_export(opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_export(opts)
 
 
 
@@ -1838,7 +1838,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_export_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_export_with_http_info(opts)
 
 ```ruby
 begin
@@ -1846,7 +1846,7 @@ begin
   data, status_code, headers = api_instance.delete_collection_namespaced_virtual_machine_export_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_collection_namespaced_virtual_machine_export_with_http_info: #{e}"
 end
@@ -1867,7 +1867,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -1881,7 +1881,7 @@ No authorization required
 
 ## delete_collection_namespaced_virtual_machine_instance
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_instance(opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_instance(opts)
 
 
 
@@ -1918,7 +1918,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_instance_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_instance_with_http_info(opts)
 
 ```ruby
 begin
@@ -1926,7 +1926,7 @@ begin
   data, status_code, headers = api_instance.delete_collection_namespaced_virtual_machine_instance_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_collection_namespaced_virtual_machine_instance_with_http_info: #{e}"
 end
@@ -1947,7 +1947,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -1961,7 +1961,7 @@ No authorization required
 
 ## delete_collection_namespaced_virtual_machine_instance_migration
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_instance_migration(opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_instance_migration(opts)
 
 
 
@@ -1998,7 +1998,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_instance_migration_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_instance_migration_with_http_info(opts)
 
 ```ruby
 begin
@@ -2006,7 +2006,7 @@ begin
   data, status_code, headers = api_instance.delete_collection_namespaced_virtual_machine_instance_migration_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_collection_namespaced_virtual_machine_instance_migration_with_http_info: #{e}"
 end
@@ -2027,7 +2027,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -2041,7 +2041,7 @@ No authorization required
 
 ## delete_collection_namespaced_virtual_machine_instance_preset
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_instance_preset(opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_instance_preset(opts)
 
 
 
@@ -2078,7 +2078,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_instance_preset_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_instance_preset_with_http_info(opts)
 
 ```ruby
 begin
@@ -2086,7 +2086,7 @@ begin
   data, status_code, headers = api_instance.delete_collection_namespaced_virtual_machine_instance_preset_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_collection_namespaced_virtual_machine_instance_preset_with_http_info: #{e}"
 end
@@ -2107,7 +2107,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -2121,7 +2121,7 @@ No authorization required
 
 ## delete_collection_namespaced_virtual_machine_instance_replica_set
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_instance_replica_set(opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_instance_replica_set(opts)
 
 
 
@@ -2158,7 +2158,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_instance_replica_set_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_instance_replica_set_with_http_info(opts)
 
 ```ruby
 begin
@@ -2166,7 +2166,7 @@ begin
   data, status_code, headers = api_instance.delete_collection_namespaced_virtual_machine_instance_replica_set_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_collection_namespaced_virtual_machine_instance_replica_set_with_http_info: #{e}"
 end
@@ -2187,7 +2187,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -2201,7 +2201,7 @@ No authorization required
 
 ## delete_collection_namespaced_virtual_machine_instancetype
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_instancetype(opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_instancetype(opts)
 
 
 
@@ -2238,7 +2238,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_instancetype_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_instancetype_with_http_info(opts)
 
 ```ruby
 begin
@@ -2246,7 +2246,7 @@ begin
   data, status_code, headers = api_instance.delete_collection_namespaced_virtual_machine_instancetype_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_collection_namespaced_virtual_machine_instancetype_with_http_info: #{e}"
 end
@@ -2267,7 +2267,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -2281,7 +2281,7 @@ No authorization required
 
 ## delete_collection_namespaced_virtual_machine_pool
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_pool(opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_pool(opts)
 
 
 
@@ -2318,7 +2318,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_pool_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_pool_with_http_info(opts)
 
 ```ruby
 begin
@@ -2326,7 +2326,7 @@ begin
   data, status_code, headers = api_instance.delete_collection_namespaced_virtual_machine_pool_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_collection_namespaced_virtual_machine_pool_with_http_info: #{e}"
 end
@@ -2347,7 +2347,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -2361,7 +2361,7 @@ No authorization required
 
 ## delete_collection_namespaced_virtual_machine_preference
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_preference(opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_preference(opts)
 
 
 
@@ -2398,7 +2398,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_preference_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_preference_with_http_info(opts)
 
 ```ruby
 begin
@@ -2406,7 +2406,7 @@ begin
   data, status_code, headers = api_instance.delete_collection_namespaced_virtual_machine_preference_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_collection_namespaced_virtual_machine_preference_with_http_info: #{e}"
 end
@@ -2427,7 +2427,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -2441,7 +2441,7 @@ No authorization required
 
 ## delete_collection_namespaced_virtual_machine_restore
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_restore(opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_restore(opts)
 
 
 
@@ -2478,7 +2478,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_restore_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_restore_with_http_info(opts)
 
 ```ruby
 begin
@@ -2486,7 +2486,7 @@ begin
   data, status_code, headers = api_instance.delete_collection_namespaced_virtual_machine_restore_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_collection_namespaced_virtual_machine_restore_with_http_info: #{e}"
 end
@@ -2507,7 +2507,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -2521,7 +2521,7 @@ No authorization required
 
 ## delete_collection_namespaced_virtual_machine_snapshot
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_snapshot(opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_snapshot(opts)
 
 
 
@@ -2558,7 +2558,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_snapshot_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_snapshot_with_http_info(opts)
 
 ```ruby
 begin
@@ -2566,7 +2566,7 @@ begin
   data, status_code, headers = api_instance.delete_collection_namespaced_virtual_machine_snapshot_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_collection_namespaced_virtual_machine_snapshot_with_http_info: #{e}"
 end
@@ -2587,7 +2587,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -2601,7 +2601,7 @@ No authorization required
 
 ## delete_collection_namespaced_virtual_machine_snapshot_content
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_snapshot_content(opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_collection_namespaced_virtual_machine_snapshot_content(opts)
 
 
 
@@ -2638,7 +2638,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_snapshot_content_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_namespaced_virtual_machine_snapshot_content_with_http_info(opts)
 
 ```ruby
 begin
@@ -2646,7 +2646,7 @@ begin
   data, status_code, headers = api_instance.delete_collection_namespaced_virtual_machine_snapshot_content_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_collection_namespaced_virtual_machine_snapshot_content_with_http_info: #{e}"
 end
@@ -2667,7 +2667,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -2681,7 +2681,7 @@ No authorization required
 
 ## delete_collection_virtual_machine_clone
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_collection_virtual_machine_clone(opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_collection_virtual_machine_clone(opts)
 
 
 
@@ -2718,7 +2718,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_virtual_machine_clone_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_virtual_machine_clone_with_http_info(opts)
 
 ```ruby
 begin
@@ -2726,7 +2726,7 @@ begin
   data, status_code, headers = api_instance.delete_collection_virtual_machine_clone_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_collection_virtual_machine_clone_with_http_info: #{e}"
 end
@@ -2747,7 +2747,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -2761,7 +2761,7 @@ No authorization required
 
 ## delete_collection_virtual_machine_cluster_instancetype
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_collection_virtual_machine_cluster_instancetype(opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_collection_virtual_machine_cluster_instancetype(opts)
 
 
 
@@ -2798,7 +2798,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_virtual_machine_cluster_instancetype_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_virtual_machine_cluster_instancetype_with_http_info(opts)
 
 ```ruby
 begin
@@ -2806,7 +2806,7 @@ begin
   data, status_code, headers = api_instance.delete_collection_virtual_machine_cluster_instancetype_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_collection_virtual_machine_cluster_instancetype_with_http_info: #{e}"
 end
@@ -2827,7 +2827,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -2841,7 +2841,7 @@ No authorization required
 
 ## delete_collection_virtual_machine_cluster_preference
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_collection_virtual_machine_cluster_preference(opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_collection_virtual_machine_cluster_preference(opts)
 
 
 
@@ -2878,7 +2878,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_virtual_machine_cluster_preference_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_collection_virtual_machine_cluster_preference_with_http_info(opts)
 
 ```ruby
 begin
@@ -2886,7 +2886,7 @@ begin
   data, status_code, headers = api_instance.delete_collection_virtual_machine_cluster_preference_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_collection_virtual_machine_cluster_preference_with_http_info: #{e}"
 end
@@ -2907,7 +2907,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -2921,7 +2921,7 @@ No authorization required
 
 ## delete_migration_policy
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_migration_policy(name, body, opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_migration_policy(name, body, opts)
 
 
 
@@ -2935,7 +2935,7 @@ require 'kubevirt'
 
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
-body = Kubevirt::K8sIoApimachineryPkgApisMetaV1DeleteOptions.new # K8sIoApimachineryPkgApisMetaV1DeleteOptions | 
+body = Kubevirt::IoK8sApimachineryPkgApisMetaV1DeleteOptions.new # IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
 opts = {
   grace_period_seconds: 56, # Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
   orphan_dependents: true, # Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
@@ -2955,7 +2955,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_migration_policy_with_http_info(name, body, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_migration_policy_with_http_info(name, body, opts)
 
 ```ruby
 begin
@@ -2963,7 +2963,7 @@ begin
   data, status_code, headers = api_instance.delete_migration_policy_with_http_info(name, body, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_migration_policy_with_http_info: #{e}"
 end
@@ -2974,14 +2974,14 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Name of the resource |  |
-| **body** | [**K8sIoApimachineryPkgApisMetaV1DeleteOptions**](K8sIoApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
+| **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
 | **grace_period_seconds** | **Integer** | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional] |
 | **orphan_dependents** | **Boolean** | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional] |
 | **propagation_policy** | **String** | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. | [optional] |
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -2995,7 +2995,7 @@ No authorization required
 
 ## delete_namespaced_kube_virt
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_namespaced_kube_virt(name, namespace, body, opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_namespaced_kube_virt(name, namespace, body, opts)
 
 
 
@@ -3010,7 +3010,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::K8sIoApimachineryPkgApisMetaV1DeleteOptions.new # K8sIoApimachineryPkgApisMetaV1DeleteOptions | 
+body = Kubevirt::IoK8sApimachineryPkgApisMetaV1DeleteOptions.new # IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
 opts = {
   grace_period_seconds: 56, # Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
   orphan_dependents: true, # Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
@@ -3030,7 +3030,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_kube_virt_with_http_info(name, namespace, body, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_kube_virt_with_http_info(name, namespace, body, opts)
 
 ```ruby
 begin
@@ -3038,7 +3038,7 @@ begin
   data, status_code, headers = api_instance.delete_namespaced_kube_virt_with_http_info(name, namespace, body, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_namespaced_kube_virt_with_http_info: #{e}"
 end
@@ -3050,14 +3050,14 @@ end
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Name of the resource |  |
 | **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
-| **body** | [**K8sIoApimachineryPkgApisMetaV1DeleteOptions**](K8sIoApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
+| **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
 | **grace_period_seconds** | **Integer** | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional] |
 | **orphan_dependents** | **Boolean** | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional] |
 | **propagation_policy** | **String** | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. | [optional] |
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -3071,7 +3071,7 @@ No authorization required
 
 ## delete_namespaced_virtual_machine
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine(name, namespace, body, opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine(name, namespace, body, opts)
 
 
 
@@ -3086,7 +3086,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::K8sIoApimachineryPkgApisMetaV1DeleteOptions.new # K8sIoApimachineryPkgApisMetaV1DeleteOptions | 
+body = Kubevirt::IoK8sApimachineryPkgApisMetaV1DeleteOptions.new # IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
 opts = {
   grace_period_seconds: 56, # Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
   orphan_dependents: true, # Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
@@ -3106,7 +3106,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_with_http_info(name, namespace, body, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_with_http_info(name, namespace, body, opts)
 
 ```ruby
 begin
@@ -3114,7 +3114,7 @@ begin
   data, status_code, headers = api_instance.delete_namespaced_virtual_machine_with_http_info(name, namespace, body, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_namespaced_virtual_machine_with_http_info: #{e}"
 end
@@ -3126,14 +3126,14 @@ end
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Name of the resource |  |
 | **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
-| **body** | [**K8sIoApimachineryPkgApisMetaV1DeleteOptions**](K8sIoApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
+| **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
 | **grace_period_seconds** | **Integer** | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional] |
 | **orphan_dependents** | **Boolean** | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional] |
 | **propagation_policy** | **String** | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. | [optional] |
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -3147,7 +3147,7 @@ No authorization required
 
 ## delete_namespaced_virtual_machine_backup
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_backup(name, namespace, body, opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_backup(name, namespace, body, opts)
 
 
 
@@ -3162,7 +3162,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::K8sIoApimachineryPkgApisMetaV1DeleteOptions.new # K8sIoApimachineryPkgApisMetaV1DeleteOptions | 
+body = Kubevirt::IoK8sApimachineryPkgApisMetaV1DeleteOptions.new # IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
 opts = {
   grace_period_seconds: 56, # Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
   orphan_dependents: true, # Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
@@ -3182,7 +3182,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_backup_with_http_info(name, namespace, body, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_backup_with_http_info(name, namespace, body, opts)
 
 ```ruby
 begin
@@ -3190,7 +3190,7 @@ begin
   data, status_code, headers = api_instance.delete_namespaced_virtual_machine_backup_with_http_info(name, namespace, body, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_namespaced_virtual_machine_backup_with_http_info: #{e}"
 end
@@ -3202,14 +3202,14 @@ end
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Name of the resource |  |
 | **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
-| **body** | [**K8sIoApimachineryPkgApisMetaV1DeleteOptions**](K8sIoApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
+| **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
 | **grace_period_seconds** | **Integer** | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional] |
 | **orphan_dependents** | **Boolean** | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional] |
 | **propagation_policy** | **String** | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. | [optional] |
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -3223,7 +3223,7 @@ No authorization required
 
 ## delete_namespaced_virtual_machine_export
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_export(name, namespace, body, opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_export(name, namespace, body, opts)
 
 
 
@@ -3238,7 +3238,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::K8sIoApimachineryPkgApisMetaV1DeleteOptions.new # K8sIoApimachineryPkgApisMetaV1DeleteOptions | 
+body = Kubevirt::IoK8sApimachineryPkgApisMetaV1DeleteOptions.new # IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
 opts = {
   grace_period_seconds: 56, # Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
   orphan_dependents: true, # Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
@@ -3258,7 +3258,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_export_with_http_info(name, namespace, body, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_export_with_http_info(name, namespace, body, opts)
 
 ```ruby
 begin
@@ -3266,7 +3266,7 @@ begin
   data, status_code, headers = api_instance.delete_namespaced_virtual_machine_export_with_http_info(name, namespace, body, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_namespaced_virtual_machine_export_with_http_info: #{e}"
 end
@@ -3278,14 +3278,14 @@ end
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Name of the resource |  |
 | **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
-| **body** | [**K8sIoApimachineryPkgApisMetaV1DeleteOptions**](K8sIoApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
+| **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
 | **grace_period_seconds** | **Integer** | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional] |
 | **orphan_dependents** | **Boolean** | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional] |
 | **propagation_policy** | **String** | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. | [optional] |
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -3299,7 +3299,7 @@ No authorization required
 
 ## delete_namespaced_virtual_machine_instance
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_instance(name, namespace, body, opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_instance(name, namespace, body, opts)
 
 
 
@@ -3314,7 +3314,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::K8sIoApimachineryPkgApisMetaV1DeleteOptions.new # K8sIoApimachineryPkgApisMetaV1DeleteOptions | 
+body = Kubevirt::IoK8sApimachineryPkgApisMetaV1DeleteOptions.new # IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
 opts = {
   grace_period_seconds: 56, # Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
   orphan_dependents: true, # Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
@@ -3334,7 +3334,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_instance_with_http_info(name, namespace, body, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_instance_with_http_info(name, namespace, body, opts)
 
 ```ruby
 begin
@@ -3342,7 +3342,7 @@ begin
   data, status_code, headers = api_instance.delete_namespaced_virtual_machine_instance_with_http_info(name, namespace, body, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_namespaced_virtual_machine_instance_with_http_info: #{e}"
 end
@@ -3354,14 +3354,14 @@ end
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Name of the resource |  |
 | **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
-| **body** | [**K8sIoApimachineryPkgApisMetaV1DeleteOptions**](K8sIoApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
+| **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
 | **grace_period_seconds** | **Integer** | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional] |
 | **orphan_dependents** | **Boolean** | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional] |
 | **propagation_policy** | **String** | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. | [optional] |
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -3375,7 +3375,7 @@ No authorization required
 
 ## delete_namespaced_virtual_machine_instance_migration
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_instance_migration(name, namespace, body, opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_instance_migration(name, namespace, body, opts)
 
 
 
@@ -3390,7 +3390,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::K8sIoApimachineryPkgApisMetaV1DeleteOptions.new # K8sIoApimachineryPkgApisMetaV1DeleteOptions | 
+body = Kubevirt::IoK8sApimachineryPkgApisMetaV1DeleteOptions.new # IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
 opts = {
   grace_period_seconds: 56, # Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
   orphan_dependents: true, # Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
@@ -3410,7 +3410,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_instance_migration_with_http_info(name, namespace, body, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_instance_migration_with_http_info(name, namespace, body, opts)
 
 ```ruby
 begin
@@ -3418,7 +3418,7 @@ begin
   data, status_code, headers = api_instance.delete_namespaced_virtual_machine_instance_migration_with_http_info(name, namespace, body, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_namespaced_virtual_machine_instance_migration_with_http_info: #{e}"
 end
@@ -3430,14 +3430,14 @@ end
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Name of the resource |  |
 | **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
-| **body** | [**K8sIoApimachineryPkgApisMetaV1DeleteOptions**](K8sIoApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
+| **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
 | **grace_period_seconds** | **Integer** | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional] |
 | **orphan_dependents** | **Boolean** | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional] |
 | **propagation_policy** | **String** | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. | [optional] |
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -3451,7 +3451,7 @@ No authorization required
 
 ## delete_namespaced_virtual_machine_instance_preset
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_instance_preset(name, namespace, body, opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_instance_preset(name, namespace, body, opts)
 
 
 
@@ -3466,7 +3466,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::K8sIoApimachineryPkgApisMetaV1DeleteOptions.new # K8sIoApimachineryPkgApisMetaV1DeleteOptions | 
+body = Kubevirt::IoK8sApimachineryPkgApisMetaV1DeleteOptions.new # IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
 opts = {
   grace_period_seconds: 56, # Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
   orphan_dependents: true, # Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
@@ -3486,7 +3486,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_instance_preset_with_http_info(name, namespace, body, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_instance_preset_with_http_info(name, namespace, body, opts)
 
 ```ruby
 begin
@@ -3494,7 +3494,7 @@ begin
   data, status_code, headers = api_instance.delete_namespaced_virtual_machine_instance_preset_with_http_info(name, namespace, body, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_namespaced_virtual_machine_instance_preset_with_http_info: #{e}"
 end
@@ -3506,14 +3506,14 @@ end
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Name of the resource |  |
 | **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
-| **body** | [**K8sIoApimachineryPkgApisMetaV1DeleteOptions**](K8sIoApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
+| **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
 | **grace_period_seconds** | **Integer** | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional] |
 | **orphan_dependents** | **Boolean** | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional] |
 | **propagation_policy** | **String** | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. | [optional] |
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -3527,7 +3527,7 @@ No authorization required
 
 ## delete_namespaced_virtual_machine_instance_replica_set
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_instance_replica_set(name, namespace, body, opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_instance_replica_set(name, namespace, body, opts)
 
 
 
@@ -3542,7 +3542,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::K8sIoApimachineryPkgApisMetaV1DeleteOptions.new # K8sIoApimachineryPkgApisMetaV1DeleteOptions | 
+body = Kubevirt::IoK8sApimachineryPkgApisMetaV1DeleteOptions.new # IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
 opts = {
   grace_period_seconds: 56, # Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
   orphan_dependents: true, # Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
@@ -3562,7 +3562,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_instance_replica_set_with_http_info(name, namespace, body, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_instance_replica_set_with_http_info(name, namespace, body, opts)
 
 ```ruby
 begin
@@ -3570,7 +3570,7 @@ begin
   data, status_code, headers = api_instance.delete_namespaced_virtual_machine_instance_replica_set_with_http_info(name, namespace, body, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_namespaced_virtual_machine_instance_replica_set_with_http_info: #{e}"
 end
@@ -3582,14 +3582,14 @@ end
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Name of the resource |  |
 | **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
-| **body** | [**K8sIoApimachineryPkgApisMetaV1DeleteOptions**](K8sIoApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
+| **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
 | **grace_period_seconds** | **Integer** | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional] |
 | **orphan_dependents** | **Boolean** | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional] |
 | **propagation_policy** | **String** | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. | [optional] |
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -3603,7 +3603,7 @@ No authorization required
 
 ## delete_namespaced_virtual_machine_instancetype
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_instancetype(name, namespace, body, opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_instancetype(name, namespace, body, opts)
 
 
 
@@ -3618,7 +3618,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::K8sIoApimachineryPkgApisMetaV1DeleteOptions.new # K8sIoApimachineryPkgApisMetaV1DeleteOptions | 
+body = Kubevirt::IoK8sApimachineryPkgApisMetaV1DeleteOptions.new # IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
 opts = {
   grace_period_seconds: 56, # Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
   orphan_dependents: true, # Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
@@ -3638,7 +3638,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_instancetype_with_http_info(name, namespace, body, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_instancetype_with_http_info(name, namespace, body, opts)
 
 ```ruby
 begin
@@ -3646,7 +3646,7 @@ begin
   data, status_code, headers = api_instance.delete_namespaced_virtual_machine_instancetype_with_http_info(name, namespace, body, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_namespaced_virtual_machine_instancetype_with_http_info: #{e}"
 end
@@ -3658,14 +3658,14 @@ end
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Name of the resource |  |
 | **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
-| **body** | [**K8sIoApimachineryPkgApisMetaV1DeleteOptions**](K8sIoApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
+| **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
 | **grace_period_seconds** | **Integer** | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional] |
 | **orphan_dependents** | **Boolean** | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional] |
 | **propagation_policy** | **String** | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. | [optional] |
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -3679,7 +3679,7 @@ No authorization required
 
 ## delete_namespaced_virtual_machine_pool
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_pool(name, namespace, body, opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_pool(name, namespace, body, opts)
 
 
 
@@ -3694,7 +3694,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::K8sIoApimachineryPkgApisMetaV1DeleteOptions.new # K8sIoApimachineryPkgApisMetaV1DeleteOptions | 
+body = Kubevirt::IoK8sApimachineryPkgApisMetaV1DeleteOptions.new # IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
 opts = {
   grace_period_seconds: 56, # Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
   orphan_dependents: true, # Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
@@ -3714,7 +3714,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_pool_with_http_info(name, namespace, body, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_pool_with_http_info(name, namespace, body, opts)
 
 ```ruby
 begin
@@ -3722,7 +3722,7 @@ begin
   data, status_code, headers = api_instance.delete_namespaced_virtual_machine_pool_with_http_info(name, namespace, body, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_namespaced_virtual_machine_pool_with_http_info: #{e}"
 end
@@ -3734,14 +3734,14 @@ end
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Name of the resource |  |
 | **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
-| **body** | [**K8sIoApimachineryPkgApisMetaV1DeleteOptions**](K8sIoApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
+| **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
 | **grace_period_seconds** | **Integer** | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional] |
 | **orphan_dependents** | **Boolean** | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional] |
 | **propagation_policy** | **String** | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. | [optional] |
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -3755,7 +3755,7 @@ No authorization required
 
 ## delete_namespaced_virtual_machine_preference
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_preference(name, namespace, body, opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_preference(name, namespace, body, opts)
 
 
 
@@ -3770,7 +3770,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::K8sIoApimachineryPkgApisMetaV1DeleteOptions.new # K8sIoApimachineryPkgApisMetaV1DeleteOptions | 
+body = Kubevirt::IoK8sApimachineryPkgApisMetaV1DeleteOptions.new # IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
 opts = {
   grace_period_seconds: 56, # Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
   orphan_dependents: true, # Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
@@ -3790,7 +3790,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_preference_with_http_info(name, namespace, body, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_preference_with_http_info(name, namespace, body, opts)
 
 ```ruby
 begin
@@ -3798,7 +3798,7 @@ begin
   data, status_code, headers = api_instance.delete_namespaced_virtual_machine_preference_with_http_info(name, namespace, body, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_namespaced_virtual_machine_preference_with_http_info: #{e}"
 end
@@ -3810,14 +3810,14 @@ end
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Name of the resource |  |
 | **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
-| **body** | [**K8sIoApimachineryPkgApisMetaV1DeleteOptions**](K8sIoApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
+| **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
 | **grace_period_seconds** | **Integer** | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional] |
 | **orphan_dependents** | **Boolean** | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional] |
 | **propagation_policy** | **String** | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. | [optional] |
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -3831,7 +3831,7 @@ No authorization required
 
 ## delete_namespaced_virtual_machine_restore
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_restore(name, namespace, body, opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_restore(name, namespace, body, opts)
 
 
 
@@ -3846,7 +3846,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::K8sIoApimachineryPkgApisMetaV1DeleteOptions.new # K8sIoApimachineryPkgApisMetaV1DeleteOptions | 
+body = Kubevirt::IoK8sApimachineryPkgApisMetaV1DeleteOptions.new # IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
 opts = {
   grace_period_seconds: 56, # Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
   orphan_dependents: true, # Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
@@ -3866,7 +3866,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_restore_with_http_info(name, namespace, body, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_restore_with_http_info(name, namespace, body, opts)
 
 ```ruby
 begin
@@ -3874,7 +3874,7 @@ begin
   data, status_code, headers = api_instance.delete_namespaced_virtual_machine_restore_with_http_info(name, namespace, body, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_namespaced_virtual_machine_restore_with_http_info: #{e}"
 end
@@ -3886,14 +3886,14 @@ end
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Name of the resource |  |
 | **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
-| **body** | [**K8sIoApimachineryPkgApisMetaV1DeleteOptions**](K8sIoApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
+| **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
 | **grace_period_seconds** | **Integer** | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional] |
 | **orphan_dependents** | **Boolean** | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional] |
 | **propagation_policy** | **String** | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. | [optional] |
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -3907,7 +3907,7 @@ No authorization required
 
 ## delete_namespaced_virtual_machine_snapshot
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_snapshot(name, namespace, body, opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_snapshot(name, namespace, body, opts)
 
 
 
@@ -3922,7 +3922,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::K8sIoApimachineryPkgApisMetaV1DeleteOptions.new # K8sIoApimachineryPkgApisMetaV1DeleteOptions | 
+body = Kubevirt::IoK8sApimachineryPkgApisMetaV1DeleteOptions.new # IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
 opts = {
   grace_period_seconds: 56, # Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
   orphan_dependents: true, # Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
@@ -3942,7 +3942,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_snapshot_with_http_info(name, namespace, body, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_snapshot_with_http_info(name, namespace, body, opts)
 
 ```ruby
 begin
@@ -3950,7 +3950,7 @@ begin
   data, status_code, headers = api_instance.delete_namespaced_virtual_machine_snapshot_with_http_info(name, namespace, body, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_namespaced_virtual_machine_snapshot_with_http_info: #{e}"
 end
@@ -3962,14 +3962,14 @@ end
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Name of the resource |  |
 | **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
-| **body** | [**K8sIoApimachineryPkgApisMetaV1DeleteOptions**](K8sIoApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
+| **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
 | **grace_period_seconds** | **Integer** | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional] |
 | **orphan_dependents** | **Boolean** | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional] |
 | **propagation_policy** | **String** | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. | [optional] |
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -3983,7 +3983,7 @@ No authorization required
 
 ## delete_namespaced_virtual_machine_snapshot_content
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_snapshot_content(name, namespace, body, opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_namespaced_virtual_machine_snapshot_content(name, namespace, body, opts)
 
 
 
@@ -3998,7 +3998,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::K8sIoApimachineryPkgApisMetaV1DeleteOptions.new # K8sIoApimachineryPkgApisMetaV1DeleteOptions | 
+body = Kubevirt::IoK8sApimachineryPkgApisMetaV1DeleteOptions.new # IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
 opts = {
   grace_period_seconds: 56, # Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
   orphan_dependents: true, # Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
@@ -4018,7 +4018,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_snapshot_content_with_http_info(name, namespace, body, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_namespaced_virtual_machine_snapshot_content_with_http_info(name, namespace, body, opts)
 
 ```ruby
 begin
@@ -4026,7 +4026,7 @@ begin
   data, status_code, headers = api_instance.delete_namespaced_virtual_machine_snapshot_content_with_http_info(name, namespace, body, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_namespaced_virtual_machine_snapshot_content_with_http_info: #{e}"
 end
@@ -4038,14 +4038,14 @@ end
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Name of the resource |  |
 | **namespace** | **String** | Object name and auth scope, such as for teams and projects |  |
-| **body** | [**K8sIoApimachineryPkgApisMetaV1DeleteOptions**](K8sIoApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
+| **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
 | **grace_period_seconds** | **Integer** | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional] |
 | **orphan_dependents** | **Boolean** | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional] |
 | **propagation_policy** | **String** | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. | [optional] |
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -4059,7 +4059,7 @@ No authorization required
 
 ## delete_virtual_machine_clone
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_virtual_machine_clone(name, body, opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_virtual_machine_clone(name, body, opts)
 
 
 
@@ -4073,7 +4073,7 @@ require 'kubevirt'
 
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
-body = Kubevirt::K8sIoApimachineryPkgApisMetaV1DeleteOptions.new # K8sIoApimachineryPkgApisMetaV1DeleteOptions | 
+body = Kubevirt::IoK8sApimachineryPkgApisMetaV1DeleteOptions.new # IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
 opts = {
   grace_period_seconds: 56, # Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
   orphan_dependents: true, # Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
@@ -4093,7 +4093,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_virtual_machine_clone_with_http_info(name, body, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_virtual_machine_clone_with_http_info(name, body, opts)
 
 ```ruby
 begin
@@ -4101,7 +4101,7 @@ begin
   data, status_code, headers = api_instance.delete_virtual_machine_clone_with_http_info(name, body, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_virtual_machine_clone_with_http_info: #{e}"
 end
@@ -4112,14 +4112,14 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Name of the resource |  |
-| **body** | [**K8sIoApimachineryPkgApisMetaV1DeleteOptions**](K8sIoApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
+| **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
 | **grace_period_seconds** | **Integer** | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional] |
 | **orphan_dependents** | **Boolean** | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional] |
 | **propagation_policy** | **String** | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. | [optional] |
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -4133,7 +4133,7 @@ No authorization required
 
 ## delete_virtual_machine_cluster_instancetype
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_virtual_machine_cluster_instancetype(name, body, opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_virtual_machine_cluster_instancetype(name, body, opts)
 
 
 
@@ -4147,7 +4147,7 @@ require 'kubevirt'
 
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
-body = Kubevirt::K8sIoApimachineryPkgApisMetaV1DeleteOptions.new # K8sIoApimachineryPkgApisMetaV1DeleteOptions | 
+body = Kubevirt::IoK8sApimachineryPkgApisMetaV1DeleteOptions.new # IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
 opts = {
   grace_period_seconds: 56, # Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
   orphan_dependents: true, # Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
@@ -4167,7 +4167,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_virtual_machine_cluster_instancetype_with_http_info(name, body, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_virtual_machine_cluster_instancetype_with_http_info(name, body, opts)
 
 ```ruby
 begin
@@ -4175,7 +4175,7 @@ begin
   data, status_code, headers = api_instance.delete_virtual_machine_cluster_instancetype_with_http_info(name, body, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_virtual_machine_cluster_instancetype_with_http_info: #{e}"
 end
@@ -4186,14 +4186,14 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Name of the resource |  |
-| **body** | [**K8sIoApimachineryPkgApisMetaV1DeleteOptions**](K8sIoApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
+| **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
 | **grace_period_seconds** | **Integer** | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional] |
 | **orphan_dependents** | **Boolean** | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional] |
 | **propagation_policy** | **String** | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. | [optional] |
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -4207,7 +4207,7 @@ No authorization required
 
 ## delete_virtual_machine_cluster_preference
 
-> <K8sIoApimachineryPkgApisMetaV1Status> delete_virtual_machine_cluster_preference(name, body, opts)
+> <IoK8sApimachineryPkgApisMetaV1Status> delete_virtual_machine_cluster_preference(name, body, opts)
 
 
 
@@ -4221,7 +4221,7 @@ require 'kubevirt'
 
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
-body = Kubevirt::K8sIoApimachineryPkgApisMetaV1DeleteOptions.new # K8sIoApimachineryPkgApisMetaV1DeleteOptions | 
+body = Kubevirt::IoK8sApimachineryPkgApisMetaV1DeleteOptions.new # IoK8sApimachineryPkgApisMetaV1DeleteOptions | 
 opts = {
   grace_period_seconds: 56, # Integer | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.
   orphan_dependents: true, # Boolean | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \"orphan\" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.
@@ -4241,7 +4241,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_virtual_machine_cluster_preference_with_http_info(name, body, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1Status>, Integer, Hash)> delete_virtual_machine_cluster_preference_with_http_info(name, body, opts)
 
 ```ruby
 begin
@@ -4249,7 +4249,7 @@ begin
   data, status_code, headers = api_instance.delete_virtual_machine_cluster_preference_with_http_info(name, body, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1Status>
+  p data # => <IoK8sApimachineryPkgApisMetaV1Status>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->delete_virtual_machine_cluster_preference_with_http_info: #{e}"
 end
@@ -4260,14 +4260,14 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Name of the resource |  |
-| **body** | [**K8sIoApimachineryPkgApisMetaV1DeleteOptions**](K8sIoApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
+| **body** | [**IoK8sApimachineryPkgApisMetaV1DeleteOptions**](IoK8sApimachineryPkgApisMetaV1DeleteOptions.md) |  |  |
 | **grace_period_seconds** | **Integer** | The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately. | [optional] |
 | **orphan_dependents** | **Boolean** | Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the \&quot;orphan\&quot; finalizer will be added to/removed from the object&#39;s finalizers list. Either this field or PropagationPolicy may be set, but not both. | [optional] |
 | **propagation_policy** | **String** | Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: &#39;Orphan&#39; - orphan the dependents; &#39;Background&#39; - allow the garbage collector to delete the dependents in the background; &#39;Foreground&#39; - a cascading policy that deletes all dependents in the foreground. | [optional] |
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1Status**](K8sIoApimachineryPkgApisMetaV1Status.md)
+[**IoK8sApimachineryPkgApisMetaV1Status**](IoK8sApimachineryPkgApisMetaV1Status.md)
 
 ### Authorization
 
@@ -4399,7 +4399,7 @@ No authorization required
 
 ## get_api_group_backup_kubevirt_io
 
-> <K8sIoApimachineryPkgApisMetaV1APIGroup> get_api_group_backup_kubevirt_io
+> <IoK8sApimachineryPkgApisMetaV1APIGroup> get_api_group_backup_kubevirt_io
 
 
 
@@ -4426,7 +4426,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1APIGroup>, Integer, Hash)> get_api_group_backup_kubevirt_io_with_http_info
+> <Array(<IoK8sApimachineryPkgApisMetaV1APIGroup>, Integer, Hash)> get_api_group_backup_kubevirt_io_with_http_info
 
 ```ruby
 begin
@@ -4434,7 +4434,7 @@ begin
   data, status_code, headers = api_instance.get_api_group_backup_kubevirt_io_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1APIGroup>
+  p data # => <IoK8sApimachineryPkgApisMetaV1APIGroup>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->get_api_group_backup_kubevirt_io_with_http_info: #{e}"
 end
@@ -4446,7 +4446,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1APIGroup**](K8sIoApimachineryPkgApisMetaV1APIGroup.md)
+[**IoK8sApimachineryPkgApisMetaV1APIGroup**](IoK8sApimachineryPkgApisMetaV1APIGroup.md)
 
 ### Authorization
 
@@ -4460,7 +4460,7 @@ No authorization required
 
 ## get_api_group_clone_kubevirt_io
 
-> <K8sIoApimachineryPkgApisMetaV1APIGroup> get_api_group_clone_kubevirt_io
+> <IoK8sApimachineryPkgApisMetaV1APIGroup> get_api_group_clone_kubevirt_io
 
 
 
@@ -4487,7 +4487,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1APIGroup>, Integer, Hash)> get_api_group_clone_kubevirt_io_with_http_info
+> <Array(<IoK8sApimachineryPkgApisMetaV1APIGroup>, Integer, Hash)> get_api_group_clone_kubevirt_io_with_http_info
 
 ```ruby
 begin
@@ -4495,7 +4495,7 @@ begin
   data, status_code, headers = api_instance.get_api_group_clone_kubevirt_io_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1APIGroup>
+  p data # => <IoK8sApimachineryPkgApisMetaV1APIGroup>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->get_api_group_clone_kubevirt_io_with_http_info: #{e}"
 end
@@ -4507,7 +4507,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1APIGroup**](K8sIoApimachineryPkgApisMetaV1APIGroup.md)
+[**IoK8sApimachineryPkgApisMetaV1APIGroup**](IoK8sApimachineryPkgApisMetaV1APIGroup.md)
 
 ### Authorization
 
@@ -4521,7 +4521,7 @@ No authorization required
 
 ## get_api_group_export_kubevirt_io
 
-> <K8sIoApimachineryPkgApisMetaV1APIGroup> get_api_group_export_kubevirt_io
+> <IoK8sApimachineryPkgApisMetaV1APIGroup> get_api_group_export_kubevirt_io
 
 
 
@@ -4548,7 +4548,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1APIGroup>, Integer, Hash)> get_api_group_export_kubevirt_io_with_http_info
+> <Array(<IoK8sApimachineryPkgApisMetaV1APIGroup>, Integer, Hash)> get_api_group_export_kubevirt_io_with_http_info
 
 ```ruby
 begin
@@ -4556,7 +4556,7 @@ begin
   data, status_code, headers = api_instance.get_api_group_export_kubevirt_io_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1APIGroup>
+  p data # => <IoK8sApimachineryPkgApisMetaV1APIGroup>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->get_api_group_export_kubevirt_io_with_http_info: #{e}"
 end
@@ -4568,7 +4568,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1APIGroup**](K8sIoApimachineryPkgApisMetaV1APIGroup.md)
+[**IoK8sApimachineryPkgApisMetaV1APIGroup**](IoK8sApimachineryPkgApisMetaV1APIGroup.md)
 
 ### Authorization
 
@@ -4582,7 +4582,7 @@ No authorization required
 
 ## get_api_group_instancetype_kubevirt_io
 
-> <K8sIoApimachineryPkgApisMetaV1APIGroup> get_api_group_instancetype_kubevirt_io
+> <IoK8sApimachineryPkgApisMetaV1APIGroup> get_api_group_instancetype_kubevirt_io
 
 
 
@@ -4609,7 +4609,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1APIGroup>, Integer, Hash)> get_api_group_instancetype_kubevirt_io_with_http_info
+> <Array(<IoK8sApimachineryPkgApisMetaV1APIGroup>, Integer, Hash)> get_api_group_instancetype_kubevirt_io_with_http_info
 
 ```ruby
 begin
@@ -4617,7 +4617,7 @@ begin
   data, status_code, headers = api_instance.get_api_group_instancetype_kubevirt_io_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1APIGroup>
+  p data # => <IoK8sApimachineryPkgApisMetaV1APIGroup>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->get_api_group_instancetype_kubevirt_io_with_http_info: #{e}"
 end
@@ -4629,7 +4629,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1APIGroup**](K8sIoApimachineryPkgApisMetaV1APIGroup.md)
+[**IoK8sApimachineryPkgApisMetaV1APIGroup**](IoK8sApimachineryPkgApisMetaV1APIGroup.md)
 
 ### Authorization
 
@@ -4643,7 +4643,7 @@ No authorization required
 
 ## get_api_group_kubevirt_io
 
-> <K8sIoApimachineryPkgApisMetaV1APIGroup> get_api_group_kubevirt_io
+> <IoK8sApimachineryPkgApisMetaV1APIGroup> get_api_group_kubevirt_io
 
 
 
@@ -4670,7 +4670,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1APIGroup>, Integer, Hash)> get_api_group_kubevirt_io_with_http_info
+> <Array(<IoK8sApimachineryPkgApisMetaV1APIGroup>, Integer, Hash)> get_api_group_kubevirt_io_with_http_info
 
 ```ruby
 begin
@@ -4678,7 +4678,7 @@ begin
   data, status_code, headers = api_instance.get_api_group_kubevirt_io_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1APIGroup>
+  p data # => <IoK8sApimachineryPkgApisMetaV1APIGroup>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->get_api_group_kubevirt_io_with_http_info: #{e}"
 end
@@ -4690,7 +4690,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1APIGroup**](K8sIoApimachineryPkgApisMetaV1APIGroup.md)
+[**IoK8sApimachineryPkgApisMetaV1APIGroup**](IoK8sApimachineryPkgApisMetaV1APIGroup.md)
 
 ### Authorization
 
@@ -4704,7 +4704,7 @@ No authorization required
 
 ## get_api_group_list
 
-> <K8sIoApimachineryPkgApisMetaV1APIGroupList> get_api_group_list
+> <IoK8sApimachineryPkgApisMetaV1APIGroupList> get_api_group_list
 
 
 
@@ -4731,7 +4731,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1APIGroupList>, Integer, Hash)> get_api_group_list_with_http_info
+> <Array(<IoK8sApimachineryPkgApisMetaV1APIGroupList>, Integer, Hash)> get_api_group_list_with_http_info
 
 ```ruby
 begin
@@ -4739,7 +4739,7 @@ begin
   data, status_code, headers = api_instance.get_api_group_list_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1APIGroupList>
+  p data # => <IoK8sApimachineryPkgApisMetaV1APIGroupList>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->get_api_group_list_with_http_info: #{e}"
 end
@@ -4751,7 +4751,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1APIGroupList**](K8sIoApimachineryPkgApisMetaV1APIGroupList.md)
+[**IoK8sApimachineryPkgApisMetaV1APIGroupList**](IoK8sApimachineryPkgApisMetaV1APIGroupList.md)
 
 ### Authorization
 
@@ -4765,7 +4765,7 @@ No authorization required
 
 ## get_api_group_migrations_kubevirt_io
 
-> <K8sIoApimachineryPkgApisMetaV1APIGroup> get_api_group_migrations_kubevirt_io
+> <IoK8sApimachineryPkgApisMetaV1APIGroup> get_api_group_migrations_kubevirt_io
 
 
 
@@ -4792,7 +4792,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1APIGroup>, Integer, Hash)> get_api_group_migrations_kubevirt_io_with_http_info
+> <Array(<IoK8sApimachineryPkgApisMetaV1APIGroup>, Integer, Hash)> get_api_group_migrations_kubevirt_io_with_http_info
 
 ```ruby
 begin
@@ -4800,7 +4800,7 @@ begin
   data, status_code, headers = api_instance.get_api_group_migrations_kubevirt_io_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1APIGroup>
+  p data # => <IoK8sApimachineryPkgApisMetaV1APIGroup>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->get_api_group_migrations_kubevirt_io_with_http_info: #{e}"
 end
@@ -4812,7 +4812,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1APIGroup**](K8sIoApimachineryPkgApisMetaV1APIGroup.md)
+[**IoK8sApimachineryPkgApisMetaV1APIGroup**](IoK8sApimachineryPkgApisMetaV1APIGroup.md)
 
 ### Authorization
 
@@ -4826,7 +4826,7 @@ No authorization required
 
 ## get_api_group_pool_kubevirt_io
 
-> <K8sIoApimachineryPkgApisMetaV1APIGroup> get_api_group_pool_kubevirt_io
+> <IoK8sApimachineryPkgApisMetaV1APIGroup> get_api_group_pool_kubevirt_io
 
 
 
@@ -4853,7 +4853,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1APIGroup>, Integer, Hash)> get_api_group_pool_kubevirt_io_with_http_info
+> <Array(<IoK8sApimachineryPkgApisMetaV1APIGroup>, Integer, Hash)> get_api_group_pool_kubevirt_io_with_http_info
 
 ```ruby
 begin
@@ -4861,7 +4861,7 @@ begin
   data, status_code, headers = api_instance.get_api_group_pool_kubevirt_io_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1APIGroup>
+  p data # => <IoK8sApimachineryPkgApisMetaV1APIGroup>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->get_api_group_pool_kubevirt_io_with_http_info: #{e}"
 end
@@ -4873,7 +4873,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1APIGroup**](K8sIoApimachineryPkgApisMetaV1APIGroup.md)
+[**IoK8sApimachineryPkgApisMetaV1APIGroup**](IoK8sApimachineryPkgApisMetaV1APIGroup.md)
 
 ### Authorization
 
@@ -4887,7 +4887,7 @@ No authorization required
 
 ## get_api_group_snapshot_kubevirt_io
 
-> <K8sIoApimachineryPkgApisMetaV1APIGroup> get_api_group_snapshot_kubevirt_io
+> <IoK8sApimachineryPkgApisMetaV1APIGroup> get_api_group_snapshot_kubevirt_io
 
 
 
@@ -4914,7 +4914,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1APIGroup>, Integer, Hash)> get_api_group_snapshot_kubevirt_io_with_http_info
+> <Array(<IoK8sApimachineryPkgApisMetaV1APIGroup>, Integer, Hash)> get_api_group_snapshot_kubevirt_io_with_http_info
 
 ```ruby
 begin
@@ -4922,7 +4922,7 @@ begin
   data, status_code, headers = api_instance.get_api_group_snapshot_kubevirt_io_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1APIGroup>
+  p data # => <IoK8sApimachineryPkgApisMetaV1APIGroup>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->get_api_group_snapshot_kubevirt_io_with_http_info: #{e}"
 end
@@ -4934,7 +4934,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1APIGroup**](K8sIoApimachineryPkgApisMetaV1APIGroup.md)
+[**IoK8sApimachineryPkgApisMetaV1APIGroup**](IoK8sApimachineryPkgApisMetaV1APIGroup.md)
 
 ### Authorization
 
@@ -4948,7 +4948,7 @@ No authorization required
 
 ## get_api_resources_backup_kubevirt_io_v1alpha1
 
-> <K8sIoApimachineryPkgApisMetaV1APIResourceList> get_api_resources_backup_kubevirt_io_v1alpha1
+> <IoK8sApimachineryPkgApisMetaV1APIResourceList> get_api_resources_backup_kubevirt_io_v1alpha1
 
 
 
@@ -4975,7 +4975,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> get_api_resources_backup_kubevirt_io_v1alpha1_with_http_info
+> <Array(<IoK8sApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> get_api_resources_backup_kubevirt_io_v1alpha1_with_http_info
 
 ```ruby
 begin
@@ -4983,7 +4983,7 @@ begin
   data, status_code, headers = api_instance.get_api_resources_backup_kubevirt_io_v1alpha1_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1APIResourceList>
+  p data # => <IoK8sApimachineryPkgApisMetaV1APIResourceList>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->get_api_resources_backup_kubevirt_io_v1alpha1_with_http_info: #{e}"
 end
@@ -4995,7 +4995,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1APIResourceList**](K8sIoApimachineryPkgApisMetaV1APIResourceList.md)
+[**IoK8sApimachineryPkgApisMetaV1APIResourceList**](IoK8sApimachineryPkgApisMetaV1APIResourceList.md)
 
 ### Authorization
 
@@ -5009,7 +5009,7 @@ No authorization required
 
 ## get_api_resources_clone_kubevirt_io_v1beta1
 
-> <K8sIoApimachineryPkgApisMetaV1APIResourceList> get_api_resources_clone_kubevirt_io_v1beta1
+> <IoK8sApimachineryPkgApisMetaV1APIResourceList> get_api_resources_clone_kubevirt_io_v1beta1
 
 
 
@@ -5036,7 +5036,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> get_api_resources_clone_kubevirt_io_v1beta1_with_http_info
+> <Array(<IoK8sApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> get_api_resources_clone_kubevirt_io_v1beta1_with_http_info
 
 ```ruby
 begin
@@ -5044,7 +5044,7 @@ begin
   data, status_code, headers = api_instance.get_api_resources_clone_kubevirt_io_v1beta1_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1APIResourceList>
+  p data # => <IoK8sApimachineryPkgApisMetaV1APIResourceList>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->get_api_resources_clone_kubevirt_io_v1beta1_with_http_info: #{e}"
 end
@@ -5056,7 +5056,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1APIResourceList**](K8sIoApimachineryPkgApisMetaV1APIResourceList.md)
+[**IoK8sApimachineryPkgApisMetaV1APIResourceList**](IoK8sApimachineryPkgApisMetaV1APIResourceList.md)
 
 ### Authorization
 
@@ -5070,7 +5070,7 @@ No authorization required
 
 ## get_api_resources_export_kubevirt_io_v1
 
-> <K8sIoApimachineryPkgApisMetaV1APIResourceList> get_api_resources_export_kubevirt_io_v1
+> <IoK8sApimachineryPkgApisMetaV1APIResourceList> get_api_resources_export_kubevirt_io_v1
 
 
 
@@ -5097,7 +5097,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> get_api_resources_export_kubevirt_io_v1_with_http_info
+> <Array(<IoK8sApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> get_api_resources_export_kubevirt_io_v1_with_http_info
 
 ```ruby
 begin
@@ -5105,7 +5105,7 @@ begin
   data, status_code, headers = api_instance.get_api_resources_export_kubevirt_io_v1_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1APIResourceList>
+  p data # => <IoK8sApimachineryPkgApisMetaV1APIResourceList>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->get_api_resources_export_kubevirt_io_v1_with_http_info: #{e}"
 end
@@ -5117,7 +5117,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1APIResourceList**](K8sIoApimachineryPkgApisMetaV1APIResourceList.md)
+[**IoK8sApimachineryPkgApisMetaV1APIResourceList**](IoK8sApimachineryPkgApisMetaV1APIResourceList.md)
 
 ### Authorization
 
@@ -5131,7 +5131,7 @@ No authorization required
 
 ## get_api_resources_instancetype_kubevirt_io_v1beta1
 
-> <K8sIoApimachineryPkgApisMetaV1APIResourceList> get_api_resources_instancetype_kubevirt_io_v1beta1
+> <IoK8sApimachineryPkgApisMetaV1APIResourceList> get_api_resources_instancetype_kubevirt_io_v1beta1
 
 
 
@@ -5158,7 +5158,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> get_api_resources_instancetype_kubevirt_io_v1beta1_with_http_info
+> <Array(<IoK8sApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> get_api_resources_instancetype_kubevirt_io_v1beta1_with_http_info
 
 ```ruby
 begin
@@ -5166,7 +5166,7 @@ begin
   data, status_code, headers = api_instance.get_api_resources_instancetype_kubevirt_io_v1beta1_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1APIResourceList>
+  p data # => <IoK8sApimachineryPkgApisMetaV1APIResourceList>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->get_api_resources_instancetype_kubevirt_io_v1beta1_with_http_info: #{e}"
 end
@@ -5178,7 +5178,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1APIResourceList**](K8sIoApimachineryPkgApisMetaV1APIResourceList.md)
+[**IoK8sApimachineryPkgApisMetaV1APIResourceList**](IoK8sApimachineryPkgApisMetaV1APIResourceList.md)
 
 ### Authorization
 
@@ -5192,7 +5192,7 @@ No authorization required
 
 ## get_api_resources_kubevirt_io_v1
 
-> <K8sIoApimachineryPkgApisMetaV1APIResourceList> get_api_resources_kubevirt_io_v1
+> <IoK8sApimachineryPkgApisMetaV1APIResourceList> get_api_resources_kubevirt_io_v1
 
 
 
@@ -5219,7 +5219,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> get_api_resources_kubevirt_io_v1_with_http_info
+> <Array(<IoK8sApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> get_api_resources_kubevirt_io_v1_with_http_info
 
 ```ruby
 begin
@@ -5227,7 +5227,7 @@ begin
   data, status_code, headers = api_instance.get_api_resources_kubevirt_io_v1_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1APIResourceList>
+  p data # => <IoK8sApimachineryPkgApisMetaV1APIResourceList>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->get_api_resources_kubevirt_io_v1_with_http_info: #{e}"
 end
@@ -5239,7 +5239,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1APIResourceList**](K8sIoApimachineryPkgApisMetaV1APIResourceList.md)
+[**IoK8sApimachineryPkgApisMetaV1APIResourceList**](IoK8sApimachineryPkgApisMetaV1APIResourceList.md)
 
 ### Authorization
 
@@ -5253,7 +5253,7 @@ No authorization required
 
 ## get_api_resources_migrations_kubevirt_io_v1alpha1
 
-> <K8sIoApimachineryPkgApisMetaV1APIResourceList> get_api_resources_migrations_kubevirt_io_v1alpha1
+> <IoK8sApimachineryPkgApisMetaV1APIResourceList> get_api_resources_migrations_kubevirt_io_v1alpha1
 
 
 
@@ -5280,7 +5280,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> get_api_resources_migrations_kubevirt_io_v1alpha1_with_http_info
+> <Array(<IoK8sApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> get_api_resources_migrations_kubevirt_io_v1alpha1_with_http_info
 
 ```ruby
 begin
@@ -5288,7 +5288,7 @@ begin
   data, status_code, headers = api_instance.get_api_resources_migrations_kubevirt_io_v1alpha1_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1APIResourceList>
+  p data # => <IoK8sApimachineryPkgApisMetaV1APIResourceList>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->get_api_resources_migrations_kubevirt_io_v1alpha1_with_http_info: #{e}"
 end
@@ -5300,7 +5300,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1APIResourceList**](K8sIoApimachineryPkgApisMetaV1APIResourceList.md)
+[**IoK8sApimachineryPkgApisMetaV1APIResourceList**](IoK8sApimachineryPkgApisMetaV1APIResourceList.md)
 
 ### Authorization
 
@@ -5314,7 +5314,7 @@ No authorization required
 
 ## get_api_resources_pool_kubevirt_io_v1beta1
 
-> <K8sIoApimachineryPkgApisMetaV1APIResourceList> get_api_resources_pool_kubevirt_io_v1beta1
+> <IoK8sApimachineryPkgApisMetaV1APIResourceList> get_api_resources_pool_kubevirt_io_v1beta1
 
 
 
@@ -5341,7 +5341,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> get_api_resources_pool_kubevirt_io_v1beta1_with_http_info
+> <Array(<IoK8sApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> get_api_resources_pool_kubevirt_io_v1beta1_with_http_info
 
 ```ruby
 begin
@@ -5349,7 +5349,7 @@ begin
   data, status_code, headers = api_instance.get_api_resources_pool_kubevirt_io_v1beta1_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1APIResourceList>
+  p data # => <IoK8sApimachineryPkgApisMetaV1APIResourceList>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->get_api_resources_pool_kubevirt_io_v1beta1_with_http_info: #{e}"
 end
@@ -5361,7 +5361,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1APIResourceList**](K8sIoApimachineryPkgApisMetaV1APIResourceList.md)
+[**IoK8sApimachineryPkgApisMetaV1APIResourceList**](IoK8sApimachineryPkgApisMetaV1APIResourceList.md)
 
 ### Authorization
 
@@ -5375,7 +5375,7 @@ No authorization required
 
 ## get_api_resources_snapshot_kubevirt_io_v1beta1
 
-> <K8sIoApimachineryPkgApisMetaV1APIResourceList> get_api_resources_snapshot_kubevirt_io_v1beta1
+> <IoK8sApimachineryPkgApisMetaV1APIResourceList> get_api_resources_snapshot_kubevirt_io_v1beta1
 
 
 
@@ -5402,7 +5402,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> get_api_resources_snapshot_kubevirt_io_v1beta1_with_http_info
+> <Array(<IoK8sApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> get_api_resources_snapshot_kubevirt_io_v1beta1_with_http_info
 
 ```ruby
 begin
@@ -5410,7 +5410,7 @@ begin
   data, status_code, headers = api_instance.get_api_resources_snapshot_kubevirt_io_v1beta1_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1APIResourceList>
+  p data # => <IoK8sApimachineryPkgApisMetaV1APIResourceList>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->get_api_resources_snapshot_kubevirt_io_v1beta1_with_http_info: #{e}"
 end
@@ -5422,7 +5422,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1APIResourceList**](K8sIoApimachineryPkgApisMetaV1APIResourceList.md)
+[**IoK8sApimachineryPkgApisMetaV1APIResourceList**](IoK8sApimachineryPkgApisMetaV1APIResourceList.md)
 
 ### Authorization
 
@@ -5618,7 +5618,7 @@ No authorization required
 
 ## get_root_paths
 
-> <K8sIoApimachineryPkgApisMetaV1RootPaths> get_root_paths
+> <IoK8sApimachineryPkgApisMetaV1RootPaths> get_root_paths
 
 
 
@@ -5645,7 +5645,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1RootPaths>, Integer, Hash)> get_root_paths_with_http_info
+> <Array(<IoK8sApimachineryPkgApisMetaV1RootPaths>, Integer, Hash)> get_root_paths_with_http_info
 
 ```ruby
 begin
@@ -5653,7 +5653,7 @@ begin
   data, status_code, headers = api_instance.get_root_paths_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1RootPaths>
+  p data # => <IoK8sApimachineryPkgApisMetaV1RootPaths>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->get_root_paths_with_http_info: #{e}"
 end
@@ -5665,7 +5665,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1RootPaths**](K8sIoApimachineryPkgApisMetaV1RootPaths.md)
+[**IoK8sApimachineryPkgApisMetaV1RootPaths**](IoK8sApimachineryPkgApisMetaV1RootPaths.md)
 
 ### Authorization
 
@@ -11168,7 +11168,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::V1alpha1VirtualMachineBackup.new({spec: Kubevirt::V1alpha1VirtualMachineBackupSpec.new({source: Kubevirt::K8sIoApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'})})}) # V1alpha1VirtualMachineBackup | 
+body = Kubevirt::V1alpha1VirtualMachineBackup.new({spec: Kubevirt::V1alpha1VirtualMachineBackupSpec.new({source: Kubevirt::IoK8sApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'})})}) # V1alpha1VirtualMachineBackup | 
 
 begin
   
@@ -11236,7 +11236,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::V1VirtualMachineExport.new({spec: Kubevirt::V1VirtualMachineExportSpec.new({source: Kubevirt::K8sIoApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'})})}) # V1VirtualMachineExport | 
+body = Kubevirt::V1VirtualMachineExport.new({spec: Kubevirt::V1VirtualMachineExportSpec.new({source: Kubevirt::IoK8sApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'})})}) # V1VirtualMachineExport | 
 
 begin
   
@@ -11508,7 +11508,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::V1VirtualMachineInstanceReplicaSet.new({spec: Kubevirt::V1VirtualMachineInstanceReplicaSetSpec.new({selector: Kubevirt::K8sIoApimachineryPkgApisMetaV1LabelSelector.new, template: Kubevirt::V1VirtualMachineInstanceTemplateSpec.new})}) # V1VirtualMachineInstanceReplicaSet | 
+body = Kubevirt::V1VirtualMachineInstanceReplicaSet.new({spec: Kubevirt::V1VirtualMachineInstanceReplicaSetSpec.new({selector: Kubevirt::IoK8sApimachineryPkgApisMetaV1LabelSelector.new, template: Kubevirt::V1VirtualMachineInstanceTemplateSpec.new})}) # V1VirtualMachineInstanceReplicaSet | 
 
 begin
   
@@ -11644,7 +11644,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::V1beta1VirtualMachinePool.new({spec: Kubevirt::V1beta1VirtualMachinePoolSpec.new({selector: Kubevirt::K8sIoApimachineryPkgApisMetaV1LabelSelector.new, virtual_machine_template: Kubevirt::V1beta1VirtualMachineTemplateSpec.new})}) # V1beta1VirtualMachinePool | 
+body = Kubevirt::V1beta1VirtualMachinePool.new({spec: Kubevirt::V1beta1VirtualMachinePoolSpec.new({selector: Kubevirt::IoK8sApimachineryPkgApisMetaV1LabelSelector.new, virtual_machine_template: Kubevirt::V1beta1VirtualMachineTemplateSpec.new})}) # V1beta1VirtualMachinePool | 
 
 begin
   
@@ -11780,7 +11780,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::V1beta1VirtualMachineRestore.new({spec: Kubevirt::V1beta1VirtualMachineRestoreSpec.new({target: Kubevirt::K8sIoApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'}), virtual_machine_snapshot_name: 'virtual_machine_snapshot_name_example'})}) # V1beta1VirtualMachineRestore | 
+body = Kubevirt::V1beta1VirtualMachineRestore.new({spec: Kubevirt::V1beta1VirtualMachineRestoreSpec.new({target: Kubevirt::IoK8sApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'}), virtual_machine_snapshot_name: 'virtual_machine_snapshot_name_example'})}) # V1beta1VirtualMachineRestore | 
 
 begin
   
@@ -11848,7 +11848,7 @@ require 'kubevirt'
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
 namespace = 'namespace_example' # String | Object name and auth scope, such as for teams and projects
-body = Kubevirt::V1beta1VirtualMachineSnapshot.new({spec: Kubevirt::V1beta1VirtualMachineSnapshotSpec.new({source: Kubevirt::K8sIoApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'})})}) # V1beta1VirtualMachineSnapshot | 
+body = Kubevirt::V1beta1VirtualMachineSnapshot.new({spec: Kubevirt::V1beta1VirtualMachineSnapshotSpec.new({source: Kubevirt::IoK8sApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'})})}) # V1beta1VirtualMachineSnapshot | 
 
 begin
   
@@ -11983,7 +11983,7 @@ require 'kubevirt'
 
 api_instance = Kubevirt::DefaultApi.new
 name = 'name_example' # String | Name of the resource
-body = Kubevirt::V1beta1VirtualMachineClone.new({spec: Kubevirt::V1beta1VirtualMachineCloneSpec.new({source: Kubevirt::K8sIoApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'})})}) # V1beta1VirtualMachineClone | 
+body = Kubevirt::V1beta1VirtualMachineClone.new({spec: Kubevirt::V1beta1VirtualMachineCloneSpec.new({source: Kubevirt::IoK8sApiCoreV1TypedLocalObjectReference.new({kind: 'kind_example', name: 'name_example'})})}) # V1beta1VirtualMachineClone | 
 
 begin
   
@@ -12559,7 +12559,7 @@ No authorization required
 
 ## v1_get_sub_api_group
 
-> <K8sIoApimachineryPkgApisMetaV1APIGroup> v1_get_sub_api_group
+> <IoK8sApimachineryPkgApisMetaV1APIGroup> v1_get_sub_api_group
 
 
 
@@ -12586,7 +12586,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1APIGroup>, Integer, Hash)> v1_get_sub_api_group_with_http_info
+> <Array(<IoK8sApimachineryPkgApisMetaV1APIGroup>, Integer, Hash)> v1_get_sub_api_group_with_http_info
 
 ```ruby
 begin
@@ -12594,7 +12594,7 @@ begin
   data, status_code, headers = api_instance.v1_get_sub_api_group_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1APIGroup>
+  p data # => <IoK8sApimachineryPkgApisMetaV1APIGroup>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->v1_get_sub_api_group_with_http_info: #{e}"
 end
@@ -12606,7 +12606,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1APIGroup**](K8sIoApimachineryPkgApisMetaV1APIGroup.md)
+[**IoK8sApimachineryPkgApisMetaV1APIGroup**](IoK8sApimachineryPkgApisMetaV1APIGroup.md)
 
 ### Authorization
 
@@ -16146,7 +16146,7 @@ No authorization required
 
 ## v1alpha3get_api_sub_resources
 
-> <K8sIoApimachineryPkgApisMetaV1APIResourceList> v1alpha3get_api_sub_resources
+> <IoK8sApimachineryPkgApisMetaV1APIResourceList> v1alpha3get_api_sub_resources
 
 
 
@@ -16173,7 +16173,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> v1alpha3get_api_sub_resources_with_http_info
+> <Array(<IoK8sApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> v1alpha3get_api_sub_resources_with_http_info
 
 ```ruby
 begin
@@ -16181,7 +16181,7 @@ begin
   data, status_code, headers = api_instance.v1alpha3get_api_sub_resources_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1APIResourceList>
+  p data # => <IoK8sApimachineryPkgApisMetaV1APIResourceList>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->v1alpha3get_api_sub_resources_with_http_info: #{e}"
 end
@@ -16193,7 +16193,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1APIResourceList**](K8sIoApimachineryPkgApisMetaV1APIResourceList.md)
+[**IoK8sApimachineryPkgApisMetaV1APIResourceList**](IoK8sApimachineryPkgApisMetaV1APIResourceList.md)
 
 ### Authorization
 
@@ -17328,7 +17328,7 @@ No authorization required
 
 ## v1get_api_sub_resources
 
-> <K8sIoApimachineryPkgApisMetaV1APIResourceList> v1get_api_sub_resources
+> <IoK8sApimachineryPkgApisMetaV1APIResourceList> v1get_api_sub_resources
 
 
 
@@ -17355,7 +17355,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> v1get_api_sub_resources_with_http_info
+> <Array(<IoK8sApimachineryPkgApisMetaV1APIResourceList>, Integer, Hash)> v1get_api_sub_resources_with_http_info
 
 ```ruby
 begin
@@ -17363,7 +17363,7 @@ begin
   data, status_code, headers = api_instance.v1get_api_sub_resources_with_http_info
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1APIResourceList>
+  p data # => <IoK8sApimachineryPkgApisMetaV1APIResourceList>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->v1get_api_sub_resources_with_http_info: #{e}"
 end
@@ -17375,7 +17375,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1APIResourceList**](K8sIoApimachineryPkgApisMetaV1APIResourceList.md)
+[**IoK8sApimachineryPkgApisMetaV1APIResourceList**](IoK8sApimachineryPkgApisMetaV1APIResourceList.md)
 
 ### Authorization
 
@@ -18452,7 +18452,7 @@ No authorization required
 
 ## watch_kube_virt_list_for_all_namespaces
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_kube_virt_list_for_all_namespaces(opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_kube_virt_list_for_all_namespaces(opts)
 
 
 
@@ -18489,7 +18489,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_kube_virt_list_for_all_namespaces_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_kube_virt_list_for_all_namespaces_with_http_info(opts)
 
 ```ruby
 begin
@@ -18497,7 +18497,7 @@ begin
   data, status_code, headers = api_instance.watch_kube_virt_list_for_all_namespaces_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_kube_virt_list_for_all_namespaces_with_http_info: #{e}"
 end
@@ -18518,7 +18518,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -18532,7 +18532,7 @@ No authorization required
 
 ## watch_migration_policy_list_for_all_namespaces
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_migration_policy_list_for_all_namespaces(opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_migration_policy_list_for_all_namespaces(opts)
 
 
 
@@ -18569,7 +18569,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_migration_policy_list_for_all_namespaces_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_migration_policy_list_for_all_namespaces_with_http_info(opts)
 
 ```ruby
 begin
@@ -18577,7 +18577,7 @@ begin
   data, status_code, headers = api_instance.watch_migration_policy_list_for_all_namespaces_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_migration_policy_list_for_all_namespaces_with_http_info: #{e}"
 end
@@ -18598,7 +18598,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -18612,7 +18612,7 @@ No authorization required
 
 ## watch_namespaced_kube_virt
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_kube_virt(namespace, opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_kube_virt(namespace, opts)
 
 
 
@@ -18650,7 +18650,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_kube_virt_with_http_info(namespace, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_kube_virt_with_http_info(namespace, opts)
 
 ```ruby
 begin
@@ -18658,7 +18658,7 @@ begin
   data, status_code, headers = api_instance.watch_namespaced_kube_virt_with_http_info(namespace, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_namespaced_kube_virt_with_http_info: #{e}"
 end
@@ -18680,7 +18680,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -18694,7 +18694,7 @@ No authorization required
 
 ## watch_namespaced_virtual_machine
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine(namespace, opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine(namespace, opts)
 
 
 
@@ -18732,7 +18732,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_with_http_info(namespace, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_with_http_info(namespace, opts)
 
 ```ruby
 begin
@@ -18740,7 +18740,7 @@ begin
   data, status_code, headers = api_instance.watch_namespaced_virtual_machine_with_http_info(namespace, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_namespaced_virtual_machine_with_http_info: #{e}"
 end
@@ -18762,7 +18762,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -18776,7 +18776,7 @@ No authorization required
 
 ## watch_namespaced_virtual_machine_backup
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_backup(namespace, opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_backup(namespace, opts)
 
 
 
@@ -18814,7 +18814,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_backup_with_http_info(namespace, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_backup_with_http_info(namespace, opts)
 
 ```ruby
 begin
@@ -18822,7 +18822,7 @@ begin
   data, status_code, headers = api_instance.watch_namespaced_virtual_machine_backup_with_http_info(namespace, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_namespaced_virtual_machine_backup_with_http_info: #{e}"
 end
@@ -18844,7 +18844,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -18858,7 +18858,7 @@ No authorization required
 
 ## watch_namespaced_virtual_machine_export
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_export(namespace, opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_export(namespace, opts)
 
 
 
@@ -18896,7 +18896,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_export_with_http_info(namespace, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_export_with_http_info(namespace, opts)
 
 ```ruby
 begin
@@ -18904,7 +18904,7 @@ begin
   data, status_code, headers = api_instance.watch_namespaced_virtual_machine_export_with_http_info(namespace, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_namespaced_virtual_machine_export_with_http_info: #{e}"
 end
@@ -18926,7 +18926,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -18940,7 +18940,7 @@ No authorization required
 
 ## watch_namespaced_virtual_machine_instance
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_instance(namespace, opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_instance(namespace, opts)
 
 
 
@@ -18978,7 +18978,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_instance_with_http_info(namespace, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_instance_with_http_info(namespace, opts)
 
 ```ruby
 begin
@@ -18986,7 +18986,7 @@ begin
   data, status_code, headers = api_instance.watch_namespaced_virtual_machine_instance_with_http_info(namespace, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_namespaced_virtual_machine_instance_with_http_info: #{e}"
 end
@@ -19008,7 +19008,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -19022,7 +19022,7 @@ No authorization required
 
 ## watch_namespaced_virtual_machine_instance_migration
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_instance_migration(namespace, opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_instance_migration(namespace, opts)
 
 
 
@@ -19060,7 +19060,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_instance_migration_with_http_info(namespace, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_instance_migration_with_http_info(namespace, opts)
 
 ```ruby
 begin
@@ -19068,7 +19068,7 @@ begin
   data, status_code, headers = api_instance.watch_namespaced_virtual_machine_instance_migration_with_http_info(namespace, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_namespaced_virtual_machine_instance_migration_with_http_info: #{e}"
 end
@@ -19090,7 +19090,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -19104,7 +19104,7 @@ No authorization required
 
 ## watch_namespaced_virtual_machine_instance_preset
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_instance_preset(namespace, opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_instance_preset(namespace, opts)
 
 
 
@@ -19142,7 +19142,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_instance_preset_with_http_info(namespace, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_instance_preset_with_http_info(namespace, opts)
 
 ```ruby
 begin
@@ -19150,7 +19150,7 @@ begin
   data, status_code, headers = api_instance.watch_namespaced_virtual_machine_instance_preset_with_http_info(namespace, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_namespaced_virtual_machine_instance_preset_with_http_info: #{e}"
 end
@@ -19172,7 +19172,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -19186,7 +19186,7 @@ No authorization required
 
 ## watch_namespaced_virtual_machine_instance_replica_set
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_instance_replica_set(namespace, opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_instance_replica_set(namespace, opts)
 
 
 
@@ -19224,7 +19224,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_instance_replica_set_with_http_info(namespace, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_instance_replica_set_with_http_info(namespace, opts)
 
 ```ruby
 begin
@@ -19232,7 +19232,7 @@ begin
   data, status_code, headers = api_instance.watch_namespaced_virtual_machine_instance_replica_set_with_http_info(namespace, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_namespaced_virtual_machine_instance_replica_set_with_http_info: #{e}"
 end
@@ -19254,7 +19254,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -19268,7 +19268,7 @@ No authorization required
 
 ## watch_namespaced_virtual_machine_instancetype
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_instancetype(namespace, opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_instancetype(namespace, opts)
 
 
 
@@ -19306,7 +19306,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_instancetype_with_http_info(namespace, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_instancetype_with_http_info(namespace, opts)
 
 ```ruby
 begin
@@ -19314,7 +19314,7 @@ begin
   data, status_code, headers = api_instance.watch_namespaced_virtual_machine_instancetype_with_http_info(namespace, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_namespaced_virtual_machine_instancetype_with_http_info: #{e}"
 end
@@ -19336,7 +19336,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -19350,7 +19350,7 @@ No authorization required
 
 ## watch_namespaced_virtual_machine_pool
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_pool(namespace, opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_pool(namespace, opts)
 
 
 
@@ -19388,7 +19388,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_pool_with_http_info(namespace, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_pool_with_http_info(namespace, opts)
 
 ```ruby
 begin
@@ -19396,7 +19396,7 @@ begin
   data, status_code, headers = api_instance.watch_namespaced_virtual_machine_pool_with_http_info(namespace, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_namespaced_virtual_machine_pool_with_http_info: #{e}"
 end
@@ -19418,7 +19418,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -19432,7 +19432,7 @@ No authorization required
 
 ## watch_namespaced_virtual_machine_preference
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_preference(namespace, opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_preference(namespace, opts)
 
 
 
@@ -19470,7 +19470,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_preference_with_http_info(namespace, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_preference_with_http_info(namespace, opts)
 
 ```ruby
 begin
@@ -19478,7 +19478,7 @@ begin
   data, status_code, headers = api_instance.watch_namespaced_virtual_machine_preference_with_http_info(namespace, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_namespaced_virtual_machine_preference_with_http_info: #{e}"
 end
@@ -19500,7 +19500,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -19514,7 +19514,7 @@ No authorization required
 
 ## watch_namespaced_virtual_machine_restore
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_restore(namespace, opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_restore(namespace, opts)
 
 
 
@@ -19552,7 +19552,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_restore_with_http_info(namespace, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_restore_with_http_info(namespace, opts)
 
 ```ruby
 begin
@@ -19560,7 +19560,7 @@ begin
   data, status_code, headers = api_instance.watch_namespaced_virtual_machine_restore_with_http_info(namespace, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_namespaced_virtual_machine_restore_with_http_info: #{e}"
 end
@@ -19582,7 +19582,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -19596,7 +19596,7 @@ No authorization required
 
 ## watch_namespaced_virtual_machine_snapshot
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_snapshot(namespace, opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_snapshot(namespace, opts)
 
 
 
@@ -19634,7 +19634,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_snapshot_with_http_info(namespace, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_snapshot_with_http_info(namespace, opts)
 
 ```ruby
 begin
@@ -19642,7 +19642,7 @@ begin
   data, status_code, headers = api_instance.watch_namespaced_virtual_machine_snapshot_with_http_info(namespace, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_namespaced_virtual_machine_snapshot_with_http_info: #{e}"
 end
@@ -19664,7 +19664,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -19678,7 +19678,7 @@ No authorization required
 
 ## watch_namespaced_virtual_machine_snapshot_content
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_snapshot_content(namespace, opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_namespaced_virtual_machine_snapshot_content(namespace, opts)
 
 
 
@@ -19716,7 +19716,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_snapshot_content_with_http_info(namespace, opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_namespaced_virtual_machine_snapshot_content_with_http_info(namespace, opts)
 
 ```ruby
 begin
@@ -19724,7 +19724,7 @@ begin
   data, status_code, headers = api_instance.watch_namespaced_virtual_machine_snapshot_content_with_http_info(namespace, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_namespaced_virtual_machine_snapshot_content_with_http_info: #{e}"
 end
@@ -19746,7 +19746,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -19760,7 +19760,7 @@ No authorization required
 
 ## watch_virtual_machine_backup_list_for_all_namespaces
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_backup_list_for_all_namespaces(opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_backup_list_for_all_namespaces(opts)
 
 
 
@@ -19797,7 +19797,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_backup_list_for_all_namespaces_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_backup_list_for_all_namespaces_with_http_info(opts)
 
 ```ruby
 begin
@@ -19805,7 +19805,7 @@ begin
   data, status_code, headers = api_instance.watch_virtual_machine_backup_list_for_all_namespaces_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_virtual_machine_backup_list_for_all_namespaces_with_http_info: #{e}"
 end
@@ -19826,7 +19826,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -19840,7 +19840,7 @@ No authorization required
 
 ## watch_virtual_machine_clone_list_for_all_namespaces
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_clone_list_for_all_namespaces(opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_clone_list_for_all_namespaces(opts)
 
 
 
@@ -19877,7 +19877,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_clone_list_for_all_namespaces_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_clone_list_for_all_namespaces_with_http_info(opts)
 
 ```ruby
 begin
@@ -19885,7 +19885,7 @@ begin
   data, status_code, headers = api_instance.watch_virtual_machine_clone_list_for_all_namespaces_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_virtual_machine_clone_list_for_all_namespaces_with_http_info: #{e}"
 end
@@ -19906,7 +19906,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -19920,7 +19920,7 @@ No authorization required
 
 ## watch_virtual_machine_cluster_instancetype_list_for_all_namespaces
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_cluster_instancetype_list_for_all_namespaces(opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_cluster_instancetype_list_for_all_namespaces(opts)
 
 
 
@@ -19957,7 +19957,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_cluster_instancetype_list_for_all_namespaces_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_cluster_instancetype_list_for_all_namespaces_with_http_info(opts)
 
 ```ruby
 begin
@@ -19965,7 +19965,7 @@ begin
   data, status_code, headers = api_instance.watch_virtual_machine_cluster_instancetype_list_for_all_namespaces_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_virtual_machine_cluster_instancetype_list_for_all_namespaces_with_http_info: #{e}"
 end
@@ -19986,7 +19986,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -20000,7 +20000,7 @@ No authorization required
 
 ## watch_virtual_machine_cluster_preference_list_for_all_namespaces
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_cluster_preference_list_for_all_namespaces(opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_cluster_preference_list_for_all_namespaces(opts)
 
 
 
@@ -20037,7 +20037,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_cluster_preference_list_for_all_namespaces_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_cluster_preference_list_for_all_namespaces_with_http_info(opts)
 
 ```ruby
 begin
@@ -20045,7 +20045,7 @@ begin
   data, status_code, headers = api_instance.watch_virtual_machine_cluster_preference_list_for_all_namespaces_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_virtual_machine_cluster_preference_list_for_all_namespaces_with_http_info: #{e}"
 end
@@ -20066,7 +20066,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -20080,7 +20080,7 @@ No authorization required
 
 ## watch_virtual_machine_export_list_for_all_namespaces
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_export_list_for_all_namespaces(opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_export_list_for_all_namespaces(opts)
 
 
 
@@ -20117,7 +20117,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_export_list_for_all_namespaces_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_export_list_for_all_namespaces_with_http_info(opts)
 
 ```ruby
 begin
@@ -20125,7 +20125,7 @@ begin
   data, status_code, headers = api_instance.watch_virtual_machine_export_list_for_all_namespaces_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_virtual_machine_export_list_for_all_namespaces_with_http_info: #{e}"
 end
@@ -20146,7 +20146,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -20160,7 +20160,7 @@ No authorization required
 
 ## watch_virtual_machine_instance_list_for_all_namespaces
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_instance_list_for_all_namespaces(opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_instance_list_for_all_namespaces(opts)
 
 
 
@@ -20197,7 +20197,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_instance_list_for_all_namespaces_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_instance_list_for_all_namespaces_with_http_info(opts)
 
 ```ruby
 begin
@@ -20205,7 +20205,7 @@ begin
   data, status_code, headers = api_instance.watch_virtual_machine_instance_list_for_all_namespaces_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_virtual_machine_instance_list_for_all_namespaces_with_http_info: #{e}"
 end
@@ -20226,7 +20226,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -20240,7 +20240,7 @@ No authorization required
 
 ## watch_virtual_machine_instance_migration_list_for_all_namespaces
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_instance_migration_list_for_all_namespaces(opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_instance_migration_list_for_all_namespaces(opts)
 
 
 
@@ -20277,7 +20277,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_instance_migration_list_for_all_namespaces_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_instance_migration_list_for_all_namespaces_with_http_info(opts)
 
 ```ruby
 begin
@@ -20285,7 +20285,7 @@ begin
   data, status_code, headers = api_instance.watch_virtual_machine_instance_migration_list_for_all_namespaces_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_virtual_machine_instance_migration_list_for_all_namespaces_with_http_info: #{e}"
 end
@@ -20306,7 +20306,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -20320,7 +20320,7 @@ No authorization required
 
 ## watch_virtual_machine_instance_preset_list_for_all_namespaces
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_instance_preset_list_for_all_namespaces(opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_instance_preset_list_for_all_namespaces(opts)
 
 
 
@@ -20357,7 +20357,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_instance_preset_list_for_all_namespaces_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_instance_preset_list_for_all_namespaces_with_http_info(opts)
 
 ```ruby
 begin
@@ -20365,7 +20365,7 @@ begin
   data, status_code, headers = api_instance.watch_virtual_machine_instance_preset_list_for_all_namespaces_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_virtual_machine_instance_preset_list_for_all_namespaces_with_http_info: #{e}"
 end
@@ -20386,7 +20386,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -20400,7 +20400,7 @@ No authorization required
 
 ## watch_virtual_machine_instance_replica_set_list_for_all_namespaces
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_instance_replica_set_list_for_all_namespaces(opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_instance_replica_set_list_for_all_namespaces(opts)
 
 
 
@@ -20437,7 +20437,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_instance_replica_set_list_for_all_namespaces_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_instance_replica_set_list_for_all_namespaces_with_http_info(opts)
 
 ```ruby
 begin
@@ -20445,7 +20445,7 @@ begin
   data, status_code, headers = api_instance.watch_virtual_machine_instance_replica_set_list_for_all_namespaces_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_virtual_machine_instance_replica_set_list_for_all_namespaces_with_http_info: #{e}"
 end
@@ -20466,7 +20466,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -20480,7 +20480,7 @@ No authorization required
 
 ## watch_virtual_machine_instancetype_list_for_all_namespaces
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_instancetype_list_for_all_namespaces(opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_instancetype_list_for_all_namespaces(opts)
 
 
 
@@ -20517,7 +20517,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_instancetype_list_for_all_namespaces_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_instancetype_list_for_all_namespaces_with_http_info(opts)
 
 ```ruby
 begin
@@ -20525,7 +20525,7 @@ begin
   data, status_code, headers = api_instance.watch_virtual_machine_instancetype_list_for_all_namespaces_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_virtual_machine_instancetype_list_for_all_namespaces_with_http_info: #{e}"
 end
@@ -20546,7 +20546,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -20560,7 +20560,7 @@ No authorization required
 
 ## watch_virtual_machine_list_for_all_namespaces
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_list_for_all_namespaces(opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_list_for_all_namespaces(opts)
 
 
 
@@ -20597,7 +20597,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_list_for_all_namespaces_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_list_for_all_namespaces_with_http_info(opts)
 
 ```ruby
 begin
@@ -20605,7 +20605,7 @@ begin
   data, status_code, headers = api_instance.watch_virtual_machine_list_for_all_namespaces_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_virtual_machine_list_for_all_namespaces_with_http_info: #{e}"
 end
@@ -20626,7 +20626,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -20640,7 +20640,7 @@ No authorization required
 
 ## watch_virtual_machine_pool_list_for_all_namespaces
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_pool_list_for_all_namespaces(opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_pool_list_for_all_namespaces(opts)
 
 
 
@@ -20677,7 +20677,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_pool_list_for_all_namespaces_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_pool_list_for_all_namespaces_with_http_info(opts)
 
 ```ruby
 begin
@@ -20685,7 +20685,7 @@ begin
   data, status_code, headers = api_instance.watch_virtual_machine_pool_list_for_all_namespaces_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_virtual_machine_pool_list_for_all_namespaces_with_http_info: #{e}"
 end
@@ -20706,7 +20706,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -20720,7 +20720,7 @@ No authorization required
 
 ## watch_virtual_machine_preference_list_for_all_namespaces
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_preference_list_for_all_namespaces(opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_preference_list_for_all_namespaces(opts)
 
 
 
@@ -20757,7 +20757,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_preference_list_for_all_namespaces_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_preference_list_for_all_namespaces_with_http_info(opts)
 
 ```ruby
 begin
@@ -20765,7 +20765,7 @@ begin
   data, status_code, headers = api_instance.watch_virtual_machine_preference_list_for_all_namespaces_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_virtual_machine_preference_list_for_all_namespaces_with_http_info: #{e}"
 end
@@ -20786,7 +20786,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -20800,7 +20800,7 @@ No authorization required
 
 ## watch_virtual_machine_restore_list_for_all_namespaces
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_restore_list_for_all_namespaces(opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_restore_list_for_all_namespaces(opts)
 
 
 
@@ -20837,7 +20837,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_restore_list_for_all_namespaces_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_restore_list_for_all_namespaces_with_http_info(opts)
 
 ```ruby
 begin
@@ -20845,7 +20845,7 @@ begin
   data, status_code, headers = api_instance.watch_virtual_machine_restore_list_for_all_namespaces_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_virtual_machine_restore_list_for_all_namespaces_with_http_info: #{e}"
 end
@@ -20866,7 +20866,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -20880,7 +20880,7 @@ No authorization required
 
 ## watch_virtual_machine_snapshot_content_list_for_all_namespaces
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_snapshot_content_list_for_all_namespaces(opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_snapshot_content_list_for_all_namespaces(opts)
 
 
 
@@ -20917,7 +20917,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_snapshot_content_list_for_all_namespaces_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_snapshot_content_list_for_all_namespaces_with_http_info(opts)
 
 ```ruby
 begin
@@ -20925,7 +20925,7 @@ begin
   data, status_code, headers = api_instance.watch_virtual_machine_snapshot_content_list_for_all_namespaces_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_virtual_machine_snapshot_content_list_for_all_namespaces_with_http_info: #{e}"
 end
@@ -20946,7 +20946,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 
@@ -20960,7 +20960,7 @@ No authorization required
 
 ## watch_virtual_machine_snapshot_list_for_all_namespaces
 
-> <K8sIoApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_snapshot_list_for_all_namespaces(opts)
+> <IoK8sApimachineryPkgApisMetaV1WatchEvent> watch_virtual_machine_snapshot_list_for_all_namespaces(opts)
 
 
 
@@ -20997,7 +20997,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<K8sIoApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_snapshot_list_for_all_namespaces_with_http_info(opts)
+> <Array(<IoK8sApimachineryPkgApisMetaV1WatchEvent>, Integer, Hash)> watch_virtual_machine_snapshot_list_for_all_namespaces_with_http_info(opts)
 
 ```ruby
 begin
@@ -21005,7 +21005,7 @@ begin
   data, status_code, headers = api_instance.watch_virtual_machine_snapshot_list_for_all_namespaces_with_http_info(opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <K8sIoApimachineryPkgApisMetaV1WatchEvent>
+  p data # => <IoK8sApimachineryPkgApisMetaV1WatchEvent>
 rescue Kubevirt::ApiError => e
   puts "Error when calling DefaultApi->watch_virtual_machine_snapshot_list_for_all_namespaces_with_http_info: #{e}"
 end
@@ -21026,7 +21026,7 @@ end
 
 ### Return type
 
-[**K8sIoApimachineryPkgApisMetaV1WatchEvent**](K8sIoApimachineryPkgApisMetaV1WatchEvent.md)
+[**IoK8sApimachineryPkgApisMetaV1WatchEvent**](IoK8sApimachineryPkgApisMetaV1WatchEvent.md)
 
 ### Authorization
 

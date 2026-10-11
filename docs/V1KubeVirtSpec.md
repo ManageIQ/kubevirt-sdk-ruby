@@ -8,7 +8,7 @@
 | **configuration** | [**V1KubeVirtConfiguration**](V1KubeVirtConfiguration.md) |  | [optional] |
 | **customize_components** | [**V1CustomizeComponents**](V1CustomizeComponents.md) |  | [optional] |
 | **image_pull_policy** | **String** | The ImagePullPolicy to use for KubeVirt operator-managed infrastructure images (virt-api, virt-controller, virt-handler, virt-exportproxy, etc.). For pull policy of user workload pods, see spec.configuration.imagePullPolicy.  Possible enum values:  - &#x60;\&quot;Always\&quot;&#x60; means that kubelet always attempts to pull the latest image. Container will fail If the pull fails.  - &#x60;\&quot;IfNotPresent\&quot;&#x60; means that kubelet pulls if the image isn&#39;t present on disk. Container will fail if the image isn&#39;t present and the pull fails.  - &#x60;\&quot;Never\&quot;&#x60; means that kubelet never pulls an image, but only uses a local image. Container will fail if the image isn&#39;t present | [optional] |
-| **image_pull_secrets** | [**Array&lt;K8sIoApiCoreV1LocalObjectReference&gt;**](K8sIoApiCoreV1LocalObjectReference.md) | The imagePullSecrets to pull the container images from Defaults to none | [optional] |
+| **image_pull_secrets** | [**Array&lt;IoK8sApiCoreV1LocalObjectReference&gt;**](IoK8sApiCoreV1LocalObjectReference.md) | The imagePullSecrets to pull the container images from Defaults to none | [optional] |
 | **image_registry** | **String** | The image registry to pull the container images from Defaults to the same registry the operator&#39;s container image is pulled from. | [optional] |
 | **image_tag** | **String** | The image tag to use for the continer images installed. Defaults to the same tag as the operator&#39;s container image. | [optional] |
 | **infra** | [**V1ComponentConfig**](V1ComponentConfig.md) |  | [optional] |
@@ -18,6 +18,7 @@
 | **product_name** | **String** | Designate the apps.kubevirt.io/part-of label for KubeVirt components. Useful if KubeVirt is included as part of a product. If ProductName is not specified, the part-of label will be omitted. | [optional] |
 | **product_version** | **String** | Designate the apps.kubevirt.io/version label for KubeVirt components. Useful if KubeVirt is included as part of a product. If ProductVersion is not specified, KubeVirt&#39;s version will be used. | [optional] |
 | **service_monitor_namespace** | **String** | The namespace the service monitor will be deployed  When ServiceMonitorNamespace is set, then we&#39;ll install the service monitor object in that namespace otherwise we will use the monitoring namespace. | [optional] |
+| **synchronization_placement** | [**V1ComponentConfig**](V1ComponentConfig.md) |  | [optional] |
 | **synchronization_port** | **String** | Specify the port to listen on for VMI status synchronization traffic. Default is 9185 | [optional] |
 | **uninstall_strategy** | **String** | Specifies if kubevirt can be deleted if workloads are still present. This is mainly a precaution to avoid accidental data loss | [optional] |
 | **workload_update_strategy** | [**V1KubeVirtWorkloadUpdateStrategy**](V1KubeVirtWorkloadUpdateStrategy.md) |  | [optional] |
@@ -43,6 +44,7 @@ instance = Kubevirt::V1KubeVirtSpec.new(
   product_name: null,
   product_version: null,
   service_monitor_namespace: null,
+  synchronization_placement: null,
   synchronization_port: null,
   uninstall_strategy: null,
   workload_update_strategy: null,
