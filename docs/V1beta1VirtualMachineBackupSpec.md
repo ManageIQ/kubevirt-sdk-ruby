@@ -1,0 +1,30 @@
+# Kubevirt::V1beta1VirtualMachineBackupSpec
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **force_full_backup** | **Boolean** | ForceFullBackup indicates that a full backup is desired | [optional] |
+| **mode** | **String** | Mode specifies the way the backup output will be received. Deleting an in-progress Pull backup finalizes it as Complete (client finished pulling). TTL expiry, or deleting an in-progress Push backup, cancels the job and marks the backup Failed. | [optional] |
+| **pvc_name** | **String** | PvcName required in push mode. Specifies the name of the PVC where the backup output will be stored | [optional] |
+| **skip_quiesce** | **Boolean** | SkipQuiesce indicates whether the VM&#39;s filesystem shoule not be quiesced before the backup | [optional] |
+| **source** | [**IoK8sApiCoreV1TypedLocalObjectReference**](IoK8sApiCoreV1TypedLocalObjectReference.md) |  |  |
+| **token_secret_ref** | **String** | TokenSecretRef is the name of the secret that will be used to pull the backup from an associated endpoint | [optional] |
+| **ttl_duration** | **String** | Duration is a wrapper around time.Duration which supports correct marshaling to YAML and JSON. In particular, it marshals into strings, which can be used as map keys in json. | [optional] |
+
+## Example
+
+```ruby
+require 'kubevirt'
+
+instance = Kubevirt::V1beta1VirtualMachineBackupSpec.new(
+  force_full_backup: null,
+  mode: null,
+  pvc_name: null,
+  skip_quiesce: null,
+  source: null,
+  token_secret_ref: null,
+  ttl_duration: null
+)
+```
+

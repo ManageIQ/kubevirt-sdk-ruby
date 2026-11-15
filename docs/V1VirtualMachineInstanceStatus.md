@@ -28,8 +28,10 @@
 | **reason** | **String** | A brief CamelCase message indicating details about why the VMI is in this state. e.g. &#39;NodeUnresponsive&#39; | [optional] |
 | **runtime_user** | **Integer** | RuntimeUser is used to determine what user will be used in launcher | [optional][default to 0] |
 | **selinux_context** | **String** | SELinuxContext is the actual SELinux context of the virt-launcher pod | [optional] |
+| **snapshot_overlay_pvcuid** | **String** | SnapshotOverlayPVCUID identifies the scratch PVC verified for the OverlaySnapshotActive condition. Updated together with that condition. | [optional] |
 | **topology_hints** | [**V1TopologyHints**](V1TopologyHints.md) |  | [optional] |
 | **virtual_machine_revision_name** | **String** | VirtualMachineRevisionName is used to get the vm revision of the vmi when doing an online vm snapshot | [optional] |
+| **virtual_machine_state_volume** | [**V1VolumeStatus**](V1VolumeStatus.md) |  | [optional] |
 | **volume_status** | [**Array&lt;V1VolumeStatus&gt;**](V1VolumeStatus.md) | VolumeStatus contains the statuses of all the volumes | [optional] |
 
 ## Example
@@ -62,8 +64,10 @@ instance = Kubevirt::V1VirtualMachineInstanceStatus.new(
   reason: null,
   runtime_user: null,
   selinux_context: null,
+  snapshot_overlay_pvcuid: null,
   topology_hints: null,
   virtual_machine_revision_name: null,
+  virtual_machine_state_volume: null,
   volume_status: null
 )
 ```

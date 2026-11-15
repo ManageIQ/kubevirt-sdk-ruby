@@ -10,7 +10,7 @@
 | **autoattach_pod_interface** | **Boolean** | Whether to attach a pod network interface. Defaults to true. | [optional] |
 | **autoattach_serial_console** | **Boolean** | Whether to attach the default virtio-serial console or not. Serial console access will not be available if set to false. Defaults to true. | [optional] |
 | **autoattach_vsock** | **Boolean** | Whether to attach the VSOCK CID to the VM or not. VSOCK access will be available if set to true. Defaults to false. | [optional] |
-| **block_multi_queue** | **Boolean** | Whether or not to enable virtio multi-queue for block devices. Defaults to false. | [optional] |
+| **block_multi_queue** | **Boolean** | Whether or not to enable virtio multi-queue for block devices. Explicit false configures a single request queue. When omitted, the queue count depends on device and IOThread configuration, falling back to hypervisor defaults when unspecified. | [optional] |
 | **client_passthrough** | **Object** | Represent a subset of client devices that can be accessed by VMI. At the moment only, USB devices using Usbredir&#39;s library and tooling. Another fit would be a smartcard with libcacard.  The struct is currently empty as there is no immediate request for user-facing APIs. This structure simply turns on USB redirection of UsbClientPassthroughMaxNumberOf devices. | [optional] |
 | **disable_hotplug** | **Boolean** | DisableHotplug disabled the ability to hotplug disks. | [optional] |
 | **disks** | [**Array&lt;V1Disk&gt;**](V1Disk.md) | Disks describes disks, cdroms and luns which are connected to the vmi. | [optional] |

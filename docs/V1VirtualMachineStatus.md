@@ -4,6 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **backup_in_progress** | **String** | BackupInProgress is the name of the VirtualMachineBackup currently executing | [optional] |
 | **changed_block_tracking** | [**V1ChangedBlockTrackingStatus**](V1ChangedBlockTrackingStatus.md) |  | [optional] |
 | **conditions** | [**Array&lt;V1VirtualMachineCondition&gt;**](V1VirtualMachineCondition.md) | Hold the state information of the VirtualMachine and its VirtualMachineInstance | [optional] |
 | **created** | **Boolean** | Created indicates if the virtual machine is created in the cluster | [optional] |
@@ -19,6 +20,7 @@
 | **snapshot_in_progress** | **String** | SnapshotInProgress is the name of the VirtualMachineSnapshot currently executing | [optional] |
 | **start_failure** | [**V1VirtualMachineStartFailure**](V1VirtualMachineStartFailure.md) |  | [optional] |
 | **state_change_requests** | [**Array&lt;V1VirtualMachineStateChangeRequest&gt;**](V1VirtualMachineStateChangeRequest.md) | StateChangeRequests indicates a list of actions that should be taken on a VMI e.g. stop a specific VMI then start a new one. | [optional] |
+| **virtual_machine_state_volume** | [**V1VolumeStatus**](V1VolumeStatus.md) |  | [optional] |
 | **volume_requests** | [**Array&lt;V1VirtualMachineVolumeRequest&gt;**](V1VirtualMachineVolumeRequest.md) | VolumeRequests indicates a list of volumes add or remove from the VMI template and hotplug on an active running VMI. | [optional] |
 | **volume_snapshot_statuses** | [**Array&lt;V1VolumeSnapshotStatus&gt;**](V1VolumeSnapshotStatus.md) | VolumeSnapshotStatuses indicates a list of statuses whether snapshotting is supported by each volume. | [optional] |
 | **volume_update_state** | [**V1VolumeUpdateState**](V1VolumeUpdateState.md) |  | [optional] |
@@ -29,6 +31,7 @@
 require 'kubevirt'
 
 instance = Kubevirt::V1VirtualMachineStatus.new(
+  backup_in_progress: null,
   changed_block_tracking: null,
   conditions: null,
   created: null,
@@ -44,6 +47,7 @@ instance = Kubevirt::V1VirtualMachineStatus.new(
   snapshot_in_progress: null,
   start_failure: null,
   state_change_requests: null,
+  virtual_machine_state_volume: null,
   volume_requests: null,
   volume_snapshot_statuses: null,
   volume_update_state: null

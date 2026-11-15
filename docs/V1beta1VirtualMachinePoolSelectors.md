@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **label_selector** | [**K8sIoApimachineryPkgApisMetaV1LabelSelector**](K8sIoApimachineryPkgApisMetaV1LabelSelector.md) |  | [optional] |
-| **node_selector_requirement_matcher** | [**Array&lt;K8sIoApiCoreV1NodeSelectorRequirement&gt;**](K8sIoApiCoreV1NodeSelectorRequirement.md) | NodeSelectorRequirementMatcher is a list of node selector requirement for VMs. | [optional] |
+| **label_selector** | [**IoK8sApimachineryPkgApisMetaV1LabelSelector**](IoK8sApimachineryPkgApisMetaV1LabelSelector.md) |  | [optional] |
+| **node_selector_requirement_matcher** | [**Array&lt;IoK8sApiCoreV1NodeSelectorRequirement&gt;**](IoK8sApiCoreV1NodeSelectorRequirement.md) | NodeSelectorRequirementMatcher is a list of node selector requirement for VMs. | [optional] |
 
 ## Example
 

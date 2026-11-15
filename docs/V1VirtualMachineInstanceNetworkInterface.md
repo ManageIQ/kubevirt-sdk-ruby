@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **info_source** | **String** | Specifies the origin of the interface data collected. values: domain, guest-agent, multus-status. | [optional] |
+| **info_source** | **String** | Specifies the origin of the interface data collected. values: domain, guest-agent, multus-status, pod-status. | [optional] |
 | **interface_name** | **String** | The interface name inside the Virtual Machine | [optional] |
 | **ip_address** | **String** | IP address of a Virtual Machine interface. It is always the first item of IPs | [optional] |
 | **ip_addresses** | **Array&lt;String&gt;** | List of all IP addresses of a Virtual Machine interface | [optional] |
