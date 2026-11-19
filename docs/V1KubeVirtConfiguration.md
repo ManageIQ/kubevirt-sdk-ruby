@@ -7,7 +7,7 @@
 | **additional_guest_memory_overhead_ratio** | **String** | AdditionalGuestMemoryOverheadRatio can be used to increase the virtualization infrastructure overhead. This is useful, since the calculation of this overhead is not accurate and cannot be entirely known in advance. The ratio that is being set determines by which factor to increase the overhead calculated by Kubevirt. A higher ratio means that the VMs would be less compromised by node pressures, but would mean that fewer VMs could be scheduled to a node. If not set, the default is 1. | [optional] |
 | **api_configuration** | [**V1ReloadableComponentConfiguration**](V1ReloadableComponentConfiguration.md) |  | [optional] |
 | **architecture_configuration** | [**V1ArchConfiguration**](V1ArchConfiguration.md) |  | [optional] |
-| **auto_cpu_limit_namespace_label_selector** | [**K8sIoApimachineryPkgApisMetaV1LabelSelector**](K8sIoApimachineryPkgApisMetaV1LabelSelector.md) |  | [optional] |
+| **auto_cpu_limit_namespace_label_selector** | [**IoK8sApimachineryPkgApisMetaV1LabelSelector**](IoK8sApimachineryPkgApisMetaV1LabelSelector.md) |  | [optional] |
 | **changed_block_tracking_label_selectors** | [**V1ChangedBlockTrackingSelectors**](V1ChangedBlockTrackingSelectors.md) |  | [optional] |
 | **common_instancetypes_deployment** | [**V1CommonInstancetypesDeployment**](V1CommonInstancetypesDeployment.md) |  | [optional] |
 | **confidential_compute** | [**V1ConfidentialComputeConfiguration**](V1ConfidentialComputeConfiguration.md) |  | [optional] |
@@ -17,6 +17,7 @@
 | **default_runtime_class** | **String** |  | [optional] |
 | **developer_configuration** | [**V1DeveloperConfiguration**](V1DeveloperConfiguration.md) |  | [optional] |
 | **emulated_machines** | **Array&lt;String&gt;** | Deprecated. Use architectureConfiguration instead. | [optional] |
+| **emulation_policy** | **String** | EmulationPolicy is the default emulation policy for VMs that do not set spec.emulationPolicy. A VM may set a more permissive policy.  Valid Options from least to most permissive are: - None: Only native-kvm - Hardware: Not yet implemented - Software: Qemu TCG cross-architecture emulation Default policy is &#39;None&#39;  This is an alpha field and should only be configured if the feature-gate CrossArchitectureVirtualization is enabled. This feature is in alpha. | [optional] |
 | **eviction_strategy** | **String** | EvictionStrategy defines at the cluster level if the VirtualMachineInstance should be migrated instead of shut-off in case of a node drain. If the VirtualMachineInstance specific field is set it overrides the cluster level one. | [optional] |
 | **handler_configuration** | [**V1ReloadableComponentConfiguration**](V1ReloadableComponentConfiguration.md) |  | [optional] |
 | **hypervisors** | [**Array&lt;V1HypervisorConfiguration&gt;**](V1HypervisorConfiguration.md) | Hypervisors holds information regarding the hypervisor configurations supported on this cluster. | [optional] |
@@ -29,6 +30,7 @@
 | **mem_balloon_stats_period** | **Integer** |  | [optional] |
 | **migrations** | [**V1MigrationConfiguration**](V1MigrationConfiguration.md) |  | [optional] |
 | **min_cpu_model** | **String** | deprecated | [optional] |
+| **multi_io_thread_auto_policy** | [**V1MultiIOThreadAutoPolicy**](V1MultiIOThreadAutoPolicy.md) |  | [optional] |
 | **network** | [**V1NetworkConfiguration**](V1NetworkConfiguration.md) |  | [optional] |
 | **obsolete_cpu_models** | **Hash&lt;String, Boolean&gt;** |  | [optional] |
 | **ovmf_path** | **String** | Deprecated. Use architectureConfiguration instead. | [optional] |
@@ -67,6 +69,7 @@ instance = Kubevirt::V1KubeVirtConfiguration.new(
   default_runtime_class: null,
   developer_configuration: null,
   emulated_machines: null,
+  emulation_policy: null,
   eviction_strategy: null,
   handler_configuration: null,
   hypervisors: null,
@@ -79,6 +82,7 @@ instance = Kubevirt::V1KubeVirtConfiguration.new(
   mem_balloon_stats_period: null,
   migrations: null,
   min_cpu_model: null,
+  multi_io_thread_auto_policy: null,
   network: null,
   obsolete_cpu_models: null,
   ovmf_path: null,
